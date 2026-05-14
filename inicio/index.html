@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danielle Alves — Marketing Digital</title>
+  <meta name="description" content="Portfólio de Danielle Alves — Social Media, Copywriting, Reels, Eventos e Sites. +8 anos de experiência em marketing digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pink: #FF2D78;
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray: #f5f5f5;
+      --gray2: #e4e4e4;
+      --muted: #888888;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--pink); color: white; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+    .u { font-family: 'Unbounded', sans-serif; }
+    .m { font-family: 'Manrope', sans-serif; }
+    img { display: block; }
+    a { text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 68px; padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.35s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid var(--gray2);
+    }
+    .nav-logo { font-family: 'Unbounded', sans-serif; font-size: 0.95rem; font-weight: 900; letter-spacing: -0.02em; cursor: pointer; color: var(--black); }
+    .nav-logo em { color: var(--pink); font-style: normal; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      font-family: 'Manrope', sans-serif; font-size: 0.82rem; font-weight: 600;
+      color: var(--black); cursor: pointer; position: relative;
+      text-transform: uppercase; letter-spacing: 0.06em; transition: color 0.2s;
+    }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 2px; background: var(--pink); transform: scaleX(0); transition: transform 0.22s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      font-family: 'Manrope', sans-serif; font-size: 0.8rem; font-weight: 700;
+      background: var(--pink); color: white; border: none;
+      padding: 10px 22px; cursor: pointer; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--black); }
+
+    /* HERO */
+    .hero { min-height: 100vh; padding: 130px 5vw 80px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.24em; color: var(--pink); display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .hero-tag::before { content: ''; width: 36px; height: 2px; background: var(--pink); flex-shrink: 0; }
+    .hero-h1 { font-family: 'Unbounded', sans-serif; font-size: clamp(3rem, 7.5vw, 9rem); font-weight: 900; line-height: 0.94; letter-spacing: -0.04em; color: var(--black); max-width: 1100px; }
+    .hero-h1 .pk { color: var(--pink); }
+    .hero-h1 .ol { -webkit-text-stroke: 2.5px var(--black); color: transparent; }
+    .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 72px; gap: 40px; flex-wrap: wrap; }
+    .hero-sub { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 440px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-pk { font-family: 'Manrope', sans-serif; background: var(--pink); color: white; border: 2px solid var(--pink); padding: 15px 34px; font-size: 0.85rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.22s; display: inline-block; }
+    .btn-pk:hover { background: transparent; color: var(--pink); }
+    .btn-bk { font-family: 'Manrope', sans-serif; background: transparent; color: var(--black); border: 2px solid var(--black); padding: 15px 34px; font-size: 0.85rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.22s; display: inline-block; }
+    .btn-bk:hover { background: var(--black); color: white; }
+
+    /* MARQUEE */
+    .mq { background: var(--pink); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); padding: 16px 0; overflow: hidden; white-space: nowrap; }
+    .mq-track { display: inline-flex; animation: marquee 22s linear infinite; }
+    .mq-item { font-family: 'Unbounded', sans-serif; font-size: 0.72rem; font-weight: 700; color: white; letter-spacing: 0.14em; text-transform: uppercase; padding: 0 36px; display: inline-flex; align-items: center; gap: 36px; }
+    .mq-dot { width: 5px; height: 5px; background: white; border-radius: 50%; display: inline-block; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+    .stat { padding: 56px 5vw; border-right: 2px solid var(--black); transition: background 0.25s; cursor: default; }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: var(--pink); }
+    .stat:hover .sn { color: white; }
+    .stat:hover .sl { color: rgba(255,255,255,0.7); }
+    .sn { font-family: 'Unbounded', sans-serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 900; color: var(--black); letter-spacing: -0.04em; transition: color 0.25s; }
+    .sl { font-size: 0.88rem; color: var(--muted); margin-top: 10px; font-weight: 500; transition: color 0.25s; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* SECTION */
+    .sec { padding: 96px 5vw; }
+    .sec-hdr { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--black); padding-bottom: 36px; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
+    .sec-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: var(--pink); margin-bottom: 10px; }
+    .sec-h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.8rem, 3.5vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
+    .sec-sub { font-size: 0.9rem; color: var(--muted); max-width: 320px; line-height: 1.7; text-align: right; }
+
+    /* WORKS */
+    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .work-card { position: relative; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; background: var(--black); }
+    .work-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: grayscale(30%); transition: all 0.6s ease; }
+    .work-card:hover img { opacity: 0.25; transform: scale(1.06); filter: grayscale(0%); }
+    .work-body { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 55%); }
+    .work-pill { display: inline-block; background: var(--pink); color: white; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 13px; margin-bottom: 10px; width: fit-content; }
+    .work-cat { font-size: 0.7rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 5px; }
+    .work-title { font-family: 'Unbounded', sans-serif; font-size: clamp(0.95rem,2vw,1.4rem); font-weight: 700; color: white; letter-spacing: -0.02em; }
+    .work-handle { font-size: 0.75rem; color: var(--pink); margin-top: 6px; font-weight: 600; }
+    .work-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .work-tag { font-size: 0.65rem; font-weight: 600; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 3px 10px; }
+    .work-arrow { position: absolute; top: 20px; right: 20px; width: 38px; height: 38px; border: 1.5px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; opacity: 0; transform: scale(0.8); transition: all 0.28s; }
+    .work-card:hover .work-arrow { opacity: 1; transform: scale(1); background: var(--pink); border-color: var(--pink); }
+
+    /* MODAL */
+    .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .modal-bg.open { opacity: 1; pointer-events: all; }
+    .modal { background: white; max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(20px); transition: transform 0.3s; }
+    .modal-bg.open .modal { transform: translateY(0); }
+    .modal-img { width: 100%; height: 260px; object-fit: cover; }
+    .modal-body { padding: 36px; }
+    .modal-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--pink); margin-bottom: 10px; }
+    .modal-title { font-family: 'Unbounded', sans-serif; font-size: 1.8rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 6px; }
+    .modal-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
+    .modal-handle { font-size: 0.88rem; font-weight: 700; color: var(--pink); margin-bottom: 18px; }
+    .modal-desc { font-size: 1rem; line-height: 1.85; color: #333; margin-bottom: 28px; }
+    .modal-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .modal-chip { font-size: 0.75rem; font-weight: 600; border: 2px solid var(--black); padding: 6px 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .modal-close { position: absolute; top: 14px; right: 14px; background: var(--black); color: white; border: none; width: 38px; height: 38px; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+    .modal-close:hover { background: var(--pink); }
+
+    /* SERVICES */
+    .svc-list { display: flex; flex-direction: column; }
+    .svc-row { display: grid; grid-template-columns: 72px 1fr 32px; align-items: center; gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--gray2); cursor: default; position: relative; }
+    .svc-row::before { content: ''; position: absolute; left: -5vw; right: -5vw; top: 0; bottom: 0; background: var(--gray); z-index: -1; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+    .svc-row:hover::before { transform: scaleX(1); }
+    .svc-row:hover .svc-num { color: var(--pink); }
+    .svc-row:hover .svc-arrow { opacity: 1; transform: translateX(4px); }
+    .svc-num { font-family: 'Unbounded', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--gray2); letter-spacing: 0.06em; transition: color 0.22s; }
+    .svc-title { font-family: 'Unbounded', sans-serif; font-size: clamp(0.95rem, 2vw, 1.3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
+    .svc-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; max-width: 520px; }
+    .svc-arrow { font-size: 1.2rem; color: var(--pink); opacity: 0; transition: all 0.22s; }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+    .about-l { background: var(--pink); padding: 80px 5vw; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .about-l::after { content: 'DA'; position: absolute; right: -10px; bottom: -50px; font-family: 'Unbounded', sans-serif; font-size: 13rem; font-weight: 900; color: rgba(255,255,255,0.1); line-height: 1; pointer-events: none; }
+    .about-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(255,255,255,0.65); margin-bottom: 18px; }
+    .about-h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 900; color: white; line-height: 1.1; letter-spacing: -0.03em; }
+    .about-r { background: var(--gray); padding: 80px 5vw; display: flex; flex-direction: column; justify-content: center; }
+    .about-txt { font-size: 1rem; color: var(--black); line-height: 1.9; margin-bottom: 36px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { font-size: 0.75rem; font-weight: 700; border: 2px solid var(--black); padding: 8px 16px; text-transform: uppercase; letter-spacing: 0.04em; cursor: default; transition: all 0.2s; }
+    .chip:hover { background: var(--pink); border-color: var(--pink); color: white; }
+
+    /* CONTACT */
+    .contact-sec { padding: 96px 5vw; border-top: 2px solid var(--black); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(2.4rem, 5vw, 5.5rem); font-weight: 900; line-height: 0.94; letter-spacing: -0.04em; margin-bottom: 28px; }
+    .contact-h2 span { color: var(--pink); }
+    .contact-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.75; max-width: 380px; }
+    .contact-links { margin-top: 40px; display: flex; flex-direction: column; gap: 14px; }
+    .clink { display: flex; align-items: center; gap: 14px; font-size: 0.9rem; color: var(--black); font-weight: 600; transition: color 0.2s; }
+    .clink:hover { color: var(--pink); }
+    .clink-icon { width: 36px; height: 36px; border: 2px solid var(--black); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; transition: all 0.2s; font-family: 'Unbounded', sans-serif; }
+    .clink:hover .clink-icon { background: var(--pink); border-color: var(--pink); color: white; }
+    .form { display: flex; flex-direction: column; gap: 14px; }
+    .field { font-family: 'Manrope', sans-serif; font-size: 0.92rem; color: var(--black); background: var(--gray); border: 2px solid transparent; padding: 15px 18px; outline: none; transition: border-color 0.2s; width: 100%; }
+    .field:focus { border-color: var(--pink); background: white; }
+    .field::placeholder { color: var(--muted); }
+
+    /* FOOTER */
+    footer { background: var(--black); color: white; padding: 36px 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-top: 4px solid var(--pink); }
+    .footer-logo { font-family: 'Unbounded', sans-serif; font-size: 0.88rem; font-weight: 900; color: white; }
+    .footer-logo em { color: var(--pink); font-style: normal; }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 2px solid var(--black); padding: 36px 5vw; }
+      .works-grid { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .about-l::after { font-size: 7rem; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .sec-hdr { flex-direction: column; align-items: flex-start; }
+      .sec-sub { text-align: left; }
+      .hero-foot { flex-direction: column; align-items: flex-start; }
+      .svc-row { grid-template-columns: 56px 1fr; }
+      .svc-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    <img class="modal-img" id="modal-img" src="" alt="" />
+    <div class="modal-body">
+      <div class="modal-tag" id="modal-cat"></div>
+      <div class="modal-title u" id="modal-title"></div>
+      <div class="modal-sub m" id="modal-sub"></div>
+      <div class="modal-handle m" id="modal-handle"></div>
+      <p class="modal-desc m" id="modal-desc"></p>
+      <div class="modal-chips" id="modal-tags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo u" onclick="scrollTo('hero')">Danielle<em>.</em></div>
+  <div class="nav-links">
+    <a href="#trabalhos">Trabalhos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Solicitar orçamento</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-tag m">Social Media & Marketing Digital</div>
+  <h1 class="hero-h1 u">
+    MARCAS<br>
+    QUE <span class="pk">IMPACTAM</span><br>
+    <span class="ol">DE VERDADE.</span>
+  </h1>
+  <div class="hero-foot">
+    <p class="hero-sub m">Profissional de marketing apaixonada por arte, moda e literatura. +8 anos criando estratégias que posicionam marcas e geram resultados reais no digital.</p>
+    <div class="hero-btns">
+      <a class="btn-pk" href="#trabalhos">Ver trabalhos</a>
+      <a class="btn-bk" href="#contato">Solicitar orçamento</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-track">
+    <span class="mq-item u">Social Media<span class="mq-dot"></span></span>
+    <span class="mq-item u">Copywriting<span class="mq-dot"></span></span>
+    <span class="mq-item u">Reels<span class="mq-dot"></span></span>
+    <span class="mq-item u">Identidade Visual<span class="mq-dot"></span></span>
+    <span class="mq-item u">Estratégia<span class="mq-dot"></span></span>
+    <span class="mq-item u">Eventos<span class="mq-dot"></span></span>
+    <span class="mq-item u">Sites<span class="mq-dot"></span></span>
+    <span class="mq-item u">Planejamento<span class="mq-dot"></span></span>
+    <span class="mq-item u">Métricas<span class="mq-dot"></span></span>
+    <span class="mq-item u">Social Media<span class="mq-dot"></span></span>
+    <span class="mq-item u">Copywriting<span class="mq-dot"></span></span>
+    <span class="mq-item u">Reels<span class="mq-dot"></span></span>
+    <span class="mq-item u">Identidade Visual<span class="mq-dot"></span></span>
+    <span class="mq-item u">Estratégia<span class="mq-dot"></span></span>
+    <span class="mq-item u">Eventos<span class="mq-dot"></span></span>
+    <span class="mq-item u">Sites<span class="mq-dot"></span></span>
+    <span class="mq-item u">Planejamento<span class="mq-dot"></span></span>
+    <span class="mq-item u">Métricas<span class="mq-dot"></span></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal"><div class="sn u">+8</div><div class="sl m">anos de experiência em marketing</div></div>
+  <div class="stat reveal"><div class="sn u">7+</div><div class="sl m">marcas gerenciadas simultaneamente</div></div>
+  <div class="stat reveal"><div class="sn u">360°</div><div class="sl m">visão de conteúdo, marca e resultado</div></div>
+</div>
+
+<!-- WORKS -->
+<section id="trabalhos" class="sec" style="background:#0a0a0a;">
+  <div class="sec-hdr" style="border-bottom-color:rgba(255,255,255,0.12);">
+    <div>
+      <div class="sec-tag m">Trabalhos</div>
+      <h2 class="sec-h2 u" style="color:white;">Cases & Clientes.</h2>
+    </div>
+    <p class="sec-sub m" style="color:rgba(255,255,255,0.4);">Projetos reais em múltiplos segmentos — beleza, moda, editorial, construção e eventos.</p>
+  </div>
+  <div class="works-grid" id="works-grid"></div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos" class="sec">
+  <div class="sec-hdr reveal">
+    <div>
+      <div class="sec-tag m">Serviços</div>
+      <h2 class="sec-h2 u">O que eu faço.</h2>
+    </div>
+    <p class="sec-sub m">Estrutura completa para marcas que precisam de presença digital com estratégia e intenção.</p>
+  </div>
+  <div class="svc-list">
+    <div class="svc-row reveal"><span class="svc-num u">01</span><div><div class="svc-title u">Gestão de Instagram</div><div class="svc-desc m">Planejamento editorial, calendário de conteúdo, análise de métricas e posicionamento de marca.</div></div><span class="svc-arrow">→</span></div>
+    <div class="svc-row reveal"><span class="svc-num u">02</span><div><div class="svc-title u">Criação de Conteúdo & Copy</div><div class="svc-desc m">Copywriting com gatilhos emocionais, design de posts, stories e campanhas de engajamento.</div></div><span class="svc-arrow">→</span></div>
+    <div class="svc-row reveal"><span class="svc-num u">03</span><div><div class="svc-title u">Edição de Vídeo & Reels</div><div class="svc-desc m">Vídeos curtos com narrativa, ritmo e identidade visual para se destacar no digital.</div></div><span class="svc-arrow">→</span></div>
+    <div class="svc-row reveal"><span class="svc-num u">04</span><div><div class="svc-title u">Eventos & Produção</div><div class="svc-desc m">Organização, cobertura e comunicação de eventos com foco em presença de marca.</div></div><span class="svc-arrow">→</span></div>
+    <div class="svc-row reveal"><span class="svc-num u">05</span><div><div class="svc-title u">Sites & Landing Pages</div><div class="svc-desc m">Páginas profissionais para apresentar serviços, cases e facilitar o contato com novos clientes.</div></div><span class="svc-arrow">→</span></div>
+    <div class="svc-row reveal"><span class="svc-num u">06</span><div><div class="svc-title u">Estratégia & Planejamento</div><div class="svc-desc m">Visão 360° de conteúdo, marca e relacionamento integrados em uma presença digital coerente.</div></div><span class="svc-arrow">→</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="sobre" class="about">
+  <div class="about-l reveal">
+    <div class="about-label m">Sobre a profissional</div>
+    <h2 class="about-h2 u">Marketing com estratégia, arte e sensibilidade.</h2>
+  </div>
+  <div class="about-r reveal">
+    <p class="about-txt m">
+      Olá, sou Danielle Alves — profissional de marketing apaixonada por arte, moda e literatura, com mais de oito anos de experiência no setor.<br><br>
+      Minhas habilidades incluem uma vasta rede de contatos, conhecimento das últimas tendências de mercado, identificação de oportunidades de negócio e visão estratégica para o desenvolvimento de campanhas de sucesso.<br><br>
+      Tenho experiência como escritora em blog literário e sou especialista em produção de conteúdo, gerenciamento de redes sociais, análise de dados e métricas, construção de marca e relacionamento com o público.
+    </p>
+    <div class="chips">
+      <span class="chip m">Instagram</span>
+      <span class="chip m">Copywriting</span>
+      <span class="chip m">Reels</span>
+      <span class="chip m">Branding</span>
+      <span class="chip m">Eventos</span>
+      <span class="chip m">Web Design</span>
+      <span class="chip m">Planejamento</span>
+      <span class="chip m">Métricas</span>
+      <span class="chip m">Moda</span>
+      <span class="chip m">Editorial</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contato" class="contact-sec">
+  <div class="contact-inner">
+    <div class="reveal">
+      <h2 class="contact-h2 u">VAMOS<br><span>TRABALHAR</span><br>JUNTOS?</h2>
+      <p class="contact-sub m">Entre em contato para solicitar orçamento, apresentar seu projeto ou montar um pacote personalizado.</p>
+      <div class="contact-links">
+        <a href="mailto:comunicaalves.marketing@gmail.com" class="clink m">
+          <div class="clink-icon u">@</div>
+          comunicaalves.marketing@gmail.com
+        </a>
+        <a href="https://www.instagram.com/dane.mkt/" class="clink m" target="_blank" rel="noreferrer">
+          <div class="clink-icon u">IG</div>
+          @dane.mkt
+        </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="form">
+        <input class="field m" placeholder="Seu nome" type="text" />
+        <input class="field m" placeholder="Seu e-mail" type="email" />
+        <input class="field m" placeholder="Assunto" type="text" />
+        <textarea class="field m" placeholder="Conte sobre seu projeto..." rows="5" style="resize:none;"></textarea>
+        <a class="btn-pk m" href="mailto:comunicaalves.marketing@gmail.com" style="align-self:flex-start;">Enviar mensagem →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo u">Danielle<em>.</em></div>
+  <p class="footer-copy m">© 2025 Danielle Alves. Todos os direitos reservados.</p>
+  <div class="footer-links">
+    <a href="#trabalhos">Trabalhos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </div>
+</footer>
+
+<script>
+  const works = [
+    { id:"casa-artista", category:"Gestão de Marketing", title:"Casa do Artista", subtitle:"Marketing & Logística", desc:"Liderança do departamento de marketing e logística do site. Campanhas criativas para promoção de produtos artísticos e cursos do ateliê, integrando estratégia digital e presença de marca.", tags:["Gestão de Marketing","Estratégia Digital","Redes Sociais"], img:"https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop", handle:null },
+    { id:"eventos", category:"Produção de Eventos", title:"Sarau de Artistas", subtitle:"Eventos & Produção Cultural", desc:"Organização de sarau para artistas com caligrafia, exposições, música ao vivo e sessões de fotos. Integração entre comunicação de marca e experiência cultural presencial.", tags:["Eventos","Produção","Comunicação"], img:"https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop", handle:null },
+    { id:"velmo", category:"Gestão de Redes Sociais", title:"Velmo Black", subtitle:"Social Media & Copywriting", desc:"Gestão de conteúdo e copywriting para suplemento wellness. Criação de captions, prompts de imagem para Gemini, headlines e campanhas focadas em gatilhos emocionais e dores do público.", tags:["Instagram","Copywriting","Campanhas"], img:"https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1200&auto=format&fit=crop", handle:"@velmboblackbr" },
+    { id:"editora-charme", category:"Gestão de Redes Sociais", title:"Editora Charme", subtitle:"Social Media & Conteúdo Editorial", desc:"Criação de captions, Stories e carrosséis para lançamentos de livros e eventos de vendas. Comunicação com parceiros bookstagrammers e copy de campanhas promocionais para o segmento editorial.", tags:["Instagram","Editorial","Copywriting"], img:"https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop", handle:"@editoracharme" },
+    { id:"monique", category:"Gestão de Redes Sociais", title:"Monique Coutinho Beauty", subtitle:"Social Media — Salão de Beleza", desc:"Carrosséis, scripts de Stories e headlines de vendas para salão de beleza no Rio de Janeiro. Tom empoderador, foco em megahair, coloração, unhas e tratamentos capilares.", tags:["Instagram","Beleza","Carrosséis"], img:"https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop", handle:"@moniquecoutinhobeauty" },
+    { id:"alfa", category:"Lançamento de Marca", title:"Alfa Soluções em Concreto", subtitle:"Social Media — B2B Construção", desc:"Estratégia de lançamento de 90 dias no Instagram para empresa de pré-moldados. Captions técnicos, memes, prompts de vídeo para Veo e comunicação com engenheiros, arquitetos e construtoras.", tags:["Instagram","B2B","Estratégia de Lançamento"], img:"https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop", handle:"@alfaprintdecor" },
+    { id:"lirios", category:"E-commerce & Social Media", title:"Lírios do Campo", subtitle:"Gestão Própria — Moda Feminina", desc:"Gestão completa da loja de moda feminina em Artur Nogueira/SP. Otimização de títulos no Mercado Livre, design de embalagens para Shopee e criação de conteúdo para Instagram.", tags:["E-commerce","Moda","Mercado Livre"], img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop", handle:"@liriosdocampostore" },
+    { id:"planejamento", category:"Planejamento de Marketing", title:"Planejamento Estratégico", subtitle:"Múltiplos Clientes", desc:"Desenvolvimento e execução de planos editoriais e cronogramas de postagens em múltiplos segmentos. Criação de conteúdo para Instagram, Facebook e LinkedIn com foco em engajamento e alcance de marca.", tags:["Planejamento","Editorial","Métricas"], img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1200&auto=format&fit=crop", handle:null },
+  ];
+
+  // Render works
+  const grid = document.getElementById('works-grid');
+  works.forEach(w => {
+    const card = document.createElement('div');
+    card.className = 'work-card reveal';
+    card.innerHTML = `
+      <img src="${w.img}" alt="${w.title}" loading="lazy" />
+      <div class="work-body">
+        <span class="work-pill m">${w.category}</span>
+        <div class="work-cat m">${w.subtitle}</div>
+        <div class="work-title u">${w.title}</div>
+        ${w.handle ? `<div class="work-handle m">${w.handle}</div>` : ''}
+        <div class="work-tags">${w.tags.map(t=>`<span class="work-tag m">${t}</span>`).join('')}</div>
+      </div>
+      <div class="work-arrow">↗</div>
+    `;
+    card.addEventListener('click', () => openModal(w));
+    grid.appendChild(card);
+  });
+
+  // Modal
+  function openModal(w) {
+    document.getElementById('modal-img').src = w.img;
+    document.getElementById('modal-img').alt = w.title;
+    document.getElementById('modal-cat').textContent = w.category;
+    document.getElementById('modal-title').textContent = w.title;
+    document.getElementById('modal-sub').textContent = w.subtitle;
+    const handleEl = document.getElementById('modal-handle');
+    handleEl.textContent = w.handle || '';
+    handleEl.style.display = w.handle ? 'block' : 'none';
+    document.getElementById('modal-desc').textContent = w.desc;
+    document.getElementById('modal-tags').innerHTML = w.tags.map(t=>`<span class="modal-chip m">${t}</span>`).join('');
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal')) {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.querySelector('.modal-close').addEventListener('click', () => {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
