@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path . -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path c:\\\\Projetos\\\\dani-paginas -Force)",
+      "Bash(Select-Object Name, FullName)"
+    ]
+  }
+}
