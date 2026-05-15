@@ -349,13 +349,14 @@
       </div>
     </div>
     <div class="reveal">
-      <div class="form">
-        <input class="field m" data-i18n-placeholder="contact.form.name" placeholder="Seu nome" type="text" />
-        <input class="field m" data-i18n-placeholder="contact.form.email" placeholder="Seu e-mail" type="email" />
-        <input class="field m" data-i18n-placeholder="contact.form.subject" placeholder="Assunto" type="text" />
-        <textarea class="field m" data-i18n-placeholder="contact.form.message" placeholder="Conte sobre seu projeto..." rows="5" style="resize:none;"></textarea>
-        <a class="btn-pk m" href="mailto:comunicaalves.marketing@gmail.com" data-i18n="contact.form.submit" style="align-self:flex-start;">Enviar mensagem →</a>
-      </div>
+      <form class="form" id="contact-form" onsubmit="submitForm(event)">
+        <input class="field m" data-i18n-placeholder="contact.form.name" placeholder="Seu nome" type="text" name="name" required />
+        <input class="field m" data-i18n-placeholder="contact.form.email" placeholder="Seu e-mail" type="email" name="email" required />
+        <input class="field m" data-i18n-placeholder="contact.form.subject" placeholder="Assunto" type="text" name="subject" required />
+        <textarea class="field m" data-i18n-placeholder="contact.form.message" placeholder="Conte sobre seu projeto..." rows="5" style="resize:none;" name="message" required></textarea>
+        <button type="submit" class="btn-pk m" id="form-btn" data-i18n="contact.form.submit" style="align-self:flex-start;">Enviar mensagem →</button>
+        <div id="form-msg" style="display:none; font-size:0.85rem; margin-top:8px; font-weight:600;"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -437,7 +438,7 @@
         contact: {
           heading_html: 'VAMOS<br><span>TRABALHAR</span><br>JUNTOS?',
           subheading: 'Entre em contato para solicitar orçamento, apresentar seu projeto ou montar um pacote personalizado.',
-          form: { name: 'Seu nome', email: 'Seu e-mail', subject: 'Assunto', message: 'Conte sobre seu projeto...', submit: 'Enviar mensagem →' }
+          form: { name: 'Seu nome', email: 'Seu e-mail', subject: 'Assunto', message: 'Conte sobre seu projeto...', submit: 'Enviar mensagem →', success: 'Mensagem enviada! Entraremos em contato em breve.', error: 'Erro ao enviar. Tente novamente ou escreva para comunicaalves.marketing@gmail.com' }
         },
         footer: { copy: '© 2025 Danielle Alves. Todos os direitos reservados.', works: 'Trabalhos', services: 'Serviços', contact: 'Contato' }
       },
@@ -500,7 +501,7 @@
         contact: {
           heading_html: 'LET\'S<br><span>WORK</span><br>TOGETHER?',
           subheading: 'Get in touch to request a quote, present your project or put together a custom package.',
-          form: { name: 'Your name', email: 'Your e-mail', subject: 'Subject', message: 'Tell me about your project...', submit: 'Send message →' }
+          form: { name: 'Your name', email: 'Your e-mail', subject: 'Subject', message: 'Tell me about your project...', submit: 'Send message →', success: 'Message sent! We will be in touch shortly.', error: 'Error sending. Please try again or email comunicaalves.marketing@gmail.com' }
         },
         footer: { copy: '© 2025 Danielle Alves. All rights reserved.', works: 'Work', services: 'Services', contact: 'Contact' }
       },
@@ -563,7 +564,7 @@
         contact: {
           heading_html: '¿TRABAJEMOS<br><span>JUNTOS</span>?',
           subheading: 'Contáctame para solicitar un presupuesto, presentar tu proyecto o armar un paquete personalizado.',
-          form: { name: 'Tu nombre', email: 'Tu correo electrónico', subject: 'Asunto', message: 'Cuéntame sobre tu proyecto...', submit: 'Enviar mensaje →' }
+          form: { name: 'Tu nombre', email: 'Tu correo electrónico', subject: 'Asunto', message: 'Cuéntame sobre tu proyecto...', submit: 'Enviar mensaje →', success: '¡Mensaje enviado! Nos pondremos en contacto pronto.', error: 'Error al enviar. Inténtalo de nuevo o escríbenos a comunicaalves.marketing@gmail.com' }
         },
         footer: { copy: '© 2025 Danielle Alves. Todos los derechos reservados.', works: 'Trabajos', services: 'Servicios', contact: 'Contacto' }
       }
@@ -642,7 +643,7 @@
 
   /* ── NON-TRANSLATABLE WORKS DATA (images & handles) ─────────────────────── */
   var worksBase = [
-    { img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop', handle:null },
+    { img:'https://lh3.googleusercontent.com/p/AF1QipN0Ti3VSr-b6j6N26HcX2rxYzDPGOp1MrQ6EYnv=s680-w680-h510-rw', handle:null },
     { img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', handle:null },
     { img:'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1200&auto=format&fit=crop', handle:'@velmboblackbr' },
     { img:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop', handle:'@editoracharme' },
@@ -707,6 +708,48 @@
   window.addEventListener('scroll', function () {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
   });
+
+  /* ── FORM SUBMISSION → GOOGLE SHEETS ────────────────────────────────────── */
+  // Após criar o Google Apps Script, cole a URL do Web App aqui:
+  var SHEETS_URL = 'COLE_AQUI_A_URL_DO_GOOGLE_APPS_SCRIPT';
+
+  function submitForm(e) {
+    e.preventDefault();
+    var form = document.getElementById('contact-form');
+    var btn = document.getElementById('form-btn');
+    var msg = document.getElementById('form-msg');
+    var data = {
+      nome: form.elements['name'].value,
+      email: form.elements['email'].value,
+      assunto: form.elements['subject'].value,
+      mensagem: form.elements['message'].value
+    };
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    msg.style.display = 'none';
+    var params = Object.keys(data).map(function(k) {
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
+    }).join('&');
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params
+    }).then(function () {
+      msg.style.display = 'block';
+      msg.style.color = '#22c55e';
+      msg.textContent = i18n.t('contact.form.success');
+      form.reset();
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }).catch(function () {
+      msg.style.display = 'block';
+      msg.style.color = '#ef4444';
+      msg.textContent = i18n.t('contact.form.error');
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    });
+  }
 
   /* ── INIT ────────────────────────────────────────────────────────────────── */
   i18n.init();
