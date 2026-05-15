@@ -114,8 +114,8 @@
     /* WORKS */
     .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
     .work-card { position: relative; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; background: var(--black); }
-    .work-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: grayscale(30%); transition: all 0.6s ease; }
-    .work-card:hover img { opacity: 0.25; transform: scale(1.06); filter: grayscale(0%); }
+    .work-card img, .work-card video { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: grayscale(30%); transition: all 0.6s ease; }
+    .work-card:hover img, .work-card:hover video { opacity: 0.25; transform: scale(1.06); filter: grayscale(0%); }
     .work-body { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 55%); }
     .work-pill { display: inline-block; background: var(--pink); color: white; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 13px; margin-bottom: 10px; width: fit-content; }
     .work-cat { font-size: 0.7rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 5px; }
@@ -644,7 +644,7 @@
   /* ── NON-TRANSLATABLE WORKS DATA (images & handles) ─────────────────────── */
   var worksBase = [
     { img:'https://lh3.googleusercontent.com/p/AF1QipN0Ti3VSr-b6j6N26HcX2rxYzDPGOp1MrQ6EYnv=s680-w680-h510-rw', handle:null },
-    { img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', handle:null },
+    { video:'imgs/sarau.mp4', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', handle:null },
     { img:'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?q=80&w=1200&auto=format&fit=crop', handle:'@velmboblackbr' },
     { img:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop', handle:'@editoracharme' },
     { img:'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop', handle:'@moniquecoutinhobeauty' },
@@ -667,7 +667,9 @@
       var card = document.createElement('div');
       card.className = 'work-card reveal';
       card.innerHTML =
-        '<img src="' + w.img + '" alt="' + w.title + '" loading="lazy" />' +
+        (w.video
+          ? '<video src="' + w.video + '" autoplay muted loop playsinline></video>'
+          : '<img src="' + w.img + '" alt="' + w.title + '" loading="lazy" />') +
         '<div class="work-body">' +
           '<span class="work-pill m">' + w.category + '</span>' +
           '<div class="work-cat m">' + w.subtitle + '</div>' +
