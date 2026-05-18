@@ -169,36 +169,30 @@
 
     /* TESTIMONIALS */
     .testi-sec { padding: 96px 5vw; background: var(--pink); }
-    .testi-sec .sec-hdr { border-bottom-color: rgba(255,255,255,0.35); }
-    .testi-sec .sec-tag { color: rgba(255,255,255,0.75); }
+    .testi-sec .sec-hdr { border-bottom-color: rgba(255,255,255,0.3); }
+    .testi-sec .sec-tag { color: rgba(255,255,255,0.7); }
     .testi-sec .sec-h2 { color: white; }
-    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 56px; }
-    .testi-card {
-      background: white; padding: 40px 36px;
-      border-top: 3px solid var(--black);
-      display: flex; flex-direction: column; gap: 24px;
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px 80px; margin-top: 64px; }
+    .testi-card { display: flex; flex-direction: column; gap: 28px; }
+    .testi-open-quote {
+      font-family: 'Unbounded', sans-serif; font-size: 5rem; font-weight: 900;
+      color: white; opacity: 0.25; line-height: 0.6; user-select: none;
     }
     .testi-quote {
-      font-family: 'Manrope', sans-serif; font-size: 0.92rem; font-weight: 400;
-      color: #333; line-height: 1.8; flex: 1;
-      position: relative;
+      font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 400;
+      color: white; line-height: 1.85; flex: 1;
     }
-    .testi-quote::before {
-      content: '\201C';
-      font-family: 'Unbounded', sans-serif; font-size: 3.5rem; font-weight: 900;
-      color: var(--black); line-height: 0; position: absolute;
-      top: 18px; left: -8px; opacity: 0.1;
-    }
-    .testi-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--gray2); padding-top: 20px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid rgba(255,255,255,0.25); padding-top: 24px; }
     .testi-avatar {
       width: 44px; height: 44px; border-radius: 50%;
       object-fit: cover; object-position: center; flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.5);
     }
-    .testi-name { font-family: 'Unbounded', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--black); letter-spacing: 0.04em; }
-    .testi-role { font-family: 'Manrope', sans-serif; font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+    .testi-name { font-family: 'Unbounded', sans-serif; font-size: 0.68rem; font-weight: 700; color: white; letter-spacing: 0.05em; }
+    .testi-role { font-family: 'Manrope', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
     @media (max-width: 768px) {
       .testi-sec { padding: 64px 5vw; }
-      .testi-card { padding: 32px 24px; }
+      .testi-grid { gap: 48px; }
     }
 
     /* CONTACT */
@@ -443,6 +437,7 @@
   <div class="testi-grid">
 
     <div class="testi-card reveal">
+      <div class="testi-open-quote">"</div>
       <p class="testi-quote">Dani, gosto muito do seu trabalho e da forma que você cuida do Instagram do salão. A imagem da Monique Coutinho Beauty mudou muito depois que começamos a trabalhar juntas e acho que você conseguiu entender bem a identidade que eu queria passar.<br><br>As postagens ficaram mais profissionais, mais alinhadas e com mais personalidade. Além disso, você sempre teve paciência comigo nas mudanças, ideias e ajustes, e isso conta muito.<br><br>Fico feliz de ter encontrado alguém comprometida de verdade com o trabalho. Te desejo muito sucesso nessa nova fase dos sites também.</p>
       <div class="testi-author">
         <img class="testi-avatar" src="imgs/monique.png" alt="Monique Coutinho" />
