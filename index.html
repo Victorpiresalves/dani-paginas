@@ -223,23 +223,23 @@
     .wa-float {
       position: fixed; bottom: 28px; right: 28px; z-index: 999;
       width: 56px; height: 56px; border-radius: 50%;
-      background: #25D366; color: white;
+      background: var(--pink); color: white;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+      box-shadow: 0 4px 16px rgba(255,45,120,0.45);
       transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
     }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.6); }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(255,45,120,0.6); }
     .wa-float::before {
       content: '';
       position: absolute; inset: -4px; border-radius: 50%;
-      border: 2px solid #25D366; opacity: 0;
+      border: 2px solid var(--pink); opacity: 0;
       animation: wa-pulse 2s ease-out infinite;
     }
     .wa-float::after {
       content: '';
       position: absolute; inset: -4px; border-radius: 50%;
-      border: 2px solid #25D366; opacity: 0;
+      border: 2px solid var(--pink); opacity: 0;
       animation: wa-pulse 2s ease-out 0.6s infinite;
     }
     @keyframes wa-pulse {
