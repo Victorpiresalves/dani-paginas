@@ -168,11 +168,14 @@
     .chip:hover { background: var(--pink); border-color: var(--pink); color: white; }
 
     /* TESTIMONIALS */
-    .testi-sec { padding: 96px 5vw; background: var(--gray); }
+    .testi-sec { padding: 96px 5vw; background: var(--pink); }
+    .testi-sec .sec-hdr { border-bottom-color: rgba(255,255,255,0.35); }
+    .testi-sec .sec-tag { color: rgba(255,255,255,0.75); }
+    .testi-sec .sec-h2 { color: white; }
     .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 56px; }
     .testi-card {
       background: white; padding: 40px 36px;
-      border-top: 3px solid var(--pink);
+      border-top: 3px solid var(--black);
       display: flex; flex-direction: column; gap: 24px;
     }
     .testi-quote {
@@ -183,8 +186,8 @@
     .testi-quote::before {
       content: '\201C';
       font-family: 'Unbounded', sans-serif; font-size: 3.5rem; font-weight: 900;
-      color: var(--pink); line-height: 0; position: absolute;
-      top: 18px; left: -8px; opacity: 0.18;
+      color: var(--black); line-height: 0; position: absolute;
+      top: 18px; left: -8px; opacity: 0.1;
     }
     .testi-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--gray2); padding-top: 20px; }
     .testi-avatar {
