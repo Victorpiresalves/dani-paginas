@@ -277,6 +277,72 @@
     .cq-wa-btn { display:inline-flex; align-items:center; gap:8px; font-family:'Manrope',sans-serif; font-size:0.8rem; font-weight:700; color:var(--black); border:1.5px solid var(--black); padding:10px 18px; letter-spacing:0.04em; text-transform:uppercase; transition:all 0.2s; text-decoration:none; }
     .cq-wa-btn:hover { background:var(--black); color:white; }
 
+    /* ANIMATED BOOK COVER — Editora Charme */
+    .cover-wrap {
+      position: absolute; inset: 0;
+      background: #0a0608;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .cover-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(232,24,90,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,24,90,0.05) 1px, transparent 1px);
+      background-size: 44px 44px;
+      animation: grid-drift 12s linear infinite;
+    }
+    @keyframes grid-drift {
+      from { background-position: 0 0; }
+      to   { background-position: 44px 44px; }
+    }
+    .cover-radial {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 60% 50%, rgba(232,24,90,0.14) 0%, transparent 70%);
+    }
+    .cover-book {
+      position: relative; z-index: 2;
+      width: 48%;
+      border-radius: 2px;
+      box-shadow: -8px 10px 32px rgba(0,0,0,0.85), 0 0 48px rgba(232,24,90,0.25);
+      transform: perspective(700px) rotateY(-10deg);
+      animation: book-float 5s ease-in-out infinite;
+    }
+    @keyframes book-float {
+      0%,100% { transform: perspective(700px) rotateY(-10deg) translateY(0px); }
+      50%      { transform: perspective(700px) rotateY(-4deg)  translateY(-10px); }
+    }
+    .cover-glow {
+      position: absolute; z-index: 1;
+      bottom: 18%; left: 50%; transform: translateX(-50%);
+      width: 130px; height: 36px;
+      background: #e8185a; filter: blur(22px); border-radius: 50%;
+      animation: glow-pulse 5s ease-in-out infinite;
+    }
+    @keyframes glow-pulse {
+      0%,100% { opacity: 0.35; transform: translateX(-50%) scaleX(1); }
+      50%      { opacity: 0.65; transform: translateX(-50%) scaleX(1.4); }
+    }
+    .cover-url {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      z-index: 3; white-space: nowrap;
+      font-family: 'Manrope', sans-serif; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(232,24,90,0.95);
+      background: rgba(10,6,8,0.8); border: 1px solid rgba(232,24,90,0.25);
+      padding: 4px 12px;
+    }
+    .cover-badge {
+      position: absolute; top: 14px; right: 14px; z-index: 3;
+      font-family: 'Unbounded', sans-serif; font-size: 0.5rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: #e8185a; color: white; padding: 5px 10px;
+      animation: badge-blink 3s ease-in-out infinite;
+    }
+    @keyframes badge-blink {
+      0%,100% { opacity: 1; } 50% { opacity: 0.6; }
+    }
+
     /* WHATSAPP FLOAT */
     .wa-float {
       position: fixed; bottom: 28px; right: 28px; z-index: 999;
@@ -913,7 +979,7 @@
     { img:'https://lh3.googleusercontent.com/p/AF1QipN0Ti3VSr-b6j6N26HcX2rxYzDPGOp1MrQ6EYnv=s680-w680-h510-rw', handle:null },
     { video:'imgs/sarau.mp4', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', handle:null },
     { img:'imgs/velmo.png', handle:'@velmboblackbr' },
-    { img:'imgs/editora-charme.png', handle:'@editoracharme' },
+    { img:'imgs/editora-charme.png', handle:'@editoracharme', animatedCover: true },
     { img:'imgs/monique.png', handle:'@moniquecoutinhobeauty' },
     { img:'imgs/alfa.png', handle:'@alfaprintdecor' },
     { img:'imgs/lirios.png', handle:'@liriosdocampostore' },
@@ -936,6 +1002,15 @@
       card.innerHTML =
         (w.video
           ? '<video src="' + w.video + '" autoplay muted loop playsinline></video>'
+          : w.animatedCover
+          ? '<div class="cover-wrap">' +
+              '<div class="cover-grid"></div>' +
+              '<div class="cover-radial"></div>' +
+              '<div class="cover-glow"></div>' +
+              '<img class="cover-book" src="' + w.img + '" alt="' + w.title + '" loading="lazy" />' +
+              '<div class="cover-badge">Site</div>' +
+              '<div class="cover-url">danealves.com/editoracharme</div>' +
+            '</div>'
           : '<img src="' + w.img + '" alt="' + w.title + '" loading="lazy" />') +
         '<div class="work-body">' +
           '<span class="work-pill m">' + w.category + '</span>' +
