@@ -979,7 +979,7 @@
     { img:'https://lh3.googleusercontent.com/p/AF1QipN0Ti3VSr-b6j6N26HcX2rxYzDPGOp1MrQ6EYnv=s680-w680-h510-rw', handle:null },
     { video:'imgs/sarau.mp4', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop', handle:null },
     { img:'imgs/velmo.png', handle:'@velmboblackbr' },
-    { img:'imgs/editora-charme.png', handle:'@editoracharme', animatedCover: true },
+    { img:'imgs/editora-charme.png', handle:'@editoracharme', animatedCover: true, url: 'https://danealves.com/editoracharme' },
     { img:'imgs/monique.png', handle:'@moniquecoutinhobeauty' },
     { img:'imgs/alfa.png', handle:'@alfaprintdecor' },
     { img:'imgs/lirios.png', handle:'@liriosdocampostore' },
@@ -1020,7 +1020,9 @@
           '<div class="work-tags">' + w.tags.map(function(t){return '<span class="work-tag m">'+t+'</span>';}).join('') + '</div>' +
         '</div>' +
         '<div class="work-arrow">↗</div>';
-      card.addEventListener('click', (function(work){ return function(){ openModal(work); }; })(w));
+      card.addEventListener('click', (function(work){ return function(){
+        if (work.url) { window.open(work.url, '_blank'); } else { openModal(work); }
+      }; })(w));
       grid.appendChild(card);
       observer.observe(card);
     });
