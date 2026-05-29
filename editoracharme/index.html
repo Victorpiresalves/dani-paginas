@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editora Charme — Case | Danielle Alves</title>
+  <meta name="description" content="Case Editora Charme — Gestão de Redes Sociais, conteúdo editorial e campanhas de lançamento de livros por Danielle Alves." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pink: #FF2D78;
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray: #f5f5f5;
+      --gray2: #e4e4e4;
+      --muted: #888888;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--pink); color: white; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+    .u { font-family: 'Unbounded', sans-serif; }
+    .m { font-family: 'Manrope', sans-serif; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 68px; padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.35s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid var(--gray2);
+    }
+    .nav-logo { font-family: 'Unbounded', sans-serif; font-size: 0.95rem; font-weight: 900; letter-spacing: -0.02em; color: var(--white); transition: color 0.35s; }
+    .nav-logo em { color: var(--pink); font-style: normal; }
+    nav.scrolled .nav-logo { color: var(--black); }
+    .nav-back {
+      font-family: 'Manrope', sans-serif; font-size: 0.8rem; font-weight: 700;
+      color: rgba(255,255,255,0.85); text-transform: uppercase; letter-spacing: 0.08em;
+      display: flex; align-items: center; gap: 8px; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--pink); }
+    nav.scrolled .nav-back { color: var(--black); }
+    .nav-cta {
+      font-family: 'Manrope', sans-serif; font-size: 0.8rem; font-weight: 700;
+      background: var(--pink); color: white; border: none;
+      padding: 10px 22px; cursor: pointer; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: all 0.2s; display: inline-block;
+    }
+    .nav-cta:hover { background: var(--black); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; position: relative;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 5vw 80px;
+      background: var(--black);
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('../imgs/editora-charme.png');
+      background-size: cover; background-position: center;
+      opacity: 0.35; filter: grayscale(20%);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.4) 60%, transparent 100%);
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 900px; }
+    .hero-tag {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.24em; color: var(--pink);
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    }
+    .hero-tag::before { content: ''; width: 36px; height: 2px; background: var(--pink); flex-shrink: 0; }
+    .hero-h1 {
+      font-family: 'Unbounded', sans-serif;
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 900; line-height: 0.92; letter-spacing: -0.04em;
+      color: white; margin-bottom: 32px;
+    }
+    .hero-h1 span { color: var(--pink); }
+    .hero-meta { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .hero-handle {
+      font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 600;
+      color: var(--pink);
+    }
+    .hero-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.2); }
+    .hero-subtitle {
+      font-family: 'Manrope', sans-serif; font-size: 0.88rem; font-weight: 500;
+      color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.1em;
+    }
+
+    /* OVERVIEW */
+    .overview { padding: 96px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; border-bottom: 2px solid var(--black); }
+    .overview-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: var(--pink); margin-bottom: 18px; }
+    .overview-h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 28px; }
+    .overview-txt { font-size: 1rem; line-height: 1.9; color: #444; margin-bottom: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .tag { font-size: 0.72rem; font-weight: 700; border: 2px solid var(--black); padding: 7px 14px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .overview-info { padding-top: 8px; }
+    .info-block { padding: 28px 0; border-bottom: 1px solid var(--gray2); }
+    .info-block:first-child { padding-top: 0; }
+    .info-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 8px; }
+    .info-value { font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--black); }
+
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+    .stat { padding: 56px 5vw; border-right: 2px solid var(--black); transition: background 0.25s; }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: var(--pink); }
+    .stat:hover .sn { color: white; }
+    .stat:hover .sl { color: rgba(255,255,255,0.7); }
+    .sn { font-family: 'Unbounded', sans-serif; font-size: clamp(2.4rem, 4.5vw, 4.5rem); font-weight: 900; color: var(--black); letter-spacing: -0.04em; transition: color 0.25s; }
+    .sl { font-size: 0.85rem; color: var(--muted); margin-top: 10px; font-weight: 500; transition: color 0.25s; }
+
+    /* DELIVERABLES */
+    .deliverables { padding: 96px 5vw; background: var(--black); }
+    .sec-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: var(--pink); margin-bottom: 12px; }
+    .sec-h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; color: white; margin-bottom: 56px; }
+    .del-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .del-card {
+      background: rgba(255,255,255,0.04); padding: 40px 32px;
+      border-top: 3px solid var(--pink);
+      transition: background 0.25s;
+    }
+    .del-card:hover { background: rgba(255,255,255,0.08); }
+    .del-num { font-family: 'Unbounded', sans-serif; font-size: 0.65rem; font-weight: 700; color: var(--pink); letter-spacing: 0.12em; margin-bottom: 20px; }
+    .del-title { font-family: 'Unbounded', sans-serif; font-size: 1rem; font-weight: 700; color: white; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.2; }
+    .del-desc { font-family: 'Manrope', sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+
+    /* GALLERY */
+    .gallery { padding: 96px 5vw; background: var(--gray); }
+    .gallery-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2px; margin-top: 48px; }
+    .gallery-main { aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--black); }
+    .gallery-main img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.6s ease; }
+    .gallery-main:hover img { transform: scale(1.04); }
+    .gallery-side { display: flex; flex-direction: column; gap: 2px; }
+    .gallery-card { flex: 1; background: var(--pink); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; text-align: center; }
+    .gallery-card-num { font-family: 'Unbounded', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; color: white; letter-spacing: -0.04em; }
+    .gallery-card-label { font-family: 'Manrope', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; }
+    .gallery-card.dark { background: var(--black); }
+
+    /* CTA */
+    .cta-sec {
+      padding: 112px 5vw; background: var(--pink);
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .cta-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+    .cta-h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(2rem, 5vw, 5rem); font-weight: 900; color: white; letter-spacing: -0.04em; line-height: 0.95; margin-bottom: 36px; }
+    .cta-sub { font-family: 'Manrope', sans-serif; font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 480px; line-height: 1.75; margin-bottom: 48px; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn-wh { font-family: 'Manrope', sans-serif; background: white; color: var(--pink); border: 2px solid white; padding: 15px 34px; font-size: 0.85rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.22s; display: inline-block; }
+    .btn-wh:hover { background: transparent; color: white; }
+    .btn-wh-out { font-family: 'Manrope', sans-serif; background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); padding: 15px 34px; font-size: 0.85rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.22s; display: inline-block; }
+    .btn-wh-out:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    /* FOOTER */
+    footer { background: var(--black); color: white; padding: 36px 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-top: 4px solid var(--pink); }
+    .footer-logo { font-family: 'Unbounded', sans-serif; font-size: 0.88rem; font-weight: 900; color: white; }
+    .footer-logo em { color: var(--pink); font-style: normal; }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .overview { grid-template-columns: 1fr; gap: 48px; padding: 64px 5vw; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 2px solid var(--black); padding: 36px 5vw; }
+      .del-grid { grid-template-columns: 1fr; gap: 2px; }
+      .gallery-inner { grid-template-columns: 1fr; }
+      .gallery-side { flex-direction: row; }
+      .cta-sec { padding: 72px 5vw; }
+      .nav-back span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo u" href="/">Danielle<em>.</em></a>
+  <a class="nav-back m" href="/#trabalhos">
+    ← <span>Ver todos os cases</span>
+  </a>
+  <a class="nav-cta" href="/#contato">Solicitar orçamento</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag m">Gestão de Redes Sociais</div>
+    <h1 class="hero-h1 u">Editora<br><span>Charme</span></h1>
+    <div class="hero-meta">
+      <span class="hero-handle m">@editoracharme</span>
+      <div class="hero-sep"></div>
+      <span class="hero-subtitle m">Social Media & Conteúdo Editorial</span>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="reveal">
+    <div class="overview-label m">O Projeto</div>
+    <h2 class="overview-h2 u">Conteúdo que vende livros e constrói comunidade.</h2>
+    <p class="overview-txt m">A Editora Charme atua no mercado editorial com foco em literatura nacional e eventos de vendas. O desafio era criar uma presença digital coerente com a identidade refinada da marca, gerando engajamento real e impulsionando lançamentos.</p>
+    <p class="overview-txt m">O trabalho envolveu criação de captions, Stories e carrosséis para lançamentos de livros, além de comunicação ativa com parceiros bookstagrammers — ampliando o alcance orgânico da editora.</p>
+    <div class="tags">
+      <span class="tag u">Instagram</span>
+      <span class="tag u">Editorial</span>
+      <span class="tag u">Copywriting</span>
+      <span class="tag u">Stories</span>
+      <span class="tag u">Carrosséis</span>
+    </div>
+  </div>
+  <div class="overview-info reveal">
+    <div class="info-block">
+      <div class="info-label m">Cliente</div>
+      <div class="info-value m">Editora Charme</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label m">Segmento</div>
+      <div class="info-value m">Mercado Editorial — Literatura Nacional</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label m">Serviço</div>
+      <div class="info-value m">Gestão de Redes Sociais</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label m">Canais</div>
+      <div class="info-value m">Instagram · Stories · Feed</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal">
+    <div class="sn u">+3×</div>
+    <div class="sl m">crescimento de engajamento no período</div>
+  </div>
+  <div class="stat reveal">
+    <div class="sn u">100%</div>
+    <div class="sl m">conteúdo alinhado à identidade da marca</div>
+  </div>
+  <div class="stat reveal">
+    <div class="sn u">+20</div>
+    <div class="sl m">parceiros bookstagrammers ativados</div>
+  </div>
+</div>
+
+<!-- DELIVERABLES -->
+<section class="deliverables">
+  <div class="reveal">
+    <div class="sec-tag m">O que foi feito</div>
+    <h2 class="sec-h2 u">Estratégia completa<br>de conteúdo editorial.</h2>
+  </div>
+  <div class="del-grid">
+    <div class="del-card reveal">
+      <div class="del-num u">01</div>
+      <div class="del-title u">Captions & Copywriting</div>
+      <div class="del-desc m">Criação de textos para feed com narrativas que despertam interesse e desejo pelos lançamentos, combinando gatilhos emocionais com a identidade literária da marca.</div>
+    </div>
+    <div class="del-card reveal">
+      <div class="del-num u">02</div>
+      <div class="del-title u">Stories & Carrosséis</div>
+      <div class="del-desc m">Produção de carrosséis educativos e Stories interativos para lançamentos de livros, eventos de vendas e bastidores da editora — gerando retenção e salvamentos.</div>
+    </div>
+    <div class="del-card reveal">
+      <div class="del-num u">03</div>
+      <div class="del-title u">Campanhas & Parcerias</div>
+      <div class="del-desc m">Copy de campanhas promocionais e comunicação estratégica com bookstagrammers parceiros, ampliando o alcance orgânico nos lançamentos e eventos de vendas.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="reveal">
+    <div class="sec-tag m" style="color:var(--pink);">Visual do Projeto</div>
+    <h2 class="sec-h2 u" style="color:var(--black);">Identidade aplicada<br>ao digital.</h2>
+  </div>
+  <div class="gallery-inner reveal">
+    <div class="gallery-main">
+      <img src="../imgs/editora-charme.png" alt="Editora Charme — Feed Instagram" />
+    </div>
+    <div class="gallery-side">
+      <div class="gallery-card">
+        <div class="gallery-card-num u">Editorial</div>
+        <div class="gallery-card-label m">Segmento</div>
+      </div>
+      <div class="gallery-card dark">
+        <div class="gallery-card-num u">Social<br>Media</div>
+        <div class="gallery-card-label m">Serviço</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-label m reveal">Próximo passo</div>
+  <h2 class="cta-h2 u reveal">Seu projeto<br>pode ser o próximo.</h2>
+  <p class="cta-sub m reveal">Vamos construir juntos uma presença digital que converte e representa a essência da sua marca.</p>
+  <div class="cta-btns reveal">
+    <a class="btn-wh m" href="/#contato">Solicitar orçamento</a>
+    <a class="btn-wh-out m" href="/">Ver portfólio completo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo u">Danielle<em>.</em></div>
+  <p class="footer-copy m">© 2025 Danielle Alves. Todos os direitos reservados.</p>
+  <div class="footer-links">
+    <a href="/#trabalhos">Trabalhos</a>
+    <a href="/#servicos">Serviços</a>
+    <a href="/#contato">Contato</a>
+  </div>
+</footer>
+
+<script>
+  /* NAV SCROLL */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* REVEAL */
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
