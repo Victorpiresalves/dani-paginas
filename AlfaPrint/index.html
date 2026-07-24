@@ -279,7 +279,11 @@ header.scrolled{background:rgba(16,18,22,.92);backdrop-filter:blur(12px);box-sha
 
 /* ---------- Quem somos ---------- */
 .about{background:var(--white)}
-.about-banner{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:22px;margin-bottom:56px}
+.about-banner{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:22px;margin-bottom:32px}
+.team-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:56px}
+.team-photo{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:var(--ink)}
+.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.team-photo figcaption{position:absolute;inset:auto 0 0 0;padding:16px 18px;background:linear-gradient(180deg,transparent,rgba(16,18,22,.85));color:var(--white);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
 .about-copy p{color:#3c4250;margin-bottom:18px}
 .about-copy p strong{color:var(--ink)}
@@ -371,7 +375,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
 }
 @media(max-width:640px){
   section{padding:80px 0}
-  .service-grid,.portfolio-grid{grid-template-columns:1fr}
+  .service-grid,.portfolio-grid,.team-strip{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
 @media(max-width:700px){
@@ -589,8 +593,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       </figure>
       <figure class="work reveal d2">
         <span class="tag">Letra caixa</span>
-        <div class="ph"><span>Foto do projeto<br>1200 x 900 px</span></div>
-        <figcaption class="overlay"><h3>Letreiro em letra caixa</h3><p>Acabamento premium para fachada</p></figcaption>
+        <img loading="lazy" decoding="async" src="img/trabalho-fachada.jpg" alt="Letreiro em fachada instalado pela Alfa Print">
+        <figcaption class="overlay"><h3>Letreiro em fachada</h3><p>Sinalização instalada em ponto comercial</p></figcaption>
       </figure>
       <figure class="work reveal d3">
         <span class="tag">Adesivagem</span>
@@ -598,9 +602,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
         <figcaption class="overlay"><h3>Envelopamento de vitrine</h3><p>Impressão digital em alta resolução</p></figcaption>
       </figure>
       <figure class="work reveal d1">
-        <span class="tag">Sinalização</span>
-        <div class="ph"><span>Foto do projeto<br>1200 x 900 px</span></div>
-        <figcaption class="overlay"><h3>Sinalização corporativa</h3><p>Placas e totens de orientação</p></figcaption>
+        <span class="tag">Placa luminosa</span>
+        <img loading="lazy" decoding="async" src="img/servico-luminoso.jpg" alt="Painel luminoso personalizado produzido pela Alfa Print">
+        <figcaption class="overlay"><h3>Painel luminoso sob medida</h3><p>Sinalização com iluminação embutida</p></figcaption>
       </figure>
       <figure class="work reveal d2">
         <span class="tag">Corte Router</span>
@@ -657,6 +661,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       <h2 class="section-title">Alfa Print FMSA Comunicação Visual</h2>
     </div>
     <img class="about-banner reveal" loading="lazy" decoding="async" src="img/quem-somos-banner.jpg" alt="Alfa Print Comunicação Visual">
+    <div class="team-strip">
+      <figure class="team-photo reveal d1">
+        <img loading="lazy" decoding="async" src="img/equipe-1.jpg" alt="Equipe Alfa Print conferindo material impresso na produção">
+        <figcaption>Produção própria</figcaption>
+      </figure>
+      <figure class="team-photo reveal d2">
+        <img loading="lazy" decoding="async" src="img/equipe-2.jpg" alt="Equipe Alfa Print Comunicação Visual">
+        <figcaption>Nossa equipe</figcaption>
+      </figure>
+    </div>
     <div class="about-grid">
       <div class="about-copy reveal">
         <p><strong>Nascemos para oferecer o que há de melhor em comunicação visual</strong>, tanto externa quanto interna, unindo qualidade e tendências inovadoras para atender às exigências e conquistar a satisfação de cada cliente.</p>
