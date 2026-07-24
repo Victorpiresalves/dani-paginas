@@ -284,7 +284,15 @@ header.scrolled{background:rgba(16,18,22,.92);backdrop-filter:blur(12px);box-sha
 
 /* ---------- Quem somos ---------- */
 .about{background:var(--white)}
-.about-banner{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:22px;margin-bottom:32px}
+.about-video-wrap{display:flex;justify-content:center;margin-bottom:40px}
+.about-video{position:relative;width:100%;max-width:340px;aspect-ratio:9/16;border-radius:var(--radius);overflow:hidden;background:var(--ink);box-shadow:0 24px 54px rgba(16,18,22,.28);cursor:pointer}
+.about-video video{width:100%;height:100%;object-fit:cover;display:block}
+.about-video .video-play{position:absolute;inset:0;margin:auto;width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.94);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .3s ease, transform .3s ease;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.about-video .video-play svg{width:26px;height:26px;fill:var(--ink);margin-left:4px}
+.about-video:hover .video-play{transform:scale(1.08)}
+.about-video.playing .video-play{opacity:0;pointer-events:none;transform:scale(.8)}
+.about-video .video-tag{position:absolute;left:16px;top:16px;z-index:2;background:var(--white);color:var(--ink);font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;transition:opacity .3s ease}
+.about-video.playing .video-tag{opacity:0}
 .team-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:56px}
 .team-photo{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:var(--ink)}
 .team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
@@ -668,7 +676,17 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       <span class="eyebrow">Nossa história</span>
       <h2 class="section-title">Alfa Print FMSA Comunicação Visual</h2>
     </div>
-    <img class="about-banner reveal" loading="lazy" decoding="async" src="img/quem-somos-banner.jpg" alt="Alfa Print Comunicação Visual">
+    <div class="about-video-wrap reveal">
+      <div class="about-video" id="aboutVideo" onclick="toggleAboutVideo()">
+        <span class="video-tag">Conheça a Alfa Print</span>
+        <video playsinline preload="metadata" poster="img/equipe-2.jpg">
+          <source src="video/equipe.mp4" type="video/mp4">
+        </video>
+        <button class="video-play" aria-label="Reproduzir vídeo">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="team-strip">
       <figure class="team-photo reveal d1">
         <img loading="lazy" decoding="async" src="img/equipe-1.jpg" alt="Equipe Alfa Print conferindo material impresso na produção">
@@ -815,6 +833,22 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
 });
 header.classList.toggle('scrolled', window.scrollY > 40);
+
+// Video "Quem somos": clique para reproduzir/pausar
+function toggleAboutVideo() {
+  const wrap = document.getElementById('aboutVideo');
+  const vid = wrap.querySelector('video');
+  if (vid.paused) {
+    vid.play();
+    wrap.classList.add('playing');
+  } else {
+    vid.pause();
+    wrap.classList.remove('playing');
+  }
+}
+document.querySelector('#aboutVideo video').addEventListener('ended', () => {
+  document.getElementById('aboutVideo').classList.remove('playing');
+});
 
 // Menu mobile
 const toggle = document.getElementById('menuToggle');
