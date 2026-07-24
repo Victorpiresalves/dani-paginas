@@ -618,7 +618,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       </figure>
       <figure class="work reveal d2">
         <span class="tag">Letra caixa</span>
-        <video autoplay muted loop playsinline preload="metadata" style="object-position:center top">
+        <video class="js-lazy-video" muted loop playsinline preload="metadata" style="object-position:center top">
           <source src="video/letreiro.mp4" type="video/mp4">
         </video>
         <figcaption class="overlay"><h3>Letreiro em fachada</h3><p>Sinalização instalada em ponto comercial</p></figcaption>
@@ -689,22 +689,22 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
     </div>
     <div class="about-video-wrap reveal">
       <div class="about-video">
-        <video autoplay muted loop playsinline preload="metadata" poster="img/equipe-2.jpg">
+        <video class="js-lazy-video" muted loop playsinline preload="metadata" poster="img/equipe-2.jpg">
           <source src="video/equipe.mp4" type="video/mp4">
         </video>
       </div>
       <div class="about-video">
-        <video autoplay muted loop playsinline preload="metadata">
+        <video class="js-lazy-video" muted loop playsinline preload="metadata">
           <source src="video/reel.mp4" type="video/mp4">
         </video>
       </div>
       <div class="about-video">
-        <video autoplay muted loop playsinline preload="metadata">
+        <video class="js-lazy-video" muted loop playsinline preload="metadata">
           <source src="video/reel2.mp4" type="video/mp4">
         </video>
       </div>
       <div class="about-video">
-        <video autoplay muted loop playsinline preload="metadata">
+        <video class="js-lazy-video" muted loop playsinline preload="metadata">
           <source src="video/reel3.mp4" type="video/mp4">
         </video>
       </div>
@@ -868,6 +868,19 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Videos decorativos: so carregam/tocam quando visiveis, pausam ao sair da tela (economiza dados e bateria no mobile)
+const videoObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const video = e.target;
+    if (e.isIntersecting) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('.js-lazy-video').forEach(video => videoObserver.observe(video));
 
 // Animação de impressão das quatro chapas (wipe em cascata)
 const pressObserver = new IntersectionObserver(entries => {
