@@ -282,15 +282,15 @@ header.scrolled{background:rgba(16,18,22,.92);backdrop-filter:blur(12px);box-sha
 
 /* ---------- Clientes ---------- */
 .clients{background:var(--white)}
-.client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.client-logo{aspect-ratio:16/7;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;padding:20px;transition:filter .4s ease, opacity .4s ease, transform .35s ease, box-shadow .35s ease;background:var(--white)}
-.client-logo:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(16,18,22,.08)}
+.client-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.client-marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:clientScroll 34s linear infinite}
+.client-marquee-track:hover{animation-play-state:paused}
+.client-marquee-track img{height:38px;width:auto;object-fit:contain;flex:none;transition:filter .3s ease,opacity .3s ease}
 @media(hover:hover){
-  .client-logo{filter:grayscale(1);opacity:.55}
-  .client-logo:hover{filter:none;opacity:1}
+  .client-marquee-track img{filter:grayscale(1);opacity:.5}
+  .client-marquee-track img:hover{filter:none;opacity:1}
 }
-.client-logo img{max-height:56px;max-width:80%;object-fit:contain}
-.client-logo span{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);text-align:center}
+@keyframes clientScroll{to{transform:translateX(-50%)}}
 
 /* ---------- Faixa de CTA ---------- */
 .cta-band{background:var(--ink);color:var(--white);padding:80px 0;position:relative;overflow:hidden}
@@ -380,7 +380,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
   .hero-art{max-width:420px;margin:0 auto}
   .about-grid,.budget-grid{grid-template-columns:1fr;gap:44px}
   .trio-grid{grid-template-columns:1fr;gap:30px}
-  .client-grid{grid-template-columns:repeat(2,1fr)}
   .cta-band .wrap{justify-content:flex-start}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -655,16 +654,27 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       <h2 class="section-title">Empresas que confiam no nosso trabalho</h2>
       <p>Atendemos desde comércios locais até grandes redes varejistas do Rio de Janeiro, como as Lojas Nalin e as Lojas Objetiva, que somam dezenas de unidades em todo o estado.</p>
     </div>
-    <div class="client-grid">
-      <div class="client-logo reveal d1"><img loading="lazy" decoding="async" src="img/logo-nalin.svg" alt="Lojas Nalin"></div>
-      <div class="client-logo reveal d2"><img loading="lazy" decoding="async" src="img/logo-objetiva.png" alt="Lojas Objetiva"></div>
-      <div class="client-logo reveal d3"><img loading="lazy" decoding="async" src="img/logo-governo-rj.png" alt="Governo do Estado do Rio de Janeiro"></div>
-      <div class="client-logo reveal d1"><img loading="lazy" decoding="async" src="img/logo-leader.png" alt="Leader"></div>
-      <div class="client-logo reveal d2"><img loading="lazy" decoding="async" src="img/logo-casa-e-lazer.png" alt="Casa e Lazer"></div>
-      <div class="client-logo reveal d3"><img loading="lazy" decoding="async" src="img/logo-tegma.png" alt="Tegma Gestão Logística"></div>
-      <div class="client-logo reveal d1"><img loading="lazy" decoding="async" src="img/logo-asterisco.png" alt="Asterisco"></div>
-      <div class="client-logo reveal d2"><img loading="lazy" decoding="async" src="img/logo-s2-holding.png" alt="S2 Holding"></div>
-      <div class="client-logo reveal d3"><img loading="lazy" decoding="async" src="img/logo-buena-carne.png" alt="Buena Carne"></div>
+    <div class="client-marquee reveal">
+      <div class="client-marquee-track">
+        <img loading="lazy" decoding="async" src="img/logo-nalin.svg" alt="Lojas Nalin">
+        <img loading="lazy" decoding="async" src="img/logo-objetiva.png" alt="Lojas Objetiva">
+        <img loading="lazy" decoding="async" src="img/logo-governo-rj.png" alt="Governo do Estado do Rio de Janeiro">
+        <img loading="lazy" decoding="async" src="img/logo-leader.png" alt="Leader">
+        <img loading="lazy" decoding="async" src="img/logo-casa-e-lazer.png" alt="Casa e Lazer">
+        <img loading="lazy" decoding="async" src="img/logo-tegma.png" alt="Tegma Gestão Logística">
+        <img loading="lazy" decoding="async" src="img/logo-asterisco.png" alt="Asterisco">
+        <img loading="lazy" decoding="async" src="img/logo-s2-holding.png" alt="S2 Holding">
+        <img loading="lazy" decoding="async" src="img/logo-buena-carne.png" alt="Buena Carne">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-nalin.svg" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-objetiva.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-governo-rj.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-leader.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-casa-e-lazer.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-tegma.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-asterisco.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-s2-holding.png" alt="">
+        <img aria-hidden="true" loading="lazy" decoding="async" src="img/logo-buena-carne.png" alt="">
+      </div>
     </div>
   </div>
 </section>
