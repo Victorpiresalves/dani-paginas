@@ -226,6 +226,11 @@ header.scrolled{background:rgba(16,18,22,.92);backdrop-filter:blur(12px);box-sha
 .service p{font-size:.88rem;color:rgba(255,255,255,.62)}
 .service .apps{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
 .service .apps i{font-style:normal;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;color:rgba(255,255,255,.7)}
+.service-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:56px}
+.service-gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;border:1px solid rgba(255,255,255,.1)}
+.service-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.service-gallery figure:hover img{transform:scale(1.05)}
+.service-gallery figcaption{position:absolute;inset:auto 0 0 0;padding:14px 18px;background:linear-gradient(180deg,transparent,rgba(16,18,22,.9));font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85)}
 
 /* ---------- Portfólio ---------- */
 .portfolio{background:var(--paper)}
@@ -375,7 +380,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
 }
 @media(max-width:640px){
   section{padding:80px 0}
-  .service-grid,.portfolio-grid,.team-strip{grid-template-columns:1fr}
+  .service-grid,.portfolio-grid,.team-strip,.service-gallery{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
 @media(max-width:700px){
@@ -502,6 +507,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       <span class="eyebrow">O que fazemos</span>
       <h2 class="section-title">Soluções completas em comunicação visual</h2>
       <p>Da fachada da sua loja à sinalização interna do seu escritório: produzimos, imprimimos e instalamos.</p>
+    </div>
+    <div class="service-gallery">
+      <figure class="reveal d1">
+        <img loading="lazy" decoding="async" src="img/servicos-displays.jpg" alt="Banners, totens e displays produzidos pela Alfa Print">
+        <figcaption>Banners, totens e displays</figcaption>
+      </figure>
+      <figure class="reveal d2">
+        <img loading="lazy" decoding="async" src="img/letra-caixa-luminosa.jpg" alt="Letreiro iluminado em letra caixa produzido pela Alfa Print">
+        <figcaption>Letras caixa iluminadas</figcaption>
+      </figure>
     </div>
     <div class="service-grid">
       <article class="service reveal d1">
