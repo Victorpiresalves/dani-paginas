@@ -100,6 +100,8 @@ section{padding:110px 0;scroll-margin-top:96px}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--yellow))}
 /* Header que se esconde ao rolar para baixo */
 header.hidden{transform:translateY(-110%)}
+/* Trava o scroll do fundo com o menu mobile aberto */
+body.nav-open{overflow:hidden}
 /* Link ativo na navegacao (scrollspy) */
 .nav-links a.active{color:var(--yellow)}
 .nav-links a.active::after{width:100%}
@@ -851,21 +853,30 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
 <script>
 // Header ao rolar
 const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 40);
-});
-header.classList.toggle('scrolled', window.scrollY > 40);
+const links = document.getElementById('navLinks');
+function atualizarScrolled() {
+  // Enquanto o menu mobile esta aberto, o header nao pode ganhar backdrop-filter/transform:
+  // como o menu (#navLinks) e filho do header, isso vira o contexto de posicionamento dele
+  // e o overlay fullscreen encolhe para caber na faixa do header (fica "transparente").
+  header.classList.toggle('scrolled', window.scrollY > 40 && !links.classList.contains('open'));
+}
+window.addEventListener('scroll', atualizarScrolled);
+atualizarScrolled();
 
 // Menu mobile
 const toggle = document.getElementById('menuToggle');
-const links = document.getElementById('navLinks');
 toggle.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  links.classList.toggle('open');
+  const abrindo = !links.classList.contains('open');
+  toggle.classList.toggle('open', abrindo);
+  links.classList.toggle('open', abrindo);
+  document.body.classList.toggle('nav-open', abrindo);
+  atualizarScrolled();
 });
 links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   toggle.classList.remove('open');
   links.classList.remove('open');
+  document.body.classList.remove('nav-open');
+  atualizarScrolled();
 }));
 
 // Animações de entrada (scroll reveal)
