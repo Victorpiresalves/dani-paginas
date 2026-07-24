@@ -226,6 +226,24 @@ header.scrolled{background:rgba(16,18,22,.92);backdrop-filter:blur(12px);box-sha
 .service p{font-size:.88rem;color:rgba(255,255,255,.62)}
 .service .apps{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
 .service .apps i{font-style:normal;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;color:rgba(255,255,255,.7)}
+/* Cartoes coloridos (chapas CMYK) */
+.service[data-ink]{border-color:transparent}
+.service[data-ink]::before{display:none}
+.service[data-ink]:hover{transform:translateY(-6px) scale(1.02)}
+.service[data-ink="c"]{background:var(--cyan)}
+.service[data-ink="m"]{background:var(--magenta)}
+.service[data-ink="y"]{background:var(--yellow)}
+.service[data-ink="k"]{background:var(--ink-soft);border:1px solid rgba(255,255,255,.09)}
+.service[data-ink="c"] .num,.service[data-ink="m"] .num{color:rgba(255,255,255,.7)}
+.service[data-ink="y"] .num{color:rgba(16,18,22,.5)}
+.service[data-ink="y"] h3,.service[data-ink="y"] p{color:var(--ink)}
+.service[data-ink="y"] p{color:rgba(16,18,22,.75)}
+.service[data-ink="y"] .apps i{background:rgba(16,18,22,.12);color:var(--ink)}
+.service[data-ink="c"] .apps i,.service[data-ink="m"] .apps i{background:rgba(255,255,255,.18);color:#fff}
+.service[data-ink="c"]:hover{box-shadow:0 22px 44px rgba(0,174,239,.35)}
+.service[data-ink="m"]:hover{box-shadow:0 22px 44px rgba(236,0,140,.35)}
+.service[data-ink="y"]:hover{box-shadow:0 22px 44px rgba(255,201,7,.4)}
+.service[data-ink="k"]:hover{box-shadow:0 22px 44px rgba(0,0,0,.4)}
 .service-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:56px}
 .service-gallery figure{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;border:1px solid rgba(255,255,255,.1)}
 .service-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -526,43 +544,43 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:70px 0 30px}
       </figure>
     </div>
     <div class="service-grid">
-      <article class="service reveal d1">
+      <article class="service reveal d1" data-ink="c">
         <span class="num">SRV-01</span>
         <h3>Letras caixa</h3>
         <p>Letreiros em relevo que dão presença e sofisticação à fachada da sua marca, produzidos em diversos materiais e acabamentos.</p>
         <div class="apps"><i>FACHADAS</i><i>RECEPÇÕES</i><i>LOJAS</i></div>
       </article>
-      <article class="service reveal d2">
+      <article class="service reveal d2" data-ink="m">
         <span class="num">SRV-02</span>
         <h3>Sinalização</h3>
         <p>Placas, totens, quadros e letras caixa que organizam, orientam e valorizam ambientes corporativos e residenciais.</p>
         <div class="apps"><i>EMPRESAS</i><i>CONDOMÍNIOS</i><i>EVENTOS</i></div>
       </article>
-      <article class="service reveal d3">
+      <article class="service reveal d3" data-ink="y">
         <span class="num">SRV-03</span>
         <h3>Adesivos decorativos</h3>
         <p>Impressão digital em altíssima resolução, com maior durabilidade que o papel de parede: lavável e de fácil remoção.</p>
         <div class="apps"><i>PAREDES</i><i>VITRINES</i><i>PISOS</i></div>
       </article>
-      <article class="service reveal d4">
+      <article class="service reveal d4" data-ink="k">
         <span class="num">SRV-04</span>
         <h3>Banners e faixas</h3>
         <p>Lona brilhante, fosca ou tecido, em diversos formatos, para promoções, eventos, festas e comunicação interna e externa.</p>
         <div class="apps"><i>PROMOÇÕES</i><i>EVENTOS</i><i>DIVULGAÇÃO</i></div>
       </article>
-      <article class="service reveal d1">
+      <article class="service reveal d1" data-ink="c">
         <span class="num">SRV-05</span>
         <h3>Placas acrílicas, PS e PVC</h3>
         <p>Displays, letreiros e placas com corte a laser de precisão. Elegância no acrílico, leveza no PS e resistência no PVC.</p>
         <div class="apps"><i>DISPLAYS</i><i>TOTENS</i><i>PAINÉIS</i></div>
       </article>
-      <article class="service reveal d2">
+      <article class="service reveal d2" data-ink="m">
         <span class="num">SRV-06</span>
         <h3>Corte Router CNC</h3>
         <p>Corte computadorizado que transforma vetores em peças exclusivas: MDF, acrílico, ACM, PVC expandido e muito mais.</p>
         <div class="apps"><i>CENOGRAFIA</i><i>MAQUETES</i><i>DECORAÇÃO</i></div>
       </article>
-      <article class="service reveal d3">
+      <article class="service reveal d3" data-ink="y">
         <span class="num">SRV-07</span>
         <h3>Tapumes</h3>
         <p>Fechamento de obras e stands com impressão de alto impacto, transformando o canteiro em vitrine para a sua marca.</p>
