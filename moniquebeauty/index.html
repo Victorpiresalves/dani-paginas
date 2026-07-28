@@ -257,15 +257,16 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 #depoimentos .center .eyebrow::before{display:none}
 
 /* ---------- agendamento ---------- */
-#agendar{background:linear-gradient(180deg,var(--cafe),var(--cafe-2));position:relative}
-#agendar::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.6 12.5 A42 42 0 0 1 82.2 79' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Cpath d='M23 84.2 A42 42 0 0 1 13.6 31' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Cpath d='M4 20 C34 28 66 72 98 84' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23EDE2DD'%3EM%3C/text%3E%3C/svg%3E") repeat;background-size:150px;opacity:.045;pointer-events:none}
+#agendar{background:var(--marfim);color:var(--cafe);position:relative}
+#agendar::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.6 12.5 A42 42 0 0 1 82.2 79' fill='none' stroke='%23685049' stroke-width='2'/%3E%3Cpath d='M23 84.2 A42 42 0 0 1 13.6 31' fill='none' stroke='%23685049' stroke-width='2'/%3E%3Cpath d='M4 20 C34 28 66 72 98 84' fill='none' stroke='%23685049' stroke-width='2'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23685049'%3EM%3C/text%3E%3C/svg%3E") repeat;background-size:150px;opacity:.05;pointer-events:none}
+#agendar .eyebrow{color:#8F7263}
 #agendar .grid{position:relative;z-index:1}
 #agendar .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,90px);align-items:start}
 #agendar h2{font-size:clamp(36px,5.4vw,64px);margin:18px 0 20px}
-#agendar .lead{color:rgba(237,226,221,.78);max-width:44ch}
-#agendar .alt{margin-top:30px;padding-top:26px;border-top:1px solid var(--linha);font-size:14.5px;color:rgba(237,226,221,.7)}
-#agendar .alt a{color:var(--mel-claro);border-bottom:1px solid rgba(200,176,164,.45)}
-.booking-embed{border:1px solid var(--linha);border-radius:22px;overflow:hidden;min-height:760px;background:#fff}
+#agendar .lead{color:#7A6158;max-width:44ch}
+#agendar .alt{margin-top:30px;padding-top:26px;border-top:1px solid rgba(104,80,73,.14);font-size:14.5px;color:#7A6158}
+#agendar .alt a{color:#8F7263;border-bottom:1px solid rgba(143,114,99,.4)}
+.booking-embed{border:1px solid rgba(104,80,73,.14);border-radius:22px;overflow:hidden;min-height:760px;background:#fff;box-shadow:0 30px 80px rgba(62,47,42,.12)}
 .booking-embed iframe{width:100%;height:100%;min-height:760px;border:0}
 @media(max-width:920px){#agendar .grid{grid-template-columns:1fr}.booking-embed{min-height:640px}.booking-embed iframe{min-height:640px}}
 
