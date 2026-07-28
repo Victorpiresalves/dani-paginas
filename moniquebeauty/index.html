@@ -123,12 +123,12 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 .fade-up{opacity:0;transform:translateY(24px);animation:fadeUp .9s ease .5s forwards}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 #hero .scroll-hint{position:absolute;right:var(--pad);bottom:34px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe);writing-mode:vertical-rl}
-#hero .scroll-hint::after{content:"";width:1px;height:52px;background:linear-gradient(var(--mel),transparent);animation:drip 1.8s ease infinite}
+#hero .scroll-hint::after{content:"";width:1px;height:52px;background:linear-gradient(var(--mel),transparent);animation:drip 1.8s ease 4}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media(max-width:920px){#hero .scroll-hint{display:none}}
 
 /* ---------- marquee ---------- */
-.marquee{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--cafe-2);overflow:hidden;padding:20px 0;position:relative}
+.marquee{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--cafe);overflow:hidden;padding:20px 0;position:relative}
 .marquee .track{display:flex;gap:0;width:max-content;animation:scrollx 30s linear infinite}
 .marquee span{font-family:var(--f-display);font-size:clamp(16px,2vw,21px);white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px;color:rgba(237,226,221,.85)}
 .marquee span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--mel);flex-shrink:0}
@@ -138,52 +138,59 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 .reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s cubic-bezier(.19,1,.22,1)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+.reveal[data-cascade]{transition-delay:calc(var(--order,0) * 90ms)}
 
 /* ---------- sobre ---------- */
+#sobre{background:var(--marfim);color:var(--cafe)}
+#sobre .eyebrow{color:#8F7263}
 #sobre .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
 #sobre h2{font-size:clamp(32px,4.6vw,56px);margin:18px 0 22px}
-#sobre p{color:rgba(237,226,221,.8);max-width:52ch}
+#sobre p{color:#7A6158;max-width:52ch}
 #sobre p+p{margin-top:16px}
-.foto-frame{position:relative;border-radius:280px 280px 18px 18px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.foto-frame{position:relative;border-radius:280px 280px 18px 18px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 30px 80px rgba(62,47,42,.3)}
 .foto-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.2s ease}
 .foto-frame:hover img{transform:scale(1)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;border-top:1px solid var(--linha);padding-top:32px}
-.stats b{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.6vw,46px);color:var(--mel-claro);display:block}
-.stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;border-top:1px solid rgba(104,80,73,.14);padding-top:32px}
+.stats b{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.6vw,46px);color:var(--cafe);display:block}
+.stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A6158}
 @media(max-width:920px){#sobre .grid{grid-template-columns:1fr}.foto-frame{max-width:420px;margin:0 auto}}
 
 /* ---------- mega hair ---------- */
-#megahair{background:var(--cafe-2);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
-#megahair .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vh,70px)}
-#megahair h2{font-size:clamp(38px,6vw,76px);margin-top:18px}
-#megahair .head p{max-width:42ch;color:rgba(237,226,221,.75)}
+#megahair{background:var(--marfim);color:var(--cafe);border-top:1px solid rgba(104,80,73,.12);border-bottom:1px solid rgba(104,80,73,.12)}
+#megahair .eyebrow{color:#8F7263}
+#megahair .head{margin-bottom:clamp(40px,6vh,70px)}
+#megahair h2{font-size:clamp(38px,6vw,76px);margin:18px 0 16px}
+#megahair .head p{max-width:42ch;color:#7A6158}
 #megahair .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4vw,64px);align-items:start}
+.media-col{display:flex;flex-direction:column;gap:clamp(24px,3vw,32px)}
 .compare{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;user-select:none;touch-action:none;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:ew-resize}
 .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .compare .after-wrap{position:absolute;inset:0;overflow:hidden}
 .compare .handle{position:absolute;top:0;bottom:0;width:2px;background:var(--mel-claro);z-index:3;pointer-events:none}
 .compare .handle::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--mel);color:var(--cafe);display:flex;align-items:center;justify-content:center;font-size:18px;font-family:var(--f-body)}
-.compare .tag{position:absolute;top:16px;z-index:2;font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:rgba(62,47,42,.65);backdrop-filter:blur(8px)}
+.compare .tag{position:absolute;top:16px;z-index:2;font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:rgba(62,47,42,.65);color:var(--marfim);backdrop-filter:blur(8px)}
 .compare .tag.antes{left:16px}
 .compare .tag.depois{right:16px}
 .compare figcaption{position:absolute;bottom:0;left:0;right:0;padding:18px;font-size:12px;color:rgba(237,226,221,.75);background:linear-gradient(transparent,rgba(62,47,42,.85));z-index:2}
 .tecnicas{display:flex;flex-direction:column;gap:14px}
-.tecnica{border:1px solid var(--linha);border-radius:16px;background:rgba(237,226,221,.02);overflow:hidden;transition:border-color .3s,background .3s}
+.tecnica{border:1px solid rgba(62,47,42,.14);border-radius:16px;background:#fff;overflow:hidden;transition:border-color .3s,background .3s}
 .tecnica summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-family:var(--f-display);font-size:clamp(18px,2vw,23px)}
 .tecnica summary::-webkit-details-marker{display:none}
 .tecnica summary i{font-style:normal;font-family:var(--f-body);font-size:20px;color:var(--mel);transition:transform .35s;flex-shrink:0}
-.tecnica[open]{border-color:rgba(200,176,164,.55);background:rgba(200,176,164,.07)}
+.tecnica[open]{border-color:rgba(200,176,164,.7);background:rgba(200,176,164,.12)}
 .tecnica[open] summary i{transform:rotate(45deg)}
-.tecnica .body{padding:0 24px 22px;color:rgba(237,226,221,.75);font-size:15px;max-width:56ch}
-.tecnica .body a{color:var(--mel-claro);border-bottom:1px solid rgba(200,176,164,.45)}
-.mh-video{margin-top:clamp(50px,8vh,90px);position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/7;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.tecnica .body{padding:0 24px 22px;color:#7A6158;font-size:15px;max-width:56ch}
+.tecnica .body a{color:#8F7263;border-bottom:1px solid rgba(143,114,99,.4)}
+.mh-video{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/16;max-width:280px;margin:0 auto;box-shadow:0 30px 80px rgba(0,0,0,.5)}
 .mh-video video,.mh-video .placeholder{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .mh-video .placeholder{background:url("https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-08-11%20at%2014.08.29%20(1).jpeg") center/cover}
-.curso{margin-top:clamp(40px,6vh,70px);border:1px solid var(--linha);border-radius:20px;padding:clamp(26px,4vw,40px);display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;background:rgba(237,226,221,.04)}
+#curso{background:var(--marfim);color:var(--cafe)}
+#curso .eyebrow{color:#8F7263}
+.curso{border:1px solid rgba(62,47,42,.14);border-radius:20px;padding:clamp(26px,4vw,40px);display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;background:#fff}
 .curso h3{font-size:clamp(20px,2.6vw,28px);margin:14px 0 10px}
-.curso p{color:rgba(237,226,221,.78);max-width:52ch;font-size:15px}
+.curso p{color:#7A6158;max-width:52ch;font-size:15px}
 .mh-video .label{position:absolute;left:24px;bottom:20px;z-index:2;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--marfim);background:rgba(62,47,42,.55);backdrop-filter:blur(8px);padding:10px 16px;border-radius:999px}
-@media(max-width:920px){#megahair .grid{grid-template-columns:1fr}.mh-video{aspect-ratio:16/10}}
+@media(max-width:920px){#megahair .grid{grid-template-columns:1fr}}
 
 /* ---------- serviços ---------- */
 #servicos{background:var(--marfim);color:var(--cafe)}
@@ -201,13 +208,15 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 .serv:hover .link::after{transform:translateX(5px)}
 
 /* ---------- equipe ---------- */
+#equipe{background:var(--marfim);color:var(--cafe)}
+#equipe .eyebrow{color:#8F7263}
 #equipe h2{font-size:clamp(34px,5vw,60px);margin:18px 0 14px}
-#equipe .intro{color:rgba(237,226,221,.75);max-width:54ch}
+#equipe .intro{color:#7A6158;max-width:54ch}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:clamp(36px,6vh,60px)}
-.pro{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--cafe-2);border:1px solid var(--linha)}
+.pro{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:rgba(104,80,73,.08);border:1px solid rgba(62,47,42,.14)}
 .pro img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .8s}
 .pro:hover img{transform:scale(1.05)}
-.pro .info{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(transparent,rgba(62,47,42,.94));display:flex;flex-direction:column;gap:4px}
+.pro .info{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(transparent,rgba(62,47,42,.94));display:flex;flex-direction:column;gap:4px;color:var(--marfim)}
 .pro h3{font-size:24px}
 .pro .esp{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mel-claro)}
 .pro .bio{font-size:13.5px;color:rgba(237,226,221,.75);max-height:0;overflow:hidden;transition:max-height .5s ease,margin .5s}
@@ -215,24 +224,29 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 .pro .agendar{margin-top:12px;align-self:flex-start}
 
 /* ---------- galeria ---------- */
-#galeria{background:var(--cafe-2);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding-left:0;padding-right:0}
+#galeria{background:var(--marfim);color:var(--cafe);border-top:1px solid rgba(104,80,73,.12);border-bottom:1px solid rgba(104,80,73,.12);padding-left:0;padding-right:0}
+#galeria .eyebrow{color:#8F7263}
+#galeria .btn.ghost{color:var(--cafe);border-color:rgba(104,80,73,.35)}
+#galeria .btn.ghost:hover{border-color:#8F7263;color:#8F7263}
 #galeria .head{padding:0 var(--pad);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;max-width:1240px;margin:0 auto clamp(30px,5vh,50px)}
 #galeria h2{font-size:clamp(34px,5vw,60px);margin-top:18px}
 .gal-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--pad) 26px;scrollbar-width:thin;scrollbar-color:var(--mel) transparent}
-.gal-item{flex:0 0 clamp(240px,32vw,380px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;scroll-snap-align:start;position:relative;background:linear-gradient(160deg,#6F564E,#57423C);border:1px solid var(--linha)}
-.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.gal-item:hover img{transform:scale(1.06)}
-.gal-item .cap{position:absolute;left:14px;bottom:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:rgba(62,47,42,.6);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px}
+.gal-item{flex:0 0 clamp(240px,32vw,380px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;scroll-snap-align:start;position:relative;background:linear-gradient(160deg,#6F564E,#57423C);border:1px solid rgba(62,47,42,.14)}
+.gal-item img,.gal-item video{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gal-item:hover img,.gal-item:hover video{transform:scale(1.06)}
+.gal-item .cap{position:absolute;left:14px;bottom:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:rgba(62,47,42,.6);color:var(--marfim);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px}
 
 /* ---------- depoimentos ---------- */
+#depoimentos{background:var(--marfim);color:var(--cafe)}
+#depoimentos .eyebrow{color:#8F7263}
 #depoimentos .quote-box{max-width:820px;margin:clamp(30px,5vh,50px) auto 0;text-align:center;min-height:230px;position:relative}
 .quote{position:absolute;inset:0;opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s;display:flex;flex-direction:column;align-items:center;gap:22px;pointer-events:none}
 .quote.active{opacity:1;transform:none;pointer-events:auto}
 .quote p{font-family:var(--f-display);font-size:clamp(20px,3vw,30px);line-height:1.4}
-.quote cite{font-style:normal;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
-.stars{color:var(--mel);letter-spacing:6px;font-size:15px}
+.quote cite{font-style:normal;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#8F7263}
+.stars{color:#8F7263;letter-spacing:6px;font-size:15px}
 .dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
-.dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(237,226,221,.25);cursor:pointer;transition:.3s;padding:0}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(104,80,73,.25);cursor:pointer;transition:.3s;padding:0}
 .dots button.active{background:var(--mel);transform:scale(1.35)}
 #depoimentos h2{font-size:clamp(34px,5vw,60px);margin-top:18px;text-align:left}
 #depoimentos .center{text-align:center;display:flex;flex-direction:column;align-items:center}
@@ -278,13 +292,17 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 @media(max-width:920px){#agendar .grid{grid-template-columns:1fr}}
 
 /* ---------- contato ---------- */
+#contato{background:var(--marfim);color:var(--cafe)}
+#contato .eyebrow{color:#8F7263}
+#contato .btn.ghost{color:var(--cafe);border-color:rgba(104,80,73,.35)}
+#contato .btn.ghost:hover{border-color:#8F7263;color:#8F7263}
 #contato .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px)}
 #contato h2{font-size:clamp(34px,5vw,58px);margin:18px 0 20px}
-#contato .bloco+.bloco{margin-top:26px;padding-top:26px;border-top:1px solid var(--linha)}
-#contato .bloco h3{font-size:13px;font-family:var(--f-body);font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-bottom:10px}
-#contato .bloco p,#contato .bloco a{font-size:17px;color:var(--marfim)}
-#contato .bloco a:hover{color:var(--mel-claro)}
-.mapa{border-radius:20px;overflow:hidden;border:1px solid var(--linha);min-height:420px;filter:grayscale(1) invert(.92) hue-rotate(180deg) contrast(.9)}
+#contato .bloco+.bloco{margin-top:26px;padding-top:26px;border-top:1px solid rgba(104,80,73,.14)}
+#contato .bloco h3{font-size:13px;font-family:var(--f-body);font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#8F7263;margin-bottom:10px}
+#contato .bloco p,#contato .bloco a{font-size:17px;color:var(--cafe)}
+#contato .bloco a:hover{color:#8F7263}
+.mapa{border-radius:20px;overflow:hidden;border:1px solid rgba(104,80,73,.14);min-height:420px;filter:grayscale(1) invert(.92) hue-rotate(180deg) contrast(.9)}
 .mapa iframe{width:100%;height:100%;min-height:420px;border:0}
 @media(max-width:920px){#contato .grid{grid-template-columns:1fr}}
 
@@ -298,7 +316,7 @@ footer .base{max-width:1240px;margin:0 auto;display:flex;justify-content:space-b
 footer .base a:hover{color:var(--mel-claro)}
 
 /* ---------- whatsapp flutuante ---------- */
-#wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 34px rgba(37,211,102,.4);transition:transform .3s;animation:pulse 2.6s ease infinite}
+#wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 34px rgba(37,211,102,.4);transition:transform .3s;animation:pulse 2.6s ease 3}
 #wa-float:hover{transform:scale(1.08)}
 #wa-float svg{width:30px;height:30px;fill:#fff}
 @keyframes pulse{0%,100%{box-shadow:0 12px 34px rgba(37,211,102,.4)}50%{box-shadow:0 12px 34px rgba(37,211,102,.4),0 0 0 14px rgba(37,211,102,0)}}
@@ -344,10 +362,8 @@ footer .base a:hover{color:var(--mel-claro)}
 <header id="hero">
   <div class="media">
     <div class="poster"></div>
-    <!-- EDITAR: substitua o src pelo vídeo do salão (MP4, horizontal, sem áudio necessário).
-         Enquanto não houver vídeo, a foto de fundo acima cobre o espaço. -->
     <video autoplay muted loop playsinline poster="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg">
-      <source src="videos/hero.mp4" type="video/mp4">
+      <source src="hero.mp4" type="video/mp4">
     </video>
     <div class="veil"></div>
   </div>
@@ -356,7 +372,7 @@ footer .base a:hover{color:var(--mel-claro)}
       <span class="hero-line"><span>Transformamos beleza</span></span>
       <span class="hero-line"><span>em <em class="it">autoestima</em>.</span></span>
     </h1>
-    <p class="fade-up">Salão boutique na Tijuca especializado em mega hair, mechas premium e tratamentos capilares, com unhas, cílios e make para completar o cuidado. Aqui você é única, e o nosso trabalho é realçar a sua beleza natural.</p>
+    <p class="fade-up">Um espaço boutique na Tijuca pensado para o seu cuidado do começo ao fim. Aqui você é única, e o nosso trabalho é realçar a sua beleza natural.</p>
     <div class="cta-row fade-up">
       <a class="btn" href="#agendar">Agendar meu horário</a>
       <a class="btn ghost" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -399,21 +415,29 @@ footer .base a:hover{color:var(--mel-claro)}
       <div class="reveal">
         <div class="eyebrow">Nossa especialidade</div>
         <h2>Mega <em class="it">hair</em></h2>
+        <p class="reveal d1">Comprimento, volume e movimento com acabamento invisível. Arraste o comparador e veja a diferença entre chegar e sair do salão.</p>
       </div>
-      <p class="reveal d1">Comprimento, volume e movimento com acabamento invisível. Arraste o comparador e veja a diferença entre chegar e sair do salão.</p>
     </div>
     <div class="grid">
-      <figure class="compare reveal" id="compare">
-        <!-- EDITAR: troque as duas imagens abaixo por um antes e depois real de mega hair (mesmo enquadramento). -->
-        <img class="antes-img" src="https://img1.wsimg.com/isteam/getty/1328333210" alt="Cabelo antes do mega hair">
-        <div class="after-wrap" id="after-wrap">
-          <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg" alt="Cabelo depois do mega hair">
+      <div class="media-col reveal">
+        <figure class="compare" id="compare">
+          <img class="antes-img" src="megahair-antes.jpg" alt="Cabelo antes do mega hair">
+          <div class="after-wrap" id="after-wrap">
+            <img src="megahair-depois.jpg" alt="Cabelo depois do mega hair">
+          </div>
+          <div class="handle" id="handle"></div>
+          <span class="tag antes">Antes</span>
+          <span class="tag depois">Depois</span>
+          <figcaption>Cabelo brasileiro 180g, 50cm, personalizado morena iluminada — sem química no cabelo natural.</figcaption>
+        </figure>
+        <div class="mh-video">
+          <div class="placeholder"></div>
+          <video autoplay muted loop playsinline>
+            <source src="megahair-aplicacao.mp4" type="video/mp4">
+          </video>
+          <span class="label">Aplicação em tempo real</span>
         </div>
-        <div class="handle" id="handle"></div>
-        <span class="tag antes">Antes</span>
-        <span class="tag depois">Depois</span>
-        <figcaption>Aumento de comprimento e volume com fios alinhados e acabamento profissional.</figcaption>
-      </figure>
+      </div>
       <div class="tecnicas reveal d1">
         <details class="tecnica" open>
           <summary>UltraFit Hair <i>+</i></summary>
@@ -434,22 +458,6 @@ footer .base a:hover{color:var(--mel-claro)}
         <a class="btn" href="#agendar" style="align-self:flex-start;margin-top:10px">Quero meu mega hair</a>
       </div>
     </div>
-    <div class="mh-video reveal">
-      <div class="placeholder"></div>
-      <!-- EDITAR: vídeo de aplicação de mega hair (MP4 horizontal). -->
-      <video autoplay muted loop playsinline>
-        <source src="videos/megahair.mp4" type="video/mp4">
-      </video>
-      <span class="label">Aplicação em tempo real</span>
-    </div>
-    <div class="curso reveal">
-      <div>
-        <div class="eyebrow">Para profissionais</div>
-        <h3>Curso de Mega Hair Premium</h3>
-        <p>Formação prática e teórica na técnica UltraFit Hair, com certificado Monique Coutinho Beauty. Aprenda com quem aplica todos os dias.</p>
-      </div>
-      <a class="btn" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20Curso%20de%20Mega%20Hair%20Premium." target="_blank" rel="noopener">Quero me formar</a>
-    </div>
   </div>
 </section>
 
@@ -459,43 +467,43 @@ footer .base a:hover{color:var(--mel-claro)}
     <h2 class="reveal">Cuidado <em class="it">completo</em>, em um só lugar.</h2>
     <p class="intro reveal d1">Toque em um serviço para já iniciar seu agendamento com ele selecionado.</p>
     <div class="serv-grid">
-      <div class="serv reveal" data-servico="Mega hair">
+      <div class="serv reveal" data-cascade data-servico="Mega hair">
         <div class="ico">✦</div>
         <h3>Mega hair</h3>
         <p>Alongamento com a técnica UltraFit Hair, ponto americano e fita adesiva. Fios selecionados e acabamento invisível.</p>
         <span class="link">Agendar</span>
       </div>
-      <div class="serv reveal d1" data-servico="Mechas premium">
+      <div class="serv reveal" data-cascade data-servico="Mechas premium">
         <div class="ico">✦</div>
         <h3>Mechas premium</h3>
         <p>Loiros saudáveis e morenas iluminadas com técnica, proteção da fibra e colorimetria personalizada.</p>
         <span class="link">Agendar</span>
       </div>
-      <div class="serv reveal d2" data-servico="Exoplastia ou progressiva orgânica">
+      <div class="serv reveal" data-cascade data-servico="Exoplastia ou progressiva orgânica">
         <div class="ico">✦</div>
         <h3>Exoplastia e progressiva orgânica</h3>
         <p>Alinhamento dos fios com fórmulas modernas, para um liso natural com brilho e sem agredir o cabelo.</p>
         <span class="link">Agendar</span>
       </div>
-      <div class="serv reveal d3" data-servico="Tratamento capilar">
+      <div class="serv reveal" data-cascade data-servico="Tratamento capilar">
         <div class="ico">✦</div>
         <h3>Tratamentos capilares</h3>
         <p>Protocolos para couro cabeludo e fios: reconstrução, hidratação profunda e cronograma sob medida.</p>
         <span class="link">Agendar</span>
       </div>
-      <div class="serv reveal d1" data-servico="Unhas em gel e fibra">
+      <div class="serv reveal" data-cascade data-servico="Unhas em gel e fibra">
         <div class="ico">✦</div>
         <h3>Unhas em gel e fibra</h3>
         <p>Unhas em gel, fibra e esmaltação com acabamento impecável, naturalidade e durabilidade.</p>
         <span class="link">Agendar</span>
       </div>
-      <div class="serv reveal d2" data-servico="Extensão de cílios">
+      <div class="serv reveal" data-cascade data-servico="Extensão de cílios">
         <div class="ico">✦</div>
         <h3>Extensão de cílios</h3>
         <p>Olhar marcante com efeito natural, aplicado fio a fio para valorizar o seu formato de olhos.</p>
         <span class="link">Agendar</span>
       </div>
-      <div class="serv reveal d3" data-servico="Make">
+      <div class="serv reveal" data-cascade data-servico="Make">
         <div class="ico">✦</div>
         <h3>Make</h3>
         <p>Maquiagem para eventos, ensaios e ocasiões especiais, do natural iluminado ao glam completo.</p>
@@ -512,7 +520,7 @@ footer .base a:hover{color:var(--mel-claro)}
     <p class="intro reveal d1">Cada profissional tem uma especialidade. Escolha com quem quer ser atendida e agende direto pelo site.</p>
     <div class="team-grid">
       <!-- EDITAR: trocar fotos, nomes, especialidades e bios reais da equipe. -->
-      <div class="pro reveal">
+      <div class="pro reveal" data-cascade>
         <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-11-11%20at%2014.44.14.jpeg" alt="Monique Coutinho" loading="lazy">
         <div class="info">
           <span class="esp">Mega hair UltraFit Hair</span>
@@ -521,16 +529,16 @@ footer .base a:hover{color:var(--mel-claro)}
           <button class="btn small agendar" data-pro="Monique Coutinho">Agendar com Monique</button>
         </div>
       </div>
-      <div class="pro reveal d1">
-        <img src="https://img1.wsimg.com/isteam/getty/1328333210" alt="Profissional da equipe" loading="lazy">
+      <div class="pro reveal" data-cascade>
+        <img src="ellen-perfil.jpg" alt="Ellen Cris" loading="lazy">
         <div class="info">
-          <span class="esp">Unhas em gel e fibra</span>
-          <h3>Nome da profissional</h3>
-          <p class="bio">Especialista em unhas em gel, fibra e esmaltação. Texto de apresentação da profissional.</p>
-          <button class="btn small agendar" data-pro="Especialista em unhas">Agendar horário</button>
+          <span class="esp">Nail Designer</span>
+          <h3>Ellen Cris</h3>
+          <p class="bio">Especialista em unhas em gel, fibra e esmaltação, com um olhar de artista para cada detalhe.</p>
+          <button class="btn small agendar" data-pro="Ellen Cris">Agendar com Ellen</button>
         </div>
       </div>
-      <div class="pro reveal d2">
+      <div class="pro reveal" data-cascade>
         <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-08-11%20at%2014.08.29%20(1).jpeg" alt="Profissional da equipe" loading="lazy">
         <div class="info">
           <span class="esp">Cílios e tratamentos</span>
@@ -558,6 +566,8 @@ footer .base a:hover{color:var(--mel-claro)}
     <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-08-11%20at%2014.08.29%20(1).jpeg" alt="Ambiente do salão" loading="lazy"><span class="cap">O salão</span></div>
     <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-11-11%20at%2014.44.14.jpeg" alt="Atendimento no salão" loading="lazy"><span class="cap">Atendimento</span></div>
     <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg" alt="Resultado de mega hair" loading="lazy"><span class="cap">Antes e depois</span></div>
+    <div class="gal-item"><video autoplay muted loop playsinline><source src="galeria-video1.mp4" type="video/mp4"></video><span class="cap">Antes e depois</span></div>
+    <div class="gal-item"><video autoplay muted loop playsinline><source src="galeria-video2.mp4" type="video/mp4"></video><span class="cap">Transformação real</span></div>
   </div>
 </section>
 
@@ -633,7 +643,7 @@ footer .base a:hover{color:var(--mel-claro)}
         <p class="hint">Todas as profissionais são especializadas na área.</p>
         <div class="chips" data-group="profissional">
           <button class="chip" type="button">Monique Coutinho</button>
-          <button class="chip" type="button">Especialista em unhas</button>
+          <button class="chip" type="button">Ellen Cris</button>
           <button class="chip" type="button">Especialista em cílios</button>
           <button class="chip" type="button">Sem preferência</button>
         </div>
@@ -703,6 +713,19 @@ footer .base a:hover{color:var(--mel-claro)}
   </div>
 </section>
 
+<section id="curso" class="section">
+  <div class="wrap">
+    <div class="curso reveal">
+      <div>
+        <div class="eyebrow">Para profissionais</div>
+        <h3>Curso de Mega Hair Premium</h3>
+        <p>Formação prática e teórica na técnica UltraFit Hair, com certificado Monique Coutinho Beauty. Aprenda com quem aplica todos os dias.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20Curso%20de%20Mega%20Hair%20Premium." target="_blank" rel="noopener">Quero me formar</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="top">
     <a class="logo" href="#hero"><svg class="mono-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M35.6 12.5 A42 42 0 0 1 82.2 79" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 84.2 A42 42 0 0 1 13.6 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path class="swash" d="M4 20 C34 28 66 72 98 84" fill="none" stroke-width="3" stroke-linecap="round"/><text class="letra" x="50" y="66" text-anchor="middle" font-size="44">M</text></svg><span>Monique Coutinho<small>Beauty</small></span></a>
@@ -761,11 +784,28 @@ document.querySelectorAll('video').forEach(function(v){
 
 // ---------- reveal on scroll ----------
 var io=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  entries.forEach(function(e,i){
+    if(e.isIntersecting){
+      if(e.target.hasAttribute('data-cascade')){e.target.style.setProperty('--order',i)}
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
   });
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+// ---------- marquee: velocidade real, baseada na largura do conteúdo ----------
+var marqueeTrack=document.querySelector('.marquee .track');
+if(marqueeTrack){
+  var setMarqueeSpeed=function(){
+    var half=marqueeTrack.scrollWidth/2;
+    var pxPerSecond=window.innerWidth<600?40:65;
+    marqueeTrack.style.animationDuration=(half/pxPerSecond)+'s';
+  };
+  setMarqueeSpeed();
+  window.addEventListener('resize',setMarqueeSpeed);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(setMarqueeSpeed)}
+}
 
 // ---------- contadores ----------
 var counted=false;
