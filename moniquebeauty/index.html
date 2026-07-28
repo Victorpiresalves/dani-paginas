@@ -148,8 +148,8 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 #sobre p{color:#7A6158;max-width:52ch}
 #sobre p+p{margin-top:16px}
 .foto-frame{position:relative;border-radius:280px 280px 18px 18px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 30px 80px rgba(62,47,42,.3)}
-.foto-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.2s ease}
-.foto-frame:hover img{transform:scale(1)}
+.foto-frame img,.foto-frame video{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.2s ease}
+.foto-frame:hover img,.foto-frame:hover video{transform:scale(1)}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px;border-top:1px solid rgba(104,80,73,.14);padding-top:32px}
 .stats b{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.6vw,46px);color:var(--cafe);display:block}
 .stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A6158}
@@ -401,7 +401,9 @@ footer .base a:hover{color:var(--mel-claro)}
     </div>
     <div class="reveal d1">
       <div class="foto-frame">
-        <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-11-11%20at%2014.44.14.jpeg" alt="Interior do salão Monique Coutinho Beauty" loading="lazy">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="salao-video.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
