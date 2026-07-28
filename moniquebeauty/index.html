@@ -257,18 +257,43 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 #depoimentos .center .eyebrow::before{display:none}
 
 /* ---------- agendamento ---------- */
-#agendar{background:var(--marfim);color:var(--cafe);position:relative}
-#agendar::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.6 12.5 A42 42 0 0 1 82.2 79' fill='none' stroke='%23685049' stroke-width='2'/%3E%3Cpath d='M23 84.2 A42 42 0 0 1 13.6 31' fill='none' stroke='%23685049' stroke-width='2'/%3E%3Cpath d='M4 20 C34 28 66 72 98 84' fill='none' stroke='%23685049' stroke-width='2'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23685049'%3EM%3C/text%3E%3C/svg%3E") repeat;background-size:150px;opacity:.05;pointer-events:none}
-#agendar .eyebrow{color:#8F7263}
+#agendar{background:linear-gradient(180deg,var(--cafe),var(--cafe-2));position:relative}
+#agendar::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.6 12.5 A42 42 0 0 1 82.2 79' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Cpath d='M23 84.2 A42 42 0 0 1 13.6 31' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Cpath d='M4 20 C34 28 66 72 98 84' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23EDE2DD'%3EM%3C/text%3E%3C/svg%3E") repeat;background-size:150px;opacity:.045;pointer-events:none}
 #agendar .grid{position:relative;z-index:1}
 #agendar .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,90px);align-items:start}
 #agendar h2{font-size:clamp(36px,5.4vw,64px);margin:18px 0 20px}
-#agendar .lead{color:#7A6158;max-width:44ch}
-#agendar .alt{margin-top:30px;padding-top:26px;border-top:1px solid rgba(104,80,73,.14);font-size:14.5px;color:#7A6158}
-#agendar .alt a{color:#8F7263;border-bottom:1px solid rgba(143,114,99,.4)}
-.booking-embed{border:1px solid rgba(104,80,73,.14);border-radius:22px;overflow:hidden;min-height:760px;background:#fff;box-shadow:0 30px 80px rgba(62,47,42,.12)}
-.booking-embed iframe{width:100%;height:100%;min-height:760px;border:0}
-@media(max-width:920px){#agendar .grid{grid-template-columns:1fr}.booking-embed{min-height:640px}.booking-embed iframe{min-height:640px}}
+#agendar .lead{color:rgba(237,226,221,.78);max-width:44ch}
+#agendar .alt{margin-top:30px;padding-top:26px;border-top:1px solid var(--linha);font-size:14.5px;color:rgba(237,226,221,.7)}
+#agendar .alt a{color:var(--mel-claro);border-bottom:1px solid rgba(200,176,164,.45)}
+.booking{border:1px solid var(--linha);border-radius:22px;background:rgba(237,226,221,.03);backdrop-filter:blur(6px);padding:clamp(24px,3.4vw,40px)}
+.steps-bar{display:flex;gap:8px;margin-bottom:28px}
+.steps-bar i{flex:1;height:2px;background:rgba(237,226,221,.14);border-radius:2px;transition:background .4s}
+.steps-bar i.on{background:var(--mel)}
+.step{display:none;animation:stepIn .45s ease}
+.step.active{display:block}
+@keyframes stepIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.step h3{font-size:clamp(20px,2.4vw,26px);margin-bottom:6px}
+.step .hint{font-size:13.5px;color:var(--taupe);margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.cat-label{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe);margin:18px 0 10px}
+.cat-label:first-of-type{margin-top:0}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:10px;max-height:220px;overflow-y:auto;padding-right:4px;scrollbar-width:thin;scrollbar-color:var(--mel) transparent}
+.slots .chip{padding:11px 4px;text-align:center;justify-content:center;font-variant-numeric:tabular-nums}
+.slot-hint{grid-column:1/-1;font-size:13.5px;color:var(--taupe)}
+.sel-count{font-size:12px;color:var(--taupe);margin-top:14px;min-height:18px}
+.chip{border:1px solid rgba(237,226,221,.22);border-radius:999px;padding:12px 20px;font-size:14px;cursor:pointer;background:transparent;color:var(--marfim);font-family:var(--f-body);font-weight:300;transition:.3s}
+.chip:hover{border-color:var(--mel)}
+.chip.sel{background:var(--mel);border-color:var(--mel);color:var(--cafe);font-weight:500}
+.field{margin-top:18px}
+.field label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);margin-bottom:8px}
+.field input{width:100%;background:rgba(237,226,221,.05);border:1px solid rgba(237,226,221,.18);border-radius:12px;padding:15px 16px;color:var(--marfim);font-family:var(--f-body);font-size:15px;transition:border-color .3s;color-scheme:dark}
+.field input:focus{outline:none;border-color:var(--mel)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:14px}
+.back-link{background:none;border:0;color:var(--taupe);font-family:var(--f-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:8px 0;transition:color .3s}
+.back-link:hover{color:var(--mel-claro)}
+.resumo{border:1px solid rgba(200,176,164,.4);border-radius:14px;padding:20px;background:rgba(200,176,164,.07);font-size:14.5px;display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
+.resumo b{font-weight:500;color:var(--mel-claro)}
+@media(max-width:920px){#agendar .grid{grid-template-columns:1fr}}
 
 /* ---------- contato ---------- */
 #contato{background:var(--marfim);color:var(--cafe)}
@@ -594,11 +619,80 @@ footer .base a:hover{color:var(--mel-claro)}
     <div class="reveal">
       <div class="eyebrow">Agendamento</div>
       <h2>Reserve seu horário em <em class="it">um minuto</em>.</h2>
-      <p class="lead">Escolha o serviço, a profissional e o horário — a agenda abaixo mostra a disponibilidade real do salão, direto pela Trinks.</p>
-      <div class="alt">Prefere falar com a gente primeiro? <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20antes%20de%20agendar." target="_blank" rel="noopener">Chame no WhatsApp</a> ou ligue para <a href="tel:+5521967015034">(21) 96701-5034</a>.</div>
+      <p class="lead">Escolha o serviço, a profissional e o melhor dia. A confirmação chega direto no seu WhatsApp, sem ligação e sem espera.</p>
+      <div class="alt">Prefere falar com a gente primeiro? <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20antes%20de%20agendar." target="_blank" rel="noopener">Chame no WhatsApp</a> ou ligue para <a href="tel:+5521967015034">(21) 96701-5034</a>. Se já é cliente e prefere o app, também dá para <a href="https://www.trinks.com/monique-coutinho-beauty" target="_blank" rel="noopener">agendar pelo Trinks</a>.</div>
     </div>
-    <div class="booking-embed reveal d1" id="booking">
-      <iframe src="https://www.trinks.com/monique-coutinho-beauty" title="Agende seu horário — Monique Coutinho Beauty (Trinks)" loading="lazy"></iframe>
+    <div class="booking reveal d1" id="booking">
+      <div class="steps-bar"><i class="on"></i><i></i><i></i><i></i></div>
+
+      <div class="step active" data-step="1">
+        <h3>O que vamos fazer?</h3>
+        <p class="hint">Você pode escolher mais de um serviço. Em dúvida, marque Avaliação.</p>
+        <div class="cat-label">Cabelo</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Mega hair</button>
+          <button class="chip" type="button">Mechas premium</button>
+          <button class="chip" type="button">Exoplastia ou progressiva orgânica</button>
+          <button class="chip" type="button">Tratamento capilar</button>
+        </div>
+        <div class="cat-label">Unhas</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Unhas em gel e fibra</button>
+          <button class="chip" type="button">Esmaltação</button>
+        </div>
+        <div class="cat-label">Olhar e make</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Extensão de cílios</button>
+          <button class="chip" type="button">Make</button>
+        </div>
+        <div class="cat-label">Ainda decidindo</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Avaliação</button>
+        </div>
+        <div class="sel-count" id="sel-count"></div>
+        <div class="step-nav"><span></span><button class="btn small" type="button" data-next>Continuar</button></div>
+      </div>
+
+      <div class="step" data-step="2">
+        <h3>Com quem você quer ser atendida?</h3>
+        <p class="hint">Todas as profissionais são especializadas na área.</p>
+        <div class="chips" data-group="profissional">
+          <button class="chip" type="button">Monique Coutinho</button>
+          <button class="chip" type="button">Ellen Cris</button>
+          <button class="chip" type="button">Karine</button>
+          <button class="chip" type="button">Schay</button>
+          <button class="chip" type="button">Sem preferência</button>
+        </div>
+        <div class="step-nav"><button class="back-link" type="button" data-back>Voltar</button><button class="btn small" type="button" data-next>Continuar</button></div>
+      </div>
+
+      <div class="step" data-step="3">
+        <h3>Qual o melhor dia e horário?</h3>
+        <p class="hint">Atendemos de terça a sábado. Vamos confirmar a disponibilidade com você pelo WhatsApp.</p>
+        <div class="field">
+          <label for="data">Data</label>
+          <input type="date" id="data">
+        </div>
+        <div class="field">
+          <label>Horário</label>
+          <div class="slots" id="slots"><p class="slot-hint">Escolha uma data para ver os horários do dia.</p></div>
+        </div>
+        <div class="step-nav"><button class="back-link" type="button" data-back>Voltar</button><button class="btn small" type="button" data-next>Continuar</button></div>
+      </div>
+
+      <div class="step" data-step="4">
+        <h3>Quase lá.</h3>
+        <p class="hint">Confira seu resumo e envie pelo WhatsApp para confirmar.</p>
+        <div class="field" style="margin-top:0;margin-bottom:18px">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" placeholder="Como podemos te chamar" autocomplete="name">
+        </div>
+        <div class="resumo" id="resumo"></div>
+        <div class="step-nav">
+          <button class="back-link" type="button" data-back>Voltar</button>
+          <button class="btn" type="button" id="enviar-wa">Confirmar pelo WhatsApp</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -798,14 +892,164 @@ function show(i){
 function restart(){clearInterval(timer);timer=setInterval(function(){show((current+1)%quotes.length)},6000)}
 restart();
 
-// ---------- agendamento: serviços e equipe levam até a agenda real ----------
+// ---------- agendamento ----------
+var booking=document.getElementById('booking');
+var steps=booking.querySelectorAll('.step');
+var bars=booking.querySelectorAll('.steps-bar i');
+var state={servicos:[],profissional:'',data:'',horario:'',nome:''};
+var stepIndex=0;
+
+// Horário de funcionamento real do salão (0=domingo ... 6=sábado)
+var HORARIOS={0:null,1:null,2:[10,18],3:[10,18],4:[10,19],5:[10,19],6:[9,16]};
+var DIAS=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+
+function atualizarContagem(){
+  var el=document.getElementById('sel-count');
+  el.textContent=state.servicos.length?state.servicos.length+' serviço'+(state.servicos.length>1?'s':'')+' selecionado'+(state.servicos.length>1?'s':''):'';
+}
+
+booking.querySelectorAll('.chips').forEach(function(group){
+  group.addEventListener('click',function(e){
+    var chip=e.target.closest('.chip');
+    if(!chip)return;
+    var nome=chip.textContent.trim();
+    if(group.hasAttribute('data-multi')){
+      chip.classList.toggle('sel');
+      if(chip.classList.contains('sel')){
+        if(state.servicos.indexOf(nome)===-1)state.servicos.push(nome);
+      }else{
+        state.servicos=state.servicos.filter(function(s){return s!==nome});
+      }
+      atualizarContagem();
+    }else{
+      group.querySelectorAll('.chip').forEach(function(c){c.classList.remove('sel')});
+      chip.classList.add('sel');
+      state[group.dataset.group]=nome;
+    }
+  });
+});
+
+// grade de horários conforme o dia escolhido
+var dataInput=document.getElementById('data');
+var slotsBox=document.getElementById('slots');
+function gerarHorarios(){
+  state.horario='';
+  slotsBox.innerHTML='';
+  var iso=dataInput.value;
+  if(!iso){slotsBox.innerHTML='<p class="slot-hint">Escolha uma data para ver os horários do dia.</p>';return}
+  var d=new Date(iso+'T12:00:00');
+  var faixa=HORARIOS[d.getDay()];
+  if(!faixa){
+    slotsBox.innerHTML='<p class="slot-hint">Aos domingos e segundas o salão fica fechado. Escolha um dia de terça a sábado.</p>';
+    return;
+  }
+  var agora=new Date();
+  var hojeISO=agora.toISOString().split('T')[0];
+  var minutos;
+  for(minutos=faixa[0]*60;minutos<=faixa[1]*60-60;minutos+=30){
+    var hh=Math.floor(minutos/60),mm=minutos%60;
+    if(iso===hojeISO&&(hh<agora.getHours()+2))continue;
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='chip';
+    b.textContent=(hh<10?'0':'')+hh+':'+(mm===0?'00':mm);
+    b.addEventListener('click',function(){
+      slotsBox.querySelectorAll('.chip').forEach(function(c){c.classList.remove('sel')});
+      this.classList.add('sel');
+      state.horario=this.textContent;
+    });
+    slotsBox.appendChild(b);
+  }
+  if(!slotsBox.children.length){
+    slotsBox.innerHTML='<p class="slot-hint">Para hoje os horários já passaram. Escolha outro dia.</p>';
+  }
+}
+dataInput.addEventListener('change',gerarHorarios);
+
+function goStep(i){
+  steps[stepIndex].classList.remove('active');
+  stepIndex=i;
+  steps[stepIndex].classList.add('active');
+  bars.forEach(function(b,idx){b.classList.toggle('on',idx<=stepIndex)});
+  if(stepIndex===3)montarResumo();
+}
+booking.querySelectorAll('[data-next]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    if(stepIndex===0&&!state.servicos.length){pulse(steps[0]);return}
+    if(stepIndex===1&&!state.profissional){pulse(steps[1]);return}
+    if(stepIndex===2){
+      state.data=dataInput.value;
+      if(!state.data||!state.horario){pulse(steps[2]);return}
+    }
+    goStep(stepIndex+1);
+  });
+});
+booking.querySelectorAll('[data-back]').forEach(function(btn){
+  btn.addEventListener('click',function(){goStep(stepIndex-1)});
+});
+function pulse(el){
+  el.style.animation='none';
+  void el.offsetWidth;
+  el.style.animation='stepIn .35s ease';
+}
+function formatarData(iso){
+  if(!iso)return'';
+  var p=iso.split('-');
+  return p[2]+'/'+p[1]+'/'+p[0];
+}
+function montarResumo(){
+  var d=new Date(state.data+'T12:00:00');
+  document.getElementById('resumo').innerHTML=
+    '<span>Serviços: <b>'+state.servicos.join(', ')+'</b></span>'+
+    '<span>Profissional: <b>'+state.profissional+'</b></span>'+
+    '<span>Data: <b>'+formatarData(state.data)+'</b> ('+DIAS[d.getDay()]+') às <b>'+state.horario+'</b></span>';
+}
+document.getElementById('enviar-wa').addEventListener('click',function(){
+  state.nome=document.getElementById('nome').value.trim();
+  var d=new Date(state.data+'T12:00:00');
+  var msg='Olá! Quero agendar um horário pelo site.\n'+
+    'Nome: '+(state.nome||'(não informado)')+'\n'+
+    'Serviços: '+state.servicos.join(', ')+'\n'+
+    'Profissional: '+state.profissional+'\n'+
+    'Data: '+formatarData(state.data)+' ('+DIAS[d.getDay()]+')\n'+
+    'Horário: '+state.horario;
+  window.open('https://wa.me/5521967015034?text='+encodeURIComponent(msg),'_blank');
+});
+
+// datas: de hoje até 60 dias
+var hoje=new Date();
+dataInput.min=hoje.toISOString().split('T')[0];
+var limite=new Date();limite.setDate(limite.getDate()+60);
+dataInput.max=limite.toISOString().split('T')[0];
+
+// ---------- atalhos: serviços e equipe pré-selecionam o agendamento ----------
+function marcarServico(valor){
+  booking.querySelectorAll('.chips[data-group="servico"] .chip').forEach(function(c){
+    if(c.textContent.trim()===valor&&!c.classList.contains('sel')){
+      c.classList.add('sel');
+      if(state.servicos.indexOf(valor)===-1)state.servicos.push(valor);
+    }
+  });
+  atualizarContagem();
+}
+function marcarProfissional(valor){
+  booking.querySelectorAll('.chips[data-group="profissional"] .chip').forEach(function(c){
+    var match=c.textContent.trim()===valor;
+    c.classList.toggle('sel',match);
+    if(match)state.profissional=valor;
+  });
+}
 document.querySelectorAll('.serv').forEach(function(card){
   card.addEventListener('click',function(){
+    marcarServico(card.dataset.servico);
+    goStep(0);
     document.getElementById('agendar').scrollIntoView({behavior:'smooth'});
   });
 });
 document.querySelectorAll('.pro .agendar').forEach(function(btn){
   btn.addEventListener('click',function(){
+    marcarProfissional(btn.dataset.pro);
+    goStep(state.servicos.length?1:0);
     document.getElementById('agendar').scrollIntoView({behavior:'smooth'});
   });
 });
