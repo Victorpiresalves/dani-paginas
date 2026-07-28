@@ -239,10 +239,10 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 /* ---------- depoimentos ---------- */
 #depoimentos{background:var(--marfim);color:var(--cafe)}
 #depoimentos .eyebrow{color:#8F7263}
-#depoimentos .quote-box{max-width:820px;margin:clamp(30px,5vh,50px) auto 0;text-align:center;min-height:230px;position:relative}
-.quote{position:absolute;inset:0;opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s;display:flex;flex-direction:column;align-items:center;gap:22px;pointer-events:none}
+#depoimentos .quote-box{max-width:640px;margin:clamp(24px,4vh,40px) auto 0;text-align:center;min-height:180px;position:relative}
+.quote{position:absolute;inset:0;opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s;display:flex;flex-direction:column;align-items:center;gap:16px;pointer-events:none}
 .quote.active{opacity:1;transform:none;pointer-events:auto}
-.quote p{font-family:var(--f-display);font-size:clamp(20px,3vw,30px);line-height:1.4}
+.quote p{font-family:var(--f-body);font-weight:300;font-size:clamp(14.5px,1.6vw,17px);line-height:1.55}
 .quote cite{font-style:normal;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#8F7263}
 .stars{color:#8F7263;letter-spacing:6px;font-size:15px}
 .dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
@@ -575,21 +575,30 @@ footer .base a:hover{color:var(--mel-claro)}
       <h2 class="reveal" style="text-align:center">O que dizem depois do <em class="it">espelho</em>.</h2>
     </div>
     <div class="quote-box reveal">
-      <!-- EDITAR: substituir pelos depoimentos reais do Google ou do Instagram. -->
       <blockquote class="quote active">
         <span class="stars">★★★★★</span>
-        <p>Fiz meu mega hair com a Monique e ninguém acredita que não é meu cabelo. O acabamento é impecável e o atendimento, um carinho do início ao fim.</p>
-        <cite>Cliente do salão, Tijuca</cite>
+        <p>Depois de uma experiência ruim com mega hair, a Monique me passou muita seriedade, cuidado e confiança. Meu mega veio numa caixa linda, com bilhete escrito à mão — ela não quer só fazer o básico, quer entregar uma experiência de verdade.</p>
+        <cite>Michele Fonseca, avaliação no Google</cite>
       </blockquote>
       <blockquote class="quote">
         <span class="stars">★★★★★</span>
-        <p>Faço unhas e cílios com elas e não troco por nada. Explicam cada etapa, cuidam de cada detalhe e o resultado dura de verdade.</p>
-        <cite>Cliente do salão, Rio de Janeiro</cite>
+        <p>A Monique e sua equipe entregam muito mais que um excelente atendimento: cuidado, atenção e um olhar genuíno para o bem-estar de cada cliente. Dá para sentir quando alguém ama o que faz.</p>
+        <cite>Luciana Mara, avaliação no Google</cite>
       </blockquote>
       <blockquote class="quote">
         <span class="stars">★★★★★</span>
-        <p>Os tratamentos capilares salvaram meu cabelo depois de anos de química. Profissionais atualizadas e um espaço acolhedor.</p>
-        <cite>Cliente do salão, Tijuca</cite>
+        <p>Já fui diversas vezes e sempre fui muito bem atendida, do início ao fim. Os serviços são de primeira. Virou meu salão xodó.</p>
+        <cite>Bruna Silva, avaliação no Google</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <span class="stars">★★★★★</span>
+        <p>Maravilhosa! A Monique é espetacular, e o cabelo é da melhor qualidade. Eu ameiii!</p>
+        <cite>Isabela Tardelli, avaliação no Google</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <span class="stars">★★★★★</span>
+        <p>Como sempre, maravilhoso o atendimento. Todas as meninas são atenciosas e, principalmente, muito técnicas.</p>
+        <cite>Debora Valente, avaliação no Google</cite>
       </blockquote>
     </div>
     <div class="dots" id="dots"></div>
