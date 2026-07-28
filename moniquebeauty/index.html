@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monique Coutinho Beauty | Mega Hair na Tijuca - RJ</title>
+<meta name="description" content="Salão boutique na Tijuca - RJ especializado em mega hair, mechas e terapia capilar. Agende seu horário e transforme seu visual com resultados naturais.">
+<meta property="og:title" content="Monique Coutinho Beauty | Mega Hair na Tijuca - RJ">
+<meta property="og:description" content="Salão boutique especializado em mega hair, mechas e terapia capilar. Atendimento premium e resultados naturais.">
+<meta property="og:image" content="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#685049">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- EDITAR: a fonte oficial da marca é a Audrey, que não existe no Google Fonts.
+     Se você tiver o arquivo Audrey-Regular (.woff2/.otf), suba na pasta fonts/ e descomente o bloco abaixo.
+     Enquanto isso, a Julius Sans One faz o papel dela com o mesmo espírito (caixa alta, traço fino e elegante).
+<style>
+@font-face{font-family:"Audrey";src:url("fonts/Audrey-Regular.woff2") format("woff2"),url("fonts/Audrey-Regular.otf") format("opentype");font-weight:400;font-display:swap}
+</style>
+-->
+<style>
+:root{
+  /* Paleta oficial do manual da marca */
+  --cafe:#685049;        /* marrom principal */
+  --cafe-2:#57423C;      /* marrom de apoio, mais profundo */
+  --marfim:#EDE2DD;      /* off-white da marca */
+  --taupe:#C8B0A4;       /* nude rosado */
+  --mel:#A38678;         /* rose gold escuro */
+  --mel-claro:#C8B0A4;
+  --grad:linear-gradient(115deg,#D3BCB0,#C8B0A4 35%,#A38678 80%);
+  --linha:rgba(237,226,221,.16);
+  --f-display:"Audrey","Julius Sans One",serif;
+  --f-body:"Poppins",sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cafe);
+  color:var(--marfim);
+  font-family:var(--f-body);
+  font-weight:300;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.18;text-transform:uppercase;letter-spacing:.06em}
+.it{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mono-svg{display:block;color:var(--marfim)}
+.mono-svg .swash{stroke:#C8B0A4}
+.mono-svg .letra{fill:#C8B0A4;font-family:var(--f-display)}
+.eyebrow{
+  font-family:var(--f-body);font-size:11px;font-weight:500;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--taupe);
+  display:flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--mel)}
+.section{padding:clamp(80px,12vh,140px) var(--pad);position:relative}
+.wrap{max-width:1240px;margin:0 auto}
+
+/* ---------- loader ---------- */
+#loader{position:fixed;inset:0;background:var(--cafe);z-index:200;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .7s ease,visibility .7s}
+#loader.done{opacity:0;visibility:hidden}
+#loader .mono{font-family:var(--f-display);font-size:clamp(22px,3.6vw,34px);letter-spacing:.28em;text-transform:uppercase;text-align:center}
+#loader .mono small{display:block;font-size:.42em;letter-spacing:.6em;margin-top:10px;color:var(--taupe)}
+#loader .bar{width:120px;height:1px;background:var(--linha);overflow:hidden}
+#loader .bar i{display:block;height:100%;width:40%;background:var(--mel);animation:load 1.1s ease infinite}
+@keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad);transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:12px var(--pad);border-color:var(--linha)}
+.logo{font-family:var(--f-display);font-size:14px;letter-spacing:.16em;white-space:nowrap;text-transform:uppercase;display:flex;align-items:center;gap:10px;line-height:1.3}
+.logo .mono-svg{width:36px;height:36px;flex-shrink:0}
+.logo small{display:block;font-size:.68em;letter-spacing:.5em;color:var(--taupe)}
+.nav-links{display:flex;gap:30px;align-items:center;font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.nav-links a{opacity:.75;transition:opacity .3s,color .3s;position:relative;padding:4px 0}
+.nav-links a:hover{opacity:1;color:var(--mel-claro)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--f-body);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  padding:15px 30px;border-radius:999px;border:1px solid var(--mel);
+  color:#4A3733;background:var(--grad);cursor:pointer;
+  transition:background .3s,color .3s,transform .3s,box-shadow .3s;
+}
+.btn:hover{background:linear-gradient(115deg,#E2CFC4,#D3BCB0 40%,#B29483);border-color:transparent;transform:translateY(-2px);box-shadow:0 12px 30px rgba(163,134,120,.3)}
+.btn.ghost{background:transparent;color:var(--marfim);border-color:rgba(237,226,221,.35)}
+.btn.ghost:hover{border-color:var(--mel-claro);color:var(--mel-claro);background:transparent;box-shadow:none}
+.btn.small{padding:11px 22px;font-size:11px}
+#menu-toggle{display:none;background:none;border:0;cursor:pointer;z-index:110}
+#menu-toggle span{display:block;width:26px;height:1.5px;background:var(--marfim);margin:6px 0;transition:.35s}
+@media(max-width:920px){
+  #menu-toggle{display:block}
+  .nav-links{
+    position:fixed;inset:0;background:rgba(62,47,42,.97);backdrop-filter:blur(20px);
+    flex-direction:column;justify-content:center;gap:34px;font-size:16px;
+    opacity:0;visibility:hidden;transition:.4s;
+  }
+  .nav-links.open{opacity:1;visibility:visible}
+  body.menu-open #menu-toggle span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.menu-open #menu-toggle span:nth-child(2){opacity:0}
+  body.menu-open #menu-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+}
+
+/* ---------- hero ---------- */
+#hero{height:100svh;min-height:620px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+#hero .media{position:absolute;inset:0}
+#hero video,#hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+#hero .poster{background:url("https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg") center/cover no-repeat}
+#hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(62,47,42,.35) 0%,rgba(62,47,42,.15) 40%,rgba(62,47,42,.92) 100%)}
+#hero .content{position:relative;z-index:2;padding:0 var(--pad) clamp(60px,10vh,110px);max-width:1240px;margin:0 auto;width:100%}
+#hero h1{font-size:clamp(32px,6.4vw,80px);max-width:16ch}
+#hero p{margin-top:22px;max-width:44ch;font-size:clamp(15px,1.6vw,18px);color:rgba(237,226,221,.85)}
+#hero .cta-row{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+.hero-line{display:block;overflow:hidden}
+.hero-line span{display:block;transform:translateY(110%);animation:rise 1s cubic-bezier(.19,1,.22,1) forwards}
+.hero-line:nth-child(2) span{animation-delay:.12s}
+@keyframes rise{to{transform:translateY(0)}}
+.fade-up{opacity:0;transform:translateY(24px);animation:fadeUp .9s ease .5s forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+#hero .scroll-hint{position:absolute;right:var(--pad);bottom:34px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--taupe);writing-mode:vertical-rl}
+#hero .scroll-hint::after{content:"";width:1px;height:52px;background:linear-gradient(var(--mel),transparent);animation:drip 1.8s ease infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:920px){#hero .scroll-hint{display:none}}
+
+/* ---------- marquee ---------- */
+.marquee{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--cafe-2);overflow:hidden;padding:20px 0;position:relative}
+.marquee .track{display:flex;gap:0;width:max-content;animation:scrollx 30s linear infinite}
+.marquee span{font-family:var(--f-display);font-size:clamp(16px,2vw,21px);white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px;color:rgba(237,226,221,.85)}
+.marquee span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--mel);flex-shrink:0}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s cubic-bezier(.19,1,.22,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+
+/* ---------- sobre ---------- */
+#sobre .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+#sobre h2{font-size:clamp(32px,4.6vw,56px);margin:18px 0 22px}
+#sobre p{color:rgba(237,226,221,.8);max-width:52ch}
+#sobre p+p{margin-top:16px}
+.foto-frame{position:relative;border-radius:280px 280px 18px 18px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.foto-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.2s ease}
+.foto-frame:hover img{transform:scale(1)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;border-top:1px solid var(--linha);padding-top:32px}
+.stats b{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.6vw,46px);color:var(--mel-claro);display:block}
+.stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+@media(max-width:920px){#sobre .grid{grid-template-columns:1fr}.foto-frame{max-width:420px;margin:0 auto}}
+
+/* ---------- mega hair ---------- */
+#megahair{background:var(--cafe-2);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+#megahair .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vh,70px)}
+#megahair h2{font-size:clamp(38px,6vw,76px);margin-top:18px}
+#megahair .head p{max-width:42ch;color:rgba(237,226,221,.75)}
+#megahair .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4vw,64px);align-items:start}
+.compare{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;user-select:none;touch-action:none;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:ew-resize}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.compare .after-wrap{position:absolute;inset:0;overflow:hidden}
+.compare .handle{position:absolute;top:0;bottom:0;width:2px;background:var(--mel-claro);z-index:3;pointer-events:none}
+.compare .handle::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--mel);color:var(--cafe);display:flex;align-items:center;justify-content:center;font-size:18px;font-family:var(--f-body)}
+.compare .tag{position:absolute;top:16px;z-index:2;font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:rgba(62,47,42,.65);backdrop-filter:blur(8px)}
+.compare .tag.antes{left:16px}
+.compare .tag.depois{right:16px}
+.compare figcaption{position:absolute;bottom:0;left:0;right:0;padding:18px;font-size:12px;color:rgba(237,226,221,.75);background:linear-gradient(transparent,rgba(62,47,42,.85));z-index:2}
+.tecnicas{display:flex;flex-direction:column;gap:14px}
+.tecnica{border:1px solid var(--linha);border-radius:16px;background:rgba(237,226,221,.02);overflow:hidden;transition:border-color .3s,background .3s}
+.tecnica summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-family:var(--f-display);font-size:clamp(18px,2vw,23px)}
+.tecnica summary::-webkit-details-marker{display:none}
+.tecnica summary i{font-style:normal;font-family:var(--f-body);font-size:20px;color:var(--mel);transition:transform .35s;flex-shrink:0}
+.tecnica[open]{border-color:rgba(200,176,164,.55);background:rgba(200,176,164,.07)}
+.tecnica[open] summary i{transform:rotate(45deg)}
+.tecnica .body{padding:0 24px 22px;color:rgba(237,226,221,.75);font-size:15px;max-width:56ch}
+.tecnica .body a{color:var(--mel-claro);border-bottom:1px solid rgba(200,176,164,.45)}
+.mh-video{margin-top:clamp(50px,8vh,90px);position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/7;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.mh-video video,.mh-video .placeholder{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mh-video .placeholder{background:url("https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-08-11%20at%2014.08.29%20(1).jpeg") center/cover}
+.curso{margin-top:clamp(40px,6vh,70px);border:1px solid var(--linha);border-radius:20px;padding:clamp(26px,4vw,40px);display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;background:rgba(237,226,221,.04)}
+.curso h3{font-size:clamp(20px,2.6vw,28px);margin:14px 0 10px}
+.curso p{color:rgba(237,226,221,.78);max-width:52ch;font-size:15px}
+.mh-video .label{position:absolute;left:24px;bottom:20px;z-index:2;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--marfim);background:rgba(62,47,42,.55);backdrop-filter:blur(8px);padding:10px 16px;border-radius:999px}
+@media(max-width:920px){#megahair .grid{grid-template-columns:1fr}.mh-video{aspect-ratio:16/10}}
+
+/* ---------- serviços ---------- */
+#servicos{background:var(--marfim);color:var(--cafe)}
+#servicos .eyebrow{color:#8F7263}
+#servicos h2{font-size:clamp(34px,5vw,60px);margin:18px 0 14px}
+#servicos .intro{color:#7A6158;max-width:52ch}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px;margin-top:clamp(36px,6vh,60px)}
+.serv{border:1px solid rgba(62,47,42,.14);border-radius:18px;padding:30px 26px;background:#fff;transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column;gap:12px;cursor:pointer}
+.serv:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(62,47,42,.12);border-color:var(--mel)}
+.serv .ico{width:44px;height:44px;border-radius:50%;background:rgba(163,134,120,.18);display:flex;align-items:center;justify-content:center;color:#8F7263}
+.serv h3{font-size:22px}
+.serv p{font-size:14.5px;color:#7A6158;flex:1}
+.serv .link{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#8F7263;display:flex;align-items:center;gap:8px}
+.serv .link::after{content:"→";transition:transform .3s}
+.serv:hover .link::after{transform:translateX(5px)}
+
+/* ---------- equipe ---------- */
+#equipe h2{font-size:clamp(34px,5vw,60px);margin:18px 0 14px}
+#equipe .intro{color:rgba(237,226,221,.75);max-width:54ch}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:clamp(36px,6vh,60px)}
+.pro{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--cafe-2);border:1px solid var(--linha)}
+.pro img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .8s}
+.pro:hover img{transform:scale(1.05)}
+.pro .info{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(transparent,rgba(62,47,42,.94));display:flex;flex-direction:column;gap:4px}
+.pro h3{font-size:24px}
+.pro .esp{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mel-claro)}
+.pro .bio{font-size:13.5px;color:rgba(237,226,221,.75);max-height:0;overflow:hidden;transition:max-height .5s ease,margin .5s}
+.pro:hover .bio{max-height:120px;margin-top:8px}
+.pro .agendar{margin-top:12px;align-self:flex-start}
+
+/* ---------- galeria ---------- */
+#galeria{background:var(--cafe-2);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding-left:0;padding-right:0}
+#galeria .head{padding:0 var(--pad);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;max-width:1240px;margin:0 auto clamp(30px,5vh,50px)}
+#galeria h2{font-size:clamp(34px,5vw,60px);margin-top:18px}
+.gal-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--pad) 26px;scrollbar-width:thin;scrollbar-color:var(--mel) transparent}
+.gal-item{flex:0 0 clamp(240px,32vw,380px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;scroll-snap-align:start;position:relative;background:linear-gradient(160deg,#6F564E,#57423C);border:1px solid var(--linha)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-item .cap{position:absolute;left:14px;bottom:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:rgba(62,47,42,.6);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px}
+
+/* ---------- depoimentos ---------- */
+#depoimentos .quote-box{max-width:820px;margin:clamp(30px,5vh,50px) auto 0;text-align:center;min-height:230px;position:relative}
+.quote{position:absolute;inset:0;opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s;display:flex;flex-direction:column;align-items:center;gap:22px;pointer-events:none}
+.quote.active{opacity:1;transform:none;pointer-events:auto}
+.quote p{font-family:var(--f-display);font-size:clamp(20px,3vw,30px);line-height:1.4}
+.quote cite{font-style:normal;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
+.stars{color:var(--mel);letter-spacing:6px;font-size:15px}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(237,226,221,.25);cursor:pointer;transition:.3s;padding:0}
+.dots button.active{background:var(--mel);transform:scale(1.35)}
+#depoimentos h2{font-size:clamp(34px,5vw,60px);margin-top:18px;text-align:left}
+#depoimentos .center{text-align:center;display:flex;flex-direction:column;align-items:center}
+#depoimentos .center .eyebrow::before{display:none}
+
+/* ---------- agendamento ---------- */
+#agendar{background:linear-gradient(180deg,var(--cafe),var(--cafe-2));position:relative}
+#agendar::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.6 12.5 A42 42 0 0 1 82.2 79' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Cpath d='M23 84.2 A42 42 0 0 1 13.6 31' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Cpath d='M4 20 C34 28 66 72 98 84' fill='none' stroke='%23EDE2DD' stroke-width='2'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23EDE2DD'%3EM%3C/text%3E%3C/svg%3E") repeat;background-size:150px;opacity:.045;pointer-events:none}
+#agendar .grid{position:relative;z-index:1}
+#agendar .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,90px);align-items:start}
+#agendar h2{font-size:clamp(36px,5.4vw,64px);margin:18px 0 20px}
+#agendar .lead{color:rgba(237,226,221,.78);max-width:44ch}
+#agendar .alt{margin-top:30px;padding-top:26px;border-top:1px solid var(--linha);font-size:14.5px;color:rgba(237,226,221,.7)}
+#agendar .alt a{color:var(--mel-claro);border-bottom:1px solid rgba(200,176,164,.45)}
+.booking{border:1px solid var(--linha);border-radius:22px;background:rgba(237,226,221,.03);backdrop-filter:blur(6px);padding:clamp(24px,3.4vw,40px)}
+.steps-bar{display:flex;gap:8px;margin-bottom:28px}
+.steps-bar i{flex:1;height:2px;background:rgba(237,226,221,.14);border-radius:2px;transition:background .4s}
+.steps-bar i.on{background:var(--mel)}
+.step{display:none;animation:stepIn .45s ease}
+.step.active{display:block}
+@keyframes stepIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.step h3{font-size:clamp(20px,2.4vw,26px);margin-bottom:6px}
+.step .hint{font-size:13.5px;color:var(--taupe);margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.cat-label{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe);margin:18px 0 10px}
+.cat-label:first-of-type{margin-top:0}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:10px;max-height:220px;overflow-y:auto;padding-right:4px;scrollbar-width:thin;scrollbar-color:var(--mel) transparent}
+.slots .chip{padding:11px 4px;text-align:center;justify-content:center;font-variant-numeric:tabular-nums}
+.slot-hint{grid-column:1/-1;font-size:13.5px;color:var(--taupe)}
+.sel-count{font-size:12px;color:var(--taupe);margin-top:14px;min-height:18px}
+.chip{border:1px solid rgba(237,226,221,.22);border-radius:999px;padding:12px 20px;font-size:14px;cursor:pointer;background:transparent;color:var(--marfim);font-family:var(--f-body);font-weight:300;transition:.3s}
+.chip:hover{border-color:var(--mel)}
+.chip.sel{background:var(--mel);border-color:var(--mel);color:var(--cafe);font-weight:500}
+.field{margin-top:18px}
+.field label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);margin-bottom:8px}
+.field input{width:100%;background:rgba(237,226,221,.05);border:1px solid rgba(237,226,221,.18);border-radius:12px;padding:15px 16px;color:var(--marfim);font-family:var(--f-body);font-size:15px;transition:border-color .3s;color-scheme:dark}
+.field input:focus{outline:none;border-color:var(--mel)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:14px}
+.back-link{background:none;border:0;color:var(--taupe);font-family:var(--f-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:8px 0;transition:color .3s}
+.back-link:hover{color:var(--mel-claro)}
+.resumo{border:1px solid rgba(200,176,164,.4);border-radius:14px;padding:20px;background:rgba(200,176,164,.07);font-size:14.5px;display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
+.resumo b{font-weight:500;color:var(--mel-claro)}
+@media(max-width:920px){#agendar .grid{grid-template-columns:1fr}}
+
+/* ---------- contato ---------- */
+#contato .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px)}
+#contato h2{font-size:clamp(34px,5vw,58px);margin:18px 0 20px}
+#contato .bloco+.bloco{margin-top:26px;padding-top:26px;border-top:1px solid var(--linha)}
+#contato .bloco h3{font-size:13px;font-family:var(--f-body);font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-bottom:10px}
+#contato .bloco p,#contato .bloco a{font-size:17px;color:var(--marfim)}
+#contato .bloco a:hover{color:var(--mel-claro)}
+.mapa{border-radius:20px;overflow:hidden;border:1px solid var(--linha);min-height:420px;filter:grayscale(1) invert(.92) hue-rotate(180deg) contrast(.9)}
+.mapa iframe{width:100%;height:100%;min-height:420px;border:0}
+@media(max-width:920px){#contato .grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--linha);padding:50px var(--pad) 36px;background:var(--cafe-2)}
+footer .top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;max-width:1240px;margin:0 auto 34px}
+footer .social{display:flex;gap:14px}
+footer .social a{width:44px;height:44px;border:1px solid var(--linha);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+footer .social a:hover{border-color:var(--mel);color:var(--mel-claro);transform:translateY(-3px)}
+footer .base{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--taupe);border-top:1px solid var(--linha);padding-top:26px}
+footer .base a:hover{color:var(--mel-claro)}
+
+/* ---------- whatsapp flutuante ---------- */
+#wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 34px rgba(37,211,102,.4);transition:transform .3s;animation:pulse 2.6s ease infinite}
+#wa-float:hover{transform:scale(1.08)}
+#wa-float svg{width:30px;height:30px;fill:#fff}
+@keyframes pulse{0%,100%{box-shadow:0 12px 34px rgba(37,211,102,.4)}50%{box-shadow:0 12px 34px rgba(37,211,102,.4),0 0 0 14px rgba(37,211,102,0)}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .hero-line span{transform:none}
+  .fade-up{opacity:1;transform:none}
+}
+:focus-visible{outline:2px solid var(--mel);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <svg class="mono-svg" width="86" height="86" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M35.6 12.5 A42 42 0 0 1 82.2 79" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M23 84.2 A42 42 0 0 1 13.6 31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <path class="swash" d="M4 20 C34 28 66 72 98 84" fill="none" stroke-width="2.2" stroke-linecap="round"/>
+    <text class="letra" x="50" y="66" text-anchor="middle" font-size="44">M</text>
+  </svg>
+  <div class="mono">Monique Coutinho<small>Beauty</small></div>
+  <div class="bar"><i></i></div>
+</div>
+
+<nav id="nav">
+  <!-- EDITAR: quando tiver o logo oficial exportado em SVG ou PNG (fundo transparente), troque o SVG abaixo por <img src="img/logo.svg" alt="Monique Coutinho Beauty"> -->
+  <a class="logo" href="#hero"><svg class="mono-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M35.6 12.5 A42 42 0 0 1 82.2 79" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 84.2 A42 42 0 0 1 13.6 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path class="swash" d="M4 20 C34 28 66 72 98 84" fill="none" stroke-width="3" stroke-linecap="round"/><text class="letra" x="50" y="66" text-anchor="middle" font-size="44">M</text></svg><span>Monique Coutinho<small>Beauty</small></span></a>
+  <button id="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="nav-links">
+    <a href="#sobre">O salão</a>
+    <a href="#megahair">Mega hair</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#depoimentos">Clientes</a>
+    <a href="#contato">Contato</a>
+    <a class="btn small" href="#agendar">Agendar horário</a>
+  </div>
+</nav>
+
+<header id="hero">
+  <div class="media">
+    <div class="poster"></div>
+    <!-- EDITAR: substitua o src pelo vídeo do salão (MP4, horizontal, sem áudio necessário).
+         Enquanto não houver vídeo, a foto de fundo acima cobre o espaço. -->
+    <video autoplay muted loop playsinline poster="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg">
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <div class="veil"></div>
+  </div>
+  <div class="content">
+    <h1>
+      <span class="hero-line"><span>Transformamos beleza</span></span>
+      <span class="hero-line"><span>em <em class="it">autoestima</em>.</span></span>
+    </h1>
+    <p class="fade-up">Salão boutique na Tijuca especializado em mega hair, mechas premium e tratamentos capilares, com unhas, cílios e make para completar o cuidado. Aqui você é única, e o nosso trabalho é realçar a sua beleza natural.</p>
+    <div class="cta-row fade-up">
+      <a class="btn" href="#agendar">Agendar meu horário</a>
+      <a class="btn ghost" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+  <div class="scroll-hint">role</div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Mega hair UltraFit Hair</span><span>Mechas premium</span><span>Exoplastia e progressiva orgânica</span><span>Tratamentos capilares</span><span>Unhas em gel e fibra</span><span>Cílios e make</span>
+    <span>Mega hair UltraFit Hair</span><span>Mechas premium</span><span>Exoplastia e progressiva orgânica</span><span>Tratamentos capilares</span><span>Unhas em gel e fibra</span><span>Cílios e make</span>
+  </div>
+</div>
+
+<section id="sobre" class="section">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">O salão</div>
+      <h2>Um espaço boutique, feito para <em class="it">você</em> se reencontrar no espelho.</h2>
+      <p>O Monique Coutinho Beauty é a expressão do cuidado e do bem-estar. Mais do que um salão, é um espaço na Tijuca onde elegância encontra propósito e cada detalhe é pensado para proporcionar uma experiência transformadora.</p>
+      <p>Cada atendimento começa com uma avaliação individual. A gente escuta, analisa o fio e o couro cabeludo, e só então indica o caminho, seja um mega hair com a técnica UltraFit Hair, mechas premium, uma exoplastia ou aquele capricho nas unhas, nos cílios e na make.</p>
+      <div class="stats">
+        <div><b data-count="10">0</b><small>anos de experiência</small></div>
+        <div><b data-count="1500">0</b><small>transformações</small></div>
+        <div><b data-count="5" data-decimal="1">0</b><small>avaliação das clientes</small></div>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="foto-frame">
+        <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-11-11%20at%2014.44.14.jpeg" alt="Interior do salão Monique Coutinho Beauty" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="megahair" class="section">
+  <div class="wrap">
+    <div class="head">
+      <div class="reveal">
+        <div class="eyebrow">Nossa especialidade</div>
+        <h2>Mega <em class="it">hair</em></h2>
+      </div>
+      <p class="reveal d1">Comprimento, volume e movimento com acabamento invisível. Arraste o comparador e veja a diferença entre chegar e sair do salão.</p>
+    </div>
+    <div class="grid">
+      <figure class="compare reveal" id="compare">
+        <!-- EDITAR: troque as duas imagens abaixo por um antes e depois real de mega hair (mesmo enquadramento). -->
+        <img class="antes-img" src="https://img1.wsimg.com/isteam/getty/1328333210" alt="Cabelo antes do mega hair">
+        <div class="after-wrap" id="after-wrap">
+          <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg" alt="Cabelo depois do mega hair">
+        </div>
+        <div class="handle" id="handle"></div>
+        <span class="tag antes">Antes</span>
+        <span class="tag depois">Depois</span>
+        <figcaption>Aumento de comprimento e volume com fios alinhados e acabamento profissional.</figcaption>
+      </figure>
+      <div class="tecnicas reveal d1">
+        <details class="tecnica" open>
+          <summary>UltraFit Hair <i>+</i></summary>
+          <div class="body">A técnica premium da casa. Aplicação leve e confortável, fixação segura e acabamento invisível, pensada para preservar a saúde do fio natural. É a mesma técnica que ensinamos no nosso curso para profissionais.</div>
+        </details>
+        <details class="tecnica">
+          <summary>Ponto americano <i>+</i></summary>
+          <div class="body">Aplicação fio a fio costurada em uma trança finíssima, sem cola e sem química. Indicada para quem busca durabilidade, conforto e manutenção previsível. O acabamento fica imperceptível, até com o cabelo preso.</div>
+        </details>
+        <details class="tecnica">
+          <summary>Fita adesiva <i>+</i></summary>
+          <div class="body">Faixas ultrafinas que se moldam à raiz e distribuem o peso de forma uniforme. Aplicação rápida, sensação leve e ideal para quem quer volume com discrição, inclusive em cabelos finos.</div>
+        </details>
+        <details class="tecnica">
+          <summary>Avaliação e manutenção <i>+</i></summary>
+          <div class="body">Todo mega hair começa com uma avaliação do fio, da cor e da rotina da cliente. E continua com manutenções periódicas para preservar a saúde do cabelo natural e o caimento do alongamento. <a href="#agendar">Agende sua avaliação</a>.</div>
+        </details>
+        <a class="btn" href="#agendar" style="align-self:flex-start;margin-top:10px">Quero meu mega hair</a>
+      </div>
+    </div>
+    <div class="mh-video reveal">
+      <div class="placeholder"></div>
+      <!-- EDITAR: vídeo de aplicação de mega hair (MP4 horizontal). -->
+      <video autoplay muted loop playsinline>
+        <source src="videos/megahair.mp4" type="video/mp4">
+      </video>
+      <span class="label">Aplicação em tempo real</span>
+    </div>
+    <div class="curso reveal">
+      <div>
+        <div class="eyebrow">Para profissionais</div>
+        <h3>Curso de Mega Hair Premium</h3>
+        <p>Formação prática e teórica na técnica UltraFit Hair, com certificado Monique Coutinho Beauty. Aprenda com quem aplica todos os dias.</p>
+      </div>
+      <a class="btn" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20Curso%20de%20Mega%20Hair%20Premium." target="_blank" rel="noopener">Quero me formar</a>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="section">
+  <div class="wrap">
+    <div class="eyebrow reveal">Serviços</div>
+    <h2 class="reveal">Cuidado <em class="it">completo</em>, em um só lugar.</h2>
+    <p class="intro reveal d1">Toque em um serviço para já iniciar seu agendamento com ele selecionado.</p>
+    <div class="serv-grid">
+      <div class="serv reveal" data-servico="Mega hair">
+        <div class="ico">✦</div>
+        <h3>Mega hair</h3>
+        <p>Alongamento com a técnica UltraFit Hair, ponto americano e fita adesiva. Fios selecionados e acabamento invisível.</p>
+        <span class="link">Agendar</span>
+      </div>
+      <div class="serv reveal d1" data-servico="Mechas premium">
+        <div class="ico">✦</div>
+        <h3>Mechas premium</h3>
+        <p>Loiros saudáveis e morenas iluminadas com técnica, proteção da fibra e colorimetria personalizada.</p>
+        <span class="link">Agendar</span>
+      </div>
+      <div class="serv reveal d2" data-servico="Exoplastia ou progressiva orgânica">
+        <div class="ico">✦</div>
+        <h3>Exoplastia e progressiva orgânica</h3>
+        <p>Alinhamento dos fios com fórmulas modernas, para um liso natural com brilho e sem agredir o cabelo.</p>
+        <span class="link">Agendar</span>
+      </div>
+      <div class="serv reveal d3" data-servico="Tratamento capilar">
+        <div class="ico">✦</div>
+        <h3>Tratamentos capilares</h3>
+        <p>Protocolos para couro cabeludo e fios: reconstrução, hidratação profunda e cronograma sob medida.</p>
+        <span class="link">Agendar</span>
+      </div>
+      <div class="serv reveal d1" data-servico="Unhas em gel e fibra">
+        <div class="ico">✦</div>
+        <h3>Unhas em gel e fibra</h3>
+        <p>Unhas em gel, fibra e esmaltação com acabamento impecável, naturalidade e durabilidade.</p>
+        <span class="link">Agendar</span>
+      </div>
+      <div class="serv reveal d2" data-servico="Extensão de cílios">
+        <div class="ico">✦</div>
+        <h3>Extensão de cílios</h3>
+        <p>Olhar marcante com efeito natural, aplicado fio a fio para valorizar o seu formato de olhos.</p>
+        <span class="link">Agendar</span>
+      </div>
+      <div class="serv reveal d3" data-servico="Make">
+        <div class="ico">✦</div>
+        <h3>Make</h3>
+        <p>Maquiagem para eventos, ensaios e ocasiões especiais, do natural iluminado ao glam completo.</p>
+        <span class="link">Agendar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe" class="section">
+  <div class="wrap">
+    <div class="eyebrow reveal">Equipe</div>
+    <h2 class="reveal">Quem cuida de você por <em class="it">aqui</em>.</h2>
+    <p class="intro reveal d1">Cada profissional tem uma especialidade. Escolha com quem quer ser atendida e agende direto pelo site.</p>
+    <div class="team-grid">
+      <!-- EDITAR: trocar fotos, nomes, especialidades e bios reais da equipe. -->
+      <div class="pro reveal">
+        <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-11-11%20at%2014.44.14.jpeg" alt="Monique Coutinho" loading="lazy">
+        <div class="info">
+          <span class="esp">Mega hair UltraFit Hair</span>
+          <h3>Monique Coutinho</h3>
+          <p class="bio">Fundadora do salão, especialista em mega hair com a técnica UltraFit Hair e formadora de novas profissionais.</p>
+          <button class="btn small agendar" data-pro="Monique Coutinho">Agendar com Monique</button>
+        </div>
+      </div>
+      <div class="pro reveal d1">
+        <img src="https://img1.wsimg.com/isteam/getty/1328333210" alt="Profissional da equipe" loading="lazy">
+        <div class="info">
+          <span class="esp">Unhas em gel e fibra</span>
+          <h3>Nome da profissional</h3>
+          <p class="bio">Especialista em unhas em gel, fibra e esmaltação. Texto de apresentação da profissional.</p>
+          <button class="btn small agendar" data-pro="Especialista em unhas">Agendar horário</button>
+        </div>
+      </div>
+      <div class="pro reveal d2">
+        <img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-08-11%20at%2014.08.29%20(1).jpeg" alt="Profissional da equipe" loading="lazy">
+        <div class="info">
+          <span class="esp">Cílios e tratamentos</span>
+          <h3>Nome da profissional</h3>
+          <p class="bio">Responsável pela extensão de cílios e pelos protocolos de tratamento capilar.</p>
+          <button class="btn small agendar" data-pro="Especialista em cílios">Agendar horário</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="section">
+  <div class="head">
+    <div class="reveal">
+      <div class="eyebrow">Galeria</div>
+      <h2>Transformações <em class="it">reais</em></h2>
+    </div>
+    <a class="btn ghost small reveal d1" href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener">Ver mais no Instagram</a>
+  </div>
+  <div class="gal-track">
+    <!-- EDITAR: substituir pelas melhores fotos de resultados (formato vertical 3x4). -->
+    <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg" alt="Resultado de mega hair" loading="lazy"><span class="cap">Mega hair</span></div>
+    <div class="gal-item"><img src="https://img1.wsimg.com/isteam/getty/1328333210" alt="Resultado de mechas" loading="lazy"><span class="cap">Tratamentos</span></div>
+    <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-08-11%20at%2014.08.29%20(1).jpeg" alt="Ambiente do salão" loading="lazy"><span class="cap">O salão</span></div>
+    <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/WhatsApp%20Image%202025-11-11%20at%2014.44.14.jpeg" alt="Atendimento no salão" loading="lazy"><span class="cap">Atendimento</span></div>
+    <div class="gal-item"><img src="https://img1.wsimg.com/isteam/ip/36329216-b550-435a-a540-db3ab9862265/o-cabeleireiro-faz-extensoes-de-cabelo-em-uma-.jpg" alt="Resultado de mega hair" loading="lazy"><span class="cap">Antes e depois</span></div>
+  </div>
+</section>
+
+<section id="depoimentos" class="section">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow reveal">Clientes</div>
+      <h2 class="reveal" style="text-align:center">O que dizem depois do <em class="it">espelho</em>.</h2>
+    </div>
+    <div class="quote-box reveal">
+      <!-- EDITAR: substituir pelos depoimentos reais do Google ou do Instagram. -->
+      <blockquote class="quote active">
+        <span class="stars">★★★★★</span>
+        <p>Fiz meu mega hair com a Monique e ninguém acredita que não é meu cabelo. O acabamento é impecável e o atendimento, um carinho do início ao fim.</p>
+        <cite>Cliente do salão, Tijuca</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <span class="stars">★★★★★</span>
+        <p>Faço unhas e cílios com elas e não troco por nada. Explicam cada etapa, cuidam de cada detalhe e o resultado dura de verdade.</p>
+        <cite>Cliente do salão, Rio de Janeiro</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <span class="stars">★★★★★</span>
+        <p>Os tratamentos capilares salvaram meu cabelo depois de anos de química. Profissionais atualizadas e um espaço acolhedor.</p>
+        <cite>Cliente do salão, Tijuca</cite>
+      </blockquote>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section id="agendar" class="section">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">Agendamento</div>
+      <h2>Reserve seu horário em <em class="it">um minuto</em>.</h2>
+      <p class="lead">Escolha o serviço, a profissional e o melhor dia. A confirmação chega direto no seu WhatsApp, sem ligação e sem espera.</p>
+      <div class="alt">Prefere falar com a gente primeiro? <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20antes%20de%20agendar." target="_blank" rel="noopener">Chame no WhatsApp</a> ou ligue para <a href="tel:+5521967015034">(21) 96701-5034</a>. Se já é cliente e prefere o app, também dá para <a href="https://www.trinks.com/monique-coutinho-beauty" target="_blank" rel="noopener">agendar pelo Trinks</a>.</div>
+    </div>
+    <div class="booking reveal d1" id="booking">
+      <div class="steps-bar"><i class="on"></i><i></i><i></i><i></i></div>
+
+      <div class="step active" data-step="1">
+        <h3>O que vamos fazer?</h3>
+        <p class="hint">Você pode escolher mais de um serviço. Em dúvida, marque Avaliação.</p>
+        <div class="cat-label">Cabelo</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Mega hair</button>
+          <button class="chip" type="button">Mechas premium</button>
+          <button class="chip" type="button">Exoplastia ou progressiva orgânica</button>
+          <button class="chip" type="button">Tratamento capilar</button>
+        </div>
+        <div class="cat-label">Unhas</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Unhas em gel e fibra</button>
+          <button class="chip" type="button">Esmaltação</button>
+        </div>
+        <div class="cat-label">Olhar e make</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Extensão de cílios</button>
+          <button class="chip" type="button">Make</button>
+        </div>
+        <div class="cat-label">Ainda decidindo</div>
+        <div class="chips" data-group="servico" data-multi>
+          <button class="chip" type="button">Avaliação</button>
+        </div>
+        <div class="sel-count" id="sel-count"></div>
+        <div class="step-nav"><span></span><button class="btn small" type="button" data-next>Continuar</button></div>
+      </div>
+
+      <div class="step" data-step="2">
+        <h3>Com quem você quer ser atendida?</h3>
+        <p class="hint">Todas as profissionais são especializadas na área.</p>
+        <div class="chips" data-group="profissional">
+          <button class="chip" type="button">Monique Coutinho</button>
+          <button class="chip" type="button">Especialista em unhas</button>
+          <button class="chip" type="button">Especialista em cílios</button>
+          <button class="chip" type="button">Sem preferência</button>
+        </div>
+        <div class="step-nav"><button class="back-link" type="button" data-back>Voltar</button><button class="btn small" type="button" data-next>Continuar</button></div>
+      </div>
+
+      <div class="step" data-step="3">
+        <h3>Qual o melhor dia e horário?</h3>
+        <p class="hint">Atendemos de terça a sábado. Vamos confirmar a disponibilidade com você pelo WhatsApp.</p>
+        <div class="field">
+          <label for="data">Data</label>
+          <input type="date" id="data">
+        </div>
+        <div class="field">
+          <label>Horário</label>
+          <div class="slots" id="slots"><p class="slot-hint">Escolha uma data para ver os horários do dia.</p></div>
+        </div>
+        <div class="step-nav"><button class="back-link" type="button" data-back>Voltar</button><button class="btn small" type="button" data-next>Continuar</button></div>
+      </div>
+
+      <div class="step" data-step="4">
+        <h3>Quase lá.</h3>
+        <p class="hint">Confira seu resumo e envie pelo WhatsApp para confirmar.</p>
+        <div class="field" style="margin-top:0;margin-bottom:18px">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" placeholder="Como podemos te chamar" autocomplete="name">
+        </div>
+        <div class="resumo" id="resumo"></div>
+        <div class="step-nav">
+          <button class="back-link" type="button" data-back>Voltar</button>
+          <button class="btn" type="button" id="enviar-wa">Confirmar pelo WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="section">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">Contato</div>
+      <h2>Venha nos <em class="it">visitar</em>.</h2>
+      <div class="bloco">
+        <h3>Endereço</h3>
+        <p>Rua do Matoso, 122, loja A<br>Praça da Bandeira (Tijuca), Rio de Janeiro - RJ<br>CEP 20270-133</p>
+      </div>
+      <div class="bloco">
+        <h3>Horário de atendimento</h3>
+        <p>Terça e quarta, das 10h às 18h<br>Quinta e sexta, das 10h às 19h<br>Sábado, das 9h às 16h<br>Domingo e segunda, fechado</p>
+      </div>
+      <div class="bloco">
+        <h3>Pagamento</h3>
+        <p>PIX, dinheiro, vale-presente e todos os principais cartões de crédito e débito.</p>
+      </div>
+      <div class="bloco">
+        <h3>Fale com a gente</h3>
+        <p><a href="tel:+5521967015034">(21) 96701-5034</a><br>
+        <a href="https://wa.me/5521967015034" target="_blank" rel="noopener">WhatsApp direto</a><br>
+        <a href="mailto:moniquecoutinhobeauty@gmail.com">moniquecoutinhobeauty@gmail.com</a><br>
+        <a href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener">@moniquecoutinhobeauty</a></p>
+      </div>
+      <a class="btn ghost" style="margin-top:30px" href="https://www.google.com/maps/search/?api=1&query=Rua+do+Matoso+122+loja+A+Tijuca+Rio+de+Janeiro" target="_blank" rel="noopener">Como chegar</a>
+    </div>
+    <div class="mapa reveal d1">
+      <iframe src="https://www.google.com/maps?q=Rua%20do%20Matoso%2C%20122%20-%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ&output=embed" loading="lazy" title="Mapa do salão" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="top">
+    <a class="logo" href="#hero"><svg class="mono-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M35.6 12.5 A42 42 0 0 1 82.2 79" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M23 84.2 A42 42 0 0 1 13.6 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path class="swash" d="M4 20 C34 28 66 72 98 84" fill="none" stroke-width="3" stroke-linecap="round"/><text class="letra" x="50" y="66" text-anchor="middle" font-size="44">M</text></svg><span>Monique Coutinho<small>Beauty</small></span></a>
+    <div class="social">
+      <a href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/730610733460911" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.6l.4-3h-3V9.1c0-.9.3-1.5 1.6-1.5h1.5V4.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9V11H8v3h2.5v7h3z"/></svg>
+      </a>
+      <a href="https://wa.me/5521967015034" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="base">
+    <span>Copyright 2026 Monique Coutinho Beauty. Todos os direitos reservados.</span>
+    <a href="/politica-de-privacidade">Política de Privacidade</a>
+  </div>
+</footer>
+
+<a id="wa-float" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20sal%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+// ---------- loader ----------
+window.addEventListener('load',function(){
+  setTimeout(function(){document.getElementById('loader').classList.add('done')},600);
+});
+
+// ---------- nav ----------
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
+var toggle=document.getElementById('menu-toggle');
+var links=document.getElementById('nav-links');
+toggle.addEventListener('click',function(){
+  links.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
+});
+links.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(){
+    links.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  });
+});
+
+// ---------- vídeos: esconder se o arquivo não existir ----------
+document.querySelectorAll('video').forEach(function(v){
+  v.addEventListener('error',function(){v.style.display='none'},true);
+  var s=v.querySelector('source');
+  if(s){s.addEventListener('error',function(){v.style.display='none'})}
+});
+
+// ---------- reveal on scroll ----------
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+// ---------- contadores ----------
+var counted=false;
+var statsIO=new IntersectionObserver(function(entries){
+  if(entries[0].isIntersecting&&!counted){
+    counted=true;
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var target=parseFloat(el.dataset.count);
+      var decimal=el.dataset.decimal?1:0;
+      var start=null;
+      function tick(t){
+        if(!start)start=t;
+        var p=Math.min((t-start)/1400,1);
+        var eased=1-Math.pow(1-p,3);
+        var val=target*eased;
+        el.textContent=decimal?val.toFixed(1).replace('.',','):Math.round(val).toLocaleString('pt-BR');
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=(decimal?target.toFixed(1).replace('.',','):target.toLocaleString('pt-BR'))+(decimal?'':'+');
+      }
+      requestAnimationFrame(tick);
+    });
+    statsIO.disconnect();
+  }
+},{threshold:.4});
+var statsEl=document.querySelector('.stats');
+if(statsEl)statsIO.observe(statsEl);
+
+// ---------- comparador antes e depois ----------
+var compare=document.getElementById('compare');
+var afterWrap=document.getElementById('after-wrap');
+var handle=document.getElementById('handle');
+function setCompare(pct){
+  pct=Math.max(4,Math.min(96,pct));
+  afterWrap.style.clipPath='inset(0 0 0 '+pct+'%)';
+  handle.style.left=pct+'%';
+}
+setCompare(50);
+function moveCompare(clientX){
+  var r=compare.getBoundingClientRect();
+  setCompare((clientX-r.left)/r.width*100);
+}
+compare.addEventListener('pointerdown',function(e){
+  compare.setPointerCapture(e.pointerId);
+  moveCompare(e.clientX);
+});
+compare.addEventListener('pointermove',function(e){
+  if(e.buttons>0)moveCompare(e.clientX);
+});
+
+// ---------- depoimentos ----------
+var quotes=document.querySelectorAll('.quote');
+var dotsBox=document.getElementById('dots');
+var current=0,timer;
+quotes.forEach(function(_,i){
+  var b=document.createElement('button');
+  b.setAttribute('aria-label','Depoimento '+(i+1));
+  if(i===0)b.classList.add('active');
+  b.addEventListener('click',function(){show(i);restart()});
+  dotsBox.appendChild(b);
+});
+function show(i){
+  quotes[current].classList.remove('active');
+  dotsBox.children[current].classList.remove('active');
+  current=i;
+  quotes[current].classList.add('active');
+  dotsBox.children[current].classList.add('active');
+}
+function restart(){clearInterval(timer);timer=setInterval(function(){show((current+1)%quotes.length)},6000)}
+restart();
+
+// ---------- agendamento ----------
+var booking=document.getElementById('booking');
+var steps=booking.querySelectorAll('.step');
+var bars=booking.querySelectorAll('.steps-bar i');
+var state={servicos:[],profissional:'',data:'',horario:'',nome:''};
+var stepIndex=0;
+
+// Horário de funcionamento real do salão (0=domingo ... 6=sábado)
+var HORARIOS={0:null,1:null,2:[10,18],3:[10,18],4:[10,19],5:[10,19],6:[9,16]};
+var DIAS=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+
+function atualizarContagem(){
+  var el=document.getElementById('sel-count');
+  el.textContent=state.servicos.length?state.servicos.length+' serviço'+(state.servicos.length>1?'s':'')+' selecionado'+(state.servicos.length>1?'s':''):'';
+}
+
+booking.querySelectorAll('.chips').forEach(function(group){
+  group.addEventListener('click',function(e){
+    var chip=e.target.closest('.chip');
+    if(!chip)return;
+    var nome=chip.textContent.trim();
+    if(group.hasAttribute('data-multi')){
+      chip.classList.toggle('sel');
+      if(chip.classList.contains('sel')){
+        if(state.servicos.indexOf(nome)===-1)state.servicos.push(nome);
+      }else{
+        state.servicos=state.servicos.filter(function(s){return s!==nome});
+      }
+      atualizarContagem();
+    }else{
+      group.querySelectorAll('.chip').forEach(function(c){c.classList.remove('sel')});
+      chip.classList.add('sel');
+      state[group.dataset.group]=nome;
+    }
+  });
+});
+
+// grade de horários conforme o dia escolhido
+var dataInput=document.getElementById('data');
+var slotsBox=document.getElementById('slots');
+function gerarHorarios(){
+  state.horario='';
+  slotsBox.innerHTML='';
+  var iso=dataInput.value;
+  if(!iso){slotsBox.innerHTML='<p class="slot-hint">Escolha uma data para ver os horários do dia.</p>';return}
+  var d=new Date(iso+'T12:00:00');
+  var faixa=HORARIOS[d.getDay()];
+  if(!faixa){
+    slotsBox.innerHTML='<p class="slot-hint">Aos domingos e segundas o salão fica fechado. Escolha um dia de terça a sábado.</p>';
+    return;
+  }
+  var agora=new Date();
+  var hojeISO=agora.toISOString().split('T')[0];
+  var minutos;
+  for(minutos=faixa[0]*60;minutos<=faixa[1]*60-60;minutos+=30){
+    var hh=Math.floor(minutos/60),mm=minutos%60;
+    if(iso===hojeISO&&(hh<agora.getHours()+2))continue;
+    var b=document.createElement('button');
+    b.type='button';
+    b.className='chip';
+    b.textContent=(hh<10?'0':'')+hh+':'+(mm===0?'00':mm);
+    b.addEventListener('click',function(){
+      slotsBox.querySelectorAll('.chip').forEach(function(c){c.classList.remove('sel')});
+      this.classList.add('sel');
+      state.horario=this.textContent;
+    });
+    slotsBox.appendChild(b);
+  }
+  if(!slotsBox.children.length){
+    slotsBox.innerHTML='<p class="slot-hint">Para hoje os horários já passaram. Escolha outro dia.</p>';
+  }
+}
+dataInput.addEventListener('change',gerarHorarios);
+
+function goStep(i){
+  steps[stepIndex].classList.remove('active');
+  stepIndex=i;
+  steps[stepIndex].classList.add('active');
+  bars.forEach(function(b,idx){b.classList.toggle('on',idx<=stepIndex)});
+  if(stepIndex===3)montarResumo();
+}
+booking.querySelectorAll('[data-next]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    if(stepIndex===0&&!state.servicos.length){pulse(steps[0]);return}
+    if(stepIndex===1&&!state.profissional){pulse(steps[1]);return}
+    if(stepIndex===2){
+      state.data=dataInput.value;
+      if(!state.data||!state.horario){pulse(steps[2]);return}
+    }
+    goStep(stepIndex+1);
+  });
+});
+booking.querySelectorAll('[data-back]').forEach(function(btn){
+  btn.addEventListener('click',function(){goStep(stepIndex-1)});
+});
+function pulse(el){
+  el.style.animation='none';
+  void el.offsetWidth;
+  el.style.animation='stepIn .35s ease';
+}
+function formatarData(iso){
+  if(!iso)return'';
+  var p=iso.split('-');
+  return p[2]+'/'+p[1]+'/'+p[0];
+}
+function montarResumo(){
+  var d=new Date(state.data+'T12:00:00');
+  document.getElementById('resumo').innerHTML=
+    '<span>Serviços: <b>'+state.servicos.join(', ')+'</b></span>'+
+    '<span>Profissional: <b>'+state.profissional+'</b></span>'+
+    '<span>Data: <b>'+formatarData(state.data)+'</b> ('+DIAS[d.getDay()]+') às <b>'+state.horario+'</b></span>';
+}
+document.getElementById('enviar-wa').addEventListener('click',function(){
+  state.nome=document.getElementById('nome').value.trim();
+  var d=new Date(state.data+'T12:00:00');
+  var msg='Olá! Quero agendar um horário pelo site.\n'+
+    'Nome: '+(state.nome||'(não informado)')+'\n'+
+    'Serviços: '+state.servicos.join(', ')+'\n'+
+    'Profissional: '+state.profissional+'\n'+
+    'Data: '+formatarData(state.data)+' ('+DIAS[d.getDay()]+')\n'+
+    'Horário: '+state.horario;
+  window.open('https://wa.me/5521967015034?text='+encodeURIComponent(msg),'_blank');
+});
+
+// datas: de hoje até 60 dias
+var hoje=new Date();
+dataInput.min=hoje.toISOString().split('T')[0];
+var limite=new Date();limite.setDate(limite.getDate()+60);
+dataInput.max=limite.toISOString().split('T')[0];
+
+// ---------- atalhos: serviços e equipe pré-selecionam o agendamento ----------
+function marcarServico(valor){
+  booking.querySelectorAll('.chips[data-group="servico"] .chip').forEach(function(c){
+    if(c.textContent.trim()===valor&&!c.classList.contains('sel')){
+      c.classList.add('sel');
+      if(state.servicos.indexOf(valor)===-1)state.servicos.push(valor);
+    }
+  });
+  atualizarContagem();
+}
+function marcarProfissional(valor){
+  booking.querySelectorAll('.chips[data-group="profissional"] .chip').forEach(function(c){
+    var match=c.textContent.trim()===valor;
+    c.classList.toggle('sel',match);
+    if(match)state.profissional=valor;
+  });
+}
+document.querySelectorAll('.serv').forEach(function(card){
+  card.addEventListener('click',function(){
+    marcarServico(card.dataset.servico);
+    goStep(0);
+    document.getElementById('agendar').scrollIntoView({behavior:'smooth'});
+  });
+});
+document.querySelectorAll('.pro .agendar').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    marcarProfissional(btn.dataset.pro);
+    goStep(state.servicos.length?1:0);
+    document.getElementById('agendar').scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
