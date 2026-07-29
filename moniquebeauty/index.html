@@ -144,8 +144,8 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 .logo .mono-svg{width:36px;height:36px;flex-shrink:0}
 .logo small{display:block;font-size:.68em;letter-spacing:.5em;color:var(--taupe)}
 .nav-links{display:flex;gap:30px;align-items:center;font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
-.nav-links a{opacity:.75;transition:opacity .3s,color .3s;position:relative;padding:4px 0}
-.nav-links a:hover{opacity:1;color:var(--mel-claro)}
+.nav-links a:not(.btn){opacity:.75;transition:opacity .3s,color .3s;position:relative;padding:4px 0}
+.nav-links a:not(.btn):hover{opacity:1;color:var(--mel-claro)}
 .btn{
   display:inline-flex;align-items:center;gap:10px;
   font-family:var(--f-body);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
@@ -266,14 +266,22 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 #servicos h2{font-size:clamp(34px,5vw,60px);margin:18px 0 14px}
 #servicos .intro{color:#7A6158;max-width:52ch}
 .serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px;margin-top:clamp(36px,6vh,60px)}
-.serv{border:1px solid rgba(62,47,42,.14);border-radius:18px;padding:30px 26px;background:#fff;transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column;gap:12px;cursor:pointer}
-.serv:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(62,47,42,.12);border-color:var(--mel)}
-.serv .ico{width:44px;height:44px;border-radius:50%;background:rgba(163,134,120,.18);display:flex;align-items:center;justify-content:center;color:#8F7263}
-.serv h3{font-size:22px}
-.serv p{font-size:14.5px;color:#7A6158;flex:1}
-.serv .link{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#8F7263;display:flex;align-items:center;gap:8px}
+.serv{border:1px solid rgba(237,226,221,.14);border-radius:18px;padding:30px 26px;background:linear-gradient(135deg,var(--cafe),var(--cafe-2));transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column;gap:12px;cursor:pointer}
+.serv:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(62,47,42,.3);border-color:var(--mel)}
+.serv .rule{width:26px;height:2px;background:var(--mel);border-radius:2px;transition:width .35s}
+.serv:hover .rule{width:46px}
+.serv h3{font-size:22px;color:var(--marfim)}
+.serv p{font-size:14.5px;color:var(--taupe);flex:1}
+.serv .link{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--mel);display:flex;align-items:center;gap:8px}
 .serv .link::after{content:"→";transition:transform .3s}
 .serv:hover .link::after{transform:translateX(5px)}
+@media(max-width:640px){
+  .serv-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .serv{padding:20px 16px;gap:8px;border-radius:14px}
+  .serv h3{font-size:15.5px}
+  .serv p{font-size:12px}
+  .serv .link{font-size:10.5px}
+}
 
 /* ---------- equipe ---------- */
 #equipe{background:var(--marfim);color:var(--cafe)}
@@ -537,43 +545,43 @@ footer .base a:hover{color:var(--mel-claro)}
     <p class="intro reveal d1">Toque em um serviço para já iniciar seu agendamento com ele selecionado.</p>
     <div class="serv-grid">
       <div class="serv reveal" data-cascade data-servico="Mega hair">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Mega hair</h3>
         <p>Alongamento com a técnica UltraFit Hair, ponto americano e fita adesiva. Fios selecionados e acabamento invisível.</p>
         <span class="link">Agendar</span>
       </div>
       <div class="serv reveal" data-cascade data-servico="Mechas premium">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Mechas premium</h3>
         <p>Loiros saudáveis e morenas iluminadas com técnica, proteção da fibra e colorimetria personalizada.</p>
         <span class="link">Agendar</span>
       </div>
       <div class="serv reveal" data-cascade data-servico="Exoplastia ou progressiva orgânica">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Exoplastia e progressiva orgânica</h3>
         <p>Alinhamento dos fios com fórmulas modernas, para um liso natural com brilho e sem agredir o cabelo.</p>
         <span class="link">Agendar</span>
       </div>
       <div class="serv reveal" data-cascade data-servico="Tratamento capilar">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Tratamentos capilares</h3>
         <p>Protocolos para couro cabeludo e fios: reconstrução, hidratação profunda e cronograma sob medida.</p>
         <span class="link">Agendar</span>
       </div>
       <div class="serv reveal" data-cascade data-servico="Unhas em gel e fibra">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Unhas em gel e fibra</h3>
         <p>Unhas em gel, fibra e esmaltação com acabamento impecável, naturalidade e durabilidade.</p>
         <span class="link">Agendar</span>
       </div>
       <div class="serv reveal" data-cascade data-servico="Extensão de cílios">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Extensão de cílios</h3>
         <p>Olhar marcante com efeito natural, aplicado fio a fio para valorizar o seu formato de olhos.</p>
         <span class="link">Agendar</span>
       </div>
       <div class="serv reveal" data-cascade data-servico="Make">
-        <div class="ico">✦</div>
+        <div class="rule"></div>
         <h3>Make</h3>
         <p>Maquiagem para eventos, ensaios e ocasiões especiais, do natural iluminado ao glam completo.</p>
         <span class="link">Agendar</span>
