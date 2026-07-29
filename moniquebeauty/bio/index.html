@@ -51,7 +51,7 @@ main{
 }
 .card{width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center}
 .foto{
-  width:104px;height:104px;border-radius:50%;object-fit:cover;
+  width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:50% 12%;
   border:2px solid rgba(237,226,221,.55);
   box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
@@ -72,12 +72,12 @@ h1 small{display:block;font-size:.6em;letter-spacing:.5em;color:var(--mel-claro)
   display:flex;align-items:center;justify-content:center;gap:10px;
   width:100%;padding:16px 20px;border-radius:999px;
   font-size:14.5px;font-weight:500;letter-spacing:.02em;text-align:center;
-  background:rgba(237,226,221,.08);border:1px solid rgba(237,226,221,.28);
+  background:rgba(237,226,221,.18);border:1px solid rgba(237,226,221,.4);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   color:#fff;
   transition:transform .2s ease,background .2s ease,border-color .2s ease;
 }
-.pill:hover,.pill:focus-visible{transform:translateY(-2px);background:rgba(237,226,221,.16);border-color:rgba(237,226,221,.5)}
+.pill:hover,.pill:focus-visible{transform:translateY(-2px);background:rgba(237,226,221,.3);border-color:rgba(237,226,221,.65)}
 .pill:focus-visible{outline:2px solid var(--mel-claro);outline-offset:2px}
 .pill.destaque{
   background:var(--grad);border-color:transparent;color:#3B2B26;font-weight:600;
