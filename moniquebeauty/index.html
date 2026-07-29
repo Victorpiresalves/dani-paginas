@@ -838,9 +838,8 @@ footer .base a:hover{color:var(--mel-claro)}
 
 <script>
 // ---------- loader ----------
-window.addEventListener('load',function(){
-  setTimeout(function(){document.getElementById('loader').classList.add('done')},600);
-});
+// Some assim que o HTML estiver pronto, sem esperar video/imagens baixarem
+setTimeout(function(){document.getElementById('loader').classList.add('done')},600);
 
 // ---------- nav ----------
 var nav=document.getElementById('nav');
