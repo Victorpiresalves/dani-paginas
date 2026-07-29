@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#685049">
+<meta name="theme-color" content="#3E2F2A">
 <title>Monique Coutinho Beauty | Links</title>
 <meta name="description" content="Agende seu horário, fale no WhatsApp e conheça o salão especializado em mega hair na Tijuca, RJ.">
 <meta property="og:title" content="Monique Coutinho Beauty | Links">
@@ -13,204 +13,152 @@
 <link rel="icon" href="https://danealves.com/moniquebeauty/logo-icone-branco.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --marrom:#685049;
-    --marrom-escuro:#4e3b35;
-    --creme:#f7f1ec;
-    --areia:#e9ddd4;
-    --dourado:#c9a27e;
-    --texto:#3a2d28;
-    --branco:#fffdfb;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    font-family:'Jost',sans-serif;
-    background:linear-gradient(175deg,var(--marrom) 0%,var(--marrom-escuro) 55%,#3d2e29 100%);
-    color:var(--texto);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    padding:2.2rem 1.1rem 3rem;
-  }
-  .card{
-    width:100%;
-    max-width:430px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  .foto{
-    width:104px;height:104px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid var(--dourado);
-    box-shadow:0 8px 28px rgba(0,0,0,.35);
-  }
-  h1{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:1.55rem;
-    color:var(--branco);
-    margin-top:1rem;
-    letter-spacing:.01em;
-    text-align:center;
-  }
-  h1 em{font-style:italic;color:var(--dourado)}
-  .sub{
-    color:var(--areia);
-    font-size:.93rem;
-    text-align:center;
-    margin-top:.4rem;
-    max-width:30ch;
-    line-height:1.45;
-  }
-  .selo{
-    margin-top:.85rem;
-    font-size:.72rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--dourado);
-    border:1px solid rgba(201,162,126,.45);
-    border-radius:999px;
-    padding:.35rem .95rem;
-  }
-  nav{width:100%;margin-top:1.7rem;display:flex;flex-direction:column;gap:.85rem}
-  .link{
-    display:flex;
-    align-items:center;
-    gap:.95rem;
-    background:var(--branco);
-    border-radius:16px;
-    padding:1rem 1.15rem;
-    text-decoration:none;
-    color:var(--texto);
-    box-shadow:0 4px 16px rgba(0,0,0,.22);
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .link:hover,.link:focus-visible{
-    transform:translateY(-2px);
-    box-shadow:0 8px 22px rgba(0,0,0,.3);
-  }
-  .link:focus-visible{outline:2px solid var(--dourado);outline-offset:2px}
-  .link.destaque{
-    background:linear-gradient(120deg,var(--dourado),#b88d66);
-    color:var(--branco);
-  }
-  .link.destaque .desc{color:rgba(255,253,251,.85)}
-  .icone{
-    flex:0 0 42px;
-    width:42px;height:42px;
-    border-radius:12px;
-    background:var(--creme);
-    display:flex;align-items:center;justify-content:center;
-    font-size:1.15rem;
-  }
-  .link.destaque .icone{background:rgba(255,255,255,.18)}
-  .textos{display:flex;flex-direction:column;gap:.1rem}
-  .titulo{font-weight:600;font-size:.98rem;letter-spacing:.01em}
-  .desc{font-size:.8rem;color:#7d6a62;line-height:1.35}
-  .rodape{
-    margin-top:2rem;
-    text-align:center;
-    color:var(--areia);
-    font-size:.78rem;
-    line-height:1.6;
-  }
-  .rodape a{color:var(--dourado);text-decoration:none}
-  @media (prefers-reduced-motion: reduce){
-    .link{transition:none}
-    .link:hover{transform:none}
-  }
+:root{
+  --cafe:#685049;
+  --cafe-2:#3E2F2A;
+  --marfim:#EDE2DD;
+  --taupe:#C8B0A4;
+  --mel:#A38678;
+  --mel-claro:#D3BCB0;
+  --grad:linear-gradient(115deg,#D3BCB0,#C8B0A4 35%,#A38678 80%);
+  --f-display:"Julius Sans One",serif;
+  --f-body:"Poppins",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:var(--f-body);
+  font-weight:300;
+  color:var(--marfim);
+  -webkit-font-smoothing:antialiased;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ---------- fundo em vídeo, fixo atrás de tudo ---------- */
+.bg{position:fixed;inset:0;z-index:-2;background:var(--cafe-2)}
+.bg video,.bg .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.bg .poster{background:url("https://danealves.com/moniquebeauty/hero-poster.jpg") center/cover no-repeat}
+.veil{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(43,32,28,.55) 0%,rgba(43,32,28,.5) 45%,rgba(43,32,28,.86) 100%)}
+
+/* ---------- conteúdo ---------- */
+main{
+  position:relative;min-height:100%;
+  display:flex;flex-direction:column;align-items:center;
+  padding:clamp(40px,8vh,72px) 20px clamp(32px,6vh,56px);
+}
+.card{width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center}
+.foto{
+  width:104px;height:104px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(237,226,221,.55);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+h1{
+  font-family:var(--f-display);font-weight:400;text-transform:uppercase;letter-spacing:.06em;
+  font-size:clamp(19px,4.6vw,23px);margin-top:18px;text-align:center;color:#fff;
+}
+h1 small{display:block;font-size:.6em;letter-spacing:.5em;color:var(--mel-claro);margin-top:6px}
+.tagline{margin-top:12px;font-size:13.5px;text-align:center;color:rgba(237,226,221,.82);max-width:32ch;line-height:1.5}
+.selo{
+  margin-top:14px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mel-claro);
+  border:1px solid rgba(211,188,176,.5);border-radius:999px;padding:.5rem 1rem;
+}
+
+/* ---------- links (estilo Linktree) ---------- */
+.links{width:100%;margin-top:30px;display:flex;flex-direction:column;gap:13px}
+.pill{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px 20px;border-radius:999px;
+  font-size:14.5px;font-weight:500;letter-spacing:.02em;text-align:center;
+  background:rgba(237,226,221,.08);border:1px solid rgba(237,226,221,.28);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:#fff;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease;
+}
+.pill:hover,.pill:focus-visible{transform:translateY(-2px);background:rgba(237,226,221,.16);border-color:rgba(237,226,221,.5)}
+.pill:focus-visible{outline:2px solid var(--mel-claro);outline-offset:2px}
+.pill.destaque{
+  background:var(--grad);border-color:transparent;color:#3B2B26;font-weight:600;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+.pill.destaque:hover{filter:brightness(1.05)}
+.pill .ic{font-size:15px;line-height:1;flex:0 0 auto}
+
+/* ---------- social ---------- */
+.social{display:flex;gap:16px;margin-top:30px}
+.social a{
+  width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(237,226,221,.3);color:#fff;transition:.25s;
+}
+.social a:hover{border-color:var(--mel-claro);color:var(--mel-claro);transform:translateY(-2px)}
+
+/* ---------- rodapé ---------- */
+.rodape{margin-top:34px;text-align:center;font-size:11.5px;line-height:1.7;color:rgba(237,226,221,.6)}
+.rodape a{color:var(--mel-claro)}
+
+@media(prefers-reduced-motion:reduce){
+  *{transition:none !important}
+}
+:focus-visible{outline:2px solid var(--mel-claro);outline-offset:3px;border-radius:4px}
 </style>
 </head>
 <body>
-<main class="card">
-  <img class="foto" src="https://danealves.com/moniquebeauty/monique-perfil.jpg" alt="Monique Coutinho">
-  <h1>Monique Coutinho <em>Beauty</em></h1>
-  <p class="sub">Transformamos beleza em autoestima. Mega hair e cuidado completo na Tijuca, RJ.</p>
-  <span class="selo">Especialista em mega hair</span>
 
-  <nav aria-label="Menu do salão">
-    <a class="link destaque" href="https://danealves.com/moniquebeauty#agendar">
-      <span class="icone" aria-hidden="true">&#10022;</span>
-      <span class="textos">
-        <span class="titulo">Agendar horário</span>
-        <span class="desc">Escolha o serviço, a profissional e o dia em um minuto</span>
-      </span>
-    </a>
+<div class="bg">
+  <div class="poster"></div>
+  <video autoplay muted loop playsinline poster="https://danealves.com/moniquebeauty/hero-poster.jpg">
+    <source src="videobiofundo.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="veil"></div>
 
-    <a class="link" href="https://danealves.com/moniquebeauty#sobre">
-      <span class="icone" aria-hidden="true">&#10047;</span>
-      <span class="textos">
-        <span class="titulo">O salão</span>
-        <span class="desc">Conheça nossa história e nosso jeito de atender</span>
-      </span>
-    </a>
+<main>
+  <div class="card">
+    <img class="foto" src="https://danealves.com/moniquebeauty/monique-perfil.jpg" alt="Monique Coutinho">
+    <h1>Monique Coutinho<small>Beauty</small></h1>
+    <p class="tagline">Transformamos beleza em autoestima. Mega hair e cuidado completo na Tijuca, RJ.</p>
+    <span class="selo">Especialista em mega hair</span>
 
-    <a class="link" href="https://danealves.com/moniquebeauty#megahair">
-      <span class="icone" aria-hidden="true">&#10024;</span>
-      <span class="textos">
-        <span class="titulo">Mega hair</span>
-        <span class="desc">Nossa especialidade, com antes e depois de verdade</span>
-      </span>
-    </a>
+    <nav class="links" aria-label="Menu do salão">
+      <a class="pill destaque" href="https://danealves.com/moniquebeauty#agendar">
+        <span class="ic" aria-hidden="true">&#10022;</span> Agendar horário
+      </a>
+      <a class="pill" href="https://danealves.com/moniquebeauty#sobre">O salão</a>
+      <a class="pill" href="https://danealves.com/moniquebeauty#megahair">Mega hair</a>
+      <a class="pill" href="https://danealves.com/moniquebeauty#servicos">Serviços</a>
+      <a class="pill" href="https://danealves.com/moniquebeauty#equipe">Equipe</a>
+      <a class="pill" href="https://danealves.com/moniquebeauty#depoimentos">Clientes</a>
+      <a class="pill" href="https://danealves.com/moniquebeauty#contato">Contato</a>
+      <a class="pill" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20link%20da%20bio%20e%20quero%20mais%20informa%C3%A7%C3%B5es.">
+        <span class="ic" aria-hidden="true">&#128172;</span> Falar no WhatsApp
+      </a>
+      <a class="pill" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Curso%20de%20Mega%20Hair%20Premium.">Curso de Mega Hair Premium</a>
+    </nav>
 
-    <a class="link" href="https://danealves.com/moniquebeauty#servicos">
-      <span class="icone" aria-hidden="true">&#9998;</span>
-      <span class="textos">
-        <span class="titulo">Serviços</span>
-        <span class="desc">Mechas, tratamentos, unhas, cílios e make</span>
-      </span>
-    </a>
+    <div class="social">
+      <a href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/730610733460911" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.6l.4-3h-3V9.1c0-.9.3-1.5 1.6-1.5h1.5V4.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9V11H8v3h2.5v7h3z"/></svg>
+      </a>
+      <a href="https://danealves.com/moniquebeauty/" aria-label="Site completo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9z"/></svg>
+      </a>
+    </div>
 
-    <a class="link" href="https://danealves.com/moniquebeauty#equipe">
-      <span class="icone" aria-hidden="true">&#128149;</span>
-      <span class="textos">
-        <span class="titulo">Equipe</span>
-        <span class="desc">Escolha com quem quer ser atendida</span>
-      </span>
-    </a>
-
-    <a class="link" href="https://danealves.com/moniquebeauty#depoimentos">
-      <span class="icone" aria-hidden="true">&#11088;</span>
-      <span class="textos">
-        <span class="titulo">Clientes</span>
-        <span class="desc">Quem já veio, conta como foi</span>
-      </span>
-    </a>
-
-    <a class="link" href="https://danealves.com/moniquebeauty#contato">
-      <span class="icone" aria-hidden="true">&#128205;</span>
-      <span class="textos">
-        <span class="titulo">Contato</span>
-        <span class="desc">Endereço, horários e como chegar</span>
-      </span>
-    </a>
-
-    <a class="link" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20link%20da%20bio%20e%20quero%20mais%20informa%C3%A7%C3%B5es.">
-      <span class="icone" aria-hidden="true">&#128172;</span>
-      <span class="textos">
-        <span class="titulo">Falar no WhatsApp</span>
-        <span class="desc">Tire suas dúvidas direto com a equipe</span>
-      </span>
-    </a>
-
-    <a class="link" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Curso%20de%20Mega%20Hair%20Premium.">
-      <span class="icone" aria-hidden="true">&#127891;</span>
-      <span class="textos">
-        <span class="titulo">Curso de Mega Hair Premium</span>
-        <span class="desc">Formação na técnica UltraFit Hair para profissionais</span>
-      </span>
-    </a>
-
-  </nav>
-
-  <footer class="rodape">
-    Terça a sábado - confira os horários no site<br>
-    <a href="https://www.instagram.com/moniquecoutinhobeauty/">@moniquecoutinhobeauty</a>
-  </footer>
+    <p class="rodape">Terça a sábado — confira os horários no site<br><a href="https://www.instagram.com/moniquecoutinhobeauty/">@moniquecoutinhobeauty</a></p>
+  </div>
 </main>
+
+<script>
+document.querySelectorAll('video').forEach(function(v){
+  v.addEventListener('error',function(){v.style.display='none'},true);
+  var s=v.querySelector('source');
+  if(s){s.addEventListener('error',function(){v.style.display='none'})}
+});
+</script>
 </body>
 </html>
