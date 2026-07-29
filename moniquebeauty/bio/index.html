@@ -116,7 +116,7 @@ h1 small{display:block;font-size:.6em;letter-spacing:.5em;color:var(--mel-claro)
 
 <div class="bg">
   <div class="poster"></div>
-  <video autoplay muted loop playsinline poster="https://danealves.com/moniquebeauty/hero-poster.jpg">
+  <video id="bg-video" muted loop playsinline preload="none" poster="https://danealves.com/moniquebeauty/hero-poster.jpg">
     <source src="videobiofundo.mp4" type="video/mp4">
   </video>
 </div>
@@ -170,6 +170,17 @@ document.querySelectorAll('video').forEach(function(v){
   var s=v.querySelector('source');
   if(s){s.addEventListener('error',function(){v.style.display='none'})}
 });
+
+// ---------- só baixa/toca o vídeo de fundo se a pessoa não pediu menos
+// movimento e não está em conexão lenta / economia de dados ----------
+var bgVideo=document.getElementById('bg-video');
+var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var conn=navigator.connection||navigator.webkitConnection||navigator.mozConnection;
+var saveData=conn&&(conn.saveData||/2g/.test(conn.effectiveType||''));
+if(bgVideo&&!reduceMotion&&!saveData){
+  bgVideo.load();
+  bgVideo.play().catch(function(){});
+}
 </script>
 </body>
 </html>
