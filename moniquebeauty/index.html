@@ -220,8 +220,13 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 .foto-frame:hover img,.foto-frame:hover video{transform:scale(1)}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px;border-top:1px solid rgba(104,80,73,.14);padding-top:32px}
 .stats b{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3.6vw,46px);color:var(--cafe);display:block}
-.stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A6158}
+.stats small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A6158;line-height:1.4;word-break:break-word;display:block}
 @media(max-width:920px){#sobre .grid{grid-template-columns:1fr}.foto-frame{max-width:420px;margin:0 auto}}
+@media(max-width:480px){
+  .stats{gap:8px}
+  .stats b{font-size:26px}
+  .stats small{font-size:10px;letter-spacing:.05em}
+}
 
 /* ---------- mega hair ---------- */
 #megahair{background:var(--marfim);color:var(--cafe);border-top:1px solid rgba(104,80,73,.12);border-bottom:1px solid rgba(104,80,73,.12)}
