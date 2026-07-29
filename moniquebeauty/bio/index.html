@@ -50,10 +50,15 @@ main{
   padding:clamp(40px,8vh,72px) 20px clamp(32px,6vh,56px);
 }
 .card{width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center}
+.foto-wrap{position:relative;display:inline-block}
 .foto{
   width:104px;height:104px;border-radius:50%;object-fit:cover;
   border:2px solid rgba(237,226,221,.55);
   box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.selo-badge{
+  position:absolute;right:-3px;bottom:-3px;width:30px;height:30px;border-radius:50%;
+  border:2px solid var(--cafe-2);box-shadow:0 4px 10px rgba(0,0,0,.4);background:#fff;object-fit:cover;
 }
 h1{
   font-family:var(--f-display);font-weight:400;text-transform:uppercase;letter-spacing:.06em;
@@ -65,6 +70,17 @@ h1 small{display:block;font-size:.6em;letter-spacing:.5em;color:var(--mel-claro)
   margin-top:14px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mel-claro);
   border:1px solid rgba(211,188,176,.5);border-radius:999px;padding:.5rem 1rem;
 }
+
+/* ---------- destaques (estilo highlights) ---------- */
+.highlights{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%;margin-top:26px}
+.hl{display:flex;flex-direction:column;align-items:center;gap:7px;width:58px}
+.hl img{
+  width:56px;height:56px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(237,226,221,.4);box-shadow:0 6px 16px rgba(0,0,0,.3);
+  transition:transform .25s ease,border-color .25s ease;
+}
+.hl:hover img,.hl:focus-visible img{transform:translateY(-3px);border-color:var(--mel-claro)}
+.hl span{font-size:10px;letter-spacing:.02em;text-transform:uppercase;color:rgba(237,226,221,.85);text-align:center;line-height:1.25}
 
 /* ---------- links (estilo Linktree) ---------- */
 .links{width:100%;margin-top:30px;display:flex;flex-direction:column;gap:13px}
@@ -112,10 +128,36 @@ h1 small{display:block;font-size:.6em;letter-spacing:.5em;color:var(--mel-claro)
 
 <main>
   <div class="card">
-    <img class="foto" src="https://danealves.com/moniquebeauty/monique-perfil-avatar.jpg" alt="Monique Coutinho">
+    <div class="foto-wrap">
+      <img class="foto" src="https://danealves.com/moniquebeauty/monique-perfil-avatar.jpg" alt="Monique Coutinho">
+      <img class="selo-badge" src="selo-marca.jpg" alt="">
+    </div>
     <h1>Monique Coutinho<small>Beauty</small></h1>
     <p class="tagline">Transformamos beleza em autoestima. Mega hair e cuidado completo na Tijuca, RJ.</p>
     <span class="selo">Especialista em mega hair</span>
+
+    <div class="highlights">
+      <a class="hl" href="https://danealves.com/moniquebeauty#megahair">
+        <img src="icone-megahair.jpg" alt="">
+        <span>Mega hair</span>
+      </a>
+      <a class="hl" href="https://danealves.com/moniquebeauty#servicos">
+        <img src="icone-unhas.jpg" alt="">
+        <span>Unhas</span>
+      </a>
+      <a class="hl" href="https://danealves.com/moniquebeauty#equipe">
+        <img src="icone-cilios.jpg" alt="">
+        <span>Cílios</span>
+      </a>
+      <a class="hl" href="https://danealves.com/moniquebeauty#depoimentos">
+        <img src="icone-atendimento.jpg" alt="">
+        <span>Clientes</span>
+      </a>
+      <a class="hl" href="https://danealves.com/moniquebeauty#contato">
+        <img src="icone-localizacao.jpg" alt="">
+        <span>Local</span>
+      </a>
+    </div>
 
     <nav class="links" aria-label="Menu do salão">
       <a class="pill destaque" href="https://danealves.com/moniquebeauty#agendar">
