@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lírios do Campo Store | A loja modesta que cabe no seu bolso</title>
+<meta name="description" content="Moda modesta feminina de Artur Nogueira - SP para todo o Brasil. Vestidos, salopetes, conjuntos e muito mais. Pague no PIX e ganhe desconto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   PALETA LÍRIOS DO CAMPO
+   Se quiser ajustar para os tons exatos do manual
+   da marca, basta editar os valores abaixo.
+───────────────────────────────────────────── */
+:root{
+  --rosa:#D4899E;         /* rosé principal do logo */
+  --rosa-claro:#F7E6EA;   /* fundos suaves */
+  --rosa-escuro:#A85D72;  /* botões, promoções, hovers */
+  --verde:#5E7A55;        /* verde folha dos lírios */
+  --creme:#FBF8F4;        /* fundo geral */
+  --areia:#F0E4E0;        /* bordas e divisores */
+  --ink:#3A2E30;          /* texto */
+  --branco:#FFFFFF;
+  --display:'Fraunces',serif;
+  --body:'Karla',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--creme);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{width:min(1200px,92%);margin:0 auto}
+
+/* ── Barra de anúncios rotativa ── */
+.announce{background:var(--rosa-escuro);color:var(--branco);overflow:hidden;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.announce-track{display:flex;gap:4rem;white-space:nowrap;padding:.55rem 0;animation:marquee 28s linear infinite;width:max-content}
+.announce-track span{display:inline-flex;align-items:center;gap:.6rem}
+.announce-track em{font-style:normal;color:var(--rosa-claro);font-weight:700}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.announce-track{animation:none;flex-wrap:wrap;white-space:normal;width:auto;justify-content:center}}
+
+/* ── Header ── */
+header{background:var(--branco);border-bottom:1px solid var(--areia);position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.7rem 0}
+.logo img{height:56px;width:auto}
+nav.main-nav ul{display:flex;gap:1.6rem;font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+nav.main-nav a{padding:.4rem 0;border-bottom:2px solid transparent;transition:.2s}
+nav.main-nav a:hover,nav.main-nav a:focus-visible{border-color:var(--rosa);color:var(--rosa-escuro)}
+nav.main-nav a.promo{color:var(--rosa-escuro)}
+.header-actions{display:flex;gap:.8rem;align-items:center;font-size:.8rem;font-weight:700}
+.header-actions a{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border:1px solid var(--areia);border-radius:99px;transition:.2s}
+.header-actions a:hover{background:var(--rosa-escuro);color:var(--branco);border-color:var(--rosa-escuro)}
+.menu-toggle{display:none;background:none;border:1px solid var(--areia);border-radius:8px;padding:.4rem .6rem;font-size:.95rem;font-weight:700;cursor:pointer;color:var(--rosa-escuro);font-family:var(--body)}
+:focus-visible{outline:2px solid var(--rosa-escuro);outline-offset:2px}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(120deg,var(--rosa) 0%,var(--rosa-escuro) 100%);color:var(--branco);position:relative;overflow:hidden}
+.hero-lirio{position:absolute;right:-4%;bottom:-10%;width:min(420px,55vw);opacity:.14;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:4rem 0;position:relative}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rosa-claro);font-weight:700;margin-bottom:1rem}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,4.8vw,3.8rem);line-height:1.08}
+.hero h1 em{font-style:italic;color:var(--rosa-claro)}
+.hero p{margin:1.3rem 0 2rem;max-width:46ch;color:#FCEFF2;font-size:1.05rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.9rem;border-radius:99px;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:1px solid transparent}
+.btn-primary{background:var(--branco);color:var(--rosa-escuro)}
+.btn-primary:hover{background:var(--rosa-claro)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:var(--branco)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.hero-card{background:var(--branco);color:var(--ink);border-radius:18px;padding:1.2rem;box-shadow:0 30px 60px rgba(0,0,0,.22);transform:rotate(1.5deg)}
+.hero-card img{border-radius:12px;margin-bottom:1rem;aspect-ratio:3/4;object-fit:cover;width:100%}
+.hero-card strong{font-family:var(--display);font-weight:500;font-size:1.15rem;display:block;padding:0 .4rem}
+.hero-card span{display:block;font-size:.85rem;color:var(--rosa-escuro);padding:0 .4rem .3rem}
+
+/* ── Barra de benefícios ── */
+.benefits{background:var(--rosa-claro);border-bottom:1px solid var(--areia)}
+.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.2rem 0;text-align:center}
+.benefits-grid div{font-size:.82rem}
+.benefits-grid strong{display:block;font-weight:700;color:var(--rosa-escuro);text-transform:uppercase;letter-spacing:.06em;font-size:.78rem}
+
+/* ── Seções ── */
+section{padding:4.2rem 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.section-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--rosa-escuro)}
+.section-head h2 em{font-style:italic;color:var(--verde)}
+.section-head p{color:#7A6A6D;max-width:52ch}
+.link-more{font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-escuro);border-bottom:2px solid var(--rosa-escuro);padding-bottom:.15rem;white-space:nowrap}
+
+/* ── Cards de produto ── */
+.grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.card{background:var(--branco);border-radius:14px;overflow:hidden;border:1px solid var(--areia);transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.18)}
+.card-media{position:relative;display:block}
+.card-media img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.badge{position:absolute;top:.8rem;left:.8rem;background:var(--rosa-escuro);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;border-radius:99px}
+.badge.frete{background:var(--verde);top:auto;bottom:.8rem}
+.card-body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card-body h3{font-family:var(--display);font-weight:500;font-size:1.05rem}
+.swatches{display:flex;gap:.4rem}
+.swatch{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.price{margin-top:auto}
+.price del{color:#A99598;font-size:.82rem}
+.price strong{display:block;font-size:1.15rem;color:var(--rosa-escuro)}
+.price strong small{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde)}
+.price span{font-size:.78rem;color:#7A6A6D}
+.card .btn-card{margin-top:.8rem;text-align:center;background:var(--rosa-escuro);color:var(--branco);border-radius:10px;padding:.7rem;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+.card .btn-card:hover{background:var(--verde)}
+
+/* ── Categorias ── */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.cat{position:relative;border-radius:16px;overflow:hidden;color:var(--branco);min-height:380px;display:flex;align-items:flex-end}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s}
+.cat:hover img{transform:scale(1.05)}
+.cat-info{position:relative;width:100%;padding:1.6rem;background:linear-gradient(to top,rgba(58,46,48,.9),transparent)}
+.cat-info h3{font-family:var(--display);font-weight:500;font-size:1.5rem}
+.cat-info p{font-size:.88rem;color:#F7E6EA;margin:.2rem 0 .8rem}
+.cat-info span{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--rosa);padding-bottom:.15rem}
+
+/* ── Tabs "um look para cada momento" ── */
+.momentos{background:var(--branco);border-top:1px solid var(--areia);border-bottom:1px solid var(--areia)}
+.tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.tab{background:none;border:1px solid var(--areia);border-radius:99px;padding:.6rem 1.4rem;font-family:var(--body);font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:#7A6A6D;transition:.2s}
+.tab[aria-selected="true"]{background:var(--rosa-escuro);color:var(--branco);border-color:var(--rosa-escuro)}
+.tab:hover{border-color:var(--rosa-escuro);color:var(--rosa-escuro)}
+.tab[aria-selected="true"]:hover{color:var(--branco)}
+.tab-panel{display:none}
+.tab-panel.active{display:grid}
+
+/* ── Faixa PIX ── */
+.pix{background:var(--verde);color:#fff;text-align:center;padding:3.2rem 0}
+.pix h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.pix h2 em{font-style:italic;color:#DCE8D5}
+.pix p{max-width:56ch;margin:.8rem auto 1.6rem;color:#E9F1E4}
+.pix .btn-primary{background:#fff;color:var(--verde)}
+.pix .btn-primary:hover{background:#DCE8D5}
+
+/* ── Medidas ── */
+.medidas{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.medidas img{border-radius:16px;aspect-ratio:4/3;object-fit:cover;object-position:top;width:100%}
+.medidas h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--rosa-escuro);margin-bottom:1rem}
+.medidas h2 em{font-style:italic;color:var(--verde)}
+.medidas p{color:#7A6A6D;margin-bottom:1.6rem}
+.btn-verde{background:var(--rosa-escuro);color:var(--branco)}
+.btn-verde:hover{background:var(--verde)}
+
+/* ── Instagram ── */
+.insta-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
+.insta-grid img{aspect-ratio:1;object-fit:cover;object-position:top;border-radius:10px;width:100%;transition:.25s}
+.insta-grid a:hover img{filter:brightness(.85);transform:scale(1.02)}
+
+/* ── Newsletter ── */
+.news{background:var(--rosa-escuro);color:var(--branco);text-align:center}
+.news h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem)}
+.news p{color:#F7E6EA;margin:.7rem auto 1.8rem;max-width:50ch}
+.news-form{display:flex;gap:.7rem;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news-form input{flex:1;min-width:240px;padding:.9rem 1.2rem;border-radius:99px;border:none;font-family:var(--body);font-size:.95rem;background:var(--branco)}
+.news-form button{cursor:pointer;border:none}
+.news-msg{margin-top:1rem;font-weight:700;color:var(--rosa-claro);min-height:1.4rem}
+
+/* ── Footer ── */
+footer{background:#4A383D;color:#E6D6DA;font-size:.88rem}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:2.5rem;padding:3.5rem 0 2.5rem}
+footer h4{font-family:var(--display);font-weight:500;color:var(--branco);font-size:1.05rem;margin-bottom:1rem}
+footer li{margin-bottom:.5rem}
+footer a:hover{color:var(--rosa)}
+.footer-brand img{height:64px;width:auto;background:var(--branco);border-radius:12px;padding:.4rem}
+.footer-brand p{margin-top:1rem;max-width:34ch}
+.footer-social{display:flex;gap:.8rem;margin-top:1.2rem}
+.footer-social a{width:38px;height:38px;border:1px solid #6A555B;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.2s}
+.footer-social a:hover{background:var(--rosa);border-color:var(--rosa);color:#4A383D}
+.footer-bottom{border-top:1px solid #5C474D;padding:1.3rem 0;text-align:center;font-size:.78rem;color:#B39CA2}
+
+/* ── WhatsApp flutuante ── */
+.wa-float{position:fixed;right:1.3rem;bottom:1.3rem;z-index:60;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.25);transition:.2s}
+.wa-float:hover{transform:scale(1.08)}
+
+/* ── Botões de canais de compra ── */
+.buy-row{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-top:.8rem}
+.bch{text-align:center;border-radius:10px;padding:.6rem .4rem;font-weight:700;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:#fff;transition:.2s}
+.bch.ml{background:#FFE600;color:#2D3277}
+.bch.ml:hover{filter:brightness(.93)}
+.bch.shopee{background:#EE4D2D}
+.bch.shopee:hover{background:#D63E20}
+.bch.tt{background:#010101}
+.bch.tt:hover{background:#2A2A2A}
+.bch.wa{background:#25D366}
+.bch.wa:hover{background:#1EBE5A}
+
+/* ── Seção "compre onde preferir" ── */
+.canais{background:var(--rosa-claro);text-align:center}
+.canais-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.2rem;text-align:left}
+.canal{background:var(--branco);border:1px solid var(--areia);border-radius:16px;padding:1.8rem 1.4rem;transition:.25s;display:flex;flex-direction:column;gap:.5rem}
+.canal:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.15)}
+.canal .tag{align-self:flex-start;padding:.45rem 1.1rem;border-radius:99px;color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.canal .tag.ml{background:#FFE600;color:#2D3277}
+.canal .tag.shopee{background:#EE4D2D}
+.canal .tag.tt{background:#010101}
+.canal .tag.wa{background:#25D366}
+.canal h3{font-family:var(--display);font-weight:500;font-size:1.3rem}
+.canal p{font-size:.9rem;color:#7A6A6D;flex:1}
+.canal span{font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-escuro)}
+
+/* ── Responsivo ── */
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr;padding:3rem 0}
+  .hero-card{max-width:340px;margin:0 auto}
+  .grid-products{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .cat:last-child{grid-column:1/-1;min-height:280px}
+  .benefits-grid{grid-template-columns:repeat(2,1fr)}
+  .medidas{grid-template-columns:1fr}
+  .canais-grid{grid-template-columns:1fr 1fr}
+  .insta-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  nav.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--branco);border-bottom:1px solid var(--areia);padding:1rem 4%}
+  nav.main-nav.open{display:block}
+  nav.main-nav ul{flex-direction:column;gap:.9rem}
+  .menu-toggle{display:block}
+  .header-actions .hide-mobile{display:none}
+}
+@media (max-width:560px){
+  .grid-products{grid-template-columns:1fr 1fr;gap:.8rem}
+  .canais-grid{grid-template-columns:1fr}
+  .card-body{padding:.8rem}
+  .cat-grid{grid-template-columns:1fr}
+  .insta-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .logo img{height:44px}
+}
+</style>
+</head>
+<body>
+
+<!-- Barra de anúncios rotativa -->
+<div class="announce" aria-label="Promoções da loja">
+  <div class="announce-track">
+    <span>Compre pela <em>Shopee</em>, <em>Mercado Livre</em>, <em>TikTok Shop</em> ou <em>WhatsApp</em></span>
+    <span>Fabricação própria com <em>envio imediato</em></span>
+    <span>De Artur Nogueira - SP <em>para todo o Brasil</em></span>
+    <span>Compre pela <em>Shopee</em>, <em>Mercado Livre</em>, <em>TikTok Shop</em> ou <em>WhatsApp</em></span>
+    <span>Fabricação própria com <em>envio imediato</em></span>
+    <span>De Artur Nogueira - SP <em>para todo o Brasil</em></span>
+  </div>
+</div>
+
+<header>
+  <div class="container header-inner">
+    <a class="logo" href="https://liriosdocampo.com.br/" aria-label="Lírios do Campo Store - Início">
+      <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/themes/common/logo-2010862784-1749649017-325ea9adf2336639a8dbcb02561d1e3e1749649017-480-0.webp" alt="Lírios do Campo Store">
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu" onclick="toggleMenu(this)">Menu</button>
+    <nav class="main-nav" id="menu" aria-label="Navegação principal">
+      <ul>
+        <li><a href="https://liriosdocampo.com.br/produtos/">Novidades</a></li>
+        <li><a href="https://liriosdocampo.com.br/salopetes/">Salopetes</a></li>
+        <li><a href="https://liriosdocampo.com.br/vestidos/">Vestidos</a></li>
+        <li><a href="https://liriosdocampo.com.br/conjuntos/">Conjuntos</a></li>
+        <li><a href="https://liriosdocampo.com.br/infantil/">Infantil</a></li>
+        <li><a class="promo" href="https://liriosdocampo.com.br/promocoes/">Promoções</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="hide-mobile" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Mercado Livre</a>
+      <a href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Shopee</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <svg class="hero-lirio" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width=".6" aria-hidden="true"><path d="M12 22V10M12 10C12 6 9 3 5 3c0 4 3 7 7 7zm0 0c0-4 3-7 7-7 0 4-3 7-7 7zM8 22c2-1 3-3 4-6 1 3 2 5 4 6"/></svg>
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-eyebrow">A loja modesta que cabe no seu bolso</p>
+      <h1>Elegância que floresce <em>no campo</em> e cabe no seu bolso.</h1>
+      <p>Vestidos, salopetes e conjuntos com modelagem pensada para a mulher que valoriza a modéstia sem abrir mão do estilo. De Artur Nogueira - SP, com envio para todo o Brasil.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Comprar na Shopee</a>
+        <a class="btn btn-primary" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Comprar no Mercado Livre</a>
+        <a class="btn btn-primary" href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">TikTok Shop</a>
+        <a class="btn btn-ghost" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Vi%20o%20site%20da%20L%C3%ADrios%20do%20Campo%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Comprar pelo WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Modelo vestindo o Vestido Judite Verde" loading="eager">
+      <strong>Vestido Judite</strong>
+      <span>O queridinho da estação, disponível em várias cores</span>
+    </div>
+  </div>
+</div>
+
+<!-- Benefícios -->
+<div class="benefits">
+  <div class="container benefits-grid">
+    <div><strong>Compre onde preferir</strong>Shopee, Mercado Livre, TikTok Shop ou WhatsApp</div>
+    <div><strong>Compra protegida</strong>Segurança da Shopee e do Mercado Livre</div>
+    <div><strong>Envio imediato</strong>Postamos em até 2 dias úteis após o pagamento</div>
+    <div><strong>Atendimento no WhatsApp</strong>(19) 9 9974-4842</div>
+  </div>
+</div>
+
+<!-- Novidades -->
+<section id="novidades">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Acabou de <em>chegar</em></h2>
+        <p>As peças mais desejadas da coleção, direto do nosso ateliê para o seu guarda-roupa.</p>
+      </div>
+      <a class="link-more" href="https://liriosdocampo.com.br/produtos/">Ver todos os produtos</a>
+    </div>
+    <div class="grid-products">
+
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/produtos/vestido-judite-verde/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Vestido Judite Verde" loading="lazy">
+          <span class="badge">Oferta</span>
+          <span class="badge frete">Envio grátis</span>
+        </a>
+        <div class="card-body">
+          <h3>Vestido Judite - Verde</h3>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <span class="swatch" style="background:#5A6B4D" title="Verde"></span>
+            <span class="swatch" style="background:#D8BFA8" title="Nude"></span>
+            <span class="swatch" style="background:#6B4E3D" title="Marrom"></span>
+            <span class="swatch" style="background:#8C8C8C" title="Cinza"></span>
+          </div>
+          <div class="price">
+            <strong>R$ 123,41 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 43,30 sem juros</span>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Shopee</a>
+            <!-- TROQUE: confirme o link da loja no TikTok Shop -->
+            <a class="bch tt" href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Judite%20Verde." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/produtos/vestido-judite-nude/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Vestido Judite Nude" loading="lazy">
+          <span class="badge">Oferta</span>
+          <span class="badge frete">Envio grátis</span>
+        </a>
+        <div class="card-body">
+          <h3>Vestido Judite - Nude</h3>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <span class="swatch" style="background:#D8BFA8" title="Nude"></span>
+          </div>
+          <div class="price">
+            <strong>R$ 123,41 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 43,30 sem juros</span>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Shopee</a>
+            <a class="bch tt" href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Judite%20Nude." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/produtos/vestido-ariane-marrom/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6581-5d61cfedaf77151f1717449271864442-640-0.webp" alt="Vestido Ariane Marrom" loading="lazy">
+          <span class="badge frete">Envio grátis</span>
+        </a>
+        <div class="card-body">
+          <h3>Vestido Ariane - Marrom</h3>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <span class="swatch" style="background:#6B4E3D" title="Marrom"></span>
+            <span class="swatch" style="background:#F4F0E6" title="Branco"></span>
+          </div>
+          <div class="price">
+            <strong>R$ 94,91 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 33,30 sem juros</span>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Shopee</a>
+            <a class="bch tt" href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Ariane%20Marrom." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/produtos/vestido-ester-marrom/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6740-edb0f97b114f74e3bb17453292946635-640-0.webp" alt="Vestido Ester Marrom" loading="lazy">
+          <span class="badge">33% off</span>
+          <span class="badge frete">Envio grátis</span>
+        </a>
+        <div class="card-body">
+          <h3>Vestido Ester - Marrom</h3>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <span class="swatch" style="background:#6B4E3D" title="Marrom"></span>
+            <span class="swatch" style="background:#6B2B35" title="Bordô"></span>
+          </div>
+          <div class="price">
+            <del>R$ 89,90</del>
+            <strong>R$ 56,91 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 19,97 sem juros</span>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Shopee</a>
+            <a class="bch tt" href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Ester%20Marrom." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Categorias -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Nossas <em>categorias</em></h2>
+        <p>Do best seller da casa aos conjuntos estilo coreano, do chique ao casual.</p>
+      </div>
+    </div>
+    <div class="cat-grid">
+      <a class="cat" href="https://liriosdocampo.com.br/salopetes/">
+        <!-- TROQUE: substitua por uma foto de salopete/jardineira da loja -->
+        <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6589-87f74d07bc11527f0417449271850947-640-0.webp" alt="Salopetes e Jardineiras" loading="lazy">
+        <div class="cat-info">
+          <h3>Salopetes e Jardineiras</h3>
+          <p>O best seller da Lírios do Campo</p>
+          <span>Confira</span>
+        </div>
+      </a>
+      <a class="cat" href="https://liriosdocampo.com.br/vestidos/">
+        <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2818-ae755cafe0213b3e5c17377267710351-640-0.webp" alt="Vestidos" loading="lazy">
+        <div class="cat-info">
+          <h3>Vestidos</h3>
+          <p>Modelagem perfeita, do curto ao longo</p>
+          <span>Confira</span>
+        </div>
+      </a>
+      <a class="cat" href="https://liriosdocampo.com.br/conjuntos/">
+        <!-- TROQUE: substitua por uma foto de conjunto da loja -->
+        <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6597-f27fce80f4113e57aa17449271827217-640-0.webp" alt="Conjuntos" loading="lazy">
+        <div class="cat-info">
+          <h3>Conjuntos</h3>
+          <p>Estilo coreano, do chique ao casual</p>
+          <span>Confira</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Um look para cada momento -->
+<section class="momentos">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Um look para <em>cada momento</em></h2>
+        <p>Selecionamos peças para cada ocasião da sua semana.</p>
+      </div>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Looks por ocasião">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="panel-dia" id="tab-dia" onclick="showTab('dia')">Dia a dia</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-culto" id="tab-culto" onclick="showTab('culto')">Culto</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-passeio" id="tab-passeio" onclick="showTab('passeio')">Passeio</button>
+    </div>
+
+    <div class="tab-panel grid-products active" id="panel-dia" role="tabpanel" aria-labelledby="tab-dia">
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/salopetes/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6613-cf2aea05da429d6bd717449271824889-640-0.webp" alt="Look para o dia a dia" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Salopetes práticos</h3>
+          <div class="price"><span>Conforto para a rotina</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/salopetes/">Ver salopetes</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/blusinhas/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6763-fcff7be3374f53472117453292949160-640-0.webp" alt="Blusinhas" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Blusinhas</h3>
+          <div class="price"><span>Combinam com tudo</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/blusinhas/">Ver blusinhas</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/saias/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6765-71c9e946d68ae2625e17453292935292-640-0.webp" alt="Saias" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Saias</h3>
+          <div class="price"><span>Do casual ao arrumado</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/saias/">Ver saias</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/casacos/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6589-87f74d07bc11527f0417449271850947-640-0.webp" alt="Casacos" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Casacos</h3>
+          <div class="price"><span>Para os dias frios</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/casacos/">Ver casacos</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="tab-panel grid-products" id="panel-culto" role="tabpanel" aria-labelledby="tab-culto">
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/vestidos/vestidoslongos/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2823-8146b45720fe349d9217377267725023-640-0.webp" alt="Vestidos longos" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Vestidos longos</h3>
+          <div class="price"><span>Elegância completa</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/vestidos/vestidoslongos/">Ver longos</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/vestidos/midi/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Vestidos midi" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Vestidos midi</h3>
+          <div class="price"><span>O equilíbrio perfeito</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/vestidos/midi/">Ver midis</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/conjuntos/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2763-82a674230a8015ae1f17377253240711-640-0.webp" alt="Conjuntos" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Conjuntos</h3>
+          <div class="price"><span>Prontos para o domingo</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/conjuntos/">Ver conjuntos</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/casaqueto/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2765-25551c0310a9836d8c17377253237058-640-0.webp" alt="Casaquetos" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Casaquetos</h3>
+          <div class="price"><span>O toque final do look</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/casaqueto/">Ver casaquetos</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="tab-panel grid-products" id="panel-passeio" role="tabpanel" aria-labelledby="tab-passeio">
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/vestidos/curtos/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6740-edb0f97b114f74e3bb17453292946635-640-0.webp" alt="Vestidos curtos" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Vestidos curtos</h3>
+          <div class="price"><span>Leves e despojados</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/vestidos/curtos/">Ver curtos</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/vestidos/max-midi/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Vestidos max midi" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Max midi</h3>
+          <div class="price"><span>Movimento e frescor</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/vestidos/max-midi/">Ver max midi</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/infantil/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6581-5d61cfedaf77151f1717449271864442-640-0.webp" alt="Moda infantil" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Infantil</h3>
+          <div class="price"><span>Mamãe e filha combinando</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/infantil/">Ver infantil</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card-media" href="https://liriosdocampo.com.br/promocoes/">
+          <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6597-f27fce80f4113e57aa17449271827217-640-0.webp" alt="Promoções" loading="lazy">
+        </a>
+        <div class="card-body">
+          <h3>Promoções</h3>
+          <div class="price"><span>Até 45% de desconto</span></div>
+          <a class="btn-card" href="https://liriosdocampo.com.br/promocoes/">Ver promoções</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Compre onde preferir -->
+<section class="canais">
+  <div class="container">
+    <h2 style="font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--rosa-escuro)">Compre onde <em style="color:var(--verde)">preferir</em></h2>
+    <p style="max-width:60ch;margin:.8rem auto 0;color:#7A6A6D">Você escolhe o jeito mais prático de garantir o seu look: nas nossas lojas da Shopee, do Mercado Livre e do TikTok Shop ou com atendimento direto pelo WhatsApp.</p>
+    <div class="canais-grid">
+      <a class="canal" href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">
+        <span class="tag shopee">Shopee</span>
+        <h3>Loja oficial na Shopee</h3>
+        <p>Cupons, frete grátis em campanhas e a praticidade que você já conhece do aplicativo.</p>
+        <span>Ir para a Shopee</span>
+      </a>
+      <a class="canal" href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">
+        <span class="tag ml">Mercado Livre</span>
+        <h3>Loja no Mercado Livre</h3>
+        <p>Compra garantida pelo Mercado Pago, com parcelamento e entrega rastreada.</p>
+        <span>Ir para o Mercado Livre</span>
+      </a>
+      <a class="canal" href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">
+        <span class="tag tt">TikTok Shop</span>
+        <h3>Loja no TikTok Shop</h3>
+        <p>Veja as peças em vídeo, aproveite cupons da plataforma e compre sem sair do aplicativo.</p>
+        <span>Ir para o TikTok Shop</span>
+      </a>
+      <a class="canal" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Vi%20o%20site%20da%20L%C3%ADrios%20do%20Campo%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">
+        <span class="tag wa">WhatsApp</span>
+        <h3>Compre pelo WhatsApp</h3>
+        <p>Atendimento pessoal para tirar dúvidas de tamanho, ver fotos e fechar o pedido: (19) 9 9974-4842.</p>
+        <span>Chamar no WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Guia de medidas -->
+<section>
+  <div class="container medidas">
+    <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2818-ae755cafe0213b3e5c17377267710351-640-0.webp" alt="Modelo com peça da Lírios do Campo" loading="lazy">
+    <div>
+      <h2>Encontre o seu tamanho <em>sem erro</em></h2>
+      <p>Cada corpo é único, e a nossa modelagem foi pensada para valorizar o seu. Consulte o guia de medidas antes de finalizar a compra e, se ficar na dúvida, fale com a gente no WhatsApp: ajudamos você a escolher o tamanho ideal.</p>
+      <a class="btn btn-verde" href="https://liriosdocampo.com.br/medidas/">Ver guia de medidas</a>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Siga <em>@liriosdocampostore</em></h2>
+        <p>Novidades, looks do dia e bastidores no nosso Instagram.</p>
+      </div>
+      <a class="link-more" href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener">Ver perfil</a>
+    </div>
+    <div class="insta-grid">
+      <!-- TROQUE: se preferir, substitua pelas fotos dos posts mais recentes do feed -->
+      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
+      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6581-5d61cfedaf77151f1717449271864442-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
+      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
+      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_6740-edb0f97b114f74e3bb17453292946635-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
+      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/products/img_2823-8146b45720fe349d9217377267725023-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="news">
+  <div class="container">
+    <h2>Fique por dentro das novidades</h2>
+    <p>Inscreva-se para receber lançamentos, promoções exclusivas e dicas de looks em primeira mão.</p>
+    <form class="news-form" onsubmit="subscribe(event)">
+      <label for="email" style="position:absolute;left:-9999px">Seu e-mail</label>
+      <input id="email" type="email" placeholder="Digite seu melhor e-mail" required>
+      <button class="btn btn-primary" type="submit">Quero receber</button>
+    </form>
+    <p class="news-msg" id="newsMsg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="https://liriosdocampo.com.br/">
+        <img src="https://dcdn-us.mitiendanube.com/stores/001/117/661/themes/common/logo-2010862784-1749649017-325ea9adf2336639a8dbcb02561d1e3e1749649017-480-0.webp" alt="Lírios do Campo Store">
+      </a>
+      <p>A loja modesta que cabe no seu bolso. De Artur Nogueira - SP para todo o Brasil.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/liriosdocampoloja" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.3 4.3 5 4.5"/></svg>
+        </a>
+        <a href="https://wa.me/5519999744842" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="https://liriosdocampo.com.br/produtos/">Todos os produtos</a></li>
+        <li><a href="https://liriosdocampo.com.br/promocoes/">Promoções</a></li>
+        <li><a href="https://liriosdocampo.com.br/medidas/">Guia de medidas</a></li>
+        <li><a href="https://liriosdocampo.com.br/contato/">Contato</a></li>
+        <li><a href="https://liriosdocampo.com.br/politica-de-privacidade/">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Categorias</h4>
+      <ul>
+        <li><a href="https://liriosdocampo.com.br/salopetes/">Salopetes e Jardineiras</a></li>
+        <li><a href="https://liriosdocampo.com.br/vestidos/">Vestidos</a></li>
+        <li><a href="https://liriosdocampo.com.br/conjuntos/">Conjuntos</a></li>
+        <li><a href="https://liriosdocampo.com.br/saias/">Saias</a></li>
+        <li><a href="https://liriosdocampo.com.br/infantil/">Infantil</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Onde comprar</h4>
+      <ul>
+        <li><a href="https://shopee.com.br/liriosdocampo" target="_blank" rel="noopener">Loja oficial na Shopee</a></li>
+        <li><a href="https://liriosdocampo.mercadoshops.com.br/" target="_blank" rel="noopener">Loja no Mercado Livre</a></li>
+        <li><a href="https://www.tiktok.com/@liriosdocampostore" target="_blank" rel="noopener">Loja no TikTok Shop</a></li>
+        <li><a href="https://wa.me/5519999744842" target="_blank" rel="noopener">WhatsApp: (19) 9 9974-4842</a></li>
+        <li>Rua 7 de Setembro, 1476, Sala 1</li>
+        <li>Centro - Artur Nogueira - SP</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      Copyright Lírios do Campo Store - CNPJ 26.347.281/0001-47 - 2026. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5519999744842" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.5 2 3.5 3.7 4.2l1.3-1 2 1c-.3 1.2-1.5 1.8-2.7 1.5-2.4-.6-4.9-3-5.6-5.4-.3-1.2.3-2.3 1.5-2.6l.9 2z" stroke-width="0" fill="currentColor" opacity=".9"/></svg>
+</a>
+
+<script>
+function toggleMenu(btn){
+  const nav=document.getElementById('menu');
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected','false'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+id).setAttribute('aria-selected','true');
+  document.getElementById('panel-'+id).classList.add('active');
+}
+function subscribe(e){
+  e.preventDefault();
+  const msg=document.getElementById('newsMsg');
+  msg.textContent='Inscrição recebida! Em breve você receberá nossas novidades.';
+  e.target.reset();
+  /* Para integrar de verdade: conecte este formulário ao Mailchimp ou à newsletter da Nuvemshop */
+}
+</script>
+
+</body>
+</html>
