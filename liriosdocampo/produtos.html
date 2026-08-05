@@ -60,7 +60,7 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 .page-head{background:linear-gradient(120deg,var(--rosa) 0%,var(--rosa-escuro) 100%);color:var(--branco);padding:3rem 0}
 .page-head .breadcrumb{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--rosa-claro);margin-bottom:.6rem}
 .page-head .breadcrumb a{border-bottom:1px solid rgba(255,255,255,.5)}
-.page-head h1{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem)}
+.page-head h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.01em}
 .page-head h1 em{font-style:italic;color:var(--rosa-claro)}
 .page-head p{margin-top:.6rem;max-width:60ch;color:#FCEFF2}
 
@@ -82,7 +82,7 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 
 /* ── Catálogo ── */
 .catalog{padding:2.6rem 0 4rem}
-.grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1.9rem}
 .card{background:var(--branco);border-radius:14px;overflow:hidden;border:1px solid var(--areia);transition:.25s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.18)}
 .card-media{position:relative;display:block;background:var(--rosa-claro);cursor:pointer}
@@ -93,8 +93,8 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 .fav-btn{position:absolute;top:.6rem;right:.6rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.05rem;line-height:1;cursor:pointer;transition:.2s;color:var(--rosa-escuro);z-index:2}
 .fav-btn:hover{background:#fff;transform:scale(1.08)}
 .fav-btn.is-fav{background:var(--rosa-escuro);color:#fff}
-.card-body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
-.card-body h3{font-family:var(--display);font-weight:500;font-size:1.05rem}
+.card-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.card-body h3{font-family:var(--display);font-weight:500;font-size:1.12rem}
 .price{margin-top:auto}
 .price strong{display:block;font-size:1.15rem;color:var(--rosa-escuro)}
 .price strong small{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde)}
@@ -141,19 +141,17 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 
 /* ── Botões de canais de compra ── */
 .buy-row{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-top:.4rem}
-.bch{text-align:center;border-radius:10px;padding:.6rem .4rem;font-weight:700;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:#fff;transition:.2s}
-.bch.ml{background:#FFE600;color:#2D3277}
-.bch.ml:hover{filter:brightness(.93)}
-.bch.shopee{background:#EE4D2D}
-.bch.shopee:hover{background:#D63E20}
-.bch.tt{background:#010101}
-.bch.tt:hover{background:#2A2A2A}
-.bch.wa{background:#25D366}
-.bch.wa:hover{background:#1EBE5A}
+.bch{display:flex;align-items:center;justify-content:center;gap:.4rem;text-align:center;border-radius:10px;padding:.6rem .4rem;font-weight:700;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:var(--branco);border:1px solid var(--areia);transition:.2s}
+.bch::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.bch:hover{border-color:var(--rosa-escuro);color:var(--rosa-escuro);background:var(--rosa-claro)}
+.bch.ml::before{background:#FFE600}
+.bch.shopee::before{background:#EE4D2D}
+.bch.tt::before{background:#010101}
+.bch.wa::before{background:#25D366}
 
 /* ── Faixa PIX ── */
 .pix{background:var(--verde);color:#fff;text-align:center;padding:3.2rem 0}
-.pix h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.pix h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.01em}
 .pix h2 em{font-style:italic;color:#DCE8D5}
 .pix p{max-width:56ch;margin:.8rem auto 1.6rem;color:#E9F1E4}
 .btn{display:inline-block;padding:.85rem 1.9rem;border-radius:99px;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:1px solid transparent}
