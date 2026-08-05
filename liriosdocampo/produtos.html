@@ -34,10 +34,10 @@ ul{list-style:none}
 .container{width:min(1200px,92%);margin:0 auto}
 
 /* ── Barra de anúncios rotativa ── */
-.announce{background:var(--rosa-escuro);color:var(--branco);overflow:hidden;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.announce{background:var(--creme);color:var(--ink);border-bottom:1px solid var(--areia);overflow:hidden;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
 .announce-track{display:flex;gap:4rem;white-space:nowrap;padding:.55rem 0;animation:marquee 28s linear infinite;width:max-content}
 .announce-track span{display:inline-flex;align-items:center;gap:.6rem}
-.announce-track em{font-style:normal;color:var(--rosa-claro);font-weight:700}
+.announce-track em{font-style:normal;color:var(--rosa-escuro);font-weight:700}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.announce-track{animation:none;flex-wrap:wrap;white-space:normal;width:auto;justify-content:center}}
 
@@ -57,12 +57,13 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 :focus-visible{outline:2px solid var(--rosa-escuro);outline-offset:2px}
 
 /* ── Cabeçalho da página ── */
-.page-head{background:linear-gradient(120deg,var(--rosa) 0%,var(--rosa-escuro) 100%);color:var(--branco);padding:3rem 0}
-.page-head .breadcrumb{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--rosa-claro);margin-bottom:.6rem}
-.page-head .breadcrumb a{border-bottom:1px solid rgba(255,255,255,.5)}
-.page-head h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.01em}
-.page-head h1 em{font-style:italic;color:var(--rosa-claro)}
-.page-head p{margin-top:.6rem;max-width:60ch;color:#FCEFF2}
+.page-head{background:var(--creme);border-bottom:1px solid var(--areia);padding:3.5rem 0}
+.page-head .breadcrumb{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--rosa-escuro);margin-bottom:.6rem}
+.page-head .breadcrumb a{color:#7A6A6D;border-bottom:1px solid transparent;transition:.2s}
+.page-head .breadcrumb a:hover{color:var(--rosa-escuro);border-color:var(--rosa-escuro)}
+.page-head h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.01em;color:var(--ink)}
+.page-head h1 em{font-style:italic;color:var(--rosa-escuro)}
+.page-head p{margin-top:.6rem;max-width:60ch;color:#5B4A4D}
 
 /* ── Busca ── */
 .search-bar{background:var(--branco);border-bottom:1px solid var(--areia);position:sticky;top:73px;z-index:40}
