@@ -504,7 +504,7 @@ footer .base a:hover{color:var(--mel-claro)}
     </div>
     <div class="reveal d1">
       <div class="foto-frame">
-        <video autoplay muted loop playsinline preload="none">
+        <video muted loop playsinline preload="none">
           <source src="salao-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -535,7 +535,7 @@ footer .base a:hover{color:var(--mel-claro)}
         </figure>
         <div class="mh-video">
           <div class="placeholder"></div>
-          <video autoplay muted loop playsinline preload="none">
+          <video muted loop playsinline preload="none">
             <source src="megahair-aplicacao.mp4" type="video/mp4">
           </video>
           <span class="label">Aplicação em tempo real</span>
@@ -673,10 +673,10 @@ footer .base a:hover{color:var(--mel-claro)}
   </div>
   <div class="gal-track">
     <!-- EDITAR: substituir pelas melhores fotos de resultados (formato vertical 3x4). -->
-    <div class="gal-item"><video autoplay muted loop playsinline preload="none"><source src="megahair-aplicacao.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-    <div class="gal-item"><video autoplay muted loop playsinline preload="none"><source src="galeria-tratamento.mp4" type="video/mp4"></video><span class="cap">Tratamento capilar</span></div>
-    <div class="gal-item"><video autoplay muted loop playsinline preload="none"><source src="galeria-atendimento.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-    <div class="gal-item"><video autoplay muted loop playsinline preload="none"><source src="galeria-video1.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+    <div class="gal-item"><video muted loop playsinline preload="none"><source src="megahair-aplicacao.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+    <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-tratamento.mp4" type="video/mp4"></video><span class="cap">Tratamento capilar</span></div>
+    <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-atendimento.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+    <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-video1.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
   </div>
 </section>
 
@@ -837,6 +837,17 @@ document.querySelectorAll('video').forEach(function(v){
   var s=v.querySelector('source');
   if(s){s.addEventListener('error',function(){v.style.display='none'})}
 });
+
+// ---------- vídeos fora do hero: só tocam enquanto estão na tela ----------
+var lazyVideos=document.querySelectorAll('#sobre video,.mh-video video,.gal-item video');
+var videoIO=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    var v=entry.target;
+    if(entry.isIntersecting){v.play().catch(function(){})}
+    else{v.pause()}
+  });
+},{threshold:.25});
+lazyVideos.forEach(function(v){videoIO.observe(v)});
 
 // ---------- reveal on scroll ----------
 var io=new IntersectionObserver(function(entries){
