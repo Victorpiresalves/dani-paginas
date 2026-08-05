@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moniquecoutinhobeauty.com/sitemap.xml

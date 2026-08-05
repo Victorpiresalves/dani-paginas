@@ -1,0 +1,18 @@
+{
+  "name": "Monique Coutinho Beauty",
+  "short_name": "Monique Beauty",
+  "description": "Salão especializado em mega hair, mechas e tratamentos capilares na Tijuca, RJ.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#685049",
+  "theme_color": "#685049",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "logo-icone.png",
+      "sizes": "400x400",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
