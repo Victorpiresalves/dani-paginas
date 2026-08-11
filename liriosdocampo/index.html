@@ -57,23 +57,30 @@ nav.main-nav a.promo{color:var(--rosa-escuro)}
 :focus-visible{outline:2px solid var(--rosa-escuro);outline-offset:2px}
 
 /* ── Hero ── */
-.hero{background:var(--creme);border-bottom:1px solid var(--areia);position:relative;overflow:hidden}
-.hero-inner{display:grid;grid-template-columns:.9fr 1.15fr;gap:3.5rem;align-items:center;padding:5.5rem 0;position:relative}
-.hero-eyebrow{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rosa-escuro);font-weight:700;margin-bottom:1.1rem}
-.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1.1;color:var(--ink);letter-spacing:-.01em}
-.hero h1 em{font-style:italic;color:var(--rosa-escuro)}
-.hero p{margin:1.3rem 0 2rem;max-width:46ch;color:#5B4A4D;font-size:1.05rem}
-.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
 .btn{display:inline-block;padding:.85rem 1.9rem;border-radius:99px;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:1px solid transparent}
 .btn-primary{background:var(--rosa-escuro);color:var(--branco)}
 .btn-primary:hover{background:var(--ink)}
 .btn-ghost{border-color:var(--rosa-escuro);color:var(--rosa-escuro)}
 .btn-ghost:hover{background:var(--rosa-claro)}
-.hero-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px rgba(58,46,48,.14)}
-.hero-photo img{width:100%;height:100%;object-fit:cover}
-.hero-photo-caption{position:absolute;left:1.1rem;right:1.1rem;bottom:1.1rem;background:rgba(255,255,255,.94);border-radius:12px;padding:.9rem 1.1rem}
-.hero-photo-caption strong{font-family:var(--display);font-weight:500;font-size:1.1rem;display:block;color:var(--ink)}
-.hero-photo-caption span{display:block;font-size:.82rem;color:var(--rosa-escuro);margin-top:.15rem}
+
+/* ── Banner rotativo ── */
+.banner{position:relative;width:100%;aspect-ratio:2/1;overflow:hidden;background:var(--creme)}
+.banner-track{display:flex;height:100%;transition:transform .6s cubic-bezier(.65,0,.35,1)}
+.banner-slide{position:relative;flex:0 0 100%;height:100%;display:block}
+.banner-slide img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.banner-caption{position:absolute;left:1.6rem;bottom:1.6rem;background:rgba(255,255,255,.96);border-radius:16px;padding:1.5rem 1.8rem;max-width:380px;box-shadow:0 25px 50px rgba(43,33,35,.22)}
+.banner-eyebrow{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--rosa-escuro);margin-bottom:.5rem}
+.banner-caption h2{font-family:var(--display);font-weight:400;font-size:clamp(1.25rem,2.3vw,1.85rem);line-height:1.15;letter-spacing:-.01em;color:var(--ink)}
+.banner-caption h2 em{font-style:italic;color:var(--rosa-escuro)}
+.banner-caption p{font-size:.86rem;color:#5B4A4D;max-width:38ch;margin:.6rem 0 1.1rem}
+.banner-caption .btn{padding:.65rem 1.5rem;font-size:.76rem}
+.banner-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.85);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:.2s;color:var(--ink)}
+.banner-arrow:hover{background:#fff}
+.banner-arrow.prev{left:1.2rem}
+.banner-arrow.next{right:1.2rem}
+.banner-dots{position:absolute;bottom:1.3rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;z-index:5}
+.banner-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);border:none;cursor:pointer;padding:0;transition:.2s}
+.banner-dot.active{background:#fff;width:24px;border-radius:4px}
 
 /* ── Barra de benefícios ── */
 .benefits{background:var(--branco);border-bottom:1px solid var(--areia)}
@@ -99,8 +106,10 @@ section{padding:4.2rem 0}
 .badge.frete{background:var(--verde);top:auto;bottom:.8rem}
 .card-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
 .card-body h3{font-family:var(--display);font-weight:500;font-size:1.12rem}
-.swatches{display:flex;gap:.4rem}
-.swatch{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.swatches{display:flex;flex-wrap:wrap;gap:.5rem}
+.swatch{display:block;width:20px;height:20px;border-radius:5px;border:1px solid rgba(0,0,0,.12);box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer;transition:.15s}
+.swatch:hover{transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,.15)}
+.swatch.active{border-color:var(--rosa-escuro);box-shadow:0 0 0 2px var(--rosa-claro);cursor:default}
 .price{margin-top:auto}
 .price del{color:#A99598;font-size:.82rem}
 .price strong{display:block;font-size:1.15rem;color:var(--rosa-escuro)}
@@ -108,6 +117,8 @@ section{padding:4.2rem 0}
 .price span{font-size:.78rem;color:#7A6A6D}
 .card .btn-card{margin-top:.8rem;text-align:center;background:var(--rosa-escuro);color:var(--branco);border-radius:10px;padding:.7rem;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
 .card .btn-card:hover{background:var(--verde)}
+.rating{display:flex;align-items:center;gap:.3rem;font-size:.78rem;color:#7A6A6D}
+.rating strong{color:#D9A441;font-weight:700}
 
 /* ── Favoritos e sacola ── */
 .fav-btn{position:absolute;top:.6rem;right:.6rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.05rem;line-height:1;cursor:pointer;transition:.2s;color:var(--rosa-escuro);z-index:2}
@@ -207,32 +218,34 @@ footer a:hover{color:var(--rosa)}
 
 /* ── Botões de canais de compra ── */
 .buy-row{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-top:.8rem}
-.bch{display:flex;align-items:center;justify-content:center;gap:.4rem;text-align:center;border-radius:10px;padding:.6rem .4rem;font-weight:700;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:var(--branco);border:1px solid var(--areia);transition:.2s}
-.bch::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.bch{display:flex;align-items:center;justify-content:center;gap:.5rem;text-align:center;border-radius:10px;padding:.6rem .4rem;font-weight:700;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:var(--branco);border:1px solid var(--areia);transition:.2s}
+.bch::before{content:'';width:19px;height:19px;border-radius:50%;background:#fff;border:1px solid var(--areia);background-size:62%;background-position:center;background-repeat:no-repeat;flex-shrink:0}
 .bch:hover{border-color:var(--rosa-escuro);color:var(--rosa-escuro);background:var(--rosa-claro)}
-.bch.ml::before{background:#FFE600}
-.bch.shopee::before{background:#EE4D2D}
-.bch.tt::before{background:#010101}
-.bch.wa::before{background:#25D366}
+.bch.ml::before{background-image:url(img/icone-mercadolivre.png);background-size:70%}
+.bch.shopee::before{background-image:url(img/icone-shopee.svg)}
+.bch.tt::before{background-image:url(img/icone-tiktok.svg)}
+.bch.wa::before{background-image:url(img/icone-whatsapp.svg)}
 
 /* ── Seção "compre onde preferir" ── */
 .canais{background:var(--creme);text-align:center;border-top:1px solid var(--areia);border-bottom:1px solid var(--areia)}
-.canais-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.2rem;text-align:left}
-.canal{background:var(--branco);border:1px solid var(--areia);border-radius:16px;padding:1.8rem 1.4rem;transition:.25s;display:flex;flex-direction:column;gap:.5rem}
-.canal:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.15)}
-.canal .tag{align-self:flex-start;padding:.45rem 1.1rem;border-radius:99px;color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
-.canal .tag.ml{background:#FFE600;color:#2D3277}
-.canal .tag.shopee{background:#EE4D2D}
-.canal .tag.tt{background:#010101}
-.canal .tag.wa{background:#25D366}
-.canal h3{font-family:var(--display);font-weight:500;font-size:1.3rem}
-.canal p{font-size:.9rem;color:#7A6A6D;flex:1}
-.canal span{font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-escuro)}
+.canais-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.8rem;text-align:left;border-top:1px solid var(--areia);border-left:1px solid var(--areia)}
+.canal{background:var(--branco);border-right:1px solid var(--areia);border-bottom:1px solid var(--areia);padding:2.4rem 1.8rem;transition:.25s;display:flex;flex-direction:column;gap:1rem}
+.canal:hover{background:var(--rosa-claro)}
+.canal:hover .marca{border-color:var(--rosa-escuro)}
+.canal:hover .ir svg{transform:translateX(3px)}
+.canal .marca{width:46px;height:46px;border-radius:50%;background:var(--creme);border:1px solid var(--areia);display:flex;align-items:center;justify-content:center;transition:.25s;overflow:hidden}
+.canal .marca svg{width:22px;height:22px}
+.canal .marca img{width:60%;height:60%;object-fit:contain}
+.canal h3{font-family:var(--display);font-weight:500;font-size:1.2rem;color:var(--ink)}
+.canal p{font-size:.88rem;color:#7A6A6D;flex:1;line-height:1.6}
+.canal .ir{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rosa-escuro)}
+.canal .ir svg{width:13px;height:13px;transition:.2s}
 
 /* ── Responsivo ── */
 @media (max-width:960px){
-  .hero-inner{grid-template-columns:1fr;padding:3rem 0}
-  .hero-photo{max-width:340px;margin:0 auto}
+  .banner{aspect-ratio:4/5}
+  .banner-caption{left:1rem;right:1rem;bottom:1rem;max-width:none}
+  .banner-arrow{display:none}
   .grid-products{grid-template-columns:repeat(2,1fr)}
   .cat-grid{grid-template-columns:1fr 1fr}
   .cat:last-child{grid-column:1/-1;min-height:280px}
@@ -296,29 +309,60 @@ footer a:hover{color:var(--rosa)}
   </div>
 </header>
 
-<!-- Hero -->
-<div class="hero">
-  <div class="container hero-inner">
-    <div>
-      <p class="hero-eyebrow">A loja modesta que cabe no seu bolso</p>
-      <h1>Elegância que floresce <em>no campo</em> e cabe no seu bolso.</h1>
-      <p>Vestidos, salopetes e conjuntos com modelagem pensada para a mulher que valoriza a modéstia sem abrir mão do estilo. De Artur Nogueira - SP, com envio para todo o Brasil.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Comprar na Shopee</a>
-        <a class="btn btn-primary" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Comprar no Mercado Livre</a>
-        <a class="btn btn-primary" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
-        <a class="btn btn-ghost" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Vi%20o%20site%20da%20L%C3%ADrios%20do%20Campo%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Comprar pelo WhatsApp</a>
+<!-- Banner rotativo -->
+<section class="banner" aria-roledescription="carrossel" aria-label="Destaques Lírios do Campo">
+  <div class="banner-track" id="bannerTrack">
+
+    <a class="banner-slide" href="produtos.html">
+      <img src="img/banner3-salopete-cores.png" alt="Modelos vestindo Salopete Adulta azul royal, amarela e pink" loading="eager" style="object-position:center">
+      <div class="banner-caption">
+        <p class="banner-eyebrow">Nova coleção</p>
+        <h2>Elegância que floresce <em>no campo</em></h2>
+        <p>Vestidos, salopetes e conjuntos com modéstia e estilo, direto do nosso ateliê para o seu guarda-roupa.</p>
+        <span class="btn btn-primary">Ver todos os produtos</span>
       </div>
-    </div>
-    <div class="hero-photo">
-      <img src="img/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Modelo vestindo o Vestido Judite Verde" loading="eager">
-      <div class="hero-photo-caption">
-        <strong>Vestido Judite</strong>
-        <span>O queridinho da estação, disponível em várias cores</span>
+    </a>
+
+    <a class="banner-slide" href="produtos.html?cat=salopetes-jardineiras">
+      <img src="img/banner1-jardineira-infantil.png" alt="Meninas vestindo Jardineira Infantil laranja e bordô" loading="lazy" style="object-position:center">
+      <div class="banner-caption">
+        <p class="banner-eyebrow">Mais vendidos</p>
+        <h2>O <em>best seller</em> da casa</h2>
+        <p>Salopetes e jardineiras em mais de 12 cores, do infantil ao adulto, aprovadas por milhares de clientes.</p>
+        <span class="btn btn-primary">Conferir salopetes e jardineiras</span>
       </div>
-    </div>
+    </a>
+
+    <a class="banner-slide" href="produtos.html?q=infantil">
+      <img src="img/banner2-salopete-infantil.png" alt="Meninas vestindo Salopete Infantil azul royal, preta e vermelha" loading="lazy" style="object-position:center">
+      <div class="banner-caption">
+        <p class="banner-eyebrow">Linha infantil</p>
+        <h2>Estilo e conforto <em>desde pequenas</em></h2>
+        <p>Salopetes infantis nas mesmas cores e qualidade das peças adultas.</p>
+        <span class="btn btn-primary">Ver linha infantil</span>
+      </div>
+    </a>
+
+    <a class="banner-slide" href="produtos.html?cat=salopetes-jardineiras">
+      <img src="img/banner4-salopete-verde-azul-pink.png" alt="Modelos vestindo Salopete Adulta verde bandeira, azul claro e pink" loading="lazy" style="object-position:center">
+      <div class="banner-caption">
+        <p class="banner-eyebrow">Salopetes</p>
+        <h2>Uma salopete pra cada <em>estilo</em></h2>
+        <p>Nossa peça mais amada, em mais de 12 cores pra combinar com o seu jeito.</p>
+        <span class="btn btn-primary">Ver todas as salopetes</span>
+      </div>
+    </a>
+
   </div>
-</div>
+  <button type="button" class="banner-arrow prev" aria-label="Slide anterior" onclick="bannerGo(bannerIndex-1)">&#8249;</button>
+  <button type="button" class="banner-arrow next" aria-label="Próximo slide" onclick="bannerGo(bannerIndex+1)">&#8250;</button>
+  <div class="banner-dots" id="bannerDots" role="tablist" aria-label="Selecionar slide">
+    <button type="button" class="banner-dot active" aria-label="Slide 1" onclick="bannerGo(0)"></button>
+    <button type="button" class="banner-dot" aria-label="Slide 2" onclick="bannerGo(1)"></button>
+    <button type="button" class="banner-dot" aria-label="Slide 3" onclick="bannerGo(2)"></button>
+    <button type="button" class="banner-dot" aria-label="Slide 4" onclick="bannerGo(3)"></button>
+  </div>
+</section>
 
 <!-- Benefícios -->
 <div class="benefits">
@@ -350,21 +394,18 @@ footer a:hover{color:var(--rosa)}
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Judite - Verde">&#9829;</button>
         </a>
         <div class="card-body">
-          <h3>Vestido Judite - Verde</h3>
-          <div class="swatches" aria-label="Cores disponíveis">
-            <span class="swatch" style="background:#5A6B4D" title="Verde"></span>
-            <span class="swatch" style="background:#D8BFA8" title="Nude"></span>
-            <span class="swatch" style="background:#6B4E3D" title="Marrom"></span>
-            <span class="swatch" style="background:#8C8C8C" title="Cinza"></span>
-          </div>
+          <h3>Vestido Judite</h3>
           <div class="price">
             <strong>R$ 123,41 <small>no PIX</small></strong>
             <span>ou 3x de R$ 43,30 sem juros</span>
           </div>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <span class="swatch active" style="background:#5A6B4D" title="Verde"></span>
+            <a class="swatch" href="produto/vestido-judite-nude.html" style="background:#D8BFA8" title="Nude"></a>
+          </div>
           <div class="buy-row">
             <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
             <a class="bch shopee" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Shopee</a>
-            <!-- TROQUE: confirme o link da loja no TikTok Shop -->
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
             <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Judite%20Verde." target="_blank" rel="noopener">WhatsApp</a>
           </div>
@@ -372,27 +413,156 @@ footer a:hover{color:var(--rosa)}
         </div>
       </article>
 
-      <article class="card" data-id="vestido-judite-nude" data-fullname="Vestido Judite - Nude" data-url="https://liriosdocampo.com.br/produtos/vestido-judite-nude/" data-img="img/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" data-pix="R$ 123,41">
-        <a class="card-media" href="produto/vestido-judite-nude.html">
-          <img src="img/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Vestido Judite Nude" loading="lazy">
-          <span class="badge">Oferta</span>
-          <span class="badge frete">Envio grátis</span>
-          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Judite - Nude">&#9829;</button>
+      <article class="card" data-id="vestido-yasmin-branco" data-fullname="Vestido Yasmin - Branco" data-url="https://liriosdocampo.com.br/produtos/vestido-yasmin-branco/" data-img="img/img_2333-c6957a7c3a4abe991517364510597043-640-0.webp" data-pix="R$ 113,91">
+        <a class="card-media" href="produto/vestido-yasmin-branco.html">
+          <img src="img/img_2333-c6957a7c3a4abe991517364510597043-640-0.webp" alt="Vestido Yasmin Branco" loading="lazy">
+          <span class="badge">Novidade</span>
+          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Yasmin - Branco">&#9829;</button>
         </a>
         <div class="card-body">
-          <h3>Vestido Judite - Nude</h3>
-          <div class="swatches" aria-label="Cores disponíveis">
-            <span class="swatch" style="background:#D8BFA8" title="Nude"></span>
-          </div>
+          <h3>Vestido Yasmin</h3>
           <div class="price">
-            <strong>R$ 123,41 <small>no PIX</small></strong>
-            <span>ou 3x de R$ 43,30 sem juros</span>
+            <strong>R$ 113,91 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 39,97 sem juros</span>
+          </div>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <a class="swatch" href="produto/vestido-yasmin-lavanda.html" style="background:#C9B8E8" title="Lavanda"></a>
+            <span class="swatch active" style="background:#FFFFFF" title="Branco"></span>
+            <a class="swatch" href="produto/vestido-yasmin-bege.html" style="background:#E8DCC8" title="Bege"></a>
           </div>
           <div class="buy-row">
             <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
             <a class="bch shopee" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Shopee</a>
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
-            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Judite%20Nude." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Yasmin%20-%20Branco." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Mais vendidos -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Os mais <em>vendidos</em></h2>
+        <p>As peças que mais saem na Shopee e no Mercado Livre — aprovadas por quem já comprou.</p>
+      </div>
+      <a class="link-more" href="produtos.html?cat=salopetes-jardineiras">Ver todos</a>
+    </div>
+    <div class="grid-products">
+
+      <article class="card">
+        <a class="card-media" href="produto/jardineira-adulta-azul-celeste.html">
+          <img src="img/img_9789-421f064301e9d3b83c17500815024402-640-0.webp" alt="Jardineira Adulta - Azul Celeste" loading="lazy" width="480" height="640">
+          <span class="badge">Mais vendido</span>
+          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Jardineira Adulta - Azul Celeste">&#9829;</button>
+        </a>
+        <div class="card-body">
+          <a href="produto/jardineira-adulta-azul-celeste.html"><h3>Jardineira Adulta</h3></a>
+          <div class="rating"><strong>&#9733; 4.9</strong> 1mil+ vendidos</div>
+          <div class="price">
+            <strong>R$ 47,41 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 16,63 sem juros</span>
+          </div>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <a class="swatch" href="produto/jardineira-adulta-cinza-bvxps.html" style="background:#8C8C8C" title="Cinza"></a>
+            <a class="swatch" href="produto/jardineira-adulta-verde-militar.html" style="background:#4B5320" title="Verde Militar"></a>
+            <a class="swatch" href="produto/jardineira-adulta-amarelo-if36o.html" style="background:#F0C33C" title="Amarelo"></a>
+            <a class="swatch" href="produto/jardineira-adulta-verde-bandeira.html" style="background:#2E7D32" title="Verde Bandeira"></a>
+            <a class="swatch" href="produto/jardineira-adulta-bege.html" style="background:#E8DCC8" title="Bege"></a>
+            <a class="swatch" href="produto/jardineira-adulta-royal.html" style="background:#2255C4" title="Royal"></a>
+            <span class="swatch active" style="background:#7EC8E3" title="Azul Celeste"></span>
+            <a class="swatch" href="produto/jardineira-adulta-terracota.html" style="background:#C1633D" title="Terracota"></a>
+            <a class="swatch" href="produto/jardineira-adulta-vermelha.html" style="background:#B33A3A" title="Vermelha"></a>
+            <a class="swatch" href="produto/jardineira-adulta-preta-hszgd.html" style="background:#1C1C1C" title="Preta"></a>
+            <a class="swatch" href="produto/jardineira-adulta-bordo-sc156.html" style="background:#7B2D3E" title="Bordô"></a>
+            <a class="swatch" href="produto/jardineira-adulta-marinho-aj9ug.html" style="background:#1B2A4A" title="Marinho"></a>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Shopee</a>
+            <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Jardineira%20Adulta%20-%20Azul%20Celeste." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="produto/salopete-infantil-marinho.html">
+          <img src="img/img_90771-d3d8d62dc4a811a81416955791901638-640-0.webp" alt="Salopete Infantil - Marinho" loading="lazy" width="480" height="640">
+          <span class="badge">Mais vendido</span>
+          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Infantil - Marinho">&#9829;</button>
+        </a>
+        <div class="card-body">
+          <a href="produto/salopete-infantil-marinho.html"><h3>Salopete Infantil</h3></a>
+          <div class="rating"><strong>&#9733; 4.9</strong> 1mil+ vendidos</div>
+          <div class="price">
+            <strong>R$ 47,41 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 16,63 sem juros</span>
+          </div>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <a class="swatch" href="produto/salopete-infantil-pink.html" style="background:#E85D9C" title="Pink"></a>
+            <a class="swatch" href="produto/salopete-infantil-bege.html" style="background:#E8DCC8" title="Bege"></a>
+            <a class="swatch" href="produto/salopete-infantil-terracota.html" style="background:#C1633D" title="Terracota"></a>
+            <a class="swatch" href="produto/salopete-infantil-amarela.html" style="background:#F0C33C" title="Amarela"></a>
+            <a class="swatch" href="produto/salopete-infantil-chocolate.html" style="background:#4A2E1E" title="Chocolate"></a>
+            <a class="swatch" href="produto/salopete-infantil-verde-militar.html" style="background:#4B5320" title="Verde Militar"></a>
+            <a class="swatch" href="produto/salopete-infantil-verde-bandeira.html" style="background:#2E7D32" title="Verde Bandeira"></a>
+            <a class="swatch" href="produto/salopete-infantil-royal.html" style="background:#2255C4" title="Royal"></a>
+            <a class="swatch" href="produto/salopete-infantil-vermelha.html" style="background:#B33A3A" title="Vermelha"></a>
+            <span class="swatch active" style="background:#1B2A4A" title="Marinho"></span>
+            <a class="swatch" href="produto/salopete-infantil-bordo.html" style="background:#7B2D3E" title="Bordô"></a>
+            <a class="swatch" href="produto/salopete-infantil-preta.html" style="background:#1C1C1C" title="Preta"></a>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Shopee</a>
+            <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Salopete%20Infantil%20-%20Marinho." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="card-media" href="produto/salopete-adulta-verde-bandeira.html">
+          <img src="img/img_4757-1d3e58c398fdfc185517422371354872-640-0.webp" alt="Salopete Adulta - Verde Bandeira" loading="lazy" width="480" height="640">
+          <span class="badge">Mais vendido</span>
+          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Adulta - Verde Bandeira">&#9829;</button>
+        </a>
+        <div class="card-body">
+          <a href="produto/salopete-adulta-verde-bandeira.html"><h3>Salopete Adulta</h3></a>
+          <div class="rating"><strong>&#9733; 4.9</strong> 3mil+ vendidos</div>
+          <div class="price">
+            <strong>R$ 47,41 <small>no PIX</small></strong>
+            <span>ou 3x de R$ 16,63 sem juros</span>
+          </div>
+          <div class="swatches" aria-label="Cores disponíveis">
+            <a class="swatch" href="produto/salopete-adulta-marrom-q7m08.html" style="background:#6B4E3D" title="Marrom"></a>
+            <a class="swatch" href="produto/salopete-adulta-laranja-j42e0.html" style="background:#E8732C" title="Laranja"></a>
+            <a class="swatch" href="produto/salopete-adulta-azul-claro.html" style="background:#A8D8EA" title="Azul Claro"></a>
+            <a class="swatch" href="produto/salopete-adulta-bege.html" style="background:#E8DCC8" title="Bege"></a>
+            <a class="swatch" href="produto/salopete-adulta-terracota.html" style="background:#C1633D" title="Terracota"></a>
+            <a class="swatch" href="produto/salopete-adulta-vermelha.html" style="background:#B33A3A" title="Vermelha"></a>
+            <a class="swatch" href="produto/salopete-adulta-amarela.html" style="background:#F0C33C" title="Amarela"></a>
+            <a class="swatch" href="produto/salopete-adulta-verde-militar.html" style="background:#4B5320" title="Verde Militar"></a>
+            <span class="swatch active" style="background:#2E7D32" title="Verde Bandeira"></span>
+            <a class="swatch" href="produto/salopete-adulta-bordo.html" style="background:#7B2D3E" title="Bordô"></a>
+            <a class="swatch" href="produto/salopete-adulta-preta.html" style="background:#1C1C1C" title="Preta"></a>
+            <a class="swatch" href="produto/salopete-adulta-marinho.html" style="background:#1B2A4A" title="Marinho"></a>
+            <a class="swatch" href="produto/salopete-adulta-royal.html" style="background:#2255C4" title="Royal"></a>
+          </div>
+          <div class="buy-row">
+            <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
+            <a class="bch shopee" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Shopee</a>
+            <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Salopete%20Adulta%20-%20Verde%20Bandeira." target="_blank" rel="noopener">WhatsApp</a>
           </div>
           <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
@@ -587,34 +757,34 @@ footer a:hover{color:var(--rosa)}
 </section>
 
 <!-- Compre onde preferir -->
-<section class="canais">
+<section class="canais" id="canais">
   <div class="container">
     <h2 style="font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.01em;color:var(--rosa-escuro)">Compre onde <em style="color:var(--verde)">preferir</em></h2>
     <p style="max-width:60ch;margin:.8rem auto 0;color:#7A6A6D">Você escolhe o jeito mais prático de garantir o seu look: nas nossas lojas da Shopee, do Mercado Livre e do TikTok Shop ou com atendimento direto pelo WhatsApp.</p>
     <div class="canais-grid">
       <a class="canal" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">
-        <span class="tag shopee">Shopee</span>
+        <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#EE4D2D"><path d="M15.9414 17.9633c.229-1.879-.981-3.077-4.1758-4.0969-1.548-.528-2.277-1.22-2.26-2.1719.065-1.056 1.048-1.825 2.352-1.85a5.2898 5.2898 0 0 1 2.8838.89c.116.072.197.06.263-.039.09-.145.315-.494.39-.62.051-.081.061-.187-.068-.281-.185-.1369-.704-.4149-.983-.5319a6.4697 6.4697 0 0 0-2.5118-.514c-1.909.008-3.4129 1.215-3.5389 2.826-.082 1.1629.494 2.1078 1.73 2.8278.262.152 1.6799.716 2.2438.892 1.774.552 2.695 1.5419 2.478 2.6969-.197 1.047-1.299 1.7239-2.818 1.7439-1.2039-.046-2.2878-.537-3.1278-1.19l-.141-.11c-.104-.08-.218-.075-.287.03-.05.077-.376.547-.458.67-.077.108-.035.168.045.234.35.293.817.613 1.134.775a6.7097 6.7097 0 0 0 2.8289.727 4.9048 4.9048 0 0 0 2.0759-.354c1.095-.465 1.8029-1.394 1.9449-2.554zM11.9986 1.4009c-2.068 0-3.7539 1.95-3.8329 4.3899h7.6657c-.08-2.44-1.765-4.3899-3.8328-4.3899zm7.8516 22.5981-.08.001-15.7843-.002c-1.074-.04-1.863-.91-1.971-1.991l-.01-.195L1.298 6.2858a.459.459 0 0 1 .45-.494h4.9748C6.8448 2.568 9.1607 0 11.9996 0c2.8388 0 5.1537 2.5689 5.2757 5.7898h4.9678a.459.459 0 0 1 .458.483l-.773 15.5883-.007.131c-.094 1.094-.979 1.9769-2.0709 2.0059z"/></svg></span>
         <h3>Loja oficial na Shopee</h3>
         <p>Cupons, frete grátis em campanhas e a praticidade que você já conhece do aplicativo.</p>
-        <span>Ir para a Shopee</span>
+        <span class="ir">Ir para a Shopee <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="canal" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">
-        <span class="tag ml">Mercado Livre</span>
+        <span class="marca" aria-hidden="true"><img src="img/icone-mercadolivre.png" alt="" loading="lazy"></span>
         <h3>Loja no Mercado Livre</h3>
         <p>Compra garantida pelo Mercado Pago, com parcelamento e entrega rastreada.</p>
-        <span>Ir para o Mercado Livre</span>
+        <span class="ir">Ir para o Mercado Livre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="canal" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">
-        <span class="tag tt">TikTok Shop</span>
+        <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#010101"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>
         <h3>Loja no TikTok Shop</h3>
         <p>Veja as peças em vídeo, aproveite cupons da plataforma e compre sem sair do aplicativo.</p>
-        <span>Ir para o TikTok Shop</span>
+        <span class="ir">Ir para o TikTok Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="canal" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Vi%20o%20site%20da%20L%C3%ADrios%20do%20Campo%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">
-        <span class="tag wa">WhatsApp</span>
+        <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.16L2 22l5.09-1.53a9.87 9.87 0 0 0 4.95 1.32h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.44 17.5 2 12.04 2zm5.85 14.13c-.25.7-1.24 1.28-2.02 1.44-.55.11-1.26.2-3.67-.79-3.08-1.27-5.06-4.4-5.21-4.6-.15-.2-1.24-1.65-1.24-3.15 0-1.5.78-2.23 1.06-2.54.27-.3.6-.38.8-.38.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.3.4-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.28.1 1.75.83 2.05.98.3.15.5.23.57.36.08.13.08.75-.17 1.45z"/></svg></span>
         <h3>Compre pelo WhatsApp</h3>
         <p>Atendimento pessoal para tirar dúvidas de tamanho, ver fotos e fechar o pedido: (19) 9 9974-4842.</p>
-        <span>Chamar no WhatsApp</span>
+        <span class="ir">Chamar no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
   </div>
@@ -756,6 +926,28 @@ function toggleMenu(btn){
   const open=nav.classList.toggle('open');
   btn.setAttribute('aria-expanded',open);
 }
+
+/* ── Banner rotativo ── */
+let bannerIndex = 0;
+let bannerTimer = null;
+const bannerTrackEl = document.getElementById('bannerTrack');
+const bannerSlideEls = bannerTrackEl ? bannerTrackEl.querySelectorAll('.banner-slide') : [];
+const bannerDotEls = document.querySelectorAll('.banner-dot');
+const bannerReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function bannerGo(i){
+  if(!bannerTrackEl || !bannerSlideEls.length) return;
+  bannerIndex = (i + bannerSlideEls.length) % bannerSlideEls.length;
+  bannerTrackEl.style.transform = 'translateX(-' + (bannerIndex * 100) + '%)';
+  bannerDotEls.forEach((d, idx) => d.classList.toggle('active', idx === bannerIndex));
+  bannerRestart();
+}
+function bannerRestart(){
+  if(bannerReduceMotion || !bannerSlideEls.length) return;
+  clearInterval(bannerTimer);
+  bannerTimer = setInterval(() => bannerGo(bannerIndex + 1), 5500);
+}
+bannerRestart();
 function showTab(id){
   document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected','false'));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
