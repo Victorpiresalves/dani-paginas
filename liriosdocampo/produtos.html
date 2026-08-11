@@ -166,6 +166,9 @@ footer a:hover{color:var(--rosa)}
 /* ── WhatsApp flutuante ── */
 .wa-float{position:fixed;right:1.3rem;bottom:1.3rem;z-index:60;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.25);transition:.2s}
 .wa-float:hover{transform:scale(1.08)}
+.top-float{position:fixed;right:1.3rem;bottom:5.6rem;z-index:60;background:var(--rosa-escuro);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,.25);transition:.2s;border:none;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px)}
+.top-float.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.top-float:hover{background:var(--ink)}
 
 /* ── Responsivo ── */
 @media (max-width:960px){
@@ -858,6 +861,13 @@ footer a:hover{color:var(--rosa)}
         <a href="https://wa.me/5519999744842" target="_blank" rel="noopener" aria-label="WhatsApp">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
         </a>
+
+<button type="button" id="topFloat" class="top-float" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+window.addEventListener('scroll',function(){var b=document.getElementById('topFloat');if(b)b.classList.toggle('show',window.scrollY>500);});
+</script>
       </div>
     </div>
     <div>
