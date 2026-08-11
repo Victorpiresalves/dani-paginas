@@ -101,8 +101,10 @@ section{padding:4.2rem 0}
 .card{background:var(--branco);border-radius:14px;overflow:hidden;border:1px solid var(--areia);transition:.25s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.18)}
 .card-media{position:relative;display:block;overflow:hidden}
-.card-media img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .5s ease}
+.card-media img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .6s ease,opacity .5s ease}
 .card:hover .card-media img{transform:scale(1.07)}
+.card-media .img-alt{position:absolute;inset:0;opacity:0}
+.card:hover .card-media .img-alt{opacity:1}
 .badge{position:absolute;top:.8rem;left:.8rem;background:var(--rosa-escuro);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;border-radius:99px}
 .badge.frete{background:var(--verde);top:auto;bottom:.8rem}
 .card-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
@@ -111,6 +113,7 @@ section{padding:4.2rem 0}
 .swatch{display:block;width:20px;height:20px;border-radius:5px;border:1px solid rgba(0,0,0,.12);box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer;transition:.15s}
 .swatch:hover{transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,.15)}
 .swatch.active{border-color:var(--rosa-escuro);box-shadow:0 0 0 2px var(--rosa-claro);cursor:default}
+.swatch.encomenda{border-style:dashed;border-width:2px}
 .price{margin-top:auto}
 .price del{color:#A99598;font-size:.82rem}
 .price strong{display:block;font-size:1.15rem;color:var(--rosa-escuro)}
@@ -461,31 +464,34 @@ footer a:hover{color:var(--rosa)}
     <div class="grid-products">
 
       <article class="card">
-        <a class="card-media" href="produto/jardineira-adulta-azul-celeste.html">
+        <a class="card-media" href="produto/jardineira-adulta.html?cor=azul-celeste">
           <img src="img/img_9789-421f064301e9d3b83c17500815024402-640-0.webp" alt="Jardineira Adulta - Azul Celeste" loading="lazy" width="480" height="640">
           <span class="badge">Mais vendido</span>
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Jardineira Adulta - Azul Celeste">&#9829;</button>
         </a>
         <div class="card-body">
-          <a href="produto/jardineira-adulta-azul-celeste.html"><h3>Jardineira Adulta</h3></a>
+          <a href="produto/jardineira-adulta.html?cor=azul-celeste"><h3>Jardineira Adulta</h3></a>
           <div class="rating"><strong>&#9733; 4.9</strong> 1mil+ vendidos</div>
           <div class="price">
             <strong>R$ 47,41 <small>no PIX</small></strong>
             <span>ou 3x de R$ 16,63 sem juros</span>
           </div>
           <div class="swatches" aria-label="Cores disponíveis">
-            <a class="swatch" href="produto/jardineira-adulta-cinza-bvxps.html" style="background:#8C8C8C" title="Cinza"></a>
-            <a class="swatch" href="produto/jardineira-adulta-verde-militar.html" style="background:#4B5320" title="Verde Militar"></a>
-            <a class="swatch" href="produto/jardineira-adulta-amarelo-if36o.html" style="background:#F0C33C" title="Amarelo"></a>
-            <a class="swatch" href="produto/jardineira-adulta-verde-bandeira.html" style="background:#2E7D32" title="Verde Bandeira"></a>
-            <a class="swatch" href="produto/jardineira-adulta-bege.html" style="background:#E8DCC8" title="Bege"></a>
-            <a class="swatch" href="produto/jardineira-adulta-royal.html" style="background:#2255C4" title="Royal"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=cinza" style="background:#8C8C8C" title="Cinza"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=verde-militar" style="background:#4B5320" title="Verde Militar"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=amarelo" style="background:#F0C33C" title="Amarelo"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=verde-bandeira" style="background:#2E7D32" title="Verde Bandeira"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=bege" style="background:#E8DCC8" title="Bege"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=royal" style="background:#2255C4" title="Royal"></a>
             <span class="swatch active" style="background:#7EC8E3" title="Azul Celeste"></span>
-            <a class="swatch" href="produto/jardineira-adulta-terracota.html" style="background:#C1633D" title="Terracota"></a>
-            <a class="swatch" href="produto/jardineira-adulta-vermelha.html" style="background:#B33A3A" title="Vermelha"></a>
-            <a class="swatch" href="produto/jardineira-adulta-preta-hszgd.html" style="background:#1C1C1C" title="Preta"></a>
-            <a class="swatch" href="produto/jardineira-adulta-bordo-sc156.html" style="background:#7B2D3E" title="Bordô"></a>
-            <a class="swatch" href="produto/jardineira-adulta-marinho-aj9ug.html" style="background:#1B2A4A" title="Marinho"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=terracota" style="background:#C1633D" title="Terracota"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=vermelha" style="background:#B33A3A" title="Vermelha"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=preta" style="background:#1C1C1C" title="Preta"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=bordo" style="background:#7B2D3E" title="Bordô"></a>
+            <a class="swatch" href="produto/jardineira-adulta.html?cor=marinho" style="background:#1B2A4A" title="Marinho"></a>
+            <a class="swatch encomenda" href="produto/jardineira-adulta.html?cor=pink" style="background:#E85D9C" title="Pink (sob encomenda)"></a>
+            <a class="swatch encomenda" href="produto/jardineira-adulta.html?cor=laranja" style="background:#E8732C" title="Laranja (sob encomenda)"></a>
+            <a class="swatch encomenda" href="produto/jardineira-adulta.html?cor=marrom" style="background:#6B4E3D" title="Marrom (sob encomenda)"></a>
           </div>
           <div class="buy-row">
             <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
@@ -498,31 +504,34 @@ footer a:hover{color:var(--rosa)}
       </article>
 
       <article class="card">
-        <a class="card-media" href="produto/salopete-infantil-marinho.html">
+        <a class="card-media" href="produto/salopete-infantil.html?cor=marinho">
           <img src="img/img_90771-d3d8d62dc4a811a81416955791901638-640-0.webp" alt="Salopete Infantil - Marinho" loading="lazy" width="480" height="640">
           <span class="badge">Mais vendido</span>
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Infantil - Marinho">&#9829;</button>
         </a>
         <div class="card-body">
-          <a href="produto/salopete-infantil-marinho.html"><h3>Salopete Infantil</h3></a>
+          <a href="produto/salopete-infantil.html?cor=marinho"><h3>Salopete Infantil</h3></a>
           <div class="rating"><strong>&#9733; 4.9</strong> 1mil+ vendidos</div>
           <div class="price">
             <strong>R$ 47,41 <small>no PIX</small></strong>
             <span>ou 3x de R$ 16,63 sem juros</span>
           </div>
           <div class="swatches" aria-label="Cores disponíveis">
-            <a class="swatch" href="produto/salopete-infantil-pink.html" style="background:#E85D9C" title="Pink"></a>
-            <a class="swatch" href="produto/salopete-infantil-bege.html" style="background:#E8DCC8" title="Bege"></a>
-            <a class="swatch" href="produto/salopete-infantil-terracota.html" style="background:#C1633D" title="Terracota"></a>
-            <a class="swatch" href="produto/salopete-infantil-amarela.html" style="background:#F0C33C" title="Amarela"></a>
-            <a class="swatch" href="produto/salopete-infantil-chocolate.html" style="background:#4A2E1E" title="Chocolate"></a>
-            <a class="swatch" href="produto/salopete-infantil-verde-militar.html" style="background:#4B5320" title="Verde Militar"></a>
-            <a class="swatch" href="produto/salopete-infantil-verde-bandeira.html" style="background:#2E7D32" title="Verde Bandeira"></a>
-            <a class="swatch" href="produto/salopete-infantil-royal.html" style="background:#2255C4" title="Royal"></a>
-            <a class="swatch" href="produto/salopete-infantil-vermelha.html" style="background:#B33A3A" title="Vermelha"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=pink" style="background:#E85D9C" title="Pink"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=bege" style="background:#E8DCC8" title="Bege"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=terracota" style="background:#C1633D" title="Terracota"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=amarela" style="background:#F0C33C" title="Amarela"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=chocolate" style="background:#4A2E1E" title="Chocolate"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=verde-militar" style="background:#4B5320" title="Verde Militar"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=verde-bandeira" style="background:#2E7D32" title="Verde Bandeira"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=royal" style="background:#2255C4" title="Royal"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=vermelha" style="background:#B33A3A" title="Vermelha"></a>
             <span class="swatch active" style="background:#1B2A4A" title="Marinho"></span>
-            <a class="swatch" href="produto/salopete-infantil-bordo.html" style="background:#7B2D3E" title="Bordô"></a>
-            <a class="swatch" href="produto/salopete-infantil-preta.html" style="background:#1C1C1C" title="Preta"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=bordo" style="background:#7B2D3E" title="Bordô"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=preta" style="background:#1C1C1C" title="Preta"></a>
+            <a class="swatch encomenda" href="produto/salopete-infantil.html?cor=azul-celeste" style="background:#7EC8E3" title="Azul Celeste (sob encomenda)"></a>
+            <a class="swatch encomenda" href="produto/salopete-infantil.html?cor=laranja" style="background:#E8732C" title="Laranja (sob encomenda)"></a>
+            <a class="swatch encomenda" href="produto/salopete-infantil.html?cor=marrom" style="background:#6B4E3D" title="Marrom (sob encomenda)"></a>
           </div>
           <div class="buy-row">
             <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
@@ -535,38 +544,41 @@ footer a:hover{color:var(--rosa)}
       </article>
 
       <article class="card">
-        <a class="card-media" href="produto/salopete-adulta-verde-bandeira.html">
-          <img src="img/img_4757-1d3e58c398fdfc185517422371354872-640-0.webp" alt="Salopete Adulta - Verde Bandeira" loading="lazy" width="480" height="640">
+        <a class="card-media" href="produto/salopete-adulta.html?cor=pink">
+          <img src="img/salopete-adulta-pink-real.webp" alt="Salopete Adulta - Pink" loading="lazy" width="480" height="640">
+          <img class="img-alt" src="img/salopete-adulta-pink-real.webp" alt="" loading="lazy" width="480" height="640">
           <span class="badge">Mais vendido</span>
-          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Adulta - Verde Bandeira">&#9829;</button>
+          <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Adulta - Pink">&#9829;</button>
         </a>
         <div class="card-body">
-          <a href="produto/salopete-adulta-verde-bandeira.html"><h3>Salopete Adulta</h3></a>
+          <a href="produto/salopete-adulta.html?cor=pink"><h3>Salopete Adulta</h3></a>
           <div class="rating"><strong>&#9733; 4.9</strong> 3mil+ vendidos</div>
           <div class="price">
             <strong>R$ 47,41 <small>no PIX</small></strong>
             <span>ou 3x de R$ 16,63 sem juros</span>
           </div>
           <div class="swatches" aria-label="Cores disponíveis">
-            <a class="swatch" href="produto/salopete-adulta-marrom-q7m08.html" style="background:#6B4E3D" title="Marrom"></a>
-            <a class="swatch" href="produto/salopete-adulta-laranja-j42e0.html" style="background:#E8732C" title="Laranja"></a>
-            <a class="swatch" href="produto/salopete-adulta-azul-claro.html" style="background:#A8D8EA" title="Azul Claro"></a>
-            <a class="swatch" href="produto/salopete-adulta-bege.html" style="background:#E8DCC8" title="Bege"></a>
-            <a class="swatch" href="produto/salopete-adulta-terracota.html" style="background:#C1633D" title="Terracota"></a>
-            <a class="swatch" href="produto/salopete-adulta-vermelha.html" style="background:#B33A3A" title="Vermelha"></a>
-            <a class="swatch" href="produto/salopete-adulta-amarela.html" style="background:#F0C33C" title="Amarela"></a>
-            <a class="swatch" href="produto/salopete-adulta-verde-militar.html" style="background:#4B5320" title="Verde Militar"></a>
-            <span class="swatch active" style="background:#2E7D32" title="Verde Bandeira"></span>
-            <a class="swatch" href="produto/salopete-adulta-bordo.html" style="background:#7B2D3E" title="Bordô"></a>
-            <a class="swatch" href="produto/salopete-adulta-preta.html" style="background:#1C1C1C" title="Preta"></a>
-            <a class="swatch" href="produto/salopete-adulta-marinho.html" style="background:#1B2A4A" title="Marinho"></a>
-            <a class="swatch" href="produto/salopete-adulta-royal.html" style="background:#2255C4" title="Royal"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=marrom" style="background:#6B4E3D" title="Marrom"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=laranja" style="background:#E8732C" title="Laranja"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=azul-claro" style="background:#A8D8EA" title="Azul Claro"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=bege" style="background:#E8DCC8" title="Bege"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=terracota" style="background:#C1633D" title="Terracota"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=vermelha" style="background:#B33A3A" title="Vermelha"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=amarela" style="background:#F0C33C" title="Amarela"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=verde-militar" style="background:#4B5320" title="Verde Militar"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=verde-bandeira" style="background:#2E7D32" title="Verde Bandeira"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=bordo" style="background:#7B2D3E" title="Bordô"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=preta" style="background:#1C1C1C" title="Preta"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=marinho" style="background:#1B2A4A" title="Marinho"></a>
+            <a class="swatch" href="produto/salopete-adulta.html?cor=royal" style="background:#2255C4" title="Royal"></a>
+            <span class="swatch active" style="background:#E85D9C" title="Pink"></span>
+            <a class="swatch encomenda" href="produto/salopete-adulta.html?cor=azul-celeste" style="background:#7EC8E3" title="Azul Celeste (sob encomenda)"></a>
           </div>
           <div class="buy-row">
             <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
             <a class="bch shopee" href="https://shopee.com.br/liriosdocampostore?shop=839021011&amp;tab=1" target="_blank" rel="noopener">Shopee</a>
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
-            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Salopete%20Adulta%20-%20Verde%20Bandeira." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Salopete%20Adulta%20-%20Pink." target="_blank" rel="noopener">WhatsApp</a>
           </div>
           <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
