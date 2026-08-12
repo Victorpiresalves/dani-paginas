@@ -18,6 +18,7 @@
   --rosa:#D8577A;         /* rosa vibrante */
   --rosa-claro:#FDF1F3;   /* fundos suaves */
   --rosa-escuro:#B8355B;  /* botões, promoções, hovers */
+  --rosa-hover:#962C4C;
   --verde:#B5735A;        /* terracota, destaques e selos */
   --creme:#FBF8F4;        /* fundo geral */
   --areia:#F0E4E0;        /* bordas e divisores */
@@ -59,7 +60,7 @@ nav.main-nav a.promo{color:var(--rosa-escuro)}
 /* ── Hero ── */
 .btn{display:inline-block;padding:.85rem 1.9rem;border-radius:99px;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:1px solid transparent}
 .btn-primary{background:var(--rosa-escuro);color:var(--branco)}
-.btn-primary:hover{background:var(--ink)}
+.btn-primary:hover{background:var(--rosa-hover)}
 .btn-ghost{border-color:var(--rosa-escuro);color:var(--rosa-escuro)}
 .btn-ghost:hover{background:var(--rosa-claro)}
 
@@ -121,7 +122,7 @@ section{padding:4.2rem 0}
 .price strong small{font-size:.56rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde)}
 .price span{font-size:.6rem;color:#7A6A6D}
 .card .btn-card{margin-top:.5rem;text-align:center;background:var(--rosa-escuro);color:var(--branco);border-radius:99px;padding:.45rem;font-weight:700;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;transition:.2s}
-.card .btn-card:hover{background:var(--ink)}
+.card .btn-card:hover{background:var(--rosa-hover)}
 .rating{display:flex;align-items:center;gap:.25rem;font-size:.6rem;color:#7A6A6D}
 .rating strong{color:#D9A441;font-weight:700}
 
@@ -131,7 +132,7 @@ section{padding:4.2rem 0}
 .fav-btn.is-fav{background:var(--rosa-escuro);color:#fff}
 .bag-btn{margin-top:.4rem;border:1px solid var(--rosa-escuro);background:transparent;color:var(--rosa-escuro);border-radius:10px;padding:.6rem;font-family:var(--body);font-weight:700;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:.2s}
 .bag-btn:hover{background:var(--rosa-claro)}
-.bag-btn.in-bag{background:var(--ink);border-color:var(--ink);color:#fff}
+.bag-btn.in-bag{background:var(--rosa-hover);border-color:var(--rosa-hover);color:#fff}
 .bag-float{position:fixed;left:1.3rem;bottom:1.3rem;z-index:60;background:var(--rosa-escuro);color:#fff;height:56px;min-width:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:0 1.1rem;box-shadow:0 10px 25px rgba(0,0,0,.25);border:none;font-size:1.3rem;cursor:pointer;transition:.2s}
 .bag-float:hover{transform:scale(1.06)}
 .bag-count{background:#fff;color:var(--rosa-escuro);font-size:.74rem;font-weight:800;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 .3rem;font-family:var(--body)}
@@ -176,10 +177,10 @@ section{padding:4.2rem 0}
 /* ── Faixa PIX ── */
 .pix{background:var(--verde);color:#fff;text-align:center;padding:3.2rem 0}
 .pix h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.01em}
-.pix h2 em{font-style:italic;color:#DCE8D5}
-.pix p{max-width:56ch;margin:.8rem auto 1.6rem;color:#E9F1E4}
+.pix h2 em{font-style:italic;color:#EFD9CC}
+.pix p{max-width:56ch;margin:.8rem auto 1.6rem;color:#F5E7DE}
 .pix .btn-primary{background:#fff;color:var(--verde)}
-.pix .btn-primary:hover{background:#DCE8D5}
+.pix .btn-primary:hover{background:#EFD9CC}
 
 /* ── Medidas ── */
 .medidas{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
