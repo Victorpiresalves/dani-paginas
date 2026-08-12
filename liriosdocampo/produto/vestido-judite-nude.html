@@ -29,8 +29,8 @@
   --body:'Inter',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--creme);line-height:1.6}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--body);color:var(--ink);background:var(--creme);line-height:1.6;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
@@ -56,7 +56,7 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 .header-actions{display:flex;gap:.8rem;align-items:center;font-size:.8rem;font-weight:700}
 .header-actions a{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border:1px solid var(--areia);border-radius:99px;transition:.2s}
 .header-actions a:hover{background:var(--rosa-escuro);color:var(--branco);border-color:var(--rosa-escuro)}
-.menu-toggle{display:none;background:none;border:1px solid var(--areia);border-radius:8px;padding:.4rem .6rem;font-size:.95rem;font-weight:700;cursor:pointer;color:var(--rosa-escuro);font-family:var(--body)}
+.menu-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:1px solid var(--areia);border-radius:8px;padding:0;cursor:pointer;color:var(--rosa-escuro)}
 :focus-visible{outline:2px solid var(--rosa-escuro);outline-offset:2px}
 
 /* ── Breadcrumb ── */
@@ -186,7 +186,7 @@ footer a:hover{color:var(--rosa)}
   nav.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--branco);border-bottom:1px solid var(--areia);padding:1rem 4%}
   nav.main-nav.open{display:block}
   nav.main-nav ul{flex-direction:column;gap:.9rem}
-  .menu-toggle{display:block}
+  .menu-toggle{display:flex}
   .header-actions .hide-mobile{display:none}
 }
 @media (max-width:560px){
@@ -216,7 +216,7 @@ footer a:hover{color:var(--rosa)}
     <a class="logo" href="../index.html" aria-label="Lírios do Campo Store - Início">
       <img src="../img/logo-2010862784-1749649017-325ea9adf2336639a8dbcb02561d1e3e1749649017-480-0.webp" alt="Lírios do Campo Store">
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="menu" onclick="toggleMenu(this)">Menu</button>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" onclick="toggleMenu(this)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     <nav class="main-nav" id="menu" aria-label="Navegação principal">
       <ul>
         <li><a href="../produtos.html">Todos os produtos</a></li>
@@ -249,7 +249,7 @@ footer a:hover{color:var(--rosa)}
     <a class="pdp-back" href="../produtos.html">&larr; Voltar para o catálogo</a>
     <div class="pdp-grid">
       <div class="pdp-media">
-        <img src="../img/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Vestido Judite - Nude" width="480" height="640">
+        <img src="../img/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Vestido Judite - Nude">
         <button type="button" class="pdp-fav" data-fav aria-pressed="false" aria-label="Favoritar Vestido Judite - Nude">&#9829;</button>
       </div>
       <div class="pdp-info card" data-id="vestido-judite-nude" data-name="vestido judite - nude" data-fullname="Vestido Judite - Nude" data-category="vestidos" data-url="https://liriosdocampo.com.br/produtos/vestido-judite-nude/" data-img="../img/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" data-pix="R$ 123,41" style="border:none;background:none">
