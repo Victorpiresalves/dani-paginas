@@ -64,6 +64,8 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 .pdp-media{position:relative;flex:1;min-width:0;border-radius:18px;overflow:hidden;background:var(--rosa-claro);box-shadow:0 25px 50px rgba(58,46,48,.14)}
 .pdp-media img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:opacity .3s ease,transform .5s ease}
 .pdp-media:hover img{transform:scale(1.05)}
+.pdp-media-alt{position:absolute;inset:0;opacity:0;display:none}
+.pdp-media:hover .pdp-media-alt{opacity:1}
 .pdp-badge{position:absolute;top:1rem;left:1rem;background:var(--rosa-escuro);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border-radius:99px;z-index:2}
 .pdp-fav{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.35rem;line-height:1;cursor:pointer;transition:.2s;color:var(--rosa-escuro);z-index:2}
 .pdp-fav:hover{background:#fff;transform:scale(1.06)}
@@ -253,6 +255,7 @@ footer a:hover{color:var(--rosa)}
         <div class="pdp-media">
           <span class="pdp-badge" id="pdpBadge" style="display:none">Sob encomenda</span>
           <img id="pdpMainImg" src="../img/img_3480-0d9f52c38340e551c717547779167635-640-0.webp" alt="Saia 360 - Marinho" width="480" height="640">
+          <img id="pdpMainImgAlt" class="pdp-media-alt" src="" alt="" loading="lazy">
           <button type="button" class="pdp-fav" data-fav aria-pressed="false" aria-label="Favoritar Saia 360">&#9829;</button>
         </div>
       </div>
@@ -690,6 +693,16 @@ function renderColor(slug, updateUrl){
     mainImg.alt = FAMILY + ' - ' + c.nome;
     mainImg.style.opacity = 1;
   }, 150);
+
+  const mainImgAlt = document.getElementById('pdpMainImgAlt');
+  if(c.gallery && c.gallery.length > 1){
+    mainImgAlt.src = c.gallery[1];
+    mainImgAlt.alt = FAMILY + ' - ' + c.nome;
+    mainImgAlt.style.display = 'block';
+  } else {
+    mainImgAlt.style.display = 'none';
+    mainImgAlt.src = '';
+  }
 
   document.getElementById('pdpTitle').textContent = FAMILY + ' - ' + c.nome;
   document.getElementById('breadcrumbColor').textContent = FAMILY + ' - ' + c.nome;
