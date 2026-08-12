@@ -192,8 +192,10 @@ section{padding:4.2rem 0}
 
 /* ── Instagram ── */
 .insta-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
-.insta-grid img{aspect-ratio:1;object-fit:cover;object-position:top;border-radius:10px;width:100%;transition:.25s}
-.insta-grid a:hover img{filter:brightness(.85);transform:scale(1.02)}
+.insta-item{position:relative;display:block;overflow:hidden;border-radius:10px}
+.insta-grid img{aspect-ratio:3/4;object-fit:cover;object-position:top;width:100%;transition:.4s ease}
+.insta-item:hover img{filter:brightness(.85);transform:scale(1.05)}
+.insta-heart{position:absolute;top:.6rem;right:.6rem;width:30px;height:30px;border-radius:50%;background:rgba(20,16,17,.45);display:flex;align-items:center;justify-content:center;color:#fff;pointer-events:none}
 
 /* ── Newsletter ── */
 .news{background:var(--branco);color:var(--ink);text-align:center;border-top:1px solid var(--areia)}
@@ -828,11 +830,26 @@ footer a:hover{color:var(--rosa)}
     </div>
     <div class="insta-grid">
       <!-- TROQUE: se preferir, substitua pelas fotos dos posts mais recentes do feed -->
-      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="img/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
-      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="img/img_6581-5d61cfedaf77151f1717449271864442-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
-      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="img/img_2758-105aa1918a1ef50bc817377253294001-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
-      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="img/img_6740-edb0f97b114f74e3bb17453292946635-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
-      <a href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener"><img src="img/img_2823-8146b45720fe349d9217377267725023-640-0.webp" alt="Post do Instagram" loading="lazy"></a>
+      <a class="insta-item" href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener">
+        <img src="img/img_9789-421f064301e9d3b83c17500815024402-640-0.webp" alt="Jardineira Adulta - Azul Celeste" loading="lazy">
+        <span class="insta-heart" aria-hidden="true">&#9825;</span>
+      </a>
+      <a class="insta-item" href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener">
+        <img src="img/salopete-adulta-pink-real.webp" alt="Salopete Adulta - Pink" loading="lazy">
+        <span class="insta-heart" aria-hidden="true">&#9825;</span>
+      </a>
+      <a class="insta-item" href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener">
+        <img src="img/img_2160-b92c890259e2436ade17537007558176-640-0.webp" alt="Jardineira Adulta - Amarelo" loading="lazy">
+        <span class="insta-heart" aria-hidden="true">&#9825;</span>
+      </a>
+      <a class="insta-item" href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener">
+        <img src="img/img_9781-82f06a6104c729643717500812834698-640-0.webp" alt="Jardineira Adulta - Verde Bandeira" loading="lazy">
+        <span class="insta-heart" aria-hidden="true">&#9825;</span>
+      </a>
+      <a class="insta-item" href="https://instagram.com/Liriosdocampostore" target="_blank" rel="noopener">
+        <img src="img/img_2171-9940ec6e38a805b43d17537005636096-640-0.webp" alt="Jardineira Adulta - Terracota" loading="lazy">
+        <span class="insta-heart" aria-hidden="true">&#9825;</span>
+      </a>
     </div>
   </div>
 </section>
