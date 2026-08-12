@@ -97,31 +97,32 @@ section{padding:4.2rem 0}
 .link-more{font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-escuro);border-bottom:2px solid var(--rosa-escuro);padding-bottom:.15rem;white-space:nowrap}
 
 /* ── Cards de produto ── */
-.grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1.9rem}
+.grid-products{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
 .card{background:var(--branco);border-radius:14px;overflow:hidden;border:1px solid var(--areia);transition:.25s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.18)}
 .card-media{position:relative;display:block;overflow:hidden}
-.card-media img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .6s ease,opacity .5s ease}
+.card-media img{aspect-ratio:1/1;object-fit:cover;width:100%;transition:transform .6s ease,opacity .5s ease}
 .card:hover .card-media img{transform:scale(1.07)}
 .card-media .img-alt{position:absolute;inset:0;opacity:0}
 .card:hover .card-media .img-alt{opacity:1}
-.badge{position:absolute;top:.8rem;left:.8rem;background:var(--rosa-escuro);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;border-radius:99px}
-.badge.frete{background:var(--verde);top:auto;bottom:.8rem}
-.card-body{padding:1.4rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
-.card-body h3{font-family:var(--display);font-weight:500;font-size:1.12rem}
-.swatches{display:flex;flex-wrap:wrap;gap:.5rem}
-.swatch{display:block;width:20px;height:20px;border-radius:5px;border:1px solid rgba(0,0,0,.12);box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer;transition:.15s}
+.badge{position:absolute;top:.6rem;left:.6rem;background:var(--rosa-escuro);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:99px}
+.badge.frete{background:var(--verde);top:auto;bottom:.6rem}
+.card-body{padding:.65rem .7rem .8rem;display:flex;flex-direction:column;gap:.3rem;height:100px;overflow:hidden}
+.grid-products .swatches,.grid-products .buy-row,.grid-products .bag-btn,.grid-products .link-more{display:none}
+.card-body h3{font-family:var(--display);font-weight:500;font-size:.78rem}
+.swatches{display:flex;flex-wrap:wrap;gap:.22rem;max-height:26px;overflow:hidden}
+.swatch{display:block;width:11px;height:11px;border-radius:3px;border:1px solid rgba(0,0,0,.12);box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer;transition:.15s}
 .swatch:hover{transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,.15)}
 .swatch.active{border-color:var(--rosa-escuro);box-shadow:0 0 0 2px var(--rosa-claro);cursor:default}
 .swatch.encomenda{border-style:dashed;border-width:2px}
 .price{margin-top:auto}
-.price del{color:#A99598;font-size:.82rem}
-.price strong{display:block;font-size:1.15rem;color:var(--rosa-escuro)}
-.price strong small{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde)}
-.price span{font-size:.78rem;color:#7A6A6D}
-.card .btn-card{margin-top:.8rem;text-align:center;background:var(--rosa-escuro);color:var(--branco);border-radius:10px;padding:.7rem;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+.price del{color:#A99598;font-size:.64rem}
+.price strong{display:block;font-size:.86rem;color:var(--rosa-escuro)}
+.price strong small{font-size:.56rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde)}
+.price span{font-size:.6rem;color:#7A6A6D}
+.card .btn-card{margin-top:.5rem;text-align:center;background:var(--rosa-escuro);color:var(--branco);border-radius:10px;padding:.45rem;font-weight:700;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;transition:.2s}
 .card .btn-card:hover{background:var(--verde)}
-.rating{display:flex;align-items:center;gap:.3rem;font-size:.78rem;color:#7A6A6D}
+.rating{display:flex;align-items:center;gap:.25rem;font-size:.6rem;color:#7A6A6D}
 .rating strong{color:#D9A441;font-weight:700}
 
 /* ── Favoritos e sacola ── */
@@ -224,9 +225,9 @@ footer a:hover{color:var(--rosa)}
 .top-float:hover{background:var(--ink)}
 
 /* ── Botões de canais de compra ── */
-.buy-row{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-top:.8rem}
-.bch{display:flex;align-items:center;justify-content:center;gap:.5rem;text-align:center;border-radius:10px;padding:.6rem .4rem;font-weight:700;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:var(--branco);border:1px solid var(--areia);transition:.2s}
-.bch::before{content:'';width:19px;height:19px;border-radius:50%;background:#fff;border:1px solid var(--areia);background-size:62%;background-position:center;background-repeat:no-repeat;flex-shrink:0}
+.buy-row{display:flex;justify-content:center;gap:.3rem;margin-top:.4rem}
+.bch{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:50%;width:22px;height:22px;padding:0;font-size:0;color:var(--ink);background:var(--branco);border:1px solid var(--areia);transition:.2s;overflow:hidden}
+.bch::before{content:'';width:100%;height:100%;border-radius:50%;background:#fff;background-size:60%;background-position:center;background-repeat:no-repeat;flex-shrink:0}
 .bch:hover{border-color:var(--rosa-escuro);color:var(--rosa-escuro);background:var(--rosa-claro)}
 .bch.ml::before{background-image:url(img/icone-mercadolivre.png);background-size:70%}
 .bch.shopee::before{background-image:url(img/icone-shopee.svg)}
@@ -253,7 +254,7 @@ footer a:hover{color:var(--rosa)}
   .banner{aspect-ratio:4/5}
   .banner-caption{left:1rem;right:1rem;bottom:1rem;max-width:none}
   .banner-arrow{display:none}
-  .grid-products{grid-template-columns:repeat(2,1fr)}
+  .grid-products{grid-template-columns:repeat(3,1fr)}
   .cat-grid{grid-template-columns:1fr 1fr}
   .cat:last-child{grid-column:1/-1;min-height:280px}
   .benefits-grid{grid-template-columns:repeat(2,1fr)}
@@ -268,10 +269,8 @@ footer a:hover{color:var(--rosa)}
   .header-actions .hide-mobile{display:none}
 }
 @media (max-width:560px){
-  .grid-products{grid-template-columns:1fr 1fr;gap:.8rem}
+  .grid-products{grid-template-columns:1fr 1fr;gap:.7rem}
   .canais-grid{grid-template-columns:1fr}
-  .card-body{padding:.8rem}
-  .buy-row{grid-template-columns:1fr}
   .cat-grid{grid-template-columns:1fr}
   .insta-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr}
@@ -465,7 +464,7 @@ footer a:hover{color:var(--rosa)}
 
       <article class="card">
         <a class="card-media" href="produto/jardineira-adulta.html?cor=azul-celeste">
-          <img src="img/img_9789-421f064301e9d3b83c17500815024402-640-0.webp" alt="Jardineira Adulta - Azul Celeste" loading="lazy" width="480" height="640">
+          <img src="img/img_9789-421f064301e9d3b83c17500815024402-640-0.webp" alt="Jardineira Adulta - Azul Celeste" loading="lazy">
           <span class="badge">Mais vendido</span>
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Jardineira Adulta - Azul Celeste">&#9829;</button>
         </a>
@@ -505,7 +504,7 @@ footer a:hover{color:var(--rosa)}
 
       <article class="card">
         <a class="card-media" href="produto/salopete-infantil.html?cor=marinho">
-          <img src="img/img_90771-d3d8d62dc4a811a81416955791901638-640-0.webp" alt="Salopete Infantil - Marinho" loading="lazy" width="480" height="640">
+          <img src="img/salopete-infantil-marinho.webp" alt="Salopete Infantil - Marinho" loading="lazy">
           <span class="badge">Mais vendido</span>
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Infantil - Marinho">&#9829;</button>
         </a>
@@ -529,8 +528,10 @@ footer a:hover{color:var(--rosa)}
             <span class="swatch active" style="background:#1B2A4A" title="Marinho"></span>
             <a class="swatch" href="produto/salopete-infantil.html?cor=bordo" style="background:#7B2D3E" title="Bordô"></a>
             <a class="swatch" href="produto/salopete-infantil.html?cor=preta" style="background:#1C1C1C" title="Preta"></a>
-            <a class="swatch encomenda" href="produto/salopete-infantil.html?cor=laranja" style="background:#E8732C" title="Laranja (sob encomenda)"></a>
-            <a class="swatch encomenda" href="produto/salopete-infantil.html?cor=marrom" style="background:#6B4E3D" title="Marrom (sob encomenda)"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=laranja" style="background:#E8732C" title="Laranja"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=marrom" style="background:#6B4E3D" title="Marrom"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=cinza" style="background:#8C8C8C" title="Cinza"></a>
+            <a class="swatch" href="produto/salopete-infantil.html?cor=azul-claro" style="background:#A8D8EA" title="Azul Claro"></a>
           </div>
           <div class="buy-row">
             <a class="bch ml" href="https://lista.mercadolivre.com.br/_CustId_258164782?skipInApp=true&amp;matt_ignore=true" target="_blank" rel="noopener">Mercado Livre</a>
@@ -544,7 +545,7 @@ footer a:hover{color:var(--rosa)}
 
       <article class="card">
         <a class="card-media" href="produto/salopete-adulta.html?cor=pink">
-          <img src="img/salopete-adulta-pink-real.webp" alt="Salopete Adulta - Pink" loading="lazy" width="480" height="640">
+          <img src="img/salopete-adulta-pink-real.webp" alt="Salopete Adulta - Pink" loading="lazy">
           <span class="badge">Mais vendido</span>
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Salopete Adulta - Pink">&#9829;</button>
         </a>

@@ -103,25 +103,26 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 /* ── Cards (relacionados) ── */
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
 .section-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.2vw,2.3rem);letter-spacing:-.01em;color:var(--rosa-escuro)}
-.link-more{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rosa-escuro);border-bottom:2px solid var(--rosa-escuro);padding-bottom:.1rem;white-space:nowrap}
+.link-more{font-weight:700;font-size:.6rem;letter-spacing:.04em;text-transform:uppercase;color:var(--rosa-escuro);border-bottom:2px solid var(--rosa-escuro);padding-bottom:.1rem;white-space:nowrap}
 .related{padding:3rem 0 4rem}
-.grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+.grid-products{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
 .card{background:var(--branco);border-radius:14px;overflow:hidden;border:1px solid var(--areia);transition:.25s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(168,93,114,.18)}
 .card-media{position:relative;display:block;background:var(--rosa-claro)}
-.card-media img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.card-media img{aspect-ratio:1/1;object-fit:cover;width:100%}
 .fav-btn{position:absolute;top:.6rem;right:.6rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.05rem;line-height:1;cursor:pointer;transition:.2s;color:var(--rosa-escuro);z-index:2}
 .fav-btn:hover{background:#fff;transform:scale(1.08)}
 .fav-btn.is-fav{background:var(--rosa-escuro);color:#fff}
-.card-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
-.card-body h3{font-family:var(--display);font-weight:500;font-size:1.05rem}
+.card-body{padding:.65rem .7rem .8rem;display:flex;flex-direction:column;gap:.3rem;height:100px;overflow:hidden}
+.grid-products .buy-row{display:none}
+.card-body h3{font-family:var(--display);font-weight:500;font-size:.78rem}
 .price{margin-top:auto}
-.price strong{display:block;font-size:1.1rem;color:var(--rosa-escuro)}
-.price strong small{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--verde)}
-.price span{font-size:.76rem;color:#7A6A6D}
-.buy-row{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-top:.3rem}
-.bch{display:flex;align-items:center;justify-content:center;gap:.45rem;text-align:center;border-radius:9px;padding:.55rem .3rem;font-weight:700;font-size:.66rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);background:var(--creme);border:1px solid var(--areia);transition:.2s}
-.bch::before{content:'';width:18px;height:18px;border-radius:50%;background:#fff;border:1px solid var(--areia);background-size:62%;background-position:center;background-repeat:no-repeat;flex-shrink:0}
+.price strong{display:block;font-size:.86rem;color:var(--rosa-escuro)}
+.price strong small{font-size:.56rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--verde)}
+.price span{font-size:.6rem;color:#7A6A6D}
+.buy-row{display:flex;justify-content:center;gap:.25rem;margin-top:.22rem}
+.bch{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:50%;width:20px;height:20px;padding:0;font-size:0;color:var(--ink);background:var(--creme);border:1px solid var(--areia);transition:.2s;overflow:hidden}
+.bch::before{content:'';width:100%;height:100%;border-radius:50%;background:#fff;background-size:60%;background-position:center;background-repeat:no-repeat;flex-shrink:0}
 .bch:hover{border-color:var(--rosa-escuro);color:var(--rosa-escuro);background:var(--rosa-claro)}
 .bch.ml::before{background-image:url(../img/icone-mercadolivre.png);background-size:70%}
 .bch.shopee::before{background-image:url(../img/icone-shopee.svg)}
@@ -178,7 +179,7 @@ footer a:hover{color:var(--rosa)}
 /* ── Responsivo ── */
 @media (max-width:960px){
   .pdp-grid{grid-template-columns:1fr;gap:1.6rem}
-  .grid-products{grid-template-columns:repeat(2,1fr)}
+  .grid-products{grid-template-columns:repeat(3,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   nav.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--branco);border-bottom:1px solid var(--areia);padding:1rem 4%}
   nav.main-nav.open{display:block}
@@ -187,9 +188,8 @@ footer a:hover{color:var(--rosa)}
   .header-actions .hide-mobile{display:none}
 }
 @media (max-width:560px){
-  .grid-products{grid-template-columns:1fr 1fr;gap:.8rem}
+  .grid-products{grid-template-columns:1fr 1fr;gap:.6rem}
   .card-body{padding:.8rem}
-  .buy-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .logo img{height:44px}
   .pdp-buy-row{grid-template-columns:1fr}
@@ -286,7 +286,7 @@ footer a:hover{color:var(--rosa)}
     <div class="grid-products">
       <article class="card" data-id="vestido-judite-verde" data-name="vestido judite - verde" data-fullname="Vestido Judite - Verde" data-category="vestidos" data-url="https://liriosdocampo.com.br/produtos/vestido-judite-verde/" data-img="img/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" data-pix="R$ 123,41">
         <a class="card-media" href="vestido-judite-verde.html">
-          <img src="../img/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Vestido Judite - Verde" loading="lazy" width="480" height="640">
+          <img src="../img/img_2808-24d1c2330e3130a5c417377267716387-640-0.webp" alt="Vestido Judite - Verde" loading="lazy">
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Judite - Verde">&#9829;</button>
         </a>
         <div class="card-body">
@@ -305,7 +305,7 @@ footer a:hover{color:var(--rosa)}
       </article>
       <article class="card" data-id="vestido-roberta-nude" data-name="vestido roberta - nude" data-fullname="Vestido Roberta - Nude" data-category="vestidos" data-url="https://liriosdocampo.com.br/produtos/vestido-roberta-nude/" data-img="img/img_1727-6cc5d239d4456c4c5517341256098665-640-0.webp" data-pix="R$ 94,91">
         <a class="card-media" href="vestido-roberta-nude.html">
-          <img src="../img/img_1727-6cc5d239d4456c4c5517341256098665-640-0.webp" alt="Vestido Roberta - Nude" loading="lazy" width="480" height="640">
+          <img src="../img/img_1727-6cc5d239d4456c4c5517341256098665-640-0.webp" alt="Vestido Roberta - Nude" loading="lazy">
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Roberta - Nude">&#9829;</button>
         </a>
         <div class="card-body">
@@ -324,7 +324,7 @@ footer a:hover{color:var(--rosa)}
       </article>
       <article class="card" data-id="vestido-cintia-verde-3q35v" data-name="vestido cintia - verde" data-fullname="Vestido Cintia - Verde" data-category="vestidos" data-url="https://liriosdocampo.com.br/produtos/vestido-cintia-verde-3q35v/" data-img="img/img_2985-f2e7c8c0501d1b586317767747751030-640-0.webp" data-pix="R$ 113,91">
         <a class="card-media" href="vestido-cintia-verde-3q35v.html">
-          <img src="../img/img_2985-f2e7c8c0501d1b586317767747751030-640-0.webp" alt="Vestido Cintia - Verde" loading="lazy" width="480" height="640">
+          <img src="../img/img_2985-f2e7c8c0501d1b586317767747751030-640-0.webp" alt="Vestido Cintia - Verde" loading="lazy">
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Cintia - Verde">&#9829;</button>
         </a>
         <div class="card-body">
@@ -343,7 +343,7 @@ footer a:hover{color:var(--rosa)}
       </article>
       <article class="card" data-id="vestido-aurora-verde-liberty-a42q7" data-name="vestido aurora - verde liberty" data-fullname="Vestido Aurora - Verde Liberty" data-category="vestidos" data-url="https://liriosdocampo.com.br/produtos/vestido-aurora-verde-liberty-a42q7/" data-img="img/img_1419-ed8042c0f0bd45085c17722939556802-640-0.webp" data-pix="R$ 113,91">
         <a class="card-media" href="vestido-aurora-verde-liberty-a42q7.html">
-          <img src="../img/img_1419-ed8042c0f0bd45085c17722939556802-640-0.webp" alt="Vestido Aurora - Verde Liberty" loading="lazy" width="480" height="640">
+          <img src="../img/img_1419-ed8042c0f0bd45085c17722939556802-640-0.webp" alt="Vestido Aurora - Verde Liberty" loading="lazy">
           <button type="button" class="fav-btn" data-fav aria-pressed="false" aria-label="Favoritar Vestido Aurora - Verde Liberty">&#9829;</button>
         </a>
         <div class="card-body">
