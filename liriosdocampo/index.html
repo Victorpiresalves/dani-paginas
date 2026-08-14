@@ -111,7 +111,7 @@ section{padding:4.2rem 0}
 .badge{position:absolute;top:.6rem;left:.6rem;background:var(--rosa-escuro);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:99px}
 .badge.frete{background:var(--verde);top:auto;bottom:.6rem}
 .card-body{padding:.65rem .7rem .8rem;display:flex;flex-direction:column;gap:.3rem;height:100px;overflow:hidden}
-.grid-products .swatches,.grid-products .buy-row,.grid-products .bag-btn,.grid-products .link-more{display:none}
+.grid-products .swatches,.grid-products .buy-row,.grid-products .link-more{display:none}
 .card-body h3{font-family:var(--display);font-weight:500;font-size:.78rem}
 .swatches{display:flex;flex-wrap:wrap;gap:.22rem;max-height:26px;overflow:hidden}
 .swatch{display:block;width:11px;height:11px;border-radius:3px;border:1px solid rgba(0,0,0,.12);box-shadow:0 1px 2px rgba(0,0,0,.08);cursor:pointer;transition:.15s}
@@ -128,33 +128,10 @@ section{padding:4.2rem 0}
 .rating{display:flex;align-items:center;gap:.25rem;font-size:.6rem;color:#7A6A6D}
 .rating strong{color:#D9A441;font-weight:700}
 
-/* ── Favoritos e sacola ── */
+/* ── Favoritos ── */
 .fav-btn{position:absolute;top:.6rem;right:.6rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.05rem;line-height:1;cursor:pointer;transition:.2s;color:var(--rosa-escuro);z-index:2}
 .fav-btn:hover{background:#fff;transform:scale(1.08)}
 .fav-btn.is-fav{background:var(--rosa-escuro);color:#fff}
-.bag-btn{margin-top:.4rem;border:1px solid var(--rosa-escuro);background:transparent;color:var(--rosa-escuro);border-radius:10px;padding:.6rem;font-family:var(--body);font-weight:700;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:.2s}
-.bag-btn:hover{background:var(--rosa-claro)}
-.bag-btn.in-bag{background:var(--rosa-hover);border-color:var(--rosa-hover);color:#fff}
-.bag-float{position:fixed;left:1.3rem;bottom:1.3rem;z-index:60;background:var(--rosa-escuro);color:#fff;height:56px;min-width:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:0 1.1rem;box-shadow:0 10px 25px rgba(0,0,0,.25);border:none;font-size:1.3rem;cursor:pointer;transition:.2s}
-.bag-float:hover{transform:scale(1.06)}
-.bag-count{background:#fff;color:var(--rosa-escuro);font-size:.74rem;font-weight:800;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 .3rem;font-family:var(--body)}
-.overlay{position:fixed;inset:0;background:rgba(58,46,48,.5);z-index:70;opacity:0;pointer-events:none;transition:.2s}
-.overlay.open{opacity:1;pointer-events:auto}
-.bag-panel{position:fixed;right:0;top:0;bottom:0;width:min(420px,92vw);background:#fff;z-index:80;transform:translateX(100%);transition:.28s ease;display:flex;flex-direction:column;box-shadow:-15px 0 40px rgba(0,0,0,.18)}
-.bag-panel.open{transform:translateX(0)}
-.bag-panel-inner{display:flex;flex-direction:column;height:100%;padding:1.4rem}
-.bag-panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
-.bag-panel-head h3{font-family:var(--display);font-weight:500;font-size:1.3rem;color:var(--rosa-escuro)}
-.bag-close{background:none;border:none;font-size:1.7rem;line-height:1;cursor:pointer;color:var(--ink)}
-.bag-items{list-style:none;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.9rem}
-.bag-item{display:flex;gap:.8rem;align-items:center;border-bottom:1px solid var(--areia);padding-bottom:.9rem}
-.bag-item img{width:52px;height:69px;object-fit:cover;border-radius:8px;flex-shrink:0}
-.bag-item-info{flex:1}
-.bag-item-info strong{display:block;font-size:.86rem;font-weight:700}
-.bag-item-info span{font-size:.8rem;color:var(--rosa-escuro);font-weight:700}
-.bag-item-remove{background:none;border:none;color:#A99598;font-size:.76rem;text-decoration:underline;cursor:pointer;margin-top:.2rem;font-family:var(--body)}
-.bag-empty{color:#7A6A6D;font-size:.9rem;padding:2.5rem 0;text-align:center}
-.bag-cta{margin-top:1rem;text-align:center;width:100%;border:none;font-family:var(--body)}
 
 /* ── Categorias ── */
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
@@ -418,7 +395,6 @@ footer a:hover{color:var(--rosa)}
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
             <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Vestido%20Ana%20G%C3%B4de%20Adulta." target="_blank" rel="noopener">WhatsApp</a>
           </div>
-          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
       </article>
 
@@ -440,7 +416,6 @@ footer a:hover{color:var(--rosa)}
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
             <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Conjunto%20Academia%20Fitness." target="_blank" rel="noopener">WhatsApp</a>
           </div>
-          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
       </article>
 
@@ -479,7 +454,6 @@ footer a:hover{color:var(--rosa)}
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
             <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Jardineira%20G%C3%B4de%20Adulta." target="_blank" rel="noopener">WhatsApp</a>
           </div>
-          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
       </article>
 
@@ -502,7 +476,6 @@ footer a:hover{color:var(--rosa)}
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
             <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Salopete%20G%C3%B4de%20Infantil." target="_blank" rel="noopener">WhatsApp</a>
           </div>
-          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
       </article>
 
@@ -525,7 +498,6 @@ footer a:hover{color:var(--rosa)}
             <a class="bch tt" href="https://vt.tiktok.com/ZS9hQ8jtHTHqd-kRH2N/" target="_blank" rel="noopener">TikTok Shop</a>
             <a class="bch wa" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Quero%20comprar%20o%20Salopete%20G%C3%B4de%20Adulta." target="_blank" rel="noopener">WhatsApp</a>
           </div>
-          <button type="button" class="bag-btn" data-bag aria-pressed="false">+ Adicionar à sacola</button>
         </div>
       </article>
 
@@ -885,23 +857,6 @@ window.addEventListener('scroll',function(){var b=document.getElementById('topFl
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.5 2 3.5 3.7 4.2l1.3-1 2 1c-.3 1.2-1.5 1.8-2.7 1.5-2.4-.6-4.9-3-5.6-5.4-.3-1.2.3-2.3 1.5-2.6l.9 2z" stroke-width="0" fill="currentColor" opacity=".9"/></svg>
 </a>
 
-<!-- Sacola flutuante -->
-<button type="button" id="bagToggle" class="bag-float" aria-label="Abrir sacola de compras">
-  🛍️<span id="bagCount" class="bag-count">0</span>
-</button>
-
-<div id="bagOverlay" class="overlay"></div>
-<div id="bagPanel" class="bag-panel" aria-hidden="true">
-  <div class="bag-panel-inner">
-    <div class="bag-panel-head">
-      <h3>Minha sacola</h3>
-      <button type="button" id="bagClose" class="bag-close" aria-label="Fechar sacola">×</button>
-    </div>
-    <ul id="bagItems" class="bag-items"></ul>
-    <p id="bagEmpty" class="bag-empty">Sua sacola está vazia. Toque em "Adicionar à sacola" nas peças que quiser.</p>
-    <a id="bagWhatsapp" class="btn btn-verde bag-cta" href="#" target="_blank" rel="noopener" style="display:none">Finalizar pelo WhatsApp</a>
-  </div>
-</div>
 
 <script>
 function toggleMenu(btn){
@@ -945,10 +900,9 @@ function subscribe(e){
   /* Para integrar de verdade: conecte este formulário ao Mailchimp ou à newsletter da Nuvemshop */
 }
 
-/* ── Favoritos e sacola (mesmo armazenamento do catálogo em produtos.html) ── */
+/* ── Favoritos (mesmo armazenamento do catálogo em produtos.html) ── */
 const PHONE = '5519999744842';
 const FAV_KEY = 'lirios_favoritos';
-const BAG_KEY = 'lirios_sacola';
 
 function loadStore(key){
   try { return JSON.parse(localStorage.getItem(key)) || {}; } catch(e){ return {}; }
@@ -958,7 +912,6 @@ function saveStore(key, obj){
 }
 
 let favorites = loadStore(FAV_KEY);
-let bag = loadStore(BAG_KEY);
 
 function cardData(card){
   return {
@@ -973,27 +926,15 @@ function cardData(card){
 function syncCardState(card){
   const id = card.dataset.id;
   const favBtn = card.querySelector('[data-fav]');
-  const bagBtn = card.querySelector('[data-bag]');
   if(favBtn){
     const isFav = !!favorites[id];
     favBtn.classList.toggle('is-fav', isFav);
     favBtn.setAttribute('aria-pressed', String(isFav));
   }
-  if(bagBtn){
-    const inBag = !!bag[id];
-    bagBtn.classList.toggle('in-bag', inBag);
-    bagBtn.setAttribute('aria-pressed', String(inBag));
-    bagBtn.textContent = inBag ? '✓ Na sacola' : '+ Adicionar à sacola';
-  }
 }
 
 function syncAllCards(){
   document.querySelectorAll('.card[data-id]').forEach(syncCardState);
-}
-
-function updateBagCount(){
-  const el = document.getElementById('bagCount');
-  if(el) el.textContent = String(Object.keys(bag).length);
 }
 
 function toggleFavorite(card){
@@ -1004,15 +945,6 @@ function toggleFavorite(card){
   syncCardState(card);
 }
 
-function toggleBag(card){
-  const id = card.dataset.id;
-  if(bag[id]) delete bag[id];
-  else bag[id] = cardData(card);
-  saveStore(BAG_KEY, bag);
-  syncCardState(card);
-  renderBagPanel();
-}
-
 document.addEventListener('click', function(e){
   const favBtn = e.target.closest('[data-fav]');
   if(favBtn){
@@ -1021,108 +953,9 @@ document.addEventListener('click', function(e){
     if(card) toggleFavorite(card);
     return;
   }
-  const bagBtn = e.target.closest('[data-bag]');
-  if(bagBtn){
-    const card = bagBtn.closest('.card');
-    if(card) toggleBag(card);
-  }
-});
-
-const bagPanel = document.getElementById('bagPanel');
-const bagOverlay = document.getElementById('bagOverlay');
-const bagToggleBtn = document.getElementById('bagToggle');
-const bagCloseBtn = document.getElementById('bagClose');
-
-function openBagPanel(){
-  renderBagPanel();
-  if(bagPanel) bagPanel.classList.add('open');
-  if(bagOverlay) bagOverlay.classList.add('open');
-  if(bagPanel) bagPanel.setAttribute('aria-hidden','false');
-}
-function closeBagPanel(){
-  if(bagPanel) bagPanel.classList.remove('open');
-  if(bagOverlay) bagOverlay.classList.remove('open');
-  if(bagPanel) bagPanel.setAttribute('aria-hidden','true');
-}
-if(bagToggleBtn) bagToggleBtn.addEventListener('click', openBagPanel);
-if(bagCloseBtn) bagCloseBtn.addEventListener('click', closeBagPanel);
-if(bagOverlay) bagOverlay.addEventListener('click', closeBagPanel);
-
-function renderBagPanel(){
-  const list = document.getElementById('bagItems');
-  const empty = document.getElementById('bagEmpty');
-  const cta = document.getElementById('bagWhatsapp');
-  if(!list || !empty || !cta) { updateBagCount(); return; }
-  const items = Object.values(bag);
-  list.innerHTML = '';
-
-  if(items.length === 0){
-    empty.style.display = 'block';
-    cta.style.display = 'none';
-  } else {
-    empty.style.display = 'none';
-    cta.style.display = 'block';
-
-    items.forEach(function(it){
-      const li = document.createElement('li');
-      li.className = 'bag-item';
-
-      const img = document.createElement('img');
-      img.src = it.img;
-      img.alt = '';
-      li.appendChild(img);
-
-      const info = document.createElement('div');
-      info.className = 'bag-item-info';
-
-      const strong = document.createElement('strong');
-      strong.textContent = it.name;
-      info.appendChild(strong);
-
-      const span = document.createElement('span');
-      span.textContent = it.pix;
-      info.appendChild(span);
-
-      const removeBtn = document.createElement('button');
-      removeBtn.type = 'button';
-      removeBtn.className = 'bag-item-remove';
-      removeBtn.setAttribute('data-remove', it.id);
-      removeBtn.textContent = 'Remover';
-      info.appendChild(removeBtn);
-
-      li.appendChild(info);
-      list.appendChild(li);
-    });
-
-    const lines = ['Olá! Quero comprar estas peças:'];
-    items.forEach(function(it, i){
-      lines.push((i + 1) + '. ' + it.name + ' - ' + it.pix);
-    });
-    lines.push('Pode confirmar disponibilidade e o valor do frete?');
-    cta.href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lines.join('\n'));
-  }
-  updateBagCount();
-}
-
-const bagItemsList = document.getElementById('bagItems');
-if(bagItemsList){
-  bagItemsList.addEventListener('click', function(e){
-    const btn = e.target.closest('[data-remove]');
-    if(!btn) return;
-    const id = btn.getAttribute('data-remove');
-    delete bag[id];
-    saveStore(BAG_KEY, bag);
-    document.querySelectorAll('.card[data-id="' + CSS.escape(id) + '"]').forEach(syncCardState);
-    renderBagPanel();
-  });
-}
-
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') closeBagPanel();
 });
 
 syncAllCards();
-updateBagCount();
 </script>
 
 </body>
