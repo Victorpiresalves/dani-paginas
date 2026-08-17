@@ -164,7 +164,7 @@ section{padding:4.2rem 0}
 
 /* ── Medidas ── */
 .medidas{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.medidas img{border-radius:16px;aspect-ratio:4/3;object-fit:cover;object-position:top;width:100%}
+.medidas img,.medidas-video{border-radius:16px;aspect-ratio:3/4;object-fit:cover;object-position:top;width:100%;box-shadow:0 25px 50px rgba(58,46,48,.14)}
 .medidas h2{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,3.5vw,2.7rem);letter-spacing:-.01em;color:var(--rosa-escuro);margin-bottom:1rem}
 .medidas h2 em{color:var(--verde)}
 .medidas p{color:#7A6A6D;margin-bottom:1.6rem}
@@ -730,7 +730,7 @@ footer a:hover{color:var(--rosa)}
 <!-- Guia de medidas -->
 <section>
   <div class="container medidas">
-    <img src="img/vestido-ana-gode-adulta-3.webp" alt="Modelo com peça da Lírios do Campo" loading="lazy">
+    <video class="medidas-video" src="img/medidas-video.mp4" poster="img/medidas-video-poster.webp" autoplay loop muted playsinline aria-label="Modelo com peça da Lírios do Campo"></video>
     <div>
       <h2>Encontre o seu tamanho <em>sem erro</em></h2>
       <p>Cada corpo é único, e a nossa modelagem foi pensada para valorizar o seu. Consulte o guia de medidas antes de finalizar a compra e, se ficar na dúvida, fale com a gente no WhatsApp: ajudamos você a escolher o tamanho ideal.</p>
