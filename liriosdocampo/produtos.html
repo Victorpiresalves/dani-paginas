@@ -124,13 +124,16 @@ nav.main-nav a[aria-current="page"]{border-color:var(--rosa-escuro);color:var(--
 .bch.wa::before{background-image:url(img/icone-whatsapp.svg)}
 
 /* ── Faixa PIX ── */
-.pix{background:var(--verde);color:#fff;text-align:center;padding:3.2rem 0}
-.pix h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.01em}
-.pix h2 em{color:#EFD9CC}
-.pix p{max-width:56ch;margin:.8rem auto 1.6rem;color:#F5E7DE}
+.pix{position:relative;background:linear-gradient(120deg,#2A2A2A 0%,#141414 100%);color:#fff;padding:1.7rem 0;overflow:hidden}
+.pix::after{content:'';position:absolute;top:-70px;right:8%;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.05)}
+.pix .container{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1.8rem;flex-wrap:wrap}
+.pix-content{text-align:left}
+.pix h2{font-family:var(--display);font-weight:400;font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.01em;margin-bottom:.15rem}
+.pix h2 em{color:#F48FB1;font-style:normal}
+.pix p{margin:0;font-size:.85rem;color:#D4D4D4;max-width:52ch}
 .btn{display:inline-block;padding:.85rem 1.9rem;border-radius:99px;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:1px solid transparent}
-.pix .btn-primary{background:#fff;color:var(--verde)}
-.pix .btn-primary:hover{background:#EFD9CC}
+.pix .btn-primary{flex-shrink:0;background:#fff;color:#202020;box-shadow:0 10px 22px rgba(0,0,0,.3)}
+.pix .btn-primary:hover{background:#F48FB1;color:#fff;transform:translateY(-2px)}
 .btn-verde{background:var(--verde);color:#fff}
 .btn-verde:hover{background:var(--rosa-escuro)}
 
@@ -527,8 +530,10 @@ footer a:hover{color:#A62958}
 <!-- Faixa PIX -->
 <div class="pix">
   <div class="container">
-    <h2>Pague no <em>PIX</em> e ganhe desconto</h2>
-    <p>Em todas as peças do catálogo, o pagamento via PIX garante o melhor preço. Ficou com dúvida sobre tamanho ou cor disponível? Fale com a gente.</p>
+    <div class="pix-content">
+      <h2>Pague no <em>PIX</em> e ganhe desconto</h2>
+      <p>Em todas as peças do catálogo, o pagamento via PIX garante o melhor preço.</p>
+    </div>
     <a class="btn btn-primary" href="https://wa.me/5519999744842?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20completo%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Falar no WhatsApp</a>
   </div>
 </div>
