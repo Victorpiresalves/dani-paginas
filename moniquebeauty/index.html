@@ -29,7 +29,7 @@
 <link rel="icon" type="image/png" href="logo-icone.png">
 <link rel="apple-touch-icon" href="logo-icone.png">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="preload" as="image" href="hero-poster.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="hero-frente.jpg" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -215,10 +215,21 @@ nav.scrolled{background:rgba(62,47,42,.82);backdrop-filter:blur(16px);-webkit-ba
 
 /* ---------- hero ---------- */
 #hero{height:100svh;min-height:620px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
-#hero .media{position:absolute;inset:0}
-#hero video,#hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-#hero .poster{background:url("hero-poster.jpg") center/cover no-repeat}
-#hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(62,47,42,.35) 0%,rgba(62,47,42,.15) 40%,rgba(62,47,42,.92) 100%)}
+#hero .media{position:absolute;inset:0;z-index:0}
+#hero .media img{position:absolute;top:0;height:100%;object-fit:cover}
+#hero .media .img-a{left:0;width:62%;object-position:32% 28%;z-index:1}
+#hero .media .img-b{right:0;width:62%;object-position:68% 14%;z-index:2;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 38%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 38%);
+}
+@media(max-width:760px){
+  #hero .media .img-a{left:0;top:0;width:100%;height:62%;object-position:50% 14%}
+  #hero .media .img-b{left:0;right:auto;top:auto;bottom:0;width:100%;height:62%;object-position:50% 20%;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 38%);
+    mask-image:linear-gradient(to bottom,transparent 0%,#000 38%);
+  }
+}
+#hero .veil{position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(62,47,42,.35) 0%,rgba(62,47,42,.15) 40%,rgba(62,47,42,.92) 100%)}
 #hero .content{position:relative;z-index:2;padding:0 var(--pad) clamp(60px,10vh,110px);max-width:1240px;margin:0 auto;width:100%}
 #hero h1{font-size:clamp(32px,6.4vw,80px);max-width:16ch}
 #hero p{margin-top:22px;max-width:44ch;font-size:clamp(15px,1.6vw,18px);color:rgba(237,226,221,.85)}
@@ -462,10 +473,8 @@ footer .base a:hover{color:var(--mel-claro)}
 
 <header id="hero">
   <div class="media">
-    <div class="poster"></div>
-    <video autoplay muted loop playsinline poster="hero-poster.jpg">
-      <source src="hero.mp4" type="video/mp4">
-    </video>
+    <img class="img-a" src="hero-frente.jpg" alt="Monique Coutinho, especialista em mega hair na Tijuca" fetchpriority="high">
+    <img class="img-b" src="hero-cabelo.jpg" alt="Mega hair com movimento e comprimento natural, visto de costas" loading="lazy">
     <div class="veil"></div>
   </div>
   <div class="content">
