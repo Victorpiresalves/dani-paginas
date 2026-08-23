@@ -332,50 +332,84 @@
 
     /* ABOUT */
     .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
-    .about-l { background: var(--black); padding: 80px 5vw; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
-    .about-l::after { content: 'DA'; position: absolute; right: -10px; bottom: -50px; font-family: 'Poppins', sans-serif; font-size: 13rem; font-weight: 900; color: rgba(255,255,255,0.1); line-height: 1; pointer-events: none; }
+    .about-l {
+      background: linear-gradient(135deg, #a3002b 0%, var(--black) 55%, #8a0026 100%);
+      padding: 80px 5vw; display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 0; overflow: hidden;
+    }
+    .about-grid {
+      position: absolute; inset: -10%; z-index: -1; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: works-grid-drift 9s linear infinite;
+      -webkit-mask-image: radial-gradient(ellipse 85% 85% at 30% 40%, black 45%, transparent 90%);
+      mask-image: radial-gradient(ellipse 85% 85% at 30% 40%, black 45%, transparent 90%);
+    }
+    .about-l::after {
+      content: 'DA'; position: absolute; right: -10px; bottom: -50px;
+      font-family: 'Poppins', sans-serif; font-size: 13rem; font-weight: 900;
+      color: transparent; -webkit-text-stroke: 2px rgba(255,255,255,0.18);
+      line-height: 1; pointer-events: none; z-index: -1;
+      animation: about-mark-pulse 6s ease-in-out infinite;
+    }
+    @keyframes about-mark-pulse { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+    @media (prefers-reduced-motion: reduce) { .about-l::after, .about-grid { animation: none; } }
     .about-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(255,255,255,0.65); margin-bottom: 18px; }
     .about-h2 { font-family: 'Poppins', sans-serif; font-size: clamp(1.6rem, 3vw, 2.6rem); font-weight: 900; color: white; line-height: 1.1; letter-spacing: -0.03em; }
     .about-r { background: var(--white); padding: 80px 5vw; display: flex; flex-direction: column; justify-content: center; }
-    .about-txt { font-size: 1rem; color: var(--black); line-height: 1.9; margin-bottom: 24px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .chip { font-size: 0.75rem; font-weight: 700; border: 2px solid var(--black); padding: 8px 16px; text-transform: uppercase; letter-spacing: 0.04em; cursor: default; transition: all 0.2s; }
+    .about-txt { font-size: 1rem; color: #3a2226; line-height: 1.9; margin-bottom: 24px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 12px 10px; margin-top: 16px; }
+    .chip {
+      font-size: 0.75rem; font-weight: 700; border: 2px solid var(--pink); color: var(--pink);
+      padding: 8px 16px; text-transform: uppercase; letter-spacing: 0.04em; cursor: default;
+      transition: transform 0.3s cubic-bezier(.2,.7,.3,1), background 0.2s, color 0.2s, box-shadow 0.3s;
+      transform: rotate(var(--tilt, 0deg));
+    }
+    .chip:nth-child(5n+1) { --tilt: -3deg; }
+    .chip:nth-child(5n+2) { --tilt: 2deg; }
+    .chip:nth-child(5n+3) { --tilt: -1.5deg; }
+    .chip:nth-child(5n+4) { --tilt: 2.5deg; }
+    .chip:nth-child(5n+5) { --tilt: -2deg; }
+    .chip.reveal-scale { opacity: 0; transform: scale(0.6) rotate(var(--tilt, 0deg)); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(.2,.7,.3,1); }
+    .chip.reveal-scale.visible { opacity: 1; transform: scale(1) rotate(var(--tilt, 0deg)); }
+    .chip:hover { background: var(--pink); color: white; transform: rotate(0deg) scale(1.08) translateY(-3px) !important; box-shadow: 0 10px 20px rgba(210,21,67,0.3); }
     .chip:hover { background: var(--pink); border-color: var(--pink); color: white; }
 
     /* TESTIMONIALS */
-    .testi-sec { padding: 96px 5vw; background: var(--pink); overflow: hidden; }
-    .testi-sec .sec-hdr { border-bottom-color: rgba(255,255,255,0.3); }
-    .testi-sec .sec-tag { color: rgba(255,255,255,0.7); }
-    .testi-sec .sec-h2 { color: white; }
+    .testi-sec { padding: 96px 5vw; background: var(--white); overflow: hidden; }
+    .testi-sec .sec-tag { color: var(--pink); }
+    .testi-sec .sec-h2 { color: var(--pink); }
     .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 40px; margin-top: 64px; }
     .testi-grid:has(> :only-child) { grid-template-columns: minmax(auto, 700px); justify-content: center; }
     .testi-card {
       display: flex; flex-direction: column; gap: 20px;
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
-      padding: 36px 32px; transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+      background: white; border: 1px solid var(--gray2);
+      padding: 36px 32px; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
-    .testi-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.14); box-shadow: 0 20px 44px rgba(0,0,0,0.25); }
+    .testi-card:hover { transform: translateY(-6px); border-color: var(--pink); box-shadow: 0 20px 44px rgba(210,21,67,0.18); }
     .testi-open-quote {
       font-family: 'Poppins', sans-serif; font-size: 4rem; font-weight: 900;
-      color: white; opacity: 0.3; line-height: 0.6; user-select: none;
+      color: var(--pink); opacity: 0.35; line-height: 0.6; user-select: none;
       animation: testi-quote-pulse 4s ease-in-out infinite;
     }
-    @keyframes testi-quote-pulse { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.55; transform: scale(1.08); } }
+    @keyframes testi-quote-pulse { 0%, 100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.08); } }
     @media (prefers-reduced-motion: reduce) { .testi-open-quote { animation: none; } }
     .testi-quote {
       font-family: 'Manrope', sans-serif; font-size: 1.05rem; font-weight: 400;
-      color: white; line-height: 1.85; flex: 1;
+      color: #3a2226; line-height: 1.85; flex: 1;
     }
-    .testi-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid rgba(255,255,255,0.25); padding-top: 24px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--gray2); padding-top: 24px; }
     .testi-avatar {
       width: 48px; height: 48px; border-radius: 50%;
       object-fit: cover; object-position: center; flex-shrink: 0;
-      border: 2px solid rgba(255,255,255,0.4);
-      background: var(--white); transition: transform 0.3s ease;
+      border: 2px solid var(--gray2);
+      background: var(--white); transition: transform 0.3s ease, border-color 0.3s ease;
     }
-    .testi-card:hover .testi-avatar { transform: scale(1.08); border-color: white; }
-    .testi-name { font-family: 'Poppins', sans-serif; font-size: 0.68rem; font-weight: 700; color: white; letter-spacing: 0.05em; }
-    .testi-role { font-family: 'Manrope', sans-serif; font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+    .testi-card:hover .testi-avatar { transform: scale(1.08); border-color: var(--pink); }
+    .testi-name { font-family: 'Poppins', sans-serif; font-size: 0.68rem; font-weight: 700; color: var(--black); letter-spacing: 0.05em; }
+    .testi-role { font-family: 'Manrope', sans-serif; font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
     @media (max-width: 768px) {
       .testi-sec { padding: 64px 5vw; }
       .testi-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -710,6 +744,7 @@
 <!-- ABOUT -->
 <section id="sobre" class="about">
   <div class="about-l reveal-left">
+    <div class="about-grid" aria-hidden="true"></div>
     <div class="about-label m" data-i18n="about.label">Sobre a profissional</div>
     <h2 class="about-h2 u" data-i18n="about.heading">Marketing com estratégia, arte e sensibilidade.</h2>
   </div>
@@ -718,16 +753,16 @@
     <p class="about-txt m" data-i18n="about.p2">Minhas habilidades incluem uma vasta rede de contatos, conhecimento das últimas tendências de mercado, identificação de oportunidades de negócio e visão estratégica para o desenvolvimento de campanhas de sucesso.</p>
     <p class="about-txt m" data-i18n="about.p3">Tenho experiência como escritora em blog literário e sou especialista em produção de conteúdo, gerenciamento de redes sociais, análise de dados e métricas, construção de marca e relacionamento com o público.</p>
     <div class="chips">
-      <span class="chip m" data-i18n="about.chips.0">Instagram</span>
-      <span class="chip m" data-i18n="about.chips.1">Copywriting</span>
-      <span class="chip m" data-i18n="about.chips.2">Reels</span>
-      <span class="chip m" data-i18n="about.chips.3">Branding</span>
-      <span class="chip m" data-i18n="about.chips.4">Eventos</span>
-      <span class="chip m" data-i18n="about.chips.5">Web Design</span>
-      <span class="chip m" data-i18n="about.chips.6">Planejamento</span>
-      <span class="chip m" data-i18n="about.chips.7">Métricas</span>
-      <span class="chip m" data-i18n="about.chips.8">Moda</span>
-      <span class="chip m" data-i18n="about.chips.9">Editorial</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.02s" data-i18n="about.chips.0">Instagram</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.06s" data-i18n="about.chips.1">Copywriting</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.10s" data-i18n="about.chips.2">Reels</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.14s" data-i18n="about.chips.3">Branding</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.18s" data-i18n="about.chips.4">Eventos</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.22s" data-i18n="about.chips.5">Web Design</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.26s" data-i18n="about.chips.6">Planejamento</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.30s" data-i18n="about.chips.7">Métricas</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.34s" data-i18n="about.chips.8">Moda</span>
+      <span class="chip reveal-scale m" style="transition-delay:0.38s" data-i18n="about.chips.9">Editorial</span>
     </div>
   </div>
 </section>
