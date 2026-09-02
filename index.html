@@ -139,8 +139,46 @@
     .lang-btn.active { background: var(--pink); border-color: var(--pink); color: white; }
 
     /* HERO */
-    .hero { min-height: 100vh; padding: 130px 5vw 80px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
-    .hero-content { position: relative; z-index: 1; }
+    .hero { padding: 110px 5vw 0; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 36px; }
+    .hero-text { max-width: 900px; margin: 0 auto; text-align: center; }
+
+    /* HERO PHONE-IN-HAND — chroma-keyed photo with a looping site preview inside the screen */
+    .hero-visual {
+      position: relative; left: 50%; width: 100vw; margin-left: -50vw;
+      display: flex; justify-content: center; overflow: hidden;
+    }
+    .phone-hand-frame {
+      position: relative; width: 100%; aspect-ratio: 1536 / 1024;
+      opacity: 0; transform: translateY(70px) scale(0.96);
+      animation: phone-hand-rise 1.1s cubic-bezier(.22,1,.36,1) 0.25s forwards;
+    }
+    @keyframes phone-hand-rise { to { opacity: 1; transform: translateY(0) scale(1); } }
+    .phone-hand-screen {
+      position: absolute; left: 37.11%; top: 10.45%; width: 28.39%; height: 67.38%;
+      overflow: hidden; background: #000;
+      clip-path: polygon(15% 1%, 9.5% 15%, 7.4% 30%, 4.4% 50%, 1.4% 70%, 0% 85%, 2.4% 99%, 97.6% 99%, 100% 85%, 98.6% 70%, 95.3% 50%, 92.1% 30%, 89.8% 15%, 84% 1%);
+    }
+    .phone-hand-scroll img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      opacity: 0; animation: phone-hand-fade 12s ease-in-out infinite;
+    }
+    .phone-hand-scroll img:nth-child(1) { animation-delay: 0s; }
+    .phone-hand-scroll img:nth-child(2) { animation-delay: 3s; }
+    .phone-hand-scroll img:nth-child(3) { animation-delay: 6s; }
+    .phone-hand-scroll img:nth-child(4) { animation-delay: 9s; }
+    @keyframes phone-hand-fade {
+      0% { opacity: 0; }
+      4% { opacity: 1; }
+      25% { opacity: 1; }
+      29% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .phone-hand-overlay { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .phone-hand-frame { animation: none; opacity: 1; transform: none; }
+      .phone-hand-scroll { animation: none; }
+    }
 
     /* HERO PARALLAX BLOB — moves with scroll, not on its own */
     .hero-grid {
@@ -158,14 +196,12 @@
 
     .hero-blob { position: absolute; z-index: 0; top: 50%; right: -8%; width: 620px; height: 620px; max-width: 60vw; max-height: 60vw; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgba(210,21,67,0.28), rgba(210,21,67,0) 70%); pointer-events: none; will-change: transform; }
     @media (max-width: 768px) { .hero-blob { opacity: 0.6; } }
-    .hero-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.24em; color: var(--pink); display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
-    .hero-tag::before { content: ''; width: 36px; height: 2px; background: var(--pink); flex-shrink: 0; }
-    .hero-h1 { font-family: 'Poppins', sans-serif; font-size: clamp(3rem, 7.5vw, 9rem); font-weight: 900; line-height: 0.94; letter-spacing: -0.04em; color: var(--black); max-width: 1100px; }
+    .hero-h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2.8rem, 7vw, 7.5rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; color: var(--black); max-width: 900px; }
     .hero-h1 .pk { color: var(--pink); }
     .hero-h1 .ol { -webkit-text-stroke: 2.5px var(--black); color: transparent; }
-    .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 72px; gap: 40px; flex-wrap: wrap; }
-    .hero-sub { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 440px; }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-foot { display: flex; flex-direction: column; align-items: center; margin-top: 40px; gap: 28px; }
+    .hero-sub { font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 480px; margin: 0 auto; text-align: center; }
+    .hero-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .btn-pk { font-family: 'Manrope', sans-serif; background: var(--pink); color: white; border: 2px solid var(--pink); padding: 15px 34px; font-size: 0.85rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.22s; display: inline-block; }
     .btn-pk:hover { background: transparent; color: var(--pink); }
     .btn-bk { font-family: 'Manrope', sans-serif; background: transparent; color: var(--black); border: 2px solid var(--black); padding: 15px 34px; font-size: 0.85rem; font-weight: 700; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.22s; display: inline-block; }
@@ -253,13 +289,46 @@
 
     /* phone visual + tilt-on-hover */
     .work-visual { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; perspective: 900px; }
-    .device-frame { transform: rotate(-6deg); transition: transform 0.45s cubic-bezier(.2,.7,.3,1); box-shadow: 0 24px 48px rgba(0,0,0,0.5); }
+    .device-frame {
+      transform: rotate(-6deg);
+      transition: transform 0.45s cubic-bezier(.2,.7,.3,1);
+      filter: drop-shadow(0 22px 30px rgba(0,0,0,0.45)) drop-shadow(0 6px 10px rgba(0,0,0,0.3));
+    }
     .work-card:hover .device-frame { transform: rotate(0deg) scale(1.06) translateY(-4px); }
 
-    .device-phone { width: 168px; background: #0a0a0a; border-radius: 28px; padding: 10px 10px 18px; }
-    .device-phone-notch { width: 40px; height: 5px; background: rgba(255,255,255,0.22); border-radius: 3px; margin: 0 auto 8px; }
-    .device-phone-screen { border-radius: 20px; overflow: hidden; aspect-ratio: 9/16; background: #000; }
+    .device-phone {
+      position: relative; width: 168px; padding: 12px;
+      border-radius: 34px;
+      background: linear-gradient(155deg, #3a3a3d 0%, #1a1a1c 12%, #0a0a0b 45%, #000 100%);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.12),
+        inset 0 1.5px 1px rgba(255,255,255,0.25),
+        inset 0 -1px 2px rgba(0,0,0,0.6);
+    }
+    /* side buttons for realism */
+    .device-phone::before, .device-phone::after {
+      content: ''; position: absolute; background: linear-gradient(180deg, #333, #0a0a0a); border-radius: 2px;
+    }
+    .device-phone::before { left: -2px; top: 22%; width: 2px; height: 9%; }
+    .device-phone::after { right: -2px; top: 20%; width: 2px; height: 14%; }
+    .device-phone-screen {
+      position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 9/19.5;
+      background: #000;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.8);
+    }
     .device-phone-screen img, .device-phone-screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .device-phone-notch {
+      position: absolute; top: 6%; left: 50%; transform: translateX(-50%);
+      width: 34%; height: 4%; min-height: 7px; background: #000; border-radius: 20px; z-index: 2;
+    }
+    .device-phone-notch::after {
+      content: ''; position: absolute; right: 18%; top: 50%; transform: translateY(-50%);
+      width: 6px; height: 6px; border-radius: 50%; background: #14141a; box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
+    }
+    .device-phone-screen::before {
+      content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(115deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 18%, transparent 32%);
+    }
 
     .work-info { flex-shrink: 0; text-align: center; margin-top: 22px; }
     .work-pill { display: inline-block; background: rgba(255,255,255,0.92); color: var(--pink); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 13px; margin-bottom: 10px; width: fit-content; }
@@ -604,7 +673,6 @@
       .contact-inner { grid-template-columns: 1fr; }
       .sec-hdr { flex-direction: column; align-items: flex-start; }
       .sec-sub { text-align: left; }
-      .hero-foot { flex-direction: column; align-items: flex-start; }
       .svc-arrow { display: none; }
     }
   </style>
@@ -673,17 +741,31 @@
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-blob" id="hero-blob" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-tag m" data-i18n="hero.tag">Social Media & Marketing Digital</div>
-    <h1 class="hero-h1 u">
-      <span data-i18n="hero.h1.line1">MARCAS</span><br>
-      <span data-i18n="hero.h1.line2">QUE </span><span class="pk" data-i18n="hero.h1.accent">IMPACTAM</span><br>
-      <span class="ol" data-i18n="hero.h1.line3">DE VERDADE.</span>
-    </h1>
-    <div class="hero-foot">
-      <p class="hero-sub m" data-i18n="hero.subtitle">Profissional de marketing apaixonada por arte, moda e literatura. +8 anos criando estratégias que posicionam marcas e geram resultados reais no digital.</p>
-      <div class="hero-btns">
-        <a class="btn-pk" href="#trabalhos" data-i18n="hero.btn_works">Ver trabalhos</a>
-        <a class="btn-bk" href="#contato" data-i18n="hero.btn_contact">Solicitar orçamento</a>
+    <div class="hero-text">
+      <h1 class="hero-h1 u">
+        <span data-i18n="hero.h1.line1">MARKETING.</span><br>
+        <span class="pk" data-i18n="hero.h1.accent">SOCIAL MEDIA.</span><br>
+        <span class="ol" data-i18n="hero.h1.line3">WEB DESIGN.</span>
+      </h1>
+      <div class="hero-foot">
+        <p class="hero-sub m" data-i18n="hero.subtitle">Sou a Danielle — marketing digital com estratégia, arte e sensibilidade, ajudando marcas reais a crescerem online há mais de 8 anos.</p>
+        <div class="hero-btns">
+          <a class="btn-pk" href="#trabalhos" data-i18n="hero.btn_works">Ver trabalhos</a>
+          <a class="btn-bk" href="#contato" data-i18n="hero.btn_contact">Solicitar orçamento</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-hand-frame">
+        <div class="phone-hand-screen">
+          <div class="phone-hand-scroll">
+            <img src="imgs/works/casa-artista.jpg" alt="" loading="eager" />
+            <img src="AlfaPrint/img/hero-destaque.jpg" alt="" loading="eager" />
+            <img src="moniquebeauty/hero-cabelo.jpg" alt="" loading="eager" />
+            <img src="liriosdocampo/img/conjunto-bailarina-1.webp" alt="" loading="eager" />
+          </div>
+        </div>
+        <img class="phone-hand-overlay" src="imgs/hero-phone-hand.png" alt="Mão segurando celular mostrando um trabalho de social media" loading="eager" />
       </div>
     </div>
   </div>
@@ -954,9 +1036,8 @@
         },
         nav: { works: 'Trabalhos', services: 'Serviços', about: 'Sobre', contact: 'Contato', cta: 'Solicitar orçamento' },
         hero: {
-          tag: 'Marketing digital com a minha cara',
-          h1: { line1: 'MARCAS', line2: 'COM ', accent: 'ALMA', line3: 'E RESULTADO.' },
-          subtitle: 'Sou apaixonada por arte, moda e literatura — e é dali que vem a forma como enxergo cada marca: como uma história esperando pra ser bem contada. Há mais de 8 anos ajudo negócios reais a aparecerem, criarem conexão e venderem de verdade no digital.',
+          h1: { line1: 'MARKETING.', accent: 'SOCIAL MEDIA.', line3: 'WEB DESIGN.' },
+          subtitle: 'Sou Danielle e trabalho com marketing digital há mais de 8 anos. Gosto de transformar ideias em estratégias e conteúdos que realmente conversam com as pessoas e ajudam marcas a crescerem de verdade.',
           btn_works: 'Ver meus trabalhos',
           btn_contact: 'Vamos conversar'
         },
@@ -1016,9 +1097,8 @@
         },
         nav: { works: 'Work', services: 'Services', about: 'About', contact: 'Contact', cta: 'Request a quote' },
         hero: {
-          tag: 'Digital marketing, my way',
-          h1: { line1: 'BRANDS', line2: 'WITH ', accent: 'SOUL', line3: 'AND RESULTS.' },
-          subtitle: 'I\'m obsessed with art, fashion and literature — and that\'s exactly how I see every brand: as a story waiting to be told well. For 8+ years I\'ve helped real businesses show up, connect and actually sell online.',
+          h1: { line1: 'MARKETING.', accent: 'SOCIAL MEDIA.', line3: 'WEB DESIGN.' },
+          subtitle: 'I\'m Danielle and I\'ve worked in digital marketing for over 8 years. I love turning ideas into strategies and content that actually speak to people and help brands grow for real.',
           btn_works: 'See my work',
           btn_contact: 'Let\'s talk'
         },
@@ -1078,9 +1158,8 @@
         },
         nav: { works: 'Trabajos', services: 'Servicios', about: 'Sobre mí', contact: 'Contacto', cta: 'Solicitar presupuesto' },
         hero: {
-          tag: 'Marketing digital a mi manera',
-          h1: { line1: 'MARCAS', line2: 'CON ', accent: 'ALMA', line3: 'Y RESULTADOS.' },
-          subtitle: 'Soy apasionada por el arte, la moda y la literatura — y así es exactamente como veo cada marca: como una historia esperando ser bien contada. Hace más de 8 años ayudo a negocios reales a aparecer, conectar y vender de verdad en el mundo digital.',
+          h1: { line1: 'MARKETING.', accent: 'SOCIAL MEDIA.', line3: 'DISEÑO WEB.' },
+          subtitle: 'Soy Danielle y trabajo con marketing digital hace más de 8 años. Me gusta transformar ideas en estrategias y contenidos que realmente conectan con las personas y ayudan a las marcas a crecer de verdad.',
           btn_works: 'Ver mis trabajos',
           btn_contact: 'Hablemos'
         },
