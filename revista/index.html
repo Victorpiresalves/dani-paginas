@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root { --papel:#F5EEE4; --papel-2:#EDE3D6; --tinta:#2E1620; --vinho:#4A1C2B; --rosa:#A63E61; --po:#EAA1B4; --ouro:#B8925A;
+:root { --papel:#F5EEE4; --papel-2:#EDE3D6; --tinta:#2E1620; --vinho:#A63E61; --rosa-escuro:#86304D; --rosa:#A63E61; --po:#EAA1B4; --ouro:#B8925A;
         --linha:#D9CBBE; --suave:#7A5C63; }
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
 html { scroll-behavior:smooth }
@@ -215,6 +215,19 @@ a { color:inherit }
 .citacao { font-weight:700 }
 .indice .n, .opcao b, .pergunta .num { font-weight:800 }
 .carta p:first-of-type::first-letter { font-weight:800; font-size:4.4rem; line-height:.85 }
+
+/* bordô → rosa (28/10): o rosa do selo vira a cor principal; ajustes de contraste onde rosa encontra rosa */
+.btn-cheio:hover { background:var(--rosa-escuro); border-color:var(--rosa-escuro) }
+.teste .folio .wrap, .teste .rodape-pag .wrap, .teste .kicker, .pergunta .num, .opcao b { color:var(--papel) }
+.teste .intro, .resultado p { color:#FBEFF2 }
+.opcao { border-color:rgba(245,238,228,.45) } .opcao:hover { background:rgba(245,238,228,.12); border-color:var(--papel) }
+.progresso { background:rgba(245,238,228,.3) } .progresso i { background:var(--papel) }
+.resultado { border-color:var(--papel) }
+.teste .btn-cheio { background:var(--papel); border-color:var(--papel); color:var(--vinho) } .teste .btn-cheio:hover { background:var(--tinta); border-color:var(--tinta); color:var(--papel) }
+.teste .btn-vazado { border-color:var(--papel); color:var(--papel) } .teste .btn-vazado:hover { background:var(--papel); color:var(--vinho) }
+.contracapa { background:var(--vinho) } .contracapa .btn-cheio { color:var(--vinho) }
+.contracapa .btn-cheio:hover { background:var(--rosa-escuro); color:var(--papel); border-color:var(--rosa-escuro) } .contracapa .btn-vazado:hover { color:var(--vinho) }
+.expediente { background:var(--rosa-escuro); color:#F6DCE3 }
 </style>
 </head>
 <body>
