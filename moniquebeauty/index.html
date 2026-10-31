@@ -602,6 +602,15 @@ h1,h2,h3{letter-spacing:.02em}
 picture{display:contents}
 .tecnica summary h3{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;margin:0}
 nav .btn,.nav-links a.btn{color:#4A3733;opacity:1}
+#agendar::before{display:none}
+#agendar{background:var(--cafe)}
+#agendar .agenda{max-width:680px;text-align:center;display:flex;flex-direction:column;align-items:center}
+#agendar .eyebrow{justify-content:center}
+#agendar h2{font-size:clamp(32px,4.2vw,50px);margin:16px 0 16px;line-height:1.16}
+#agendar .lead{color:#EDE2DD;max-width:46ch;margin:0 auto}
+#booking{width:100%;max-width:420px;margin-top:32px}
+#agendar .alt{border-top:0;margin-top:22px;padding-top:0;color:#EDE2DD;font-size:14.5px}
+#agendar .alt a{color:#EDE2DD;border-bottom-color:rgba(237,226,221,.5)}
 </style>
 </head>
 <body>
@@ -912,18 +921,13 @@ nav .btn,.nav-links a.btn{color:#4A3733;opacity:1}
 </section>
 
 <section id="agendar" class="section">
-  <div class="wrap grid">
-    <div class="reveal">
-      <div class="eyebrow">Agendamento</div>
-      <h2>Pronta para dar o <em class="it">primeiro passo</em>?</h2>
-      <p class="lead">Comece pela avaliação. Veja os horários disponíveis na agenda online e escolha o melhor para você.</p>
-      <div class="alt">Prefere falar com a gente primeiro? <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20antes%20de%20agendar." target="_blank" rel="noopener">Chame no WhatsApp</a> ou ligue para <a href="tel:+5521967015034">(21) 96701-5034</a>.</div>
-    </div>
-    <div class="booking reveal d1" id="booking">
-      <h3>Escolha o melhor horário</h3>
-      <p class="hint">Veja os horários disponíveis e finalize o agendamento na agenda online da Trinks.</p>
-      <a class="btn cheio" href="https://www.trinks.com/monique-coutinho-beauty" target="_blank" rel="noopener">Ver horários disponíveis</a>
-      </div>
+  <div class="wrap agenda reveal">
+    <div class="eyebrow">Agendamento</div>
+    <h2>Pronta para dar o <em class="it">primeiro passo</em>?</h2>
+    <p class="lead">Comece pela avaliação. Veja os horários disponíveis na agenda online e escolha o melhor para você.</p>
+    <div id="booking"><a class="btn cheio" href="https://www.trinks.com/monique-coutinho-beauty" target="_blank" rel="noopener">Ver horários disponíveis</a></div>
+    <div class="alt">Prefere falar com a gente primeiro? <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20antes%20de%20agendar." target="_blank" rel="noopener">Chame no WhatsApp</a> ou ligue para <a href="tel:+5521967015034">(21) 96701-5034</a>.</div>
+  </div>
 </section>
 
 <section id="contato" class="section">
