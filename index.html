@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DANE · Edição nº 01 · Danielle Alves</title>
+<title>Social Media, Edição de Vídeo e Sites | Danielle Alves</title>
 <meta name="description" content="Seu trabalho é melhor do que o seu Instagram? Social media, vídeo e sites para negócios de todos os segmentos: beleza, imóveis, moda, construção, entretenimento e mais. Danielle Alves, +10 anos de marketing.">
-<meta property="og:title" content="DANE · Edição nº 01">
+<meta property="og:title" content="Social Media, Edição de Vídeo e Sites | Danielle Alves">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danealves.com/">
+<meta property="og:locale" content="pt_BR">
+<link rel="canonical" href="https://danealves.com/">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:description" content="Casos reais de vários segmentos, um teste rápido sobre o seu Instagram e tudo o que eu faço pela sua marca.">
 <meta property="og:image" content="https://danealves.com/revista/img/capa.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +21,7 @@
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
 html { scroll-behavior:smooth }
 body { background:var(--papel); color:var(--tinta); font-family:'Manrope',system-ui,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased }
-img,video { display:block; max-width:100% }
+img,video { display:block; max-width:100%; height:auto }
 a { color:inherit }
 .serif { font-family:'Montserrat',sans-serif }
 .kicker { font-size:.72rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--rosa) }
@@ -228,7 +233,13 @@ a { color:inherit }
 .contracapa { background:var(--vinho) } .contracapa .btn-cheio { color:var(--vinho) }
 .contracapa .btn-cheio:hover { background:var(--rosa-escuro); color:var(--papel); border-color:var(--rosa-escuro) } .contracapa .btn-vazado:hover { color:var(--vinho) }
 .expediente { background:var(--rosa-escuro); color:#F6DCE3 }
+.so-leitor{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+picture{display:contents}
+@media(max-width:340px){.wrap{padding-left:20px;padding-right:20px}.capa-faixa{flex-wrap:wrap;gap:4px 12px}.masthead{font-size:clamp(64px,24vw,90px);overflow-wrap:anywhere}body{overflow-x:hidden}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Danielle Alves","alternateName":"Dane","url":"https://danealves.com/","image":"https://danealves.com/revista/img/capa.jpg","description":"Social media, edição de vídeo e sites para negócios de todos os segmentos.","telephone":"+5511939236550","email":"comunicaalves.marketing@gmail.com","areaServed":"BR","sameAs":["https://instagram.com/dane.mkt"]}
+</script>
 </head>
 <body>
 
@@ -242,13 +253,13 @@ a { color:inherit }
 <section class="capa" id="capa"><div class="wrap">
   <div class="capa-faixa"><span>Edição nº 01</span><span>Beleza · Imóveis · Moda · Construção · Entretenimento</span><span>Outubro 2026</span></div>
   <div class="capa-grade">
-    <h1 class="masthead">DANE</h1>
+    <h1 class="masthead">DANE<span class="so-leitor"> Danielle Alves: social media, edição de vídeo e sites</span></h1>
     <div class="chamadas">
       <a class="chamada grande" href="#monique"><span class="kicker">Matéria de capa · Salão</span><h3>“Posta mais vídeo do salão.” Como a Monique parou de ouvir isso</h3><p>Feed, Reels e site, sem ela sair do atendimento.</p></a>
       <a class="chamada" href="#alfa"><span class="kicker">Antes &amp; depois</span><h3>Ninguém compra a peça. Compram a parede pronta.</h3></a>
     </div>
     <figure class="capa-foto">
-      <img src="revista/img/capa.jpg" alt="Danielle Alves, social media e editora desta revista">
+      <picture><source srcset="revista/img/capa.webp" type="image/webp"><img width="1200" height="1500" src="revista/img/capa.jpg" alt="Danielle Alves, social media e editora desta revista"></picture>
       <div class="selo"><span><b>+10</b>anos de marketing</span></div>
     </figure>
     <div class="chamadas">
@@ -288,7 +299,7 @@ a { color:inherit }
 <span id="sobre"></span><section class="pag" id="carta">
   <div class="folio"><div class="wrap"><span>Carta da editora</span><span>Pág. 03</span></div></div>
   <div class="wrap carta">
-    <div class="carta-fotos rev"><img src="revista/img/editora-cafe.jpg" alt="Notebook e café: a rotina de trabalho da Danielle" loading="lazy"><img src="revista/img/editora-viagem.jpg" alt="Danielle trabalhando de qualquer lugar" loading="lazy"></div>
+    <div class="carta-fotos rev"><picture><source srcset="revista/img/editora-cafe.webp" type="image/webp"><img width="900" height="1200" src="revista/img/editora-cafe.jpg" alt="Notebook e café: a rotina de trabalho da Danielle" loading="lazy"></picture><picture><source srcset="revista/img/editora-viagem.webp" type="image/webp"><img width="900" height="1200" src="revista/img/editora-viagem.jpg" alt="Danielle trabalhando de qualquer lugar" loading="lazy"></picture></div>
     <div class="rev">
       <span class="kicker">Carta da editora</span>
       <h2>“Meu trabalho é melhor do que o meu Instagram.”</h2>
@@ -312,11 +323,11 @@ a { color:inherit }
         <div class="creditos"><span>Gestão de Instagram</span><span>Carrosséis &amp; copy</span><span>Edição de vídeo</span><span>Site com agendamento</span></div></div>
     </div>
     <div class="mosaico rev">
-      <img class="alto" src="revista/img/monique-retrato.jpg" alt="Monique Coutinho" loading="lazy">
-      <img src="revista/img/monique-post1.jpg" alt="Carrossel: mega hair é coisa de mulher rica?" loading="lazy">
-      <img src="revista/img/monique-post2.jpg" alt="Carrossel da Monique, tela 2" loading="lazy">
-      <img src="revista/img/monique-post3.jpg" alt="Carrossel da Monique, tela 3" loading="lazy">
-      <img src="revista/img/monique-post4.jpg" alt="Carrossel da Monique, tela 4" loading="lazy">
+      <picture><source srcset="revista/img/monique-retrato.webp" type="image/webp"><img width="900" height="1350" class="alto" src="revista/img/monique-retrato.jpg" alt="Monique Coutinho" loading="lazy"></picture>
+      <picture><source srcset="revista/img/monique-post1.webp" type="image/webp"><img width="700" height="875" src="revista/img/monique-post1.jpg" alt="Carrossel: mega hair é coisa de mulher rica?" loading="lazy"></picture>
+      <picture><source srcset="revista/img/monique-post2.webp" type="image/webp"><img width="700" height="875" src="revista/img/monique-post2.jpg" alt="Carrossel da Monique, tela 2" loading="lazy"></picture>
+      <picture><source srcset="revista/img/monique-post3.webp" type="image/webp"><img width="700" height="875" src="revista/img/monique-post3.jpg" alt="Carrossel da Monique, tela 3" loading="lazy"></picture>
+      <picture><source srcset="revista/img/monique-post4.webp" type="image/webp"><img width="700" height="875" src="revista/img/monique-post4.jpg" alt="Carrossel da Monique, tela 4" loading="lazy"></picture>
     </div>
     <p class="legenda rev"><b>No feed:</b> o carrossel “Mega hair é coisa de mulher rica?” responde a dúvida que a cliente tem e não pergunta.</p>
     <blockquote class="citacao rev">“As postagens ficaram mais profissionais, mais alinhadas e com mais personalidade.”<small>Monique Coutinho, dona do salão</small></blockquote>
@@ -328,8 +339,8 @@ a { color:inherit }
       <p><b>Se você tem salão:</b> quantos vídeos bons estão parados no seu celular agora?</p>
     </div>
     <div class="dupla rev" style="margin-top:50px">
-      <div><div class="navegador"><div class="barra"><i></i><i></i><i></i></div><img src="revista/img/site-monique.jpg" alt="Site da Monique Coutinho Beauty" loading="lazy"></div><p class="legenda"><b>O site:</b> “Transformamos beleza em autoestima”, com agendamento online integrado.</p></div>
-      <div class="celular"><img src="revista/img/cel-monique.jpg" alt="Site da Monique no celular" loading="lazy"></div>
+      <div><div class="navegador"><div class="barra"><i></i><i></i><i></i></div><picture><source srcset="revista/img/site-monique.webp" type="image/webp"><img width="1300" height="813" src="revista/img/site-monique.jpg" alt="Site da Monique Coutinho Beauty" loading="lazy"></picture></div><p class="legenda"><b>O site:</b> “Transformamos beleza em autoestima”, com agendamento online integrado.</p></div>
+      <div class="celular"><picture><source srcset="revista/img/cel-monique.webp" type="image/webp"><img width="390" height="760" src="revista/img/cel-monique.jpg" alt="Site da Monique no celular" loading="lazy"></picture></div>
     </div>
   </div>
   <div class="rodape-pag"><div class="wrap"><span>DANE · Nº 01</span><span>danealves.com/moniquebeauty</span></div></div>
@@ -345,7 +356,7 @@ a { color:inherit }
         <div class="creditos"><span>Stories &amp; carrosséis</span><span>Imagens de ambiente</span><span>Site novo</span></div></div>
     </div>
     <div class="materia-abre rev" style="align-items:start">
-      <div><div class="comparador" id="comparador"><img src="revista/img/alfa-antes.jpg" alt="Sala com parede lisa"><img class="depois" src="revista/img/alfa-depois.jpg" alt="A mesma sala com o revestimento Floral"><div class="divisor"></div><span class="tag a">Antes</span><span class="tag d">Depois</span></div>
+      <div><div class="comparador" id="comparador"><picture><source srcset="revista/img/alfa-antes.webp" type="image/webp"><img width="900" height="1205" src="revista/img/alfa-antes.jpg" alt="Sala com parede lisa"></picture><picture><source srcset="revista/img/alfa-depois.webp" type="image/webp"><img width="900" height="1205" class="depois" src="revista/img/alfa-depois.jpg" alt="A mesma sala com o revestimento Floral"></picture><div class="divisor"></div><span class="tag a">Antes</span><span class="tag d">Depois</span></div>
         <p class="legenda"><b>Arraste:</b> a mesma sala, antes e depois do revestimento 3D Floral. Ambiente ilustrativo.</p></div>
       <div>
         <div class="colunas" style="columns:1">
@@ -354,7 +365,7 @@ a { color:inherit }
           <p>O site foi refeito com a mesma ideia: os 69 produtos organizados em cinco linhas e o botão de orçamento sempre à mão.</p>
           <p><b>Se você vende produto:</b> o seu cliente consegue imaginar ele na vida dele?</p>
         </div>
-        <div class="navegador" style="margin-top:22px"><div class="barra"><i></i><i></i><i></i></div><img src="revista/img/site-alfa.jpg" alt="Novo site da Alfa Soluções em Concreto" loading="lazy"></div>
+        <div class="navegador" style="margin-top:22px"><div class="barra"><i></i><i></i><i></i></div><picture><source srcset="revista/img/site-alfa.webp" type="image/webp"><img width="1100" height="688" src="revista/img/site-alfa.jpg" alt="Novo site da Alfa Soluções em Concreto" loading="lazy"></picture></div>
         <p class="legenda"><b>alfaconcreto.com.br</b> · redesign de 2026</p>
       </div>
     </div>
@@ -372,11 +383,11 @@ a { color:inherit }
         <div class="creditos"><span>Site institucional</span><span>Vídeos de imóveis</span><span>Conteúdo</span></div></div>
     </div>
     <div class="dupla rev">
-      <div><div class="navegador"><div class="barra"><i></i><i></i><i></i></div><img src="revista/img/site-wendy.jpg" alt="Site do Wendy Marcel" loading="lazy"></div>
+      <div><div class="navegador"><div class="barra"><i></i><i></i><i></i></div><picture><source srcset="revista/img/site-wendy.webp" type="image/webp"><img width="1300" height="704" src="revista/img/site-wendy.jpg" alt="Site do Wendy Marcel" loading="lazy"></picture></div>
         <p class="legenda"><b>O site:</b> imóveis com foto, preço e filtro, formulário pra captar cliente, simulação de financiamento e WhatsApp a um clique.</p>
         <p style="margin-top:18px">Quem procura imóvel com o Wendy encontra o que encontraria numa imobiliária grande. E os vídeos que ele grava nas visitas viram tours com ritmo, que mostram a casa como ela merece ser vista.</p>
         <p style="margin-top:12px"><b>Corretor:</b> quando o cliente pesquisa o seu nome, o que ele encontra?</p></div>
-      <div class="celular"><img src="revista/img/cel-wendy.jpg" alt="Site do Wendy no celular" loading="lazy"></div>
+      <div class="celular"><picture><source srcset="revista/img/cel-wendy.webp" type="image/webp"><img width="390" height="760" src="revista/img/cel-wendy.jpg" alt="Site do Wendy no celular" loading="lazy"></picture></div>
     </div>
     <blockquote class="citacao rev">“Dani já é de tempos… veio por indicação, e indicação muito boa. Ótima profissional. Eu garanto!”<small>Wendy Marcel, corretor de imóveis · comentário no Instagram</small></blockquote>
   </div>
@@ -393,9 +404,9 @@ a { color:inherit }
         <div class="creditos"><span>Loja virtual</span><span>Catálogo</span><span>Página de medidas</span></div></div>
     </div>
     <div class="dupla rev">
-      <div><div class="navegador"><div class="barra"><i></i><i></i><i></i></div><img src="revista/img/site-lirios.jpg" alt="Site da Lírios do Campo" loading="lazy"></div>
+      <div><div class="navegador"><div class="barra"><i></i><i></i><i></i></div><picture><source srcset="revista/img/site-lirios.webp" type="image/webp"><img width="1300" height="813" src="revista/img/site-lirios.jpg" alt="Site da Lírios do Campo" loading="lazy"></picture></div>
         <p class="legenda"><b>A loja:</b> coleções, página de medidas e os canais de venda reunidos num endereço só.</p></div>
-      <div class="celular"><img src="revista/img/cel-lirios.jpg" alt="Loja Lírios do Campo no celular" loading="lazy"></div>
+      <div class="celular"><picture><source srcset="revista/img/cel-lirios.webp" type="image/webp"><img width="390" height="760" src="revista/img/cel-lirios.jpg" alt="Loja Lírios do Campo no celular" loading="lazy"></picture></div>
     </div>
   </div>
   <div class="rodape-pag"><div class="wrap"><span>DANE · Nº 01</span><span>liriosdocampo.pages.dev</span></div></div>
@@ -407,10 +418,10 @@ a { color:inherit }
   <div class="wrap">
     <div class="materia-abre rev" style="margin-bottom:40px"><div><span class="kicker">Também nesta edição</span><h2>Em poucas linhas</h2></div></div>
     <div class="breves rev">
-      <article class="breve"><span class="kicker">Entretenimento</span><img src="revista/img/livros-citacoes.jpg" alt="Post da Livros &amp; Citações" loading="lazy"><h3>Livros &amp; Citações</h3><p>Notícias do mundo dos livros: adaptações, elenco e lançamentos, num formato fixo que a seguidora reconhece no feed.</p></article>
-      <article class="breve"><span class="kicker">Editorial</span><img src="revista/img/site-charme.jpg" alt="Site da Editora Charme" loading="lazy"><h3>Editora Charme</h3><p>Lançamento de “O melhor de tudo”, de Mariana Zapata: uma página com a cara do romance, pra leitora sentir a história antes de comprar.</p></article>
+      <article class="breve"><span class="kicker">Entretenimento</span><picture><source srcset="revista/img/livros-citacoes.webp" type="image/webp"><img width="1000" height="750" src="revista/img/livros-citacoes.jpg" alt="Post da Livros &amp; Citações" loading="lazy"></picture><h3>Livros &amp; Citações</h3><p>Notícias do mundo dos livros: adaptações, elenco e lançamentos, num formato fixo que a seguidora reconhece no feed.</p></article>
+      <article class="breve"><span class="kicker">Editorial</span><picture><source srcset="revista/img/site-charme.webp" type="image/webp"><img width="1300" height="813" src="revista/img/site-charme.jpg" alt="Site da Editora Charme" loading="lazy"></picture><h3>Editora Charme</h3><p>Lançamento de “O melhor de tudo”, de Mariana Zapata: uma página com a cara do romance, pra leitora sentir a história antes de comprar.</p></article>
       <article class="breve"><span class="kicker">Eventos</span><video src="revista/img/sarau.mp4" poster="revista/img/sarau-capa.jpg" muted loop playsinline autoplay preload="metadata"></video><h3>Sarau de Artistas</h3><p>Da divulgação ao dia do evento: caligrafia, exposições, música ao vivo e sessões de fotos.</p></article>
-      <article class="breve"><span class="kicker">Gestão</span><img src="revista/img/casa-artista.jpg" alt="Casa do Artista" loading="lazy"><h3>Casa do Artista</h3><p>Marketing e logística do site: campanhas pros produtos e cursos do ateliê.</p></article>
+      <article class="breve"><span class="kicker">Gestão</span><picture><source srcset="revista/img/casa-artista.webp" type="image/webp"><img width="474" height="510" src="revista/img/casa-artista.jpg" alt="Casa do Artista" loading="lazy"></picture><h3>Casa do Artista</h3><p>Marketing e logística do site: campanhas pros produtos e cursos do ateliê.</p></article>
     </div>
   </div>
   <div class="rodape-pag"><div class="wrap"><span>DANE · Nº 01</span><span>+ Alfa Print, Macrê Decor, Velmo Black</span></div></div>
