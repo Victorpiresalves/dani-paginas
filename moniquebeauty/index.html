@@ -555,6 +555,28 @@ h1,h2,h3{letter-spacing:.02em}
   #barra-cel a:first-child{background:#E2CFC4;color:#4A3733}
 }
 </style>
+<style>
+#como{background:var(--marfim);color:var(--cafe)}
+#como .eyebrow{color:#8F7263}
+#como h2,#duvidas h2{font-size:clamp(30px,4.4vw,52px);margin:18px 0 0}
+.passos{list-style:none;padding:0;margin:clamp(30px,5vh,48px) 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.passos li{border-top:1px solid rgba(104,80,73,.3);padding-top:18px}
+.passos b{font-family:var(--f-display);font-weight:400;font-size:30px;color:#8F7263}
+.passos h3{font-size:20px;color:#57423C;margin:8px 0 6px}
+.passos p{font-size:14.5px;color:#6F564E}
+#duvidas{background:var(--marfim);color:var(--cafe)}
+#duvidas .eyebrow{color:#8F7263}
+.perguntas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:clamp(28px,4vh,42px) 0 24px;align-items:start}
+.perguntas summary{font-size:17px!important}
+.perguntas .body{color:#6F564E}
+.btn.ghost.escuro{color:#57423C;border-color:rgba(87,66,60,.5)}
+.serv .acoes{display:flex;gap:18px;flex-wrap:wrap}
+.serv .zap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:inherit;text-decoration:none}
+.serv:not(:first-child) .zap{color:#6F564E}
+.serv:first-child .zap{color:#EDE2DD}
+@media(max-width:920px){.passos{grid-template-columns:1fr 1fr}.perguntas{grid-template-columns:1fr}}
+@media(max-width:520px){.passos{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -652,7 +674,7 @@ h1,h2,h3{letter-spacing:.02em}
           <summary>Avaliação e manutenção <i>+</i></summary>
           <div class="body">Todo mega hair começa com uma avaliação do fio, da cor e da rotina da cliente. E continua com manutenções periódicas para preservar a saúde do cabelo natural e o caimento do alongamento. <a href="#agendar">Agende sua avaliação</a>.</div>
         </details>
-        <a class="btn" href="#agendar" style="align-self:flex-start;margin-top:10px">Quero meu mega hair</a>
+        <a class="btn" href="#agendar" style="align-self:flex-start;margin-top:10px">Agendar minha avaliação</a>
       </div>
     </div>
   </div>
@@ -669,13 +691,27 @@ h1,h2,h3{letter-spacing:.02em}
   <div class="gal-wrap">
     <button class="gal-nav prev" type="button" aria-label="Vídeo anterior">‹</button>
     <div class="gal-track" id="gal-track">
-      <!-- EDITAR: substituir pelas melhores fotos de resultados (formato vertical 3x4). -->
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="megahair-aplicacao.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-tratamento.mp4" type="video/mp4"></video><span class="cap">Tratamento capilar</span></div>
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-atendimento.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-video1.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><img src="galeria-01.jpg" alt="Resultado de mega hair no Monique Coutinho Beauty" loading="lazy"><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><img src="galeria-02.jpg" alt="Resultado de mega hair no Monique Coutinho Beauty" loading="lazy"><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><img src="galeria-03.jpg" alt="Resultado de mega hair no Monique Coutinho Beauty" loading="lazy"><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><img src="galeria-04.jpg" alt="Resultado de mega hair no Monique Coutinho Beauty" loading="lazy"><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><img src="galeria-05.jpg" alt="Resultado de mega hair no Monique Coutinho Beauty" loading="lazy"><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><img src="galeria-06.jpg" alt="Resultado de mega hair no Monique Coutinho Beauty" loading="lazy"><span class="cap">Mega hair</span></div>
     </div>
     <button class="gal-nav next" type="button" aria-label="Próximo vídeo">›</button>
+  </div>
+</section>
+
+<section id="como" class="section">
+  <div class="wrap">
+    <div class="eyebrow reveal">Como funciona</div>
+    <h2 class="reveal">Do primeiro contato à <em class="it">manutenção</em>.</h2>
+    <ol class="passos">
+      <li class="reveal"><b>1</b><h3>Avaliação</h3><p>A gente escuta o que você quer e analisa o fio, o couro cabeludo e a sua rotina.</p></li>
+      <li class="reveal"><b>2</b><h3>Indicação</h3><p>Com a avaliação feita, indicamos a técnica, a cor e o comprimento para o seu caso.</p></li>
+      <li class="reveal"><b>3</b><h3>Aplicação</h3><p>Fios selecionados, aplicação com calma e acabamento invisível.</p></li>
+      <li class="reveal"><b>4</b><h3>Manutenção</h3><p>Manutenções periódicas preservam o cabelo natural e o caimento do mega hair.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -686,6 +722,7 @@ h1,h2,h3{letter-spacing:.02em}
       <h2>Um salão para <em class="it">você</em> sair diferente de como entrou.</h2>
       <p>O Monique Coutinho Beauty fica na Tijuca e nasceu do trabalho da Monique com mega hair. Hoje atende poucas clientes por dia, para que cada atendimento tenha tempo e atenção de verdade — não é só mais um horário na agenda.</p>
       <p>Cada atendimento começa com uma avaliação individual. A gente escuta, analisa o fio e o couro cabeludo, e só então indica o caminho, seja um mega hair com a técnica UltraFit Hair, mechas premium, uma exoplastia ou aquele capricho nas unhas, nos cílios e na make.</p>
+      <p>E tem o que a gente faz questão de cuidar: o café na xícara da casa e o bilhete que resume o nosso jeito de atender. Não tenha pressa.</p>
       <div class="stats">
         <div><b data-count="10">0</b><small>anos de experiência</small></div>
         <div><b data-count="1500">0</b><small>transformações</small></div>
@@ -694,9 +731,7 @@ h1,h2,h3{letter-spacing:.02em}
     </div>
     <div class="reveal d1">
       <div class="foto-frame">
-        <video muted loop playsinline preload="none">
-          <source src="salao-video.mp4" type="video/mp4">
-        </video>
+        <img src="experiencia.jpg" alt="Café na xícara do salão com o bilhete Não tenha pressa" loading="lazy">
       </div>
     </div>
   </div>
@@ -830,6 +865,22 @@ h1,h2,h3{letter-spacing:.02em}
       </blockquote>
     </div>
     <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section id="duvidas" class="section">
+  <div class="wrap">
+    <div class="eyebrow reveal">Dúvidas</div>
+    <h2 class="reveal">O que você quer saber sobre <em class="it">mega hair</em>.</h2>
+    <div class="tecnicas perguntas reveal">
+      <details class="tecnica"><summary>Colocar mega hair dói? <i>+</i></summary><div class="body">A aplicação é pensada para ser leve e confortável. Na avaliação, explicamos como funciona cada técnica para você escolher com tranquilidade.</div></details>
+      <details class="tecnica"><summary>Mega hair estraga o cabelo? <i>+</i></summary><div class="body">Nossas técnicas são pensadas para preservar a saúde do fio natural, e as manutenções periódicas fazem parte desse cuidado. O ponto americano, por exemplo, é feito sem cola e sem química.</div></details>
+      <details class="tecnica"><summary>Quanto tempo dura? <i>+</i></summary><div class="body">Depende da técnica, do seu cabelo e da sua rotina. O intervalo das manutenções é definido com você na avaliação.</div></details>
+      <details class="tecnica"><summary>Funciona em cabelo fino? <i>+</i></summary><div class="body">Sim, mas a técnica precisa ser a certa. A fita adesiva, por exemplo, tem faixas ultrafinas e sensação leve, e é uma opção para cabelos finos.</div></details>
+      <details class="tecnica"><summary>Quanto custa? <i>+</i></summary><div class="body">O valor depende da técnica, da quantidade de cabelo e do comprimento. Por isso, todo mega hair começa com uma avaliação.</div></details>
+      <details class="tecnica"><summary>Como eu começo? <i>+</i></summary><div class="body">Agende sua avaliação pela agenda online ou chame a gente no WhatsApp.</div></details>
+    </div>
+    <a class="btn ghost escuro reveal" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20mega%20hair." target="_blank" rel="noopener">Tirar outra dúvida no WhatsApp</a>
   </div>
 </section>
 
@@ -1088,6 +1139,30 @@ document.querySelectorAll('.pro .agendar').forEach(function(btn){
   btn.addEventListener('click',function(){
     document.getElementById('agendar').scrollIntoView({behavior:'smooth'});
   });
+});
+// ---------- WhatsApp por serviço ----------
+document.querySelectorAll('.serv').forEach(function(card){
+  var link=card.querySelector('.link');
+  var nome=card.querySelector('h3').textContent.toLowerCase();
+  var box=document.createElement('div');box.className='acoes';
+  link.parentNode.insertBefore(box,link);box.appendChild(link);
+  var a=document.createElement('a');a.className='zap';a.textContent='WhatsApp';a.target='_blank';a.rel='noopener';
+  a.href='https://wa.me/5521967015034?text='+encodeURIComponent('Olá, vim pelo site e quero saber sobre '+nome+'.');
+  a.addEventListener('click',function(e){e.stopPropagation()});
+  box.appendChild(a);
+});
+
+// ---------- medição de cliques no Analytics ----------
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a');
+  if(!a||typeof gtag!=='function')return;
+  var href=a.getAttribute('href')||'';
+  var sec=a.closest('section,header,nav,footer,#barra-cel');
+  var local=sec?(sec.id||sec.tagName.toLowerCase()):'outro';
+  if(href.indexOf('wa.me')>-1)gtag('event','clique_whatsapp',{local:local});
+  else if(href.indexOf('trinks.com')>-1)gtag('event','clique_agenda',{local:local});
+  else if(href.indexOf('tel:')===0)gtag('event','clique_telefone',{local:local});
+  else if(href.indexOf('maps')>-1)gtag('event','clique_como_chegar',{local:local});
 });
 </script>
 </body>
