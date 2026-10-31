@@ -38,7 +38,7 @@
 <link rel="icon" type="image/png" href="logo-icone.png">
 <link rel="apple-touch-icon" href="logo-icone.png">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="preload" as="image" href="hero-frente-1200.jpg" imagesrcset="hero-frente-800.jpg 800w, hero-frente-1200.jpg 1200w, hero-frente.jpg 1600w" imagesizes="(max-width:920px) 100vw, 54vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="hero-frente-1200.webp" imagesrcset="hero-frente-800.webp 800w, hero-frente-1200.webp 1200w, hero-frente.webp 1600w" imagesizes="(max-width:920px) 100vw, 54vw" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -498,7 +498,7 @@ h1,h2,h3{letter-spacing:.02em}
 .serv p{font-size:14px;color:#6F564E}
 .serv .link{font-size:12px;color:#6F564E}
 .serv:first-child{grid-row:span 3;min-height:430px;justify-content:flex-end;padding:30px;border:0;border-radius:18px;
-  background:linear-gradient(180deg,transparent 40%,rgba(62,47,42,.94) 82%),url("hero-cabelo-900.jpg") center 22%/cover}
+  background:linear-gradient(180deg,transparent 40%,rgba(62,47,42,.94) 82%),image-set(url("hero-cabelo-900.webp") type("image/webp"),url("hero-cabelo-900.jpg") type("image/jpeg")) center 22%/cover}
 .serv:first-child h3{font-size:30px;color:#EDE2DD;flex:0}
 .serv:first-child p{color:#EDE2DD;flex:0}
 .serv:first-child .link{color:#EDE2DD}
@@ -599,6 +599,9 @@ h1,h2,h3{letter-spacing:.02em}
   .btn{width:100%}
   .cta-row .btn{width:100%}
 }
+picture{display:contents}
+.tecnica summary h3{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;margin:0}
+nav .btn,.nav-links a.btn{color:#4A3733;opacity:1}
 </style>
 </head>
 <body>
@@ -627,7 +630,7 @@ h1,h2,h3{letter-spacing:.02em}
 
 <header id="hero">
   <div class="media">
-    <img class="img-a" src="hero-frente-1200.jpg" srcset="hero-frente-800.jpg 800w, hero-frente-1200.jpg 1200w, hero-frente.jpg 1600w" sizes="(max-width:920px) 100vw, 54vw" width="1600" height="2400" alt="Monique Coutinho, especialista em mega hair na Tijuca" fetchpriority="high">
+    <picture><source type="image/webp" srcset="hero-frente-800.webp 800w, hero-frente-1200.webp 1200w, hero-frente.webp 1600w" sizes="(max-width:920px) 100vw, 54vw"><img class="img-a" src="hero-frente-1200.jpg" srcset="hero-frente-800.jpg 800w, hero-frente-1200.jpg 1200w, hero-frente.jpg 1600w" sizes="(max-width:920px) 100vw, 54vw" width="1600" height="2400" alt="Monique Coutinho, especialista em mega hair na Tijuca" fetchpriority="high"></picture>
     <div class="veil"></div>
   </div>
   <div class="content">
@@ -664,9 +667,9 @@ h1,h2,h3{letter-spacing:.02em}
     <div class="grid">
       <div class="media-col reveal">
         <figure class="compare" id="compare">
-          <img class="antes-img" src="megahair-antes.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Cabelo antes do mega hair">
+          <picture><source srcset="megahair-antes.webp" type="image/webp"><img class="antes-img" src="megahair-antes.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Cabelo antes do mega hair"></picture>
           <div class="after-wrap" id="after-wrap">
-            <img src="megahair-depois.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Cabelo depois do mega hair">
+            <picture><source srcset="megahair-depois.webp" type="image/webp"><img src="megahair-depois.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Cabelo depois do mega hair"></picture>
           </div>
           <div class="handle" id="handle"></div>
           <span class="tag antes">Antes</span>
@@ -683,19 +686,19 @@ h1,h2,h3{letter-spacing:.02em}
       </div>
       <div class="tecnicas reveal d1">
         <details class="tecnica">
-          <summary>UltraFit Hair <i>+</i></summary>
+          <summary><h3>UltraFit Hair</h3> <i>+</i></summary>
           <div class="body">A técnica premium da casa. Aplicação leve e confortável, fixação segura e acabamento invisível, pensada para preservar a saúde do fio natural. É a mesma técnica que ensinamos no nosso curso para profissionais.</div>
         </details>
         <details class="tecnica">
-          <summary>Ponto americano <i>+</i></summary>
+          <summary><h3>Ponto americano</h3> <i>+</i></summary>
           <div class="body">Aplicação fio a fio costurada em uma trança finíssima, sem cola e sem química. Indicada para quem busca durabilidade, conforto e manutenção previsível. O acabamento fica imperceptível, até com o cabelo preso.</div>
         </details>
         <details class="tecnica">
-          <summary>Fita adesiva <i>+</i></summary>
+          <summary><h3>Fita adesiva</h3> <i>+</i></summary>
           <div class="body">Faixas ultrafinas que se moldam à raiz e distribuem o peso de forma uniforme. Aplicação rápida, sensação leve e ideal para quem quer volume com discrição, inclusive em cabelos finos.</div>
         </details>
         <details class="tecnica">
-          <summary>Avaliação e manutenção <i>+</i></summary>
+          <summary><h3>Avaliação e manutenção</h3> <i>+</i></summary>
           <div class="body">Todo mega hair começa com uma avaliação do fio, da cor e da rotina da cliente. E continua com manutenções periódicas para preservar a saúde do cabelo natural e o caimento do alongamento. <a href="#agendar">Agende sua avaliação</a>.</div>
         </details>
         <a class="btn" href="#agendar" style="align-self:flex-start;margin-top:10px">Agendar minha avaliação</a>
@@ -743,12 +746,12 @@ h1,h2,h3{letter-spacing:.02em}
     <h2 class="reveal">“Tenho <em class="it">medo</em> de me arrepender.”</h2>
     <p class="intro reveal d1">Mega hair é uma decisão importante. Aqui estão as respostas para decidir com calma.</p>
     <div class="tecnicas perguntas reveal">
-      <details class="tecnica"><summary>Colocar mega hair dói? <i>+</i></summary><div class="body">A aplicação é pensada para ser leve e confortável. Na avaliação, explicamos como funciona cada técnica para você escolher com tranquilidade.</div></details>
-      <details class="tecnica"><summary>Mega hair estraga o cabelo? <i>+</i></summary><div class="body">Nossas técnicas são pensadas para preservar a saúde do fio natural, e as manutenções periódicas fazem parte desse cuidado. O ponto americano, por exemplo, é feito sem cola e sem química.</div></details>
-      <details class="tecnica"><summary>Quanto tempo dura? <i>+</i></summary><div class="body">Depende da técnica, do seu cabelo e da sua rotina. O intervalo das manutenções é definido com você na avaliação.</div></details>
-      <details class="tecnica"><summary>Funciona em cabelo fino? <i>+</i></summary><div class="body">Sim, mas a técnica precisa ser a certa. A fita adesiva, por exemplo, tem faixas ultrafinas e sensação leve, e é uma opção para cabelos finos.</div></details>
-      <details class="tecnica"><summary>Quanto custa? <i>+</i></summary><div class="body">O valor depende da técnica, da quantidade de cabelo e do comprimento. Por isso, todo mega hair começa com uma avaliação.</div></details>
-      <details class="tecnica"><summary>Já tive uma experiência ruim. E agora? <i>+</i></summary><div class="body">A gente começa escutando o que aconteceu. Depois, avalia o seu fio e o couro cabeludo e só então indica o caminho.</div></details>
+      <details class="tecnica"><summary><h3>Colocar mega hair dói?</h3> <i>+</i></summary><div class="body">A aplicação é pensada para ser leve e confortável. Na avaliação, explicamos como funciona cada técnica para você escolher com tranquilidade.</div></details>
+      <details class="tecnica"><summary><h3>Mega hair estraga o cabelo?</h3> <i>+</i></summary><div class="body">Nossas técnicas são pensadas para preservar a saúde do fio natural, e as manutenções periódicas fazem parte desse cuidado. O ponto americano, por exemplo, é feito sem cola e sem química.</div></details>
+      <details class="tecnica"><summary><h3>Quanto tempo dura?</h3> <i>+</i></summary><div class="body">Depende da técnica, do seu cabelo e da sua rotina. O intervalo das manutenções é definido com você na avaliação.</div></details>
+      <details class="tecnica"><summary><h3>Funciona em cabelo fino?</h3> <i>+</i></summary><div class="body">Sim, mas a técnica precisa ser a certa. A fita adesiva, por exemplo, tem faixas ultrafinas e sensação leve, e é uma opção para cabelos finos.</div></details>
+      <details class="tecnica"><summary><h3>Quanto custa?</h3> <i>+</i></summary><div class="body">O valor depende da técnica, da quantidade de cabelo e do comprimento. Por isso, todo mega hair começa com uma avaliação.</div></details>
+      <details class="tecnica"><summary><h3>Já tive uma experiência ruim. E agora?</h3> <i>+</i></summary><div class="body">A gente começa escutando o que aconteceu. Depois, avalia o seu fio e o couro cabeludo e só então indica o caminho.</div></details>
     </div>
     <a class="btn ghost escuro reveal" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20mega%20hair." target="_blank" rel="noopener">Tirar outra dúvida no WhatsApp</a>
     <a class="btn reveal" href="#agendar" style="margin-left:10px">Agendar minha avaliação</a>
@@ -771,7 +774,7 @@ h1,h2,h3{letter-spacing:.02em}
     </div>
     <div class="reveal d1">
       <div class="foto-frame">
-        <img src="experiencia.jpg" width="900" height="1200" decoding="async" alt="Café na xícara do salão com o bilhete Não tenha pressa" loading="lazy">
+        <picture><source srcset="experiencia.webp" type="image/webp"><img src="experiencia.jpg" width="900" height="1200" decoding="async" alt="Café na xícara do salão com o bilhete Não tenha pressa" loading="lazy"></picture>
       </div>
     </div>
   </div>
@@ -839,7 +842,7 @@ h1,h2,h3{letter-spacing:.02em}
     <div class="team-grid">
       <!-- EDITAR: trocar fotos, nomes, especialidades e bios reais da equipe. -->
       <div class="pro reveal" data-cascade>
-        <img src="equipe-monique-800.jpg" width="800" height="1200" decoding="async" alt="Monique Coutinho, especialista em mega hair na Tijuca" loading="lazy">
+        <picture><source srcset="equipe-monique-800.webp" type="image/webp"><img src="equipe-monique-800.jpg" width="800" height="1200" decoding="async" alt="Monique Coutinho, especialista em mega hair na Tijuca" loading="lazy"></picture>
         <div class="info">
           <span class="esp">Mega hair UltraFit Hair</span>
           <h3>Monique Coutinho</h3>
@@ -848,7 +851,7 @@ h1,h2,h3{letter-spacing:.02em}
         </div>
       </div>
       <div class="pro reveal" data-cascade>
-        <img src="ellen-perfil.jpg" width="521" height="694" decoding="async" alt="Ellen Cris, nail designer do Monique Coutinho Beauty" loading="lazy">
+        <picture><source srcset="ellen-perfil.webp" type="image/webp"><img src="ellen-perfil.jpg" width="521" height="694" decoding="async" alt="Ellen Cris, nail designer do Monique Coutinho Beauty" loading="lazy"></picture>
         <div class="info">
           <span class="esp">Nail Designer</span>
           <h3>Ellen Cris</h3>
@@ -857,7 +860,7 @@ h1,h2,h3{letter-spacing:.02em}
         </div>
       </div>
       <div class="pro reveal" data-cascade>
-        <img src="karine-perfil-800.jpg" width="800" height="1067" decoding="async" alt="Karine, design de sobrancelhas e cílios no Monique Coutinho Beauty" loading="lazy">
+        <picture><source srcset="karine-perfil-800.webp" type="image/webp"><img src="karine-perfil-800.jpg" width="800" height="1067" decoding="async" alt="Karine, design de sobrancelhas e cílios no Monique Coutinho Beauty" loading="lazy"></picture>
         <div class="info">
           <span class="esp">Design de sobrancelhas e cílios</span>
           <h3>Karine</h3>
@@ -984,6 +987,7 @@ h1,h2,h3{letter-spacing:.02em}
     </div>
   </div>
   <div class="base">
+    <span>Monique Coutinho Beauty, mega hair na Tijuca. A partir de 10/11: Rua Mariz e Barros, 448, loja B, Tijuca, Rio de Janeiro - RJ. Telefone: <a href="tel:+5521967015034">(21) 96701-5034</a>.</span>
     <span>Copyright 2026 Monique Coutinho Beauty. Todos os direitos reservados.</span>
   </div>
 </footer>
