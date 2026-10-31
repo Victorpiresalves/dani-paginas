@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Monique Coutinho Beauty">
 <meta property="og:url" content="https://moniquecoutinhobeauty.com/">
 <meta property="og:title" content="Monique Coutinho Beauty | Mega Hair na Tijuca - RJ">
-<meta property="og:description" content="Salão especializado em mega hair, mechas e tratamentos capilares na Tijuca. Técnica própria, equipe fixa, avaliação individual.">
+<meta property="og:description" content="Salão especializado em mega hair, mechas e tratamentos capilares na Tijuca. Técnica própria, poucas clientes por dia, avaliação individual.">
 <meta property="og:image" content="https://moniquecoutinhobeauty.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -67,7 +67,7 @@
     "latitude": -22.9142837,
     "longitude": -43.2128370
   },
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua+do+Matoso+122+loja+A+Tijuca+Rio+de+Janeiro",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Rua+Mariz+e+Barros+448+Tijuca+Rio+de+Janeiro",
   "areaServed": {"@type": "City", "name": "Rio de Janeiro"},
   "openingHoursSpecification": [
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday"],"opens":"10:00","closes":"18:00"},
@@ -464,6 +464,97 @@ footer .base a:hover{color:var(--mel-claro)}
 }
 :focus-visible{outline:2px solid var(--mel);outline-offset:3px;border-radius:4px}
 </style>
+<style>
+/* faixa */
+#faixa{position:fixed;top:0;left:0;right:0;z-index:101;height:36px;display:flex;align-items:center;justify-content:center;gap:6px;padding:0 12px;
+  background:#4A3733;color:#EDE2DD;font-size:13px;letter-spacing:.02em;text-decoration:none;white-space:nowrap}
+#faixa b{font-weight:600}
+nav,nav.scrolled{top:36px;background:rgba(74,55,51,.96)!important;padding-top:12px;padding-bottom:12px}
+nav a,.nav-links a{color:#EDE2DD}
+html{scroll-padding-top:110px}
+
+/* títulos mais firmes, sem letra sumindo */
+h1,h2,h3{letter-spacing:.02em}
+.it{background:none;color:#8F7263;-webkit-text-fill-color:currentColor}
+#hero .it,#agendar .it{color:#E2CFC4}
+#depoimentos .it{color:#4A3733}
+
+/* primeira tela */
+#hero{background:linear-gradient(120deg,#4A3733,#685049);align-items:center}
+#hero .hero-line:nth-child(3) span{animation-delay:.24s}
+#hero .media .img-a{left:auto;right:0;width:54%;object-position:50% 26%;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 30%);mask-image:linear-gradient(90deg,transparent,#000 30%)}
+#hero .veil{display:none}
+#hero .content{padding-top:90px;padding-bottom:0;z-index:4}
+#hero h1{font-size:clamp(38px,4.7vw,68px);max-width:none;line-height:1.14}
+#hero p{color:#EDE2DD;max-width:40ch}
+#hero .scroll-hint{display:none}
+
+/* serviços: mega hair em destaque, o resto em lista */
+.serv-grid{grid-template-columns:1.25fr 1fr 1fr;gap:0 38px}
+.serv{background:none;border:0;border-top:1px solid rgba(104,80,73,.24);border-radius:0;padding:20px 0;gap:6px}
+.serv:hover{transform:none;box-shadow:none;border-color:rgba(104,80,73,.24)}
+.serv .rule{display:none}
+.serv h3{font-size:20px;color:#57423C}
+.serv p{font-size:14px;color:#6F564E}
+.serv .link{font-size:12px;color:#6F564E}
+.serv:first-child{grid-row:span 3;min-height:430px;justify-content:flex-end;padding:30px;border:0;border-radius:18px;
+  background:linear-gradient(180deg,transparent 40%,rgba(62,47,42,.94) 82%),url("hero-cabelo.jpg") center 22%/cover}
+.serv:first-child h3{font-size:30px;color:#EDE2DD;flex:0}
+.serv:first-child p{color:#EDE2DD;flex:0}
+.serv:first-child .link{color:#EDE2DD}
+
+/* equipe: informação fora da foto */
+.pro{aspect-ratio:auto;background:#F5EEEA;display:flex;flex-direction:column}
+.pro img{height:auto;aspect-ratio:4/4.6}
+.pro .info{position:static;background:none;color:#57423C;padding:20px 22px 24px;flex:1}
+.pro .esp{color:#6F564E;letter-spacing:.08em}
+.pro .bio,.pro:hover .bio{max-height:none!important;margin-top:8px;color:#6F564E;font-size:14px;flex:1}
+
+/* depoimentos: três ao mesmo tempo */
+#depoimentos .quote-box{max-width:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left;min-height:0}
+.quote{position:static;opacity:1!important;transform:none!important;pointer-events:auto;align-items:flex-start;background:#F5EEEA;border-radius:16px;padding:26px;gap:12px;color:#4A3733}
+.quote:nth-child(n+3){display:none}
+.quote:nth-child(5){display:flex}
+.quote p{font-weight:400;font-size:15px;flex:1}
+.quote cite{letter-spacing:.04em;color:#6F564E;font-size:13px}
+.dots{display:none}
+
+/* agenda */
+.booking h3{color:#EDE2DD}
+.booking .hint{color:#EDE2DD;font-size:15px}
+.btn.cheio{display:flex;justify-content:center;width:100%;padding:20px;font-size:14px}
+
+#wa-float{background:#685049}
+
+#barra-cel{display:none}
+@media(max-width:920px){
+  #hero{height:auto;min-height:0;display:block}
+  #hero .media{position:relative;inset:auto;height:62svh;min-height:400px}
+  #hero .media .img-a{width:100%;height:100%;object-position:50% 25%;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent);mask-image:linear-gradient(180deg,#000 72%,transparent)}
+  #hero .content{padding:6px var(--pad) 44px}
+  #hero h1{font-size:clamp(32px,9vw,46px)}
+  .serv-grid{grid-template-columns:1fr 1fr!important}
+  .serv:first-child{grid-column:1/-1;grid-row:auto}
+  #depoimentos .quote-box{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .serv-grid{grid-template-columns:1fr!important;gap:0}
+  .serv{padding:16px 0}
+  .serv h3{font-size:18px}
+  .serv p{font-size:14px}
+  .serv:first-child{min-height:360px;padding:24px;margin-bottom:10px}
+  .serv:first-child h3{font-size:26px}
+}
+@media(max-width:760px){
+  #faixa{font-size:11.5px}
+  #wa-float{display:none}
+  body{padding-bottom:62px}
+  #barra-cel{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:102;height:62px;background:#4A3733;box-shadow:0 -6px 20px rgba(62,47,42,.25)}
+  #barra-cel a{display:flex;align-items:center;justify-content:center;color:#EDE2DD;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  #barra-cel a:first-child{background:#E2CFC4;color:#4A3733}
+}
+</style>
 </head>
 <body>
 
@@ -473,12 +564,14 @@ footer .base a:hover{color:var(--mel-claro)}
   <div class="bar"><i></i></div>
 </div>
 
+<a id="faixa" href="#contato">Novo endereço a partir de 10/11: <b>Rua Mariz e Barros, 448, loja B</b></a>
+
 <nav id="nav">
   <a class="logo" href="#hero"><img class="mono-svg" src="logo-icone-branco.png" alt=""><span>Monique Coutinho<small>Beauty</small></span></a>
   <button id="menu-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
   <div class="nav-links" id="nav-links">
-    <a href="#sobre">O salão</a>
     <a href="#megahair">Mega hair</a>
+    <a href="#sobre">O salão</a>
     <a href="#servicos">Serviços</a>
     <a href="#equipe">Equipe</a>
     <a href="#depoimentos">Clientes</a>
@@ -490,15 +583,14 @@ footer .base a:hover{color:var(--mel-claro)}
 <header id="hero">
   <div class="media">
     <img class="img-a" src="hero-frente.jpg" alt="Monique Coutinho, especialista em mega hair na Tijuca" fetchpriority="high">
-    <img class="img-b" src="hero-cabelo.jpg" alt="Mega hair com movimento e comprimento natural, visto de costas" loading="lazy">
     <div class="veil"></div>
   </div>
   <div class="content">
     <h1>
-      <span class="hero-line"><span>Transformamos beleza</span></span>
-      <span class="hero-line"><span>em <em class="it">autoestima</em>.</span></span>
+      <span class="hero-line"><span>Mega hair</span></span><span class="hero-line"><span>na Tijuca,</span></span>
+      <span class="hero-line"><span><em class="it">sem pressa</em>.</span></span>
     </h1>
-    <p class="fade-up">Salão especializado em mega hair na Tijuca — atendimento de perto, do diagnóstico do fio ao resultado final.</p>
+    <p class="fade-up">Atendimento de perto, do diagnóstico do fio ao resultado final. Poucas clientes por dia, com tempo de verdade.</p>
     <div class="cta-row fade-up">
       <a class="btn" href="#agendar">Agendar meu horário</a>
       <a class="btn ghost" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -513,29 +605,6 @@ footer .base a:hover{color:var(--mel-claro)}
     <span>Mega hair UltraFit Hair</span><span>Mechas premium</span><span>Exoplastia e progressiva orgânica</span><span>Tratamentos capilares</span><span>Unhas em gel e fibra</span><span>Cílios e make</span>
   </div>
 </div>
-
-<section id="sobre" class="section">
-  <div class="wrap grid">
-    <div class="reveal">
-      <div class="eyebrow">O salão</div>
-      <h2>Um salão para <em class="it">você</em> sair diferente de como entrou.</h2>
-      <p>O Monique Coutinho Beauty fica na Tijuca e nasceu do trabalho da Monique com mega hair. Hoje tem equipe fixa e atende poucas clientes por dia, para que cada atendimento tenha tempo e atenção de verdade — não é só mais um horário na agenda.</p>
-      <p>Cada atendimento começa com uma avaliação individual. A gente escuta, analisa o fio e o couro cabeludo, e só então indica o caminho, seja um mega hair com a técnica UltraFit Hair, mechas premium, uma exoplastia ou aquele capricho nas unhas, nos cílios e na make.</p>
-      <div class="stats">
-        <div><b data-count="10">0</b><small>anos de experiência</small></div>
-        <div><b data-count="1500">0</b><small>transformações</small></div>
-        <div><b data-count="5" data-decimal="1">0</b><small>avaliação das clientes</small></div>
-      </div>
-    </div>
-    <div class="reveal d1">
-      <div class="foto-frame">
-        <video muted loop playsinline preload="none">
-          <source src="salao-video.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="megahair" class="section">
   <div class="wrap">
@@ -588,6 +657,52 @@ footer .base a:hover{color:var(--mel-claro)}
     </div>
   </div>
 </section>
+
+<section id="galeria" class="section">
+  <div class="head">
+    <div class="reveal">
+      <div class="eyebrow">Galeria</div>
+      <h2>Transformações <em class="it">reais</em></h2>
+    </div>
+    <a class="btn ghost small reveal d1" href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener">Ver mais no Instagram</a>
+  </div>
+  <div class="gal-wrap">
+    <button class="gal-nav prev" type="button" aria-label="Vídeo anterior">‹</button>
+    <div class="gal-track" id="gal-track">
+      <!-- EDITAR: substituir pelas melhores fotos de resultados (formato vertical 3x4). -->
+      <div class="gal-item"><video muted loop playsinline preload="none"><source src="megahair-aplicacao.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-tratamento.mp4" type="video/mp4"></video><span class="cap">Tratamento capilar</span></div>
+      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-atendimento.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-video1.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
+    </div>
+    <button class="gal-nav next" type="button" aria-label="Próximo vídeo">›</button>
+  </div>
+</section>
+
+<section id="sobre" class="section">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">O salão</div>
+      <h2>Um salão para <em class="it">você</em> sair diferente de como entrou.</h2>
+      <p>O Monique Coutinho Beauty fica na Tijuca e nasceu do trabalho da Monique com mega hair. Hoje atende poucas clientes por dia, para que cada atendimento tenha tempo e atenção de verdade — não é só mais um horário na agenda.</p>
+      <p>Cada atendimento começa com uma avaliação individual. A gente escuta, analisa o fio e o couro cabeludo, e só então indica o caminho, seja um mega hair com a técnica UltraFit Hair, mechas premium, uma exoplastia ou aquele capricho nas unhas, nos cílios e na make.</p>
+      <div class="stats">
+        <div><b data-count="10">0</b><small>anos de experiência</small></div>
+        <div><b data-count="1500">0</b><small>transformações</small></div>
+        <div><b data-count="5" data-decimal="1">0</b><small>avaliação das clientes</small></div>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="foto-frame">
+        <video muted loop playsinline preload="none">
+          <source src="salao-video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <section id="servicos" class="section">
   <div class="wrap">
@@ -679,26 +794,7 @@ footer .base a:hover{color:var(--mel-claro)}
   </div>
 </section>
 
-<section id="galeria" class="section">
-  <div class="head">
-    <div class="reveal">
-      <div class="eyebrow">Galeria</div>
-      <h2>Transformações <em class="it">reais</em></h2>
-    </div>
-    <a class="btn ghost small reveal d1" href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener">Ver mais no Instagram</a>
-  </div>
-  <div class="gal-wrap">
-    <button class="gal-nav prev" type="button" aria-label="Vídeo anterior">‹</button>
-    <div class="gal-track" id="gal-track">
-      <!-- EDITAR: substituir pelas melhores fotos de resultados (formato vertical 3x4). -->
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="megahair-aplicacao.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-tratamento.mp4" type="video/mp4"></video><span class="cap">Tratamento capilar</span></div>
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-atendimento.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-      <div class="gal-item"><video muted loop playsinline preload="none"><source src="galeria-video1.mp4" type="video/mp4"></video><span class="cap">Mega hair</span></div>
-    </div>
-    <button class="gal-nav next" type="button" aria-label="Próximo vídeo">›</button>
-  </div>
-</section>
+
 
 <section id="depoimentos" class="section">
   <div class="wrap">
@@ -746,17 +842,10 @@ footer .base a:hover{color:var(--mel-claro)}
       <div class="alt">Prefere falar com a gente primeiro? <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20antes%20de%20agendar." target="_blank" rel="noopener">Chame no WhatsApp</a> ou ligue para <a href="tel:+5521967015034">(21) 96701-5034</a>.</div>
     </div>
     <div class="booking reveal d1" id="booking">
-      <span class="tp-label">Pré-visualização · agenda Trinks</span>
       <h3>Escolha o melhor horário</h3>
-      <p class="hint">Veja os horários disponíveis e finalize o agendamento direto na plataforma da Trinks.</p>
-      <div class="tp-frame">
-        <iframe src="https://www.trinks.com/monique-coutinho-beauty" title="Agenda da Monique Coutinho Beauty no Trinks" loading="lazy" tabindex="-1"></iframe>
-        <div class="tp-veil">
-          <a class="tp-btn" href="https://www.trinks.com/monique-coutinho-beauty?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadWhNNY98q-QbhbfEZbVmKV-_H6A6JCFJAANx7-VjOpG2onQnVuSVhZHRuEQg_aem_KqBb4pF8XFZdGQ-3Fnx9nw" target="_blank" rel="noopener">Abrir agenda completa ↗</a>
-        </div>
+      <p class="hint">Veja os horários disponíveis e finalize o agendamento na agenda online da Trinks.</p>
+      <a class="btn cheio" href="https://www.trinks.com/monique-coutinho-beauty" target="_blank" rel="noopener">Ver horários disponíveis</a>
       </div>
-    </div>
-  </div>
 </section>
 
 <section id="contato" class="section">
@@ -766,7 +855,7 @@ footer .base a:hover{color:var(--mel-claro)}
       <h2>Venha nos <em class="it">visitar</em>.</h2>
       <div class="bloco">
         <h3>Endereço</h3>
-        <p>Rua do Matoso, 122, loja A<br>Praça da Bandeira (Tijuca), Rio de Janeiro - RJ<br>CEP 20270-133</p>
+        <p><b>A partir de 10/11:</b> Rua Mariz e Barros, 448, loja B<br>Tijuca, Rio de Janeiro - RJ</p><p style="margin-top:8px"><b>Até lá:</b> Rua do Matoso, 122, loja A<br>Praça da Bandeira (Tijuca), Rio de Janeiro - RJ</p>
       </div>
       <div class="bloco">
         <h3>Horário de atendimento</h3>
@@ -786,7 +875,7 @@ footer .base a:hover{color:var(--mel-claro)}
       <a class="btn ghost" style="margin-top:20px" href="https://www.google.com/maps/search/?api=1&query=Rua+do+Matoso+122+loja+A+Tijuca+Rio+de+Janeiro" target="_blank" rel="noopener">Como chegar</a>
     </div>
     <div class="mapa reveal d1">
-      <iframe src="https://www.google.com/maps?q=Rua%20do%20Matoso%2C%20122%20-%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ&output=embed" loading="lazy" title="Mapa do salão" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps?q=Rua%20Mariz%20e%20Barros%2C%20448%20-%20Tijuca%2C%20Rio%20de%20Janeiro%20-%20RJ&output=embed" loading="lazy" title="Mapa do salão" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
@@ -827,6 +916,11 @@ footer .base a:hover{color:var(--mel-claro)}
 <a id="wa-float" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20sal%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.8-.7-1.3-1.5-1.4-1.8-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.8 2.8 4.5 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></svg>
 </a>
+
+<div id="barra-cel">
+  <a href="#agendar">Agendar</a>
+  <a href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20sal%C3%A3o." target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <script>
 // ---------- loader ----------
