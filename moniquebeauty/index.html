@@ -576,6 +576,15 @@ h1,h2,h3{letter-spacing:.02em}
 .serv:first-child .zap{color:#EDE2DD}
 @media(max-width:920px){.passos{grid-template-columns:1fr 1fr}.perguntas{grid-template-columns:1fr}}
 @media(max-width:520px){.passos{grid-template-columns:1fr}}
+#galeria,#como,#duvidas{border-top:0!important}
+#galeria .head{width:min(1240px,calc(100% - 2*var(--pad)));max-width:1240px;margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
+#galeria::before,#como::before,#duvidas::before{display:none}
+#galeria{padding-top:clamp(36px,6vh,60px);padding-bottom:clamp(30px,5vh,50px)}
+#como{padding-top:clamp(30px,5vh,50px);padding-bottom:clamp(30px,5vh,50px)}
+#duvidas{padding-top:clamp(30px,5vh,50px)}
+#megahair{padding-bottom:clamp(36px,6vh,60px)}
+#sobre{border-top:1px solid rgba(104,80,73,.18)}
+@media(max-width:520px){#duvidas .btn{margin:10px 0 0!important}}
 </style>
 </head>
 <body>
@@ -683,7 +692,7 @@ h1,h2,h3{letter-spacing:.02em}
 <section id="galeria" class="section">
   <div class="head">
     <div class="reveal">
-      <div class="eyebrow">Galeria</div>
+      <div class="eyebrow">Mega hair · Resultados</div>
       <h2>Transformações <em class="it">reais</em></h2>
     </div>
     <a class="btn ghost small reveal d1" href="https://www.instagram.com/moniquecoutinhobeauty/" target="_blank" rel="noopener">Ver mais no Instagram</a>
@@ -704,7 +713,7 @@ h1,h2,h3{letter-spacing:.02em}
 
 <section id="como" class="section">
   <div class="wrap">
-    <div class="eyebrow reveal">Como funciona</div>
+    <div class="eyebrow reveal">Mega hair · Como funciona</div>
     <h2 class="reveal">Do primeiro contato à <em class="it">manutenção</em>.</h2>
     <ol class="passos">
       <li class="reveal"><b>1</b><h3>Avaliação</h3><p>A gente escuta o que você quer e analisa o fio, o couro cabeludo e a sua rotina.</p></li>
@@ -712,6 +721,23 @@ h1,h2,h3{letter-spacing:.02em}
       <li class="reveal"><b>3</b><h3>Aplicação</h3><p>Fios selecionados, aplicação com calma e acabamento invisível.</p></li>
       <li class="reveal"><b>4</b><h3>Manutenção</h3><p>Manutenções periódicas preservam o cabelo natural e o caimento do mega hair.</p></li>
     </ol>
+  </div>
+</section>
+
+<section id="duvidas" class="section">
+  <div class="wrap">
+    <div class="eyebrow reveal">Mega hair · Dúvidas</div>
+    <h2 class="reveal">O que todo mundo <em class="it">pergunta</em>.</h2>
+    <div class="tecnicas perguntas reveal">
+      <details class="tecnica"><summary>Colocar mega hair dói? <i>+</i></summary><div class="body">A aplicação é pensada para ser leve e confortável. Na avaliação, explicamos como funciona cada técnica para você escolher com tranquilidade.</div></details>
+      <details class="tecnica"><summary>Mega hair estraga o cabelo? <i>+</i></summary><div class="body">Nossas técnicas são pensadas para preservar a saúde do fio natural, e as manutenções periódicas fazem parte desse cuidado. O ponto americano, por exemplo, é feito sem cola e sem química.</div></details>
+      <details class="tecnica"><summary>Quanto tempo dura? <i>+</i></summary><div class="body">Depende da técnica, do seu cabelo e da sua rotina. O intervalo das manutenções é definido com você na avaliação.</div></details>
+      <details class="tecnica"><summary>Funciona em cabelo fino? <i>+</i></summary><div class="body">Sim, mas a técnica precisa ser a certa. A fita adesiva, por exemplo, tem faixas ultrafinas e sensação leve, e é uma opção para cabelos finos.</div></details>
+      <details class="tecnica"><summary>Quanto custa? <i>+</i></summary><div class="body">O valor depende da técnica, da quantidade de cabelo e do comprimento. Por isso, todo mega hair começa com uma avaliação.</div></details>
+      <details class="tecnica"><summary>Como eu começo? <i>+</i></summary><div class="body">Agende sua avaliação pela agenda online ou chame a gente no WhatsApp.</div></details>
+    </div>
+    <a class="btn ghost escuro reveal" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20mega%20hair." target="_blank" rel="noopener">Tirar outra dúvida no WhatsApp</a>
+    <a class="btn reveal" href="#agendar" style="margin-left:10px">Agendar minha avaliação</a>
   </div>
 </section>
 
@@ -865,22 +891,6 @@ h1,h2,h3{letter-spacing:.02em}
       </blockquote>
     </div>
     <div class="dots" id="dots"></div>
-  </div>
-</section>
-
-<section id="duvidas" class="section">
-  <div class="wrap">
-    <div class="eyebrow reveal">Dúvidas</div>
-    <h2 class="reveal">O que você quer saber sobre <em class="it">mega hair</em>.</h2>
-    <div class="tecnicas perguntas reveal">
-      <details class="tecnica"><summary>Colocar mega hair dói? <i>+</i></summary><div class="body">A aplicação é pensada para ser leve e confortável. Na avaliação, explicamos como funciona cada técnica para você escolher com tranquilidade.</div></details>
-      <details class="tecnica"><summary>Mega hair estraga o cabelo? <i>+</i></summary><div class="body">Nossas técnicas são pensadas para preservar a saúde do fio natural, e as manutenções periódicas fazem parte desse cuidado. O ponto americano, por exemplo, é feito sem cola e sem química.</div></details>
-      <details class="tecnica"><summary>Quanto tempo dura? <i>+</i></summary><div class="body">Depende da técnica, do seu cabelo e da sua rotina. O intervalo das manutenções é definido com você na avaliação.</div></details>
-      <details class="tecnica"><summary>Funciona em cabelo fino? <i>+</i></summary><div class="body">Sim, mas a técnica precisa ser a certa. A fita adesiva, por exemplo, tem faixas ultrafinas e sensação leve, e é uma opção para cabelos finos.</div></details>
-      <details class="tecnica"><summary>Quanto custa? <i>+</i></summary><div class="body">O valor depende da técnica, da quantidade de cabelo e do comprimento. Por isso, todo mega hair começa com uma avaliação.</div></details>
-      <details class="tecnica"><summary>Como eu começo? <i>+</i></summary><div class="body">Agende sua avaliação pela agenda online ou chame a gente no WhatsApp.</div></details>
-    </div>
-    <a class="btn ghost escuro reveal" href="https://wa.me/5521967015034?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20mega%20hair." target="_blank" rel="noopener">Tirar outra dúvida no WhatsApp</a>
   </div>
 </section>
 
